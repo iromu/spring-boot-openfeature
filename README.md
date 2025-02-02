@@ -4,8 +4,6 @@
 [![Coverage Status](https://coveralls.io/repos/github/iromu/spring-boot-openfeature/badge.svg?branch=main)](https://coveralls.io/github/iromu/spring-boot-openfeature?branch=main)
 [![Maven Central](https://img.shields.io/maven-central/v/org.iromu.openfeature/spring-boot-openfeature)](https://mvnrepository.com/artifact/org.iromu.openfeature/spring-boot-openfeature)
 
-
-
 This is a Spring Boot starter that integrates [OpenFeature](https://openfeature.dev/), an open standard for feature flag management.
 
 ## Features
