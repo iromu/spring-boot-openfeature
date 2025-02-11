@@ -63,7 +63,7 @@
     </modules>
 
     <properties>
-        <revision>0.0.9</revision>
+        <revision>0.0.10-SNAPSHOT</revision>
         <java.version>17</java.version>
 
         <maven.compiler.source>${java.version}</maven.compiler.source>
