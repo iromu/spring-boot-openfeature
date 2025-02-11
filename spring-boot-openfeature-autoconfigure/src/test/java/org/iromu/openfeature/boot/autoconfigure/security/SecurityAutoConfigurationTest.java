@@ -19,7 +19,6 @@ package org.iromu.openfeature.boot.autoconfigure.security;
 import dev.openfeature.sdk.*;
 import org.iromu.openfeature.boot.autoconfigure.ClientAutoConfiguration;
 import org.iromu.openfeature.boot.autoconfigure.OpenFeatureAPIAutoConfiguration;
-import org.iromu.openfeature.boot.autoconfigure.multiprovider.MultiProviderAutoConfiguration;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mockito;
@@ -68,28 +67,27 @@ class SecurityAutoConfigurationTest {
 			assertTrue(client.getBooleanValue("foo", false));
 			assertThat(argumentCaptor.getValue().asMap()).isEqualTo(Map.of());
 
-			List<GrantedAuthority> roleUser = AuthorityUtils.createAuthorityList("ROLE_USER");
+			List<GrantedAuthority> roleUserAsList = AuthorityUtils.createAuthorityList("ROLE_USER");
+			Value roleUserAsValue = new Value(List.of(new Value("ROLE_USER")));
 
 			SecurityContextHolder.getContext()
-				.setAuthentication(new UsernamePasswordAuthenticationToken("testUser", "password", roleUser));
+				.setAuthentication(new UsernamePasswordAuthenticationToken("testUser", "password", roleUserAsList));
 			assertTrue(client.getBooleanValue("foo", false));
-			Value role_user = new Value(List.of(new Value("ROLE_USER")));
 			assertThat(argumentCaptor.getValue().asMap())
-				.isEqualTo(Map.of("userId", new Value("testUser"), "authorities", role_user));
+				.isEqualTo(Map.of("userId", new Value("testUser"), "authorities", roleUserAsValue));
 
 			SecurityContextHolder.getContext()
-				.setAuthentication(new UsernamePasswordAuthenticationToken("testUser2", "password", roleUser));
+				.setAuthentication(new UsernamePasswordAuthenticationToken("testUser2", "password", roleUserAsList));
 			assertTrue(client.getBooleanValue("foo", false));
 			assertThat(argumentCaptor.getValue().asMap())
-				.isEqualTo(Map.of("userId", new Value("testUser2"), "authorities", role_user));
-			;
+				.isEqualTo(Map.of("userId", new Value("testUser2"), "authorities", roleUserAsValue));
 
 			SecurityContextHolder.getContext()
 				.setAuthentication(new WebAuthnAuthentication(
-						ImmutablePublicKeyCredentialUserEntity.builder().name("testUser3").build(), roleUser));
+						ImmutablePublicKeyCredentialUserEntity.builder().name("testUser3").build(), roleUserAsList));
 			assertTrue(client.getBooleanValue("foo", false));
 			assertThat(argumentCaptor.getValue().asMap())
-				.isEqualTo(Map.of("userId", new Value("testUser3"), "authorities", role_user));
+				.isEqualTo(Map.of("userId", new Value("testUser3"), "authorities", roleUserAsValue));
 		});
 
 	}
