@@ -16,6 +16,9 @@
 
 package org.iromu.openfeature.boot.autoconfigure.jsonlogic;
 
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 import javax.annotation.Nullable;
 
 import dev.openfeature.contrib.providers.jsonlogic.FileBasedFetcher;
@@ -25,6 +28,7 @@ import dev.openfeature.sdk.EvaluationContext;
 import dev.openfeature.sdk.FeatureProvider;
 import io.github.jamsesso.jsonlogic.JsonLogic;
 import lombok.SneakyThrows;
+import lombok.extern.slf4j.Slf4j;
 import org.iromu.openfeature.boot.autoconfigure.ClientAutoConfiguration;
 import org.iromu.openfeature.boot.autoconfigure.multiprovider.MultiProviderAutoConfiguration;
 
@@ -47,6 +51,7 @@ import org.springframework.context.annotation.Bean;
 @ConditionalOnProperty(prefix = JsonlogicProperties.JSONLOGIC_PREFIX, name = "enabled", havingValue = "true",
 		matchIfMissing = true)
 @EnableConfigurationProperties(JsonlogicProperties.class)
+@Slf4j
 public class JsonlogicAutoConfiguration {
 
 	@Bean
@@ -60,6 +65,10 @@ public class JsonlogicAutoConfiguration {
 	@ConditionalOnProperty(prefix = JsonlogicProperties.JSONLOGIC_PREFIX, name = "filename")
 	@ConditionalOnMissingBean
 	public RuleFetcher fileBasedFetcher(JsonlogicProperties properties) {
+		if (log.isTraceEnabled()) {
+			log.trace("jsonlogic.filename={}",
+					String.join("\n", Files.readAllLines(Paths.get(properties.getFilename().getURI()))));
+		}
 		return new FileBasedFetcher(properties.getFilename().getURI());
 	}
 
