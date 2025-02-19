@@ -20,8 +20,11 @@ import dev.openfeature.sdk.NoOpProvider;
 import dev.openfeature.sdk.OpenFeatureAPI;
 import dev.openfeature.sdk.ProviderState;
 
+import lombok.RequiredArgsConstructor;
+
 import org.springframework.boot.actuate.health.Health;
 import org.springframework.boot.actuate.health.HealthIndicator;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.stereotype.Component;
 
 /**
@@ -34,40 +37,45 @@ import org.springframework.stereotype.Component;
  * @author Ivan Rodriguez
  */
 @Component
+@ConditionalOnBean(OpenFeatureAPI.class)
+@RequiredArgsConstructor
 public class OpenFeatureHealthIndicator implements HealthIndicator {
 
-	/**
-	 * Performs a health check on OpenFeature.
-	 * @return {@link Health#up()} if OpenFeature is configured correctly and responding,
-	 * otherwise {@link Health#down()} with error details.
-	 */
-	@Override
-	public Health health() {
-		try {
-			var provider = OpenFeatureAPI.getInstance().getProvider();
+    private final OpenFeatureAPI openFeatureAPI;
 
-			if (provider instanceof NoOpProvider) {
-				return Health.down().withDetail("error", "No active OpenFeature provider").build();
-			}
+    /**
+     * Performs a health check on OpenFeature.
+     *
+     * @return {@link Health#up()} if OpenFeature is configured correctly and responding,
+     * otherwise {@link Health#down()} with error details.
+     */
+    @Override
+    public Health health() {
+        try {
+            var provider = this.openFeatureAPI.getProvider();
 
-			ProviderState providerState = OpenFeatureAPI.getInstance().getClient().getProviderState();
-			Health health = null;
+            if (provider instanceof NoOpProvider) {
+                return Health.down().withDetail("error", "No active OpenFeature provider").build();
+            }
 
+            ProviderState providerState = this.openFeatureAPI.getClient().getProviderState();
+            Health health = null;
+
+			final String providerName = provider.getClass().getSimpleName();
 			switch (providerState) {
-				case READY -> health = Health.up().withDetail("provider", provider.getClass().getSimpleName()).build();
-				case NOT_READY, STALE ->
-					health = Health.outOfService().withDetail("provider", provider.getClass().getSimpleName()).build();
-				case ERROR, FATAL ->
-					health = Health.down().withDetail("provider", provider.getClass().getSimpleName()).build();
-				default -> Health.down().withDetail("Unexpected value", providerState).build();
-			}
+                case READY -> health = Health.up().withDetail("provider", providerName).build();
+                case NOT_READY, STALE ->
+                        health = Health.outOfService().withDetail("provider", providerName).build();
+                case ERROR, FATAL ->
+                        health = Health.down().withDetail("provider", providerName).build();
+                default -> Health.down().withDetail("Unexpected value", providerState).build();
+            }
 
-			return health;
+            return health;
 
-		}
-		catch (Exception ex) {
-			return Health.down().withDetail("error", ex.getMessage()).build();
-		}
-	}
+        } catch (Exception ex) {
+            return Health.down().withDetail("error", ex.getMessage()).build();
+        }
+    }
 
 }
