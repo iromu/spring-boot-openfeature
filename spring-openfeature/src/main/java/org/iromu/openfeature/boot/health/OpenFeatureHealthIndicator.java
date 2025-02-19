@@ -19,7 +19,6 @@ package org.iromu.openfeature.boot.health;
 import dev.openfeature.sdk.NoOpProvider;
 import dev.openfeature.sdk.OpenFeatureAPI;
 import dev.openfeature.sdk.ProviderState;
-
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.boot.actuate.health.Health;
@@ -41,41 +40,39 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class OpenFeatureHealthIndicator implements HealthIndicator {
 
-    private final OpenFeatureAPI openFeatureAPI;
+	private final OpenFeatureAPI openFeatureAPI;
 
-    /**
-     * Performs a health check on OpenFeature.
-     *
-     * @return {@link Health#up()} if OpenFeature is configured correctly and responding,
-     * otherwise {@link Health#down()} with error details.
-     */
-    @Override
-    public Health health() {
-        try {
-            var provider = this.openFeatureAPI.getProvider();
+	/**
+	 * Performs a health check on OpenFeature.
+	 * @return {@link Health#up()} if OpenFeature is configured correctly and responding,
+	 * otherwise {@link Health#down()} with error details.
+	 */
+	@Override
+	public Health health() {
+		try {
+			var provider = this.openFeatureAPI.getProvider();
 
-            if (provider instanceof NoOpProvider) {
-                return Health.down().withDetail("error", "No active OpenFeature provider").build();
-            }
+			if (provider instanceof NoOpProvider) {
+				return Health.down().withDetail("error", "No active OpenFeature provider").build();
+			}
 
-            ProviderState providerState = this.openFeatureAPI.getClient().getProviderState();
-            Health health = null;
+			ProviderState providerState = this.openFeatureAPI.getClient().getProviderState();
+			Health health = null;
 
 			final String providerName = provider.getClass().getSimpleName();
 			switch (providerState) {
-                case READY -> health = Health.up().withDetail("provider", providerName).build();
-                case NOT_READY, STALE ->
-                        health = Health.outOfService().withDetail("provider", providerName).build();
-                case ERROR, FATAL ->
-                        health = Health.down().withDetail("provider", providerName).build();
-                default -> Health.down().withDetail("Unexpected value", providerState).build();
-            }
+				case READY -> health = Health.up().withDetail("provider", providerName).build();
+				case NOT_READY, STALE -> health = Health.outOfService().withDetail("provider", providerName).build();
+				case ERROR, FATAL -> health = Health.down().withDetail("provider", providerName).build();
+				default -> Health.down().withDetail("Unexpected value", providerState).build();
+			}
 
-            return health;
+			return health;
 
-        } catch (Exception ex) {
-            return Health.down().withDetail("error", ex.getMessage()).build();
-        }
-    }
+		}
+		catch (Exception ex) {
+			return Health.down().withDetail("error", ex.getMessage()).build();
+		}
+	}
 
 }
