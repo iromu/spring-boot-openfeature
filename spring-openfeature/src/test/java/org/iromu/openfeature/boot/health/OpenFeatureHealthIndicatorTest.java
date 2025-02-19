@@ -43,7 +43,7 @@ class OpenFeatureHealthIndicatorTest {
 	private FeatureProvider featureProvider;
 
 	@Mock
-	private OpenFeatureClient client;
+	private Client client;
 
 	@InjectMocks
 	private OpenFeatureHealthIndicator healthIndicator;

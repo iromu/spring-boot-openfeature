@@ -40,6 +40,8 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class OpenFeatureHealthIndicator implements HealthIndicator {
 
+	private static final String PROVIDER = "provider";
+
 	private final OpenFeatureAPI openFeatureAPI;
 
 	/**
@@ -61,9 +63,9 @@ public class OpenFeatureHealthIndicator implements HealthIndicator {
 
 			final String providerName = provider.getClass().getSimpleName();
 			switch (providerState) {
-				case READY -> health = Health.up().withDetail("provider", providerName).build();
-				case NOT_READY, STALE -> health = Health.outOfService().withDetail("provider", providerName).build();
-				case ERROR, FATAL -> health = Health.down().withDetail("provider", providerName).build();
+				case READY -> health = Health.up().withDetail(PROVIDER, providerName).build();
+				case NOT_READY, STALE -> health = Health.outOfService().withDetail(PROVIDER, providerName).build();
+				case ERROR, FATAL -> health = Health.down().withDetail(PROVIDER, providerName).build();
 			}
 
 			return health;
