@@ -31,6 +31,7 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.reflect.MethodSignature;
 
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.expression.ExpressionParser;
 import org.springframework.expression.spel.standard.SpelExpressionParser;
 import org.springframework.expression.spel.support.StandardEvaluationContext;
@@ -50,6 +51,7 @@ import org.springframework.stereotype.Component;
  */
 @Aspect
 @Component
+@ConditionalOnBean(Client.class)
 @RequiredArgsConstructor
 public class ToggleOnFlagAspect {
 

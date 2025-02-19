@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CheckStyle-IDEA" serialisationVersion="2">
-    <checkstyleVersion>10.21.1</checkstyleVersion>
+    <checkstyleVersion>10.21.2</checkstyleVersion>
     <scanScope>JavaOnly</scanScope>
-    <copyLibs>true</copyLibs>
-    <option name="thirdPartyClasspath" />
-    <option name="activeLocationIds" />
+    <option name="thirdPartyClasspath">
+      <option value="$PROJECT_DIR$/spring-javaformat-checkstyle-0.0.43.jar" />
+      <option value="$PROJECT_DIR$/spring-javaformat-config-0.0.43.jar" />
+    </option>
+    <option name="activeLocationIds">
+      <option value="772ea2fb-7fce-4a80-bfa5-3a153d5963ad" />
+    </option>
     <option name="locations">
       <list>
         <ConfigurationLocation id="bundled-sun-checks" type="BUNDLED" scope="All" description="Sun Checks">(bundled)</ConfigurationLocation>
         <ConfigurationLocation id="bundled-google-checks" type="BUNDLED" scope="All" description="Google Checks">(bundled)</ConfigurationLocation>
+        <ConfigurationLocation id="772ea2fb-7fce-4a80-bfa5-3a153d5963ad" type="LOCAL_FILE" scope="All" description="Spring">$PROJECT_DIR$/checkstyle.xml</ConfigurationLocation>
       </list>
     </option>
   </component>
