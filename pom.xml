@@ -70,7 +70,7 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <spring-boot.version>3.4.2</spring-boot.version>
+        <spring-boot.version>3.4.3</spring-boot.version>
         <io.spring.javaformat.version>0.0.43</io.spring.javaformat.version>
 
         <unleash.version>0.1.0-alpha</unleash.version>
