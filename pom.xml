@@ -74,7 +74,7 @@
         <io.spring.javaformat.version>0.0.43</io.spring.javaformat.version>
 
         <unleash.version>0.1.0-alpha</unleash.version>
-        <unleash-client-java.version>10.0.1</unleash-client-java.version>
+        <unleash-client-java.version>10.1.0</unleash-client-java.version>
         <sdk.version>1.14.0</sdk.version>
         <env-var.version>0.0.7</env-var.version>
         <multiprovider.version>0.0.1</multiprovider.version>
