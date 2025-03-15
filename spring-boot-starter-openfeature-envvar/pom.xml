@@ -27,7 +27,6 @@
     </parent>
 
     <artifactId>spring-boot-starter-openfeature-envvar</artifactId>
-    <packaging>pom</packaging>
 
     <dependencyManagement>
         <dependencies>

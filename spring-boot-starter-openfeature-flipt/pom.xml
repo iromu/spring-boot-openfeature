@@ -27,7 +27,6 @@
     </parent>
 
     <artifactId>spring-boot-starter-openfeature-flipt</artifactId>
-    <packaging>pom</packaging>
 
     <dependencyManagement>
         <dependencies>

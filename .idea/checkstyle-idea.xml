@@ -14,7 +14,7 @@
       <list>
         <ConfigurationLocation id="bundled-sun-checks" type="BUNDLED" scope="All" description="Sun Checks">(bundled)</ConfigurationLocation>
         <ConfigurationLocation id="bundled-google-checks" type="BUNDLED" scope="All" description="Google Checks">(bundled)</ConfigurationLocation>
-        <ConfigurationLocation id="772ea2fb-7fce-4a80-bfa5-3a153d5963ad" type="LOCAL_FILE" scope="All" description="Spring">$PROJECT_DIR$/checkstyle.xml</ConfigurationLocation>
+        <ConfigurationLocation id="0a814f8b-2122-4647-a911-7f9ac90a1230" type="LOCAL_FILE" scope="All" description="Spring">$PROJECT_DIR$/checkstyle.xml</ConfigurationLocation>
       </list>
     </option>
   </component>

@@ -27,7 +27,6 @@
     </parent>
 
     <artifactId>spring-boot-starter-openfeature-unleash</artifactId>
-    <packaging>pom</packaging>
 
     <dependencyManagement>
         <dependencies>
