@@ -25,6 +25,8 @@ import io.getunleash.util.UnleashConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.iromu.openfeature.boot.autoconfigure.ClientAutoConfiguration;
 import org.iromu.openfeature.boot.autoconfigure.multiprovider.MultiProviderAutoConfiguration;
+import org.iromu.openfeature.boot.unleash.UnleashCustomizer;
+import org.iromu.openfeature.boot.unleash.UnleashProperties;
 
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.boot.autoconfigure.AutoConfiguration;

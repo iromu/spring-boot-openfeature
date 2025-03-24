@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.iromu.openfeature.boot.autoconfigure.unleash;
+package org.iromu.openfeature.boot.unleash;
 
 import java.net.URI;
 import java.time.Duration;

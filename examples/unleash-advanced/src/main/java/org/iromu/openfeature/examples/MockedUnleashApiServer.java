@@ -23,8 +23,8 @@ import okhttp3.mockwebserver.Dispatcher;
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
 import okhttp3.mockwebserver.RecordedRequest;
-import org.iromu.openfeature.boot.autoconfigure.unleash.UnleashBackFile;
-import org.iromu.openfeature.boot.autoconfigure.unleash.UnleashProperties;
+import org.iromu.openfeature.boot.unleash.UnleashBackFile;
+import org.iromu.openfeature.boot.unleash.UnleashProperties;
 
 import org.springframework.stereotype.Component;
 

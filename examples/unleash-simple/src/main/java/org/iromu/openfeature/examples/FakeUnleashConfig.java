@@ -18,7 +18,7 @@ package org.iromu.openfeature.examples;
 
 import dev.openfeature.contrib.providers.unleash.UnleashProviderConfig;
 import dev.openfeature.sdk.FeatureProvider;
-import org.iromu.openfeature.boot.autoconfigure.unleash.FakeUnleashProvider;
+import org.iromu.openfeature.boot.unleash.FakeUnleashProvider;
 import org.iromu.openfeature.boot.autoconfigure.unleash.UnleashAutoConfiguration;
 
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;

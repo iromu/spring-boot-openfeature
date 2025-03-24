@@ -8,4 +8,3 @@ org.iromu.openfeature.boot.autoconfigure.flipt.FliptAutoConfiguration
 org.iromu.openfeature.boot.autoconfigure.jsonlogic.JsonlogicAutoConfiguration
 org.iromu.openfeature.boot.autoconfigure.multiprovider.MultiProviderAutoConfiguration
 org.iromu.openfeature.boot.autoconfigure.security.SecurityAutoConfiguration
-org.iromu.openfeature.boot.autoconfigure.unleash.UnleashAutoConfiguration

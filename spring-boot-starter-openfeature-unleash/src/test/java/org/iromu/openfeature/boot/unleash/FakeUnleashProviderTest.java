@@ -14,11 +14,12 @@
  * limitations under the License.
  */
 
-package org.iromu.openfeature.boot.autoconfigure.unleash;
+package org.iromu.openfeature.boot.unleash;
 
 import dev.openfeature.sdk.EvaluationContext;
 import dev.openfeature.sdk.exceptions.GeneralError;
 import io.getunleash.FakeUnleash;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -48,7 +49,7 @@ class FakeUnleashProviderTest {
 		fakeUnleashProvider.initialize(evaluationContext);
 
 		assertNotNull(fakeUnleashProvider.getUnleash(), "Unleash should be initialized");
-		assertTrue(fakeUnleashProvider.getUnleash() instanceof FakeUnleash,
+		Assertions.assertTrue(fakeUnleashProvider.getUnleash() instanceof FakeUnleash,
 				"Unleash should be an instance of FakeUnleash");
 	}
 
@@ -59,7 +60,7 @@ class FakeUnleashProviderTest {
 		fakeUnleashProvider.initialize(evaluationContext);
 
 		// Attempt to initialize again and assert exception is thrown
-		GeneralError exception = assertThrows(GeneralError.class, () -> {
+		GeneralError exception = Assertions.assertThrows(GeneralError.class, () -> {
 			fakeUnleashProvider.initialize(evaluationContext);
 		});
 
