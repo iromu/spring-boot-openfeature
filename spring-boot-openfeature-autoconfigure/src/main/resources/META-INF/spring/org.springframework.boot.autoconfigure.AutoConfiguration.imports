@@ -4,5 +4,4 @@ org.iromu.openfeature.boot.autoconfigure.HealthAutoConfiguration
 org.iromu.openfeature.boot.autoconfigure.OpenFeatureAPIAutoConfiguration
 org.iromu.openfeature.boot.autoconfigure.flipt.FliptAutoConfiguration
 org.iromu.openfeature.boot.autoconfigure.jsonlogic.JsonlogicAutoConfiguration
-org.iromu.openfeature.boot.autoconfigure.multiprovider.MultiProviderAutoConfiguration
 org.iromu.openfeature.boot.autoconfigure.security.SecurityAutoConfiguration

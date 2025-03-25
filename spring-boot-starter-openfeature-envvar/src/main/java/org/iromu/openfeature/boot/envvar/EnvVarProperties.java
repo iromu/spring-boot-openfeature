@@ -17,6 +17,7 @@
 package org.iromu.openfeature.boot.envvar;
 
 import lombok.Data;
+import org.iromu.openfeature.boot.autoconfigure.envvar.EnvVarAutoConfiguration;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

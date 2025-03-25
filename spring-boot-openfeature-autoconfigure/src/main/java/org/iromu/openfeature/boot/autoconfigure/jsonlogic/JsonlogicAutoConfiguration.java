@@ -30,7 +30,6 @@ import io.github.jamsesso.jsonlogic.JsonLogic;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.iromu.openfeature.boot.autoconfigure.ClientAutoConfiguration;
-import org.iromu.openfeature.boot.autoconfigure.multiprovider.MultiProviderAutoConfiguration;
 
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
@@ -46,7 +45,8 @@ import org.springframework.context.annotation.Bean;
  * @author Ivan Rodriguez
  */
 @AutoConfiguration
-@AutoConfigureBefore({ ClientAutoConfiguration.class, MultiProviderAutoConfiguration.class })
+@AutoConfigureBefore(value = { ClientAutoConfiguration.class },
+		name = "org.iromu.openfeature.boot.autoconfigure.multiprovider.MultiProviderAutoConfiguration")
 @ConditionalOnClass({ JsonlogicProvider.class })
 @ConditionalOnProperty(prefix = JsonlogicProperties.JSONLOGIC_PREFIX, name = "enabled", havingValue = "true",
 		matchIfMissing = true)

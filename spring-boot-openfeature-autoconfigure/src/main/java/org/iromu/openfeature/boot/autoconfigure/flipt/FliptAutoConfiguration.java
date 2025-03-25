@@ -21,9 +21,7 @@ import dev.openfeature.contrib.providers.flipt.FliptProviderConfig;
 import dev.openfeature.sdk.FeatureProvider;
 import io.flipt.api.FliptClient;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
 import org.iromu.openfeature.boot.autoconfigure.ClientAutoConfiguration;
-import org.iromu.openfeature.boot.autoconfigure.multiprovider.MultiProviderAutoConfiguration;
 
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
@@ -40,7 +38,8 @@ import org.springframework.context.annotation.Bean;
  * @author Ivan Rodriguez
  */
 @AutoConfiguration
-@AutoConfigureBefore({ ClientAutoConfiguration.class, MultiProviderAutoConfiguration.class })
+@AutoConfigureBefore(value = { ClientAutoConfiguration.class },
+		name = "org.iromu.openfeature.boot.autoconfigure.multiprovider.MultiProviderAutoConfiguration")
 @ConditionalOnClass({ FliptProvider.class })
 @ConditionalOnProperty(prefix = FliptProperties.FLIPT_PREFIX, name = "enabled", havingValue = "true",
 		matchIfMissing = true)
@@ -53,7 +52,8 @@ public class FliptAutoConfiguration {
 	public FliptProviderConfig fliptProviderConfig(ObjectProvider<FliptCustomizer> customizers,
 			FliptProperties properties) {
 		FliptClient.FliptClientBuilder fliptClientBuilder = FliptClient.builder()
-			.url((properties.getBaseURL() != null) ? StringUtils.removeEnd(properties.getBaseURL(), "/") : null)
+			.url((properties.getBaseURL() != null && properties.getBaseURL().endsWith("/"))
+					? properties.getBaseURL().substring(0, properties.getBaseURL().length() - 1) : null)
 			.timeout(properties.getTimeout())
 			.headers(properties.getHeaders());
 

@@ -18,7 +18,6 @@ package org.iromu.openfeature.boot.autoconfigure;
 
 import dev.openfeature.sdk.OpenFeatureAPI;
 import lombok.extern.slf4j.Slf4j;
-import org.iromu.openfeature.boot.autoconfigure.multiprovider.MultiProviderAutoConfiguration;
 
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
@@ -34,7 +33,8 @@ import org.springframework.core.annotation.Order;
  * @author Ivan Rodriguez
  */
 @AutoConfiguration
-@AutoConfigureBefore({ ClientAutoConfiguration.class, MultiProviderAutoConfiguration.class })
+@AutoConfigureBefore(value = { ClientAutoConfiguration.class },
+		name = "org.iromu.openfeature.boot.autoconfigure.multiprovider.MultiProviderAutoConfiguration")
 @Slf4j
 public class OpenFeatureAPIAutoConfiguration {
 
