@@ -30,6 +30,7 @@ import io.github.jamsesso.jsonlogic.JsonLogic;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.iromu.openfeature.boot.autoconfigure.ClientAutoConfiguration;
+import org.iromu.openfeature.boot.jsonlogic.JsonlogicProperties;
 
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;

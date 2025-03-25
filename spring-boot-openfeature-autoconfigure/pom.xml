@@ -78,12 +78,6 @@
         </dependency>
         <dependency>
             <groupId>dev.openfeature.contrib.providers</groupId>
-            <artifactId>jsonlogic-eval-provider</artifactId>
-            <version>${jsonlogic-eval-provider.version}</version>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>dev.openfeature.contrib.providers</groupId>
             <artifactId>multiprovider</artifactId>
             <version>${multiprovider.version}</version>
             <optional>true</optional>

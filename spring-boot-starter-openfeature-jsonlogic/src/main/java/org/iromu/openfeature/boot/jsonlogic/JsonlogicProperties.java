@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-package org.iromu.openfeature.boot.autoconfigure.jsonlogic;
+package org.iromu.openfeature.boot.jsonlogic;
 
 import lombok.Data;
+import org.iromu.openfeature.boot.autoconfigure.jsonlogic.JsonlogicAutoConfiguration;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.core.io.Resource;
