@@ -18,6 +18,8 @@
     <file url="file://$PROJECT_DIR$/spring-boot-starter-openfeature-envvar/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-boot-starter-openfeature-flagd/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-boot-starter-openfeature-flagd/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-boot-starter-openfeature-flagsmith/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-boot-starter-openfeature-flagsmith/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-boot-starter-openfeature-flipt/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-boot-starter-openfeature-flipt/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-boot-starter-openfeature-jsonlogic/src/main/java" charset="UTF-8" />

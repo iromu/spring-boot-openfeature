@@ -48,6 +48,11 @@
             </dependency>
             <dependency>
                 <groupId>dev.openfeature.contrib.providers</groupId>
+                <artifactId>flagsmith</artifactId>
+                <version>${flagsmith.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>dev.openfeature.contrib.providers</groupId>
                 <artifactId>flipt</artifactId>
                 <version>${flipt.version}</version>
             </dependency>
