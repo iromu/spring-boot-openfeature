@@ -58,6 +58,11 @@
             </dependency>
             <dependency>
                 <groupId>dev.openfeature.contrib.providers</groupId>
+                <artifactId>go-feature-flag</artifactId>
+                <version>${go-feature-flag.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>dev.openfeature.contrib.providers</groupId>
                 <artifactId>jsonlogic-eval-provider</artifactId>
                 <version>${jsonlogic-eval-provider.version}</version>
             </dependency>

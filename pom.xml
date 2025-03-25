@@ -58,6 +58,7 @@
         <module>spring-boot-starter-openfeature-flagd</module>
         <module>spring-boot-starter-openfeature-flagsmith</module>
         <module>spring-boot-starter-openfeature-flipt</module>
+        <module>spring-boot-starter-openfeature-gofeatureflag</module>
         <module>spring-boot-starter-openfeature-jsonlogic</module>
         <module>spring-boot-starter-openfeature-multiprovider</module>
         <module>spring-boot-starter-openfeature-unleash</module>
@@ -82,6 +83,7 @@
         <flagd.version>0.11.8</flagd.version>
         <flagsmith.version>0.0.9</flagsmith.version>
         <flipt.version>0.1.1</flipt.version>
+        <go-feature-flag.version>0.4.3</go-feature-flag.version>
         <jsonlogic-eval-provider.version>1.1.1</jsonlogic-eval-provider.version>
         <multiprovider.version>0.0.1</multiprovider.version>
         <unleash.version>0.1.0-alpha</unleash.version>
