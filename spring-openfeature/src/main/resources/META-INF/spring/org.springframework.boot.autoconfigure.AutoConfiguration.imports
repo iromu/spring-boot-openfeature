@@ -1,0 +1,2 @@
+org.iromu.openfeature.boot.autoconfigure.AspectAutoConfiguration
+org.iromu.openfeature.boot.autoconfigure.HealthAutoConfiguration

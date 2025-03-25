@@ -1,5 +1,3 @@
-org.iromu.openfeature.boot.autoconfigure.AspectAutoConfiguration
 org.iromu.openfeature.boot.autoconfigure.ClientAutoConfiguration
-org.iromu.openfeature.boot.autoconfigure.HealthAutoConfiguration
 org.iromu.openfeature.boot.autoconfigure.OpenFeatureAPIAutoConfiguration
 org.iromu.openfeature.boot.autoconfigure.security.SecurityAutoConfiguration
