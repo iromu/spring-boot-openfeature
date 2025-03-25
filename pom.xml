@@ -63,7 +63,7 @@
     </modules>
 
     <properties>
-        <revision>0.0.12-SNAPSHOT</revision>
+        <revision>0.1.0-SNAPSHOT</revision>
         <java.version>17</java.version>
 
         <maven.compiler.source>${java.version}</maven.compiler.source>
@@ -81,6 +81,7 @@
         <jsonlogic-eval-provider.version>1.1.1</jsonlogic-eval-provider.version>
         <configcat.version>0.1.0</configcat.version>
         <flipt.version>0.1.1</flipt.version>
+        <mockwebserver.version>4.12.0</mockwebserver.version>
     </properties>
 
     <build>

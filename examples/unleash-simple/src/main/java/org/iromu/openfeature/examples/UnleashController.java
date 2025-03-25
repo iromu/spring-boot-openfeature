@@ -18,7 +18,7 @@ package org.iromu.openfeature.examples;
 
 import dev.openfeature.sdk.Client;
 import org.iromu.openfeature.boot.aop.ToggleOnFlag;
-import org.iromu.openfeature.boot.autoconfigure.unleash.FakeUnleashProvider;
+import org.iromu.openfeature.boot.unleash.FakeUnleashProvider;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
