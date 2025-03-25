@@ -1,4 +1,4 @@
-server.port: 8888
+server.port: 9998
 spring:
   openfeature:
     unleash:
