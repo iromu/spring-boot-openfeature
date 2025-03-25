@@ -73,6 +73,11 @@
             </dependency>
             <dependency>
                 <groupId>dev.openfeature.contrib.providers</groupId>
+                <artifactId>statsig</artifactId>
+                <version>${statsig.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>dev.openfeature.contrib.providers</groupId>
                 <artifactId>unleash</artifactId>
                 <version>${unleash.version}</version>
                 <exclusions>
