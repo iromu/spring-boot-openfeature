@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.iromu.openfeature.boot.autoconfigure.envvar;
+package org.iromu.openfeature.boot.envvar;
 
 import lombok.Data;
 

@@ -80,7 +80,7 @@
             <groupId>dev.openfeature.contrib.providers</groupId>
             <artifactId>env-var</artifactId>
             <version>${env-var.version}</version>
-            <optional>true</optional>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>dev.openfeature.contrib.providers</groupId>
