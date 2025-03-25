@@ -29,7 +29,7 @@ class GoFeatureFlagAutoConfigurationTest {
 	static String[] requiredProperties;
 
 	@BeforeAll
-	public static void setUp() throws IOException {
+	static void setUp() throws IOException {
 		mockWebServer = new MockWebServer();
 		mockWebServer.start();
 		requiredProperties = new String[] { GOFEATUREFLAG_PREFIX + ".endpoint=" + mockWebServer.url("/api") };
