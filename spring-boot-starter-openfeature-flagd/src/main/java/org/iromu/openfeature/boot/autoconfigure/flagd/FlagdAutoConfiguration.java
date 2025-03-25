@@ -16,13 +16,17 @@
 
 package org.iromu.openfeature.boot.autoconfigure.flagd;
 
+import java.io.IOException;
+
+import dev.openfeature.contrib.providers.flagd.FlagdOptions;
 import dev.openfeature.contrib.providers.flagd.FlagdProvider;
-import dev.openfeature.contrib.providers.flagd.EnvironmentGateway;
-import dev.openfeature.contrib.providers.flagd.EnvironmentKeyTransformer;
 import dev.openfeature.sdk.FeatureProvider;
+import lombok.extern.slf4j.Slf4j;
 import org.iromu.openfeature.boot.autoconfigure.ClientAutoConfiguration;
+import org.iromu.openfeature.boot.flagd.FlagdCustomizer;
 import org.iromu.openfeature.boot.flagd.FlagdProperties;
 
+import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
@@ -40,28 +44,37 @@ import org.springframework.context.annotation.Bean;
 @AutoConfigureBefore(value = { ClientAutoConfiguration.class },
 		name = "org.iromu.openfeature.boot.autoconfigure.multiprovider.MultiProviderAutoConfiguration")
 @ConditionalOnClass({ FlagdProvider.class })
-@ConditionalOnProperty(prefix = FlagdProperties.ENVVAR_PREFIX, name = "enabled", havingValue = "true",
+@ConditionalOnProperty(prefix = FlagdProperties.FLAGD_PREFIX, name = "enabled", havingValue = "true",
 		matchIfMissing = true)
 @EnableConfigurationProperties(FlagdProperties.class)
+@Slf4j
 public class FlagdAutoConfiguration {
 
 	@Bean
 	@ConditionalOnMissingBean
-	public EnvironmentGateway environmentGateway() {
-		return System::getenv;
+	public FlagdOptions flagdOptions(ObjectProvider<FlagdCustomizer> customizers, FlagdProperties flagdProperties) {
+		FlagdOptions.FlagdOptionsBuilder builder = FlagdOptions.builder()
+			.resolverType(flagdProperties.getResolverType())
+			.deadline(flagdProperties.getDeadline());
+
+		if (flagdProperties.getOfflineFlagSourcePath() != null) {
+			try {
+				builder.offlineFlagSourcePath(flagdProperties.getOfflineFlagSourcePath().getFile().getAbsolutePath());
+			}
+			catch (IOException ex) {
+				log.error(ex.getMessage());
+			}
+		}
+
+		customizers.orderedStream().forEach((customizer) -> customizer.customize(builder));
+
+		return builder.build();
 	}
 
 	@Bean
 	@ConditionalOnMissingBean
-	public EnvironmentKeyTransformer environmentKeyTransformer() {
-		return EnvironmentKeyTransformer.doNothing();
-	}
-
-	@Bean
-	@ConditionalOnMissingBean
-	public FeatureProvider envVarProvider(EnvironmentGateway environmentGateway,
-			EnvironmentKeyTransformer environmentKeyTransformer) {
-		return new FlagdProvider(environmentGateway, environmentKeyTransformer);
+	public FeatureProvider flagdProvider(FlagdOptions flagdOptions) {
+		return new FlagdProvider(flagdOptions);
 	}
 
 }

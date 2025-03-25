@@ -16,25 +16,45 @@
 
 package org.iromu.openfeature.boot.flagd;
 
+import dev.openfeature.contrib.providers.flagd.Config;
 import lombok.Data;
 import org.iromu.openfeature.boot.autoconfigure.flagd.FlagdAutoConfiguration;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.core.io.Resource;
 
 /**
  * Spring properties for {@link FlagdAutoConfiguration}.
  *
  * @author Ivan Rodriguez
  */
-@ConfigurationProperties(prefix = FlagdProperties.ENVVAR_PREFIX)
+@ConfigurationProperties(prefix = FlagdProperties.FLAGD_PREFIX)
 @Data
 public class FlagdProperties {
 
 	/**
 	 * Prefix for Spring properties.
 	 */
-	public static final String ENVVAR_PREFIX = "spring.openfeature.env-var";
+	public static final String FLAGD_PREFIX = "spring.openfeature.flagd";
 
 	private boolean enabled = true;
+
+	/**
+	 * flagd resolving type.
+	 */
+	private Config.Resolver resolverType = Config.Resolver.RPC;
+
+	/**
+	 * Connection deadline in milliseconds. For RPC resolving, this is the deadline to
+	 * connect to flagd for flag evaluation. For in-process resolving, this is the
+	 * deadline for sync stream termination.
+	 */
+	private int deadline = 500;
+
+	/**
+	 * File source of flags to be used by offline mode. Setting this enables the offline
+	 * mode of the in-process provider.
+	 */
+	private Resource offlineFlagSourcePath;
 
 }
