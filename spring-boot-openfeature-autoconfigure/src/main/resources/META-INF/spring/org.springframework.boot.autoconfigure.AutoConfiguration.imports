@@ -2,7 +2,6 @@ org.iromu.openfeature.boot.autoconfigure.AspectAutoConfiguration
 org.iromu.openfeature.boot.autoconfigure.ClientAutoConfiguration
 org.iromu.openfeature.boot.autoconfigure.HealthAutoConfiguration
 org.iromu.openfeature.boot.autoconfigure.OpenFeatureAPIAutoConfiguration
-org.iromu.openfeature.boot.autoconfigure.configcat.ConfigCatAutoConfiguration
 org.iromu.openfeature.boot.autoconfigure.envvar.EnvVarAutoConfiguration
 org.iromu.openfeature.boot.autoconfigure.flipt.FliptAutoConfiguration
 org.iromu.openfeature.boot.autoconfigure.jsonlogic.JsonlogicAutoConfiguration

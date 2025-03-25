@@ -14,23 +14,32 @@
  * limitations under the License.
  */
 
-package org.iromu.openfeature.boot.autoconfigure.configcat;
+package org.iromu.openfeature.boot.configcat;
 
-import com.configcat.ConfigCatClient;
+import dev.openfeature.contrib.providers.configcat.ConfigCatProviderConfig;
+import lombok.Data;
+
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.core.io.Resource;
 
 /**
- * Callback interface that can be used to customize ConfigCatClient with a
- * {@link ConfigCatClient.Options}.
+ * Spring properties for {@link ConfigCatProviderConfig}.
  *
  * @author Ivan Rodriguez
  */
-@FunctionalInterface
-public interface ConfigCatCustomizer {
+@ConfigurationProperties(prefix = ConfigCatProperties.CONFIGCAT_PREFIX)
+@Data
+public class ConfigCatProperties {
 
 	/**
-	 * Callback to customize a {@link ConfigCatClient.Options} instance.
-	 * @param options a ConfigCatClient Options to customize
+	 * Prefix for Spring properties.
 	 */
-	void customize(ConfigCatClient.Options options);
+	public static final String CONFIGCAT_PREFIX = "spring.openfeature.config-cat";
+
+	private boolean enabled = true;
+
+	private String sdkKey;
+
+	private Resource filename;
 
 }

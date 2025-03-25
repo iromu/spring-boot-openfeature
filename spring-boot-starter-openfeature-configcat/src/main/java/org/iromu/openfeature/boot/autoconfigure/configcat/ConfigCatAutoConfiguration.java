@@ -26,6 +26,8 @@ import dev.openfeature.sdk.FeatureProvider;
 import lombok.extern.slf4j.Slf4j;
 import org.iromu.openfeature.boot.autoconfigure.ClientAutoConfiguration;
 import org.iromu.openfeature.boot.autoconfigure.multiprovider.MultiProviderAutoConfiguration;
+import org.iromu.openfeature.boot.configcat.ConfigCatCustomizer;
+import org.iromu.openfeature.boot.configcat.ConfigCatProperties;
 
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
