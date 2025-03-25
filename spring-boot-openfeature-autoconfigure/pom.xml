@@ -89,12 +89,6 @@
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>dev.openfeature.contrib.providers</groupId>
-            <artifactId>flipt</artifactId>
-            <version>${flipt.version}</version>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>

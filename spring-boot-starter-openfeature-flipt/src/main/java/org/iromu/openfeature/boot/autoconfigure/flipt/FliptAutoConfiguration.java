@@ -22,6 +22,8 @@ import dev.openfeature.sdk.FeatureProvider;
 import io.flipt.api.FliptClient;
 import lombok.extern.slf4j.Slf4j;
 import org.iromu.openfeature.boot.autoconfigure.ClientAutoConfiguration;
+import org.iromu.openfeature.boot.flipt.FliptCustomizer;
+import org.iromu.openfeature.boot.flipt.FliptProperties;
 
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.boot.autoconfigure.AutoConfiguration;

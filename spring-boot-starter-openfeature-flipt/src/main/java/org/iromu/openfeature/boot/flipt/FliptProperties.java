@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.iromu.openfeature.boot.autoconfigure.flipt;
+package org.iromu.openfeature.boot.flipt;
 
 import java.time.Duration;
 import java.util.HashMap;
