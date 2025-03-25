@@ -21,7 +21,7 @@ class FlagdAutoConfigurationTest {
 		.withConfiguration(AutoConfigurations.of(ClientAutoConfiguration.class, FlagdAutoConfiguration.class));
 
 	static String[] requiredProperties = new String[] { FLAGD_PREFIX + ".resolverType=file",
-			FLAGD_PREFIX + ".offlineFlagSourcePath=flags/testing-flags.json" };
+			FLAGD_PREFIX + ".offlineFlagSourcePath=flags/testing-flags.json", FLAGD_PREFIX + ".deadline=1000" };
 
 	@Test
 	void shouldSupplyDefaultBeans() {
