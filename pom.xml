@@ -82,7 +82,7 @@
         <configcat.version>0.1.0</configcat.version>
         <env-var.version>0.0.7</env-var.version>
         <flagd.version>0.11.8</flagd.version>
-        <flagsmith.version>0.0.9</flagsmith.version>
+        <flagsmith.version>0.0.10</flagsmith.version>
         <flipt.version>0.1.1</flipt.version>
         <go-feature-flag.version>0.4.3</go-feature-flag.version>
         <jsonlogic-eval-provider.version>1.1.1</jsonlogic-eval-provider.version>
