@@ -80,7 +80,7 @@
         <sdk.version>1.14.2</sdk.version>
 
         <configcat.version>0.1.0</configcat.version>
-        <env-var.version>0.0.7</env-var.version>
+        <env-var.version>0.0.10</env-var.version>
         <flagd.version>0.11.8</flagd.version>
         <flagsmith.version>0.0.10</flagsmith.version>
         <flipt.version>0.1.1</flipt.version>
