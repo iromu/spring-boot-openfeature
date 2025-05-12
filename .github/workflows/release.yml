@@ -38,9 +38,6 @@ jobs:
           BASE_VERSION=${CURRENT_VERSION%-SNAPSHOT} # Remove -SNAPSHOT
           ./mvnw -B --no-transfer-progress versions:set-property -Dproperty=revision -DnewVersion=$BASE_VERSION
           ./mvnw -B --no-transfer-progress versions:commit 
-          
-          ./mvnw -f examples/pom.xml -B --no-transfer-progress versions:set-property -Dproperty=revision -DnewVersion=$BASE_VERSION
-          ./mvnw -f examples/pom.xml -B --no-transfer-progress versions:commit
 
       - name: Commit changed and create Git tag
         run: |
@@ -66,9 +63,6 @@ jobs:
           NEXT_SNAPSHOT=$(./mvnw -B --no-transfer-progress help:evaluate -Dexpression=revision -q -DforceStdout | awk -F. -v OFS=. '{$NF += 1 ; print}')-SNAPSHOT
           ./mvnw -B --no-transfer-progress versions:set-property -Dproperty=revision -DnewVersion=$NEXT_SNAPSHOT
           ./mvnw -B --no-transfer-progress versions:commit         
-          
-          ./mvnw -f examples/pom.xml -B --no-transfer-progress versions:set-property -Dproperty=revision -DnewVersion=$NEXT_SNAPSHOT
-          ./mvnw -f examples/pom.xml -B --no-transfer-progress versions:commit
           
           find . -name 'pom.xml' | xargs git add
           git commit -m "Increment version to ${NEXT_SNAPSHOT} [skip-ci]"
