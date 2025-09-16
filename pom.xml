@@ -81,7 +81,7 @@
 
         <configcat.version>0.1.0</configcat.version>
         <env-var.version>0.0.11</env-var.version>
-        <flagd.version>0.11.8</flagd.version>
+        <flagd.version>0.11.15</flagd.version>
         <flagsmith.version>0.0.10</flagsmith.version>
         <flipt.version>0.1.1</flipt.version>
         <go-feature-flag.version>0.4.3</go-feature-flag.version>
