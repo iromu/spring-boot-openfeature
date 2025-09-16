@@ -27,6 +27,7 @@
     </parent>
 
     <artifactId>spring-boot-starter-openfeature-statsig</artifactId>
+    <name>spring-boot-starter-openfeature-statsig</name>
 
     <dependencyManagement>
         <dependencies>

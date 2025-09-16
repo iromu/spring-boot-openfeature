@@ -27,6 +27,7 @@
     </parent>
 
     <artifactId>spring-boot-starter-openfeature-unleash</artifactId>
+    <name>spring-boot-starter-openfeature-unleash</name>
 
     <dependencyManagement>
         <dependencies>

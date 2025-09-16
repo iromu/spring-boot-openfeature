@@ -27,6 +27,7 @@
     </parent>
 
     <artifactId>spring-boot-starter-openfeature-multiprovider</artifactId>
+    <name>spring-boot-starter-openfeature-multiprovider</name>
 
     <dependencyManagement>
         <dependencies>

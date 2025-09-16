@@ -27,6 +27,7 @@
     </parent>
 
     <artifactId>spring-boot-starter-openfeature-flagsmith</artifactId>
+    <name>spring-boot-starter-openfeature-flagsmith</name>
 
     <dependencyManagement>
         <dependencies>

@@ -27,6 +27,7 @@
     </parent>
 
     <artifactId>spring-openfeature</artifactId>
+    <name>spring-openfeature</name>
 
     <dependencyManagement>
         <dependencies>

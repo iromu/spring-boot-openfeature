@@ -27,6 +27,7 @@
     </parent>
 
     <artifactId>spring-boot-starter-openfeature-configcat</artifactId>
+    <name>spring-boot-starter-openfeature-configcat</name>
 
     <dependencyManagement>
         <dependencies>

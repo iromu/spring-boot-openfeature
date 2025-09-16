@@ -27,6 +27,7 @@
     </parent>
 
     <artifactId>spring-boot-starter-openfeature-envvar</artifactId>
+    <name>spring-boot-starter-openfeature-envvar</name>
 
     <dependencyManagement>
         <dependencies>

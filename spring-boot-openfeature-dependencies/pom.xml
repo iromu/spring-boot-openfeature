@@ -27,6 +27,7 @@
     </parent>
 
     <artifactId>spring-boot-openfeature-dependencies</artifactId>
+    <name>spring-boot-openfeature-dependencies</name>
     <packaging>pom</packaging>
 
     <dependencyManagement>

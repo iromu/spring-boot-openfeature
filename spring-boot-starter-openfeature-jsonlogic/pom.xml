@@ -27,6 +27,7 @@
     </parent>
 
     <artifactId>spring-boot-starter-openfeature-jsonlogic</artifactId>
+    <name>spring-boot-starter-openfeature-jsonlogic</name>
 
     <dependencyManagement>
         <dependencies>

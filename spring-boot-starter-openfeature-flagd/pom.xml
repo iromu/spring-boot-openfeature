@@ -27,6 +27,7 @@
     </parent>
 
     <artifactId>spring-boot-starter-openfeature-flagd</artifactId>
+    <name>spring-boot-starter-openfeature-flagd</name>
 
     <dependencyManagement>
         <dependencies>

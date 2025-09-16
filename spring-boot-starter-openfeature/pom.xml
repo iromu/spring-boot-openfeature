@@ -27,6 +27,7 @@
     </parent>
 
     <artifactId>spring-boot-starter-openfeature</artifactId>
+    <name>spring-boot-starter-openfeature</name>
     <packaging>pom</packaging>
 
     <dependencyManagement>

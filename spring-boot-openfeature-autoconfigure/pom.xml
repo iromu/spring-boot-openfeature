@@ -27,6 +27,7 @@
     </parent>
 
     <artifactId>spring-boot-openfeature-autoconfigure</artifactId>
+    <name>spring-boot-openfeature-autoconfigure</name>
 
     <dependencyManagement>
         <dependencies>

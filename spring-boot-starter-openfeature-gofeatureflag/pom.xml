@@ -27,6 +27,7 @@
     </parent>
 
     <artifactId>spring-boot-starter-openfeature-gofeatureflag</artifactId>
+    <name>spring-boot-starter-openfeature-gofeatureflag</name>
 
     <dependencyManagement>
         <dependencies>

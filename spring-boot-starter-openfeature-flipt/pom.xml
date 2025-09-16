@@ -27,6 +27,7 @@
     </parent>
 
     <artifactId>spring-boot-starter-openfeature-flipt</artifactId>
+    <name>spring-boot-starter-openfeature-flipt</name>
 
     <dependencyManagement>
         <dependencies>
