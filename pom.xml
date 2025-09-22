@@ -85,7 +85,7 @@
         <flagsmith.version>0.0.10</flagsmith.version>
         <flipt.version>0.1.1</flipt.version>
         <go-feature-flag.version>0.4.3</go-feature-flag.version>
-        <jsonlogic-eval-provider.version>1.1.1</jsonlogic-eval-provider.version>
+        <jsonlogic-eval-provider.version>1.2.1</jsonlogic-eval-provider.version>
         <multiprovider.version>0.0.1</multiprovider.version>
         <statsig.version>0.1.0</statsig.version>
         <unleash.version>0.1.0-alpha</unleash.version>
