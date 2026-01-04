@@ -68,7 +68,7 @@
   </modules>
 
   <properties>
-    <revision>0.1.5-SNAPSHOT</revision>
+    <revision>0.1.5</revision>
     <java.version>17</java.version>
 
     <maven.compiler.source>${java.version}</maven.compiler.source>
