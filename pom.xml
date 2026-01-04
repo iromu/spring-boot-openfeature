@@ -64,7 +64,7 @@
     <module>spring-boot-starter-openfeature-statsig</module>
     <module>spring-boot-starter-openfeature-unleash</module>
     <module>spring-openfeature</module>
-    <module>spring-boot-starter-openfeature-growthbook</module>
+<!--    <module>spring-boot-starter-openfeature-growthbook</module>-->
   </modules>
 
   <properties>
@@ -75,7 +75,7 @@
     <maven.compiler.target>${java.version}</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-    <spring-boot.version>3.5.0</spring-boot.version>
+    <spring-boot.version>3.5.9</spring-boot.version>
     <io.spring.javaformat.version>0.0.47</io.spring.javaformat.version>
 
     <sdk.version>1.15.1</sdk.version>
@@ -93,6 +93,7 @@
     <unleash-client-java.version>10.2.2</unleash-client-java.version>
 
     <mockwebserver.version>4.12.0</mockwebserver.version>
+
     <growthbook-sdk-java.version>v0.10.4</growthbook-sdk-java.version>
     <growthbook-provider.version>0.0.2</growthbook-provider.version>
   </properties>

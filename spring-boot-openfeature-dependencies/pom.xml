@@ -97,7 +97,7 @@
         <artifactId>unleash-client-java</artifactId>
         <version>${unleash-client-java.version}</version>
       </dependency>
-      <dependency>
+<!--      <dependency>
         <groupId>com.github.growthbook</groupId>
         <artifactId>growthbook-openfeature-provider-java</artifactId>
         <version>${growthbook-provider.version}</version>
@@ -112,7 +112,7 @@
         <groupId>com.github.growthbook</groupId>
         <artifactId>growthbook-sdk-java</artifactId>
         <version>${growthbook-sdk-java.version}</version>
-      </dependency>
+      </dependency>-->
     </dependencies>
   </dependencyManagement>
   <build>
