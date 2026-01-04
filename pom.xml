@@ -64,7 +64,7 @@
     <module>spring-boot-starter-openfeature-statsig</module>
     <module>spring-boot-starter-openfeature-unleash</module>
     <module>spring-openfeature</module>
-<!--    <module>spring-boot-starter-openfeature-growthbook</module>-->
+    <module>spring-boot-starter-openfeature-growthbook</module>
   </modules>
 
   <properties>
@@ -321,4 +321,10 @@
       <url>https://central.sonatype.com/repository/maven-snapshots/</url>
     </snapshotRepository>
   </distributionManagement>
+  <repositories>
+    <repository>
+      <id>jitpack.io</id>
+      <url>https://jitpack.io</url>
+    </repository>
+  </repositories>
 </project>
