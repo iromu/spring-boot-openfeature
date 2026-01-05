@@ -38,7 +38,7 @@
     </modules>
 
     <properties>
-        <revision>0.1.5</revision>
+        <revision>0.1.6-SNAPSHOT</revision>
         <spring-boot-openfeature.version>${revision}</spring-boot-openfeature.version>
         <sprindoc-openapi.version>2.8.4</sprindoc-openapi.version>
     </properties>
