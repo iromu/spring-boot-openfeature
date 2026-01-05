@@ -89,7 +89,7 @@
     <jsonlogic-eval-provider.version>1.2.1</jsonlogic-eval-provider.version>
     <multiprovider.version>0.0.3</multiprovider.version>
     <statsig.version>0.1.0</statsig.version>
-    <unleash.version>0.1.0-alpha</unleash.version>
+    <unleash.version>0.1.3-alpha</unleash.version>
     <unleash-client-java.version>10.2.2</unleash-client-java.version>
 
     <okhttp.version>4.12.0</okhttp.version>
