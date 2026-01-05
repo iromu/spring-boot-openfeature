@@ -22,23 +22,27 @@ jobs:
           java-version: '17'
           cache: 'maven'
 
-      - name: Cache SonarQube packages
-        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
-        with:
-          path: ~/.sonar/cache
-          key: ${{ runner.os }}-sonar
-          restore-keys: ${{ runner.os }}-sonar
-
+#      - name: Cache SonarQube packages
+#        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+#        with:
+#          path: ~/.sonar/cache
+#          key: ${{ runner.os }}-sonar
+#          restore-keys: ${{ runner.os }}-sonar
+#
+#      - name: Build with Maven
+#        run: |
+#          ./mvnw -B --no-transfer-progress \
+#          -Dsonar.organization=iromu \
+#          -Dsonar.host.url=https://sonarcloud.io \
+#          -Dsonar.projectKey=iromu_spring-boot-openfeature \
+#          clean verify \
+#          org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -P sonar
+#        env:
+#          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       - name: Build with Maven
         run: |
           ./mvnw -B --no-transfer-progress \
-          -Dsonar.organization=iromu \
-          -Dsonar.host.url=https://sonarcloud.io \
-          -Dsonar.projectKey=iromu_spring-boot-openfeature \
-          clean verify \
-          org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -P sonar
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          clean verify
 
       - name: Jacoco Artifacts
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
