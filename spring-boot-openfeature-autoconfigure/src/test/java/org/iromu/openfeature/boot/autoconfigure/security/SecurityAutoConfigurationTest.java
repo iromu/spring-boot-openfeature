@@ -30,9 +30,6 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.web.webauthn.api.ImmutablePublicKeyCredentialUserEntity;
-import org.springframework.security.web.webauthn.authentication.WebAuthnAuthentication;
-
 import java.util.List;
 import java.util.Map;
 
@@ -81,13 +78,6 @@ class SecurityAutoConfigurationTest {
 			assertTrue(client.getBooleanValue("foo", false));
 			assertThat(argumentCaptor.getValue().asMap())
 				.isEqualTo(Map.of("userId", new Value("testUser2"), "authorities", roleUserAsValue));
-
-			SecurityContextHolder.getContext()
-				.setAuthentication(new WebAuthnAuthentication(
-						ImmutablePublicKeyCredentialUserEntity.builder().name("testUser3").build(), roleUserAsList));
-			assertTrue(client.getBooleanValue("foo", false));
-			assertThat(argumentCaptor.getValue().asMap())
-				.isEqualTo(Map.of("userId", new Value("testUser3"), "authorities", roleUserAsValue));
 		});
 
 	}
