@@ -94,7 +94,7 @@
 
     <okhttp.version>4.12.0</okhttp.version>
 
-    <growthbook-sdk-java.version>v0.10.4</growthbook-sdk-java.version>
+    <growthbook-sdk-java.version>0.10.6</growthbook-sdk-java.version>
     <growthbook-provider.version>0.0.2</growthbook-provider.version>
   </properties>
 
