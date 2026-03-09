@@ -78,7 +78,7 @@
     <spring-boot.version>4.0.1</spring-boot.version>
     <io.spring.javaformat.version>0.0.47</io.spring.javaformat.version>
 
-    <sdk.version>1.15.1</sdk.version>
+    <sdk.version>1.20.1</sdk.version>
 
     <configcat.version>0.1.0</configcat.version>
     <env-var.version>0.0.12</env-var.version>
