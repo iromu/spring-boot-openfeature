@@ -29,6 +29,11 @@
     <artifactId>spring-boot-starter-openfeature-envvar</artifactId>
     <name>spring-boot-starter-openfeature-envvar</name>
 
+    <properties>
+        <!-- JaCoCo instruction-coverage ratchet (measured: 1.0000) -->
+        <jacoco.instruction.minimum>1.00</jacoco.instruction.minimum>
+    </properties>
+
     <dependencyManagement>
         <dependencies>
             <dependency>

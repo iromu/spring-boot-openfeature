@@ -24,7 +24,7 @@ For each provider, extend the existing `*AutoConfigurationTest` with: (a) `enabl
 
 ## 3. JaCoCo per-module coverage gate
 
-- [ ] 3.1 Add a JaCoCo `check` execution to the root `pom.xml` under the active `build/plugins` (BUNDLE-level, `INSTRUCTION` counter, `COVEREDRATIO` minimum) so it runs in every module's `verify`; verify the check executes by running `./mvnw -pl spring-openfeature verify`.
-- [ ] 3.2 Measure each module's post-test instruction coverage from the JaCoCo reports and set each module's `INSTRUCTION` floor to its measured value (the ratchet); verify `./mvnw clean verify` is green with the check active.
-- [ ] 3.3 Prove the gate fails on regression: temporarily raise one module's floor above its actual coverage, run `./mvnw -pl <that-module> verify`, confirm it fails, then restore the correct floor; verify the restored build is green.
-- [ ] 3.4 Run the full reactor `./mvnw clean verify` and verify it exits 0 with every module passing the coverage check.
+- [x] 3.1 Add a JaCoCo `check` execution to the root `pom.xml` under the active `build/plugins` (BUNDLE-level, `INSTRUCTION` counter, `COVEREDRATIO` minimum) so it runs in every module's `verify`; verify the check executes by running `./mvnw -pl spring-openfeature verify`.
+- [x] 3.2 Measure each module's post-test instruction coverage from the JaCoCo reports and set each module's `INSTRUCTION` floor to its measured value (the ratchet); verify `./mvnw clean verify` is green with the check active.
+- [x] 3.3 Prove the gate fails on regression: temporarily raise one module's floor above its actual coverage, run `./mvnw -pl <that-module> verify`, confirm it fails, then restore the correct floor; verify the restored build is green.
+- [x] 3.4 Run the full reactor `./mvnw clean verify` and verify it exits 0 with every module passing the coverage check.

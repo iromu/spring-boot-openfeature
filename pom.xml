@@ -78,6 +78,11 @@
     <spring-boot.version>4.0.1</spring-boot.version>
     <io.spring.javaformat.version>0.0.47</io.spring.javaformat.version>
 
+    <!-- Per-module JaCoCo instruction-coverage floor (the ratchet). The root default
+         keeps the gate green everywhere; each module overrides this in its own
+         <properties> with the instruction COVEREDRATIO it actually achieves. -->
+    <jacoco.instruction.minimum>0.0</jacoco.instruction.minimum>
+
     <sdk.version>1.15.1</sdk.version>
 
     <configcat.version>0.1.0</configcat.version>
@@ -135,6 +140,29 @@
                 <outputDirectory>
                   ${project.reporting.outputDirectory}/jacoco
                 </outputDirectory>
+              </configuration>
+            </execution>
+            <execution>
+              <id>check</id>
+              <phase>verify</phase>
+              <goals>
+                <goal>check</goal>
+              </goals>
+              <configuration>
+                <dataFile>${project.build.directory}/jacoco.exec</dataFile>
+                <haltOnFailure>true</haltOnFailure>
+                <rules>
+                  <rule>
+                    <element>BUNDLE</element>
+                    <limits>
+                      <limit>
+                        <counter>INSTRUCTION</counter>
+                        <value>COVEREDRATIO</value>
+                        <minimum>${jacoco.instruction.minimum}</minimum>
+                      </limit>
+                    </limits>
+                  </rule>
+                </rules>
               </configuration>
             </execution>
           </executions>

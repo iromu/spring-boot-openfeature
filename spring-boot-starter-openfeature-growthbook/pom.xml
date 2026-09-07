@@ -13,6 +13,11 @@
   <artifactId>spring-boot-starter-openfeature-growthbook</artifactId>
   <name>spring-boot-starter-openfeature-growthbook</name>
 
+  <properties>
+    <!-- JaCoCo instruction-coverage ratchet (measured: 0.9483) -->
+    <jacoco.instruction.minimum>0.94</jacoco.instruction.minimum>
+  </properties>
+
   <dependencyManagement>
     <dependencies>
       <dependency>

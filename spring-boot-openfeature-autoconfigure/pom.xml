@@ -29,6 +29,11 @@
     <artifactId>spring-boot-openfeature-autoconfigure</artifactId>
     <name>spring-boot-openfeature-autoconfigure</name>
 
+    <properties>
+        <!-- JaCoCo instruction-coverage ratchet (measured: 0.9769) -->
+        <jacoco.instruction.minimum>0.97</jacoco.instruction.minimum>
+    </properties>
+
     <dependencyManagement>
         <dependencies>
             <dependency>

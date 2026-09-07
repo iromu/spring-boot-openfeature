@@ -29,6 +29,11 @@
     <artifactId>spring-boot-starter-openfeature-unleash</artifactId>
     <name>spring-boot-starter-openfeature-unleash</name>
 
+    <properties>
+        <!-- JaCoCo instruction-coverage ratchet (measured: 0.9015) -->
+        <jacoco.instruction.minimum>0.90</jacoco.instruction.minimum>
+    </properties>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
