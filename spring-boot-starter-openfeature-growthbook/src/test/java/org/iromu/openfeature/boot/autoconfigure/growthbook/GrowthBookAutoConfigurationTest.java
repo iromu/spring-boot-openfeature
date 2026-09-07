@@ -1,5 +1,5 @@
 /*
- * Copyright 2025-2025 the original author or authors.
+ * Copyright 2025-2026 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,15 +22,23 @@ import java.io.IOException;
 
 import dev.openfeature.sdk.Client;
 import dev.openfeature.sdk.FeatureProvider;
+import dev.openfeature.sdk.ProviderEvaluation;
+import growthbook.sdk.java.multiusermode.configurations.Options;
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
 import org.iromu.openfeature.boot.autoconfigure.ClientAutoConfiguration;
+import org.iromu.openfeature.boot.growthbook.GrowthBookCustomizer;
 import org.iromu.openfeature.boot.growthbook.GrowthBookProperties;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 import org.springframework.boot.autoconfigure.AutoConfigurations;
 import org.springframework.boot.test.context.runner.ApplicationContextRunner;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import static org.mockito.ArgumentMatchers.any;
 
 class GrowthBookAutoConfigurationTest {
 
@@ -239,6 +247,65 @@ class GrowthBookAutoConfigurationTest {
 				.hasBean("growthBookProvider")
 				.hasSingleBean(Client.class)
 				.hasBean("client"));
+	}
+
+	@Test
+	void shouldNotSupplyProviderWhenDisabled() {
+		this.contextRunner.withPropertyValues(GrowthBookProperties.GROWTHBOOK_PREFIX + ".enabled=false")
+			.run((context) -> assertThat(context).doesNotHaveBean(FeatureProvider.class)
+				.doesNotHaveBean("growthBookProvider"));
+	}
+
+	@Test
+	void shouldBackOffWhenUserSuppliesProvider() {
+		this.contextRunner.withPropertyValues(requiredProperties)
+			.withUserConfiguration(UserProviderConfiguration.class)
+			.run((context) -> assertThat(context).hasSingleBean(FeatureProvider.class)
+				.doesNotHaveBean("growthBookProvider")
+				.hasSingleBean(Client.class));
+	}
+
+	@Test
+	void shouldApplyCustomizerToBuiltConfiguration() {
+		this.contextRunner.withPropertyValues(requiredProperties)
+			.withUserConfiguration(CustomizerConfiguration.class)
+			.run((context) -> assertThat(context.getBean(Options.class)).extracting("decryptionKey")
+				.isEqualTo("custom-decryption-key"));
+	}
+
+	@Configuration(proxyBeanMethods = false)
+	static class UserProviderConfiguration {
+
+		@Bean
+		public FeatureProvider featureProvider() {
+			return userProvider();
+		}
+
+	}
+
+	@Configuration(proxyBeanMethods = false)
+	static class CustomizerConfiguration {
+
+		// The user-supplied provider makes the auto-config provider back off, so the real
+		// GrowthBookProvider (which performs SDK init) is never constructed.
+		@Bean
+		public FeatureProvider featureProvider() {
+			return userProvider();
+		}
+
+		@Bean
+		public GrowthBookCustomizer growthBookDecryptionKeyCustomizer() {
+			return builder -> builder.decryptionKey("custom-decryption-key");
+		}
+
+	}
+
+	private static FeatureProvider userProvider() {
+		FeatureProvider mock = Mockito.mock(FeatureProvider.class);
+		Mockito.when(mock.getMetadata()).thenReturn(() -> "UserFeatureProvider");
+		Mockito.when(mock.getBooleanEvaluation(any(), any(), any()))
+			.thenReturn(ProviderEvaluation.<Boolean>builder().value(true).build());
+		return mock;
 	}
 
 }

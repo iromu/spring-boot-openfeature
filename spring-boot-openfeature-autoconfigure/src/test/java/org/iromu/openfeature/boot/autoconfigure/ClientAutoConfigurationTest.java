@@ -14,14 +14,11 @@
  * limitations under the License.
  */
 
-package org.iromu.openfeature.boot.autoconfigure.envvar;
+package org.iromu.openfeature.boot.autoconfigure;
 
-import dev.openfeature.contrib.providers.envvar.EnvironmentGateway;
-import dev.openfeature.contrib.providers.envvar.EnvironmentKeyTransformer;
 import dev.openfeature.sdk.Client;
 import dev.openfeature.sdk.FeatureProvider;
 import dev.openfeature.sdk.ProviderEvaluation;
-import org.iromu.openfeature.boot.autoconfigure.ClientAutoConfiguration;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.boot.autoconfigure.AutoConfigurations;
@@ -30,53 +27,58 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.iromu.openfeature.boot.envvar.EnvVarProperties.ENVVAR_PREFIX;
 import static org.mockito.ArgumentMatchers.any;
 
 /**
- * Tests for {@link EnvVarAutoConfiguration}.
+ * Tests for {@link ClientAutoConfiguration}.
  *
  * @author Ivan Rodriguez
  */
-class EnvVarAutoConfigurationTest {
+class ClientAutoConfigurationTest {
 
 	private final ApplicationContextRunner contextRunner = new ApplicationContextRunner()
-		.withConfiguration(AutoConfigurations.of(ClientAutoConfiguration.class, EnvVarAutoConfiguration.class));
+		.withConfiguration(AutoConfigurations.of(ClientAutoConfiguration.class));
 
 	@Test
-	void shouldSupplyDefaultBeans() {
-		this.contextRunner.run((context) -> assertThat(context).hasSingleBean(EnvironmentGateway.class)
-			.hasBean("environmentGateway")
-			.hasSingleBean(EnvironmentKeyTransformer.class)
-			.hasBean("environmentKeyTransformer")
-			.hasSingleBean(FeatureProvider.class)
-			.hasBean("envVarProvider")
-			.hasSingleBean(Client.class)
-			.hasBean("client"));
-	}
-
-	@Test
-	void shouldNotSupplyProviderWhenDisabled() {
-		this.contextRunner.withPropertyValues(ENVVAR_PREFIX + ".enabled=false")
-			.run((context) -> assertThat(context).doesNotHaveBean(FeatureProvider.class)
-				.doesNotHaveBean("envVarProvider"));
-	}
-
-	@Test
-	void shouldBackOffWhenUserSuppliesProvider() {
-		this.contextRunner.withUserConfiguration(UserProviderConfiguration.class)
+	void shouldSupplyClientWhenProviderPresent() {
+		this.contextRunner.withUserConfiguration(ProviderConfiguration.class)
 			.run((context) -> assertThat(context).hasSingleBean(FeatureProvider.class)
-				.doesNotHaveBean("envVarProvider")
-				.hasSingleBean(Client.class));
+				.hasSingleBean(Client.class)
+				.hasBean("client"));
+	}
+
+	@Test
+	void shouldNotSupplyClientWhenNoProvider() {
+		this.contextRunner.run((context) -> assertThat(context).doesNotHaveBean(Client.class));
+	}
+
+	@Test
+	void shouldBackOffWhenMultiProviderPresent() {
+		this.contextRunner.withUserConfiguration(MultiProviderConfiguration.class)
+			.run((context) -> assertThat(context).doesNotHaveBean(Client.class));
 	}
 
 	@Configuration(proxyBeanMethods = false)
-	static class UserProviderConfiguration {
+	static class ProviderConfiguration {
 
 		@Bean
 		public FeatureProvider featureProvider() {
 			FeatureProvider mock = Mockito.mock(FeatureProvider.class);
-			Mockito.when(mock.getMetadata()).thenReturn(() -> "UserFeatureProvider");
+			Mockito.when(mock.getMetadata()).thenReturn(() -> "MockedFeatureProvider");
+			Mockito.when(mock.getBooleanEvaluation(any(), any(), any()))
+				.thenReturn(ProviderEvaluation.<Boolean>builder().value(true).build());
+			return mock;
+		}
+
+	}
+
+	@Configuration(proxyBeanMethods = false)
+	static class MultiProviderConfiguration {
+
+		@Bean
+		public FeatureProvider multiProvider() {
+			FeatureProvider mock = Mockito.mock(FeatureProvider.class);
+			Mockito.when(mock.getMetadata()).thenReturn(() -> "MockedMultiProvider");
 			Mockito.when(mock.getBooleanEvaluation(any(), any(), any()))
 				.thenReturn(ProviderEvaluation.<Boolean>builder().value(true).build());
 			return mock;

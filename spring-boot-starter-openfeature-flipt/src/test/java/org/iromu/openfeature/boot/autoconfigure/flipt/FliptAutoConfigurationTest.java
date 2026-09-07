@@ -1,5 +1,5 @@
 /*
- * Copyright 2025-2025 the original author or authors.
+ * Copyright 2025-2026 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,21 +20,27 @@ import dev.openfeature.contrib.providers.flipt.FliptProviderConfig;
 import dev.openfeature.sdk.Client;
 import dev.openfeature.sdk.FeatureProvider;
 import dev.openfeature.sdk.MutableContext;
+import dev.openfeature.sdk.ProviderEvaluation;
 import okhttp3.mockwebserver.Dispatcher;
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
 import okhttp3.mockwebserver.RecordedRequest;
 import org.iromu.openfeature.boot.autoconfigure.ClientAutoConfiguration;
+import org.iromu.openfeature.boot.flipt.FliptCustomizer;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 import org.springframework.boot.autoconfigure.AutoConfigurations;
 import org.springframework.boot.test.context.runner.ApplicationContextRunner;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 import java.io.IOException;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.iromu.openfeature.boot.flipt.FliptProperties.FLIPT_PREFIX;
+import static org.mockito.ArgumentMatchers.any;
 
 @SuppressWarnings("NullableProblems")
 class FliptAutoConfigurationTest {
@@ -110,6 +116,63 @@ class FliptAutoConfigurationTest {
 			assertThat(context.getBean(Client.class).getBooleanValue("example", false, evaluationContext)).isTrue();
 
 		});
+	}
+
+	@Test
+	void shouldNotSupplyProviderWhenDisabled() {
+		this.contextRunner.withPropertyValues(FLIPT_PREFIX + ".enabled=false")
+			.run((context) -> assertThat(context).doesNotHaveBean(FeatureProvider.class)
+				.doesNotHaveBean("fliptProvider"));
+	}
+
+	@Test
+	void shouldBackOffWhenUserSuppliesProvider() {
+		this.contextRunner.withUserConfiguration(UserProviderConfiguration.class)
+			.run((context) -> assertThat(context).hasSingleBean(FeatureProvider.class)
+				.doesNotHaveBean("fliptProvider")
+				.hasSingleBean(Client.class));
+	}
+
+	@Test
+	void shouldApplyCustomizerToBuiltConfiguration() {
+		this.contextRunner.withUserConfiguration(CustomizerConfiguration.class)
+			.run((context) -> assertThat(context.getBean(FliptProviderConfig.class)).extracting("namespace")
+				.isEqualTo("custom-namespace"));
+	}
+
+	@Configuration(proxyBeanMethods = false)
+	static class UserProviderConfiguration {
+
+		@Bean
+		public FeatureProvider featureProvider() {
+			return userProvider();
+		}
+
+	}
+
+	@Configuration(proxyBeanMethods = false)
+	static class CustomizerConfiguration {
+
+		// The user-supplied provider makes the auto-config provider back off, so the real
+		// FliptProvider is never constructed.
+		@Bean
+		public FeatureProvider featureProvider() {
+			return userProvider();
+		}
+
+		@Bean
+		public FliptCustomizer fliptNamespaceCustomizer() {
+			return builder -> builder.namespace("custom-namespace");
+		}
+
+	}
+
+	private static FeatureProvider userProvider() {
+		FeatureProvider mock = Mockito.mock(FeatureProvider.class);
+		Mockito.when(mock.getMetadata()).thenReturn(() -> "UserFeatureProvider");
+		Mockito.when(mock.getBooleanEvaluation(any(), any(), any()))
+			.thenReturn(ProviderEvaluation.<Boolean>builder().value(true).build());
+		return mock;
 	}
 
 }
