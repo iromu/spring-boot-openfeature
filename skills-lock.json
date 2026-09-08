@@ -7,6 +7,12 @@
       "skillPath": "skills/git-wiki/SKILL.md",
       "computedHash": "7a0c766675ee104158a9957ed185731411446b5b2e00ef475581b7b8aa9a6349"
     },
+    "openspec-review": {
+      "source": "iromu/OpenSpec",
+      "sourceType": "github",
+      "skillPath": "skills/openspec-review/SKILL.md",
+      "computedHash": "64a2980067291e01530fe003ffcd08f88a94849a09ac5f24a9258723b8f01301"
+    },
     "spring-boot-testing": {
       "source": "github/awesome-copilot",
       "sourceType": "github",
