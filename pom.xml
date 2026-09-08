@@ -76,7 +76,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
     <spring-boot.version>4.0.8</spring-boot.version>
-    <io.spring.javaformat.version>0.0.47</io.spring.javaformat.version>
+    <io.spring.javaformat.version>0.0.48</io.spring.javaformat.version>
 
     <!-- Per-module JaCoCo instruction-coverage floor (the ratchet). The root default
          keeps the gate green everywhere; each module overrides this in its own
