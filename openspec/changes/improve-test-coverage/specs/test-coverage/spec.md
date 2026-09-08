@@ -16,14 +16,16 @@ The build SHALL fail the `verify` phase when any module's instruction-coverage r
 - **THEN** the build's `verify` phase passes
 
 ### Requirement: Provider auto-configuration activates only when enabled
-Each provider auto-configuration SHALL create its configuration and `FeatureProvider` beans when the provider's `enabled` property is true or unset, and SHALL NOT create them when the property is false.
+Each backend provider auto-configuration SHALL create its configuration and `FeatureProvider` beans when the provider's `enabled` property is true or unset, and SHALL NOT create them when the property is false.
+
+This requirement covers the backend providers — `configcat`, `envvar`, `flagd`, `flagsmith`, `flipt`, `gofeatureflag`, `jsonlogic`, `statsig`, `unleash`, and `growthbook` — and no others. The `multiprovider` auto-configuration is explicitly exempt: it is a composite aggregator over the providers it already aggregates, so its enablement is governed by those providers rather than by its own toggle; it has never exposed an `enabled` property; and introducing one would alter provider runtime behavior and the public configuration surface, which design.md's Non-Goals place out of this change's scope. The exemption names `multiprovider` alone — `envvar` and `jsonlogic` do expose an `enabled` gate and remain fully covered.
 
 #### Scenario: Provider disabled
-- **WHEN** a provider's `enabled` property is set to `false`
+- **WHEN** a backend provider's `enabled` property is set to `false`
 - **THEN** the application context contains no `FeatureProvider` bean for that provider
 
 #### Scenario: Provider enabled by default
-- **WHEN** a provider's `enabled` property is unset
+- **WHEN** a backend provider's `enabled` property is unset
 - **THEN** the application context contains the provider's `FeatureProvider` bean
 
 ### Requirement: Auto-configuration yields to a user-supplied provider

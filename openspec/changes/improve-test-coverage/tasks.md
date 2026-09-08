@@ -17,7 +17,7 @@ For each provider, extend the existing `*AutoConfigurationTest` with: (a) `enabl
 - [x] 2.5 flipt *(customizer)* — add the 3 assertions; verify `./mvnw -pl spring-boot-starter-openfeature-flipt test` passes.
 - [x] 2.6 gofeatureflag *(customizer)* — add the 3 assertions; verify `./mvnw -pl spring-boot-starter-openfeature-gofeatureflag test` passes.
 - [x] 2.7 jsonlogic — add assertions (a) and (b); verify `./mvnw -pl spring-boot-starter-openfeature-jsonlogic test` passes.
-- [x] 2.8 multiprovider — add assertions (a) and (b); verify `./mvnw -pl spring-boot-starter-openfeature-multiprovider test` passes.
+- [x] 2.8 multiprovider — add assertion (b) (user-supplied provider back-off; assertion (a) does not apply here — `multiprovider` exposes no `enabled` property, so it is exempt from the enabled-gate requirement per `specs/test-coverage/spec.md`); verify `./mvnw -pl spring-boot-starter-openfeature-multiprovider test` passes.
 - [x] 2.9 statsig *(customizer)* — add the 3 assertions; verify `./mvnw -pl spring-boot-starter-openfeature-statsig test` passes.
 - [x] 2.10 unleash *(customizer)* — add the 3 assertions; verify `./mvnw -pl spring-boot-starter-openfeature-unleash test` passes.
 - [x] 2.11 growthbook *(customizer)* — add the 3 assertions; verify `./mvnw -pl spring-boot-starter-openfeature-growthbook test` passes.
