@@ -33,9 +33,9 @@ See proposal.md for motivation. Current state: 85% instruction / 71% branch / 89
 - **Alternatives considered:** Fixed per-module targets (rejected — must be hit exactly; fragile); a single global 0.90 (rejected — same masking problem as #2).
 
 ### 4. Test pattern: the 3-assertion `ApplicationContextRunner` convention
-- **Choice:** Each provider test keeps the positive assertion and adds: (a) `enabled=false` → no `FeatureProvider` bean; (b) user-supplied `FeatureProvider` → auto-config backs off (`@ConditionalOnMissingBean`); (c) where a customizer exists, a registered `*Customizer` actually mutates the built config.
+- **Choice:** Each backend provider test keeps the positive assertion and adds: (a) `enabled=false` → no `FeatureProvider` bean; (b) user-supplied `FeatureProvider` → auto-config backs off (`@ConditionalOnMissingBean`); (c) where a customizer exists, a registered `*Customizer` actually mutates the built config. `multiprovider` is exempt from (a) — see the `multiprovider` exemption under the enabled-gate requirement in `specs/test-coverage/spec.md`.
 - **Why:** Matches the repo's existing convention. Assertions (a) and (b) are cheap — bean presence/absence, no network needed. This is what lifts branch coverage most efficiently.
-- **Customizer coverage:** 9 providers have a `*Customizer` (configcat, flagd, flagsmith, flipt, gofeatureflag, growthbook, statsig, unleash, + core). 3 do not (envvar, jsonlogic, multiprovider) — they get only (a) and (b).
+- **Customizer coverage:** 9 providers have a `*Customizer` (configcat, flagd, flagsmith, flipt, gofeatureflag, growthbook, statsig, unleash, + core). 3 do not (envvar, jsonlogic, multiprovider): `envvar` and `jsonlogic` get (a) and (b), while `multiprovider` is exempt from (a) and so gets only (b).
 
 ### 5. Functional tests use a mocked `OpenFeatureAPI` / `Client`
 - **Choice:** For `OpenFeatureAPIAutoConfiguration`, pull the `OpenFeatureAPICustomizer` bean, call `.customize(mockApi)` on a mocked `OpenFeatureAPI`, then fire each event and verify the handler was wired. For `ToggleOnFlagAspect`, inject a mocked `Client` returning controlled booleans.
