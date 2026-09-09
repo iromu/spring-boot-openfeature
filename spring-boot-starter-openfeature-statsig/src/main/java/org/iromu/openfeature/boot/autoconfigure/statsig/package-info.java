@@ -14,4 +14,7 @@
  * limitations under the License.
  */
 
+/**
+ * Auto-configuration for the Statsig provider.
+ */
 package org.iromu.openfeature.boot.autoconfigure.statsig;

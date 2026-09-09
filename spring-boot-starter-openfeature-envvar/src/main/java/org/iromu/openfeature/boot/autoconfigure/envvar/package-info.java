@@ -14,4 +14,7 @@
  * limitations under the License.
  */
 
+/**
+ * Auto-configuration for the environment-variable provider.
+ */
 package org.iromu.openfeature.boot.autoconfigure.envvar;
