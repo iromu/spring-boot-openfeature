@@ -83,14 +83,14 @@
          <properties> with the instruction COVEREDRATIO it actually achieves. -->
     <jacoco.instruction.minimum>0.0</jacoco.instruction.minimum>
 
-    <sdk.version>1.22.1</sdk.version>
+    <sdk.version>1.15.1</sdk.version>
 
     <configcat.version>0.1.0</configcat.version>
     <env-var.version>0.0.12</env-var.version>
     <flagd.version>0.11.15</flagd.version>
     <flagsmith.version>0.0.13</flagsmith.version>
     <flipt.version>0.1.1</flipt.version>
-    <go-feature-flag.version>1.2.1</go-feature-flag.version>
+    <go-feature-flag.version>0.4.3</go-feature-flag.version>
     <jsonlogic-eval-provider.version>1.2.1</jsonlogic-eval-provider.version>
     <multiprovider.version>0.0.3</multiprovider.version>
     <statsig.version>0.2.1</statsig.version>
