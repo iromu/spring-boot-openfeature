@@ -14,4 +14,7 @@
  * limitations under the License.
  */
 
+/**
+ * Configuration properties and customizer for the JsonLogic provider.
+ */
 package org.iromu.openfeature.boot.jsonlogic;
