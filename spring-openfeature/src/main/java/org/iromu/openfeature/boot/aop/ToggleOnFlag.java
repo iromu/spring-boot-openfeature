@@ -48,7 +48,7 @@ public @interface ToggleOnFlag {
 	/**
 	 * A map of attributes to be dynamically populated. Supports SpEL expressions to
 	 * populate key-value pairs. e.g.: "{'userId': #arg0, 'role': 'admin'}"
-	 * @return SpEL expression
+	 * @return spel expression
 	 */
 	String attributes() default "{}";
 

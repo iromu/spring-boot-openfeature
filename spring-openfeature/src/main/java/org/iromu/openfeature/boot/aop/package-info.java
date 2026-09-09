@@ -14,4 +14,7 @@
  * limitations under the License.
  */
 
+/**
+ * Flag-driven method interception, backed by the {@code @ToggleOnFlag} annotation.
+ */
 package org.iromu.openfeature.boot.aop;
