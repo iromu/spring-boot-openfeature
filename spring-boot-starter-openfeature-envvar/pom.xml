@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  ~ Copyright 2025-2025 the original author or authors.
+  ~ Copyright 2025-2026 the original author or authors.
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -28,6 +28,11 @@
 
     <artifactId>spring-boot-starter-openfeature-envvar</artifactId>
     <name>spring-boot-starter-openfeature-envvar</name>
+
+    <properties>
+        <!-- JaCoCo instruction-coverage ratchet (measured: 1.0000) -->
+        <jacoco.instruction.minimum>1.00</jacoco.instruction.minimum>
+    </properties>
 
     <dependencyManagement>
         <dependencies>
