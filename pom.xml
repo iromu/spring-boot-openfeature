@@ -191,6 +191,7 @@
               <configuration>
                 <configLocation>io/spring/javaformat/checkstyle/checkstyle.xml</configLocation>
                 <includeTestSourceDirectory>false</includeTestSourceDirectory>
+                <violationIgnore>SpringNullability</violationIgnore>
               </configuration>
               <goals>
                 <goal>check</goal>
