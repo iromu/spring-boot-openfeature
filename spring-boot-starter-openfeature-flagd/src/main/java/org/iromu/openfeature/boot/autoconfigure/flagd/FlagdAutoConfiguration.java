@@ -50,6 +50,12 @@ import org.springframework.context.annotation.Bean;
 @Slf4j
 public class FlagdAutoConfiguration {
 
+	/**
+	 * Creates the {@link FlagdOptions} from the provided properties and customizers.
+	 * @param customizers an ObjectProvider providing the FlagdCustomizer instances
+	 * @param flagdProperties the Flagd configuration properties
+	 * @return the FlagdOptions used to configure the provider
+	 */
 	@Bean
 	@ConditionalOnMissingBean
 	public FlagdOptions flagdOptions(ObjectProvider<FlagdCustomizer> customizers, FlagdProperties flagdProperties) {
@@ -71,6 +77,11 @@ public class FlagdAutoConfiguration {
 		return builder.build();
 	}
 
+	/**
+	 * Creates the {@link FeatureProvider} backed by Flagd.
+	 * @param flagdOptions the FlagdOptions used to configure the provider
+	 * @return the FlagdProvider registered as the feature provider
+	 */
 	@Bean
 	@ConditionalOnMissingBean
 	public FeatureProvider flagdProvider(FlagdOptions flagdOptions) {

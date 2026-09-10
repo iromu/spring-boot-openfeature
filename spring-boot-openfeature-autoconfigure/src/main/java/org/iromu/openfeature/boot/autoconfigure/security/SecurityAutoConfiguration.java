@@ -47,6 +47,11 @@ import org.springframework.security.core.context.SecurityContextHolder;
 @Slf4j
 public class SecurityAutoConfiguration {
 
+	/**
+	 * Create a {@link OpenFeatureAPICustomizer} that registers a {@link Hook} adding
+	 * authentication details to the evaluation context.
+	 * @return a customizer registering the security-aware {@link Hook}
+	 */
 	@Bean
 	public OpenFeatureAPICustomizer openFeatureAPISecurityCustomizer() {
 		return (openFeatureAPI) -> openFeatureAPI.addHooks(new Hook<String>() {

@@ -36,6 +36,13 @@ import org.springframework.context.annotation.Bean;
 @ConditionalOnMissingBean(name = "multiProvider")
 public class ClientAutoConfiguration {
 
+	/**
+	 * Build the {@link Client} after binding the given {@link FeatureProvider}.
+	 * @param featureProvider the provider to set on the OpenFeature API
+	 * @param customizers provider of {@link ClientCustomizer} callbacks to apply to the
+	 * client
+	 * @return the configured {@link Client} instance
+	 */
 	@Bean
 	@ConditionalOnMissingBean
 	public Client client(FeatureProvider featureProvider, ObjectProvider<ClientCustomizer> customizers) {

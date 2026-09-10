@@ -42,18 +42,37 @@ import org.springframework.context.annotation.Bean;
 @ConditionalOnClass(MultiProvider.class)
 public class MultiProviderAutoConfiguration {
 
+	/**
+	 * Creates the default {@link FirstMatchStrategy} used by the {@link MultiProvider} to
+	 * pick the first provider that resolves a flag.
+	 * @return the first match evaluation strategy
+	 */
 	@Bean
 	@ConditionalOnMissingBean
 	public Strategy firstMatchStrategy() {
 		return new FirstMatchStrategy();
 	}
 
+	/**
+	 * Creates the {@link MultiProvider} that delegates flag evaluation to the available
+	 * {@link FeatureProvider} beans according to the given {@link Strategy}.
+	 * @param providers the ordered provider of FeatureProvider beans
+	 * @param strategy the strategy used to select the resolving provider
+	 * @return the configured MultiProvider instance
+	 */
 	@Bean
 	@ConditionalOnMissingBean
 	public MultiProvider multiProvider(ObjectProvider<FeatureProvider> providers, Strategy strategy) {
 		return new MultiProvider(providers.orderedStream().toList(), strategy);
 	}
 
+	/**
+	 * Creates the {@link Client} bound to the {@link MultiProvider}, applying every
+	 * available {@link ClientCustomizer} to it.
+	 * @param multiProvider the MultiProvider to register as the active provider
+	 * @param customizers the ordered provider of ClientCustomizer beans
+	 * @return the configured Client instance
+	 */
 	@Bean
 	@ConditionalOnMissingBean
 	public Client multiClient(MultiProvider multiProvider, ObjectProvider<ClientCustomizer> customizers) {

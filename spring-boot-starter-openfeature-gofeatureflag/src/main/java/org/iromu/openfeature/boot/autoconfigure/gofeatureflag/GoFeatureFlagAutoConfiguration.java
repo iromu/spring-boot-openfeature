@@ -49,6 +49,13 @@ import org.springframework.context.annotation.Bean;
 @Slf4j
 public class GoFeatureFlagAutoConfiguration {
 
+	/**
+	 * Builds the {@link GoFeatureFlagProviderOptions} used to create the GoFeatureFlag
+	 * feature provider.
+	 * @param customizers the customizers applied to the options builder
+	 * @param gofeatureflagProperties the GoFeatureFlag configuration properties
+	 * @return the configured GoFeatureFlag provider options
+	 */
 	@Bean
 	@ConditionalOnMissingBean
 	public GoFeatureFlagProviderOptions gofeatureflagProviderOptions(
@@ -63,6 +70,11 @@ public class GoFeatureFlagAutoConfiguration {
 		return builder.build();
 	}
 
+	/**
+	 * Creates the {@link FeatureProvider} backed by the supplied GoFeatureFlag options.
+	 * @param gofeatureflagProviderOptions the provider options to build the provider from
+	 * @return the GoFeatureFlag feature provider
+	 */
 	@SneakyThrows
 	@Bean
 	@ConditionalOnMissingBean

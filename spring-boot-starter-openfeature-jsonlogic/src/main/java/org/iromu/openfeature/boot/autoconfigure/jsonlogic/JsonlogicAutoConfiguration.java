@@ -55,12 +55,22 @@ import org.springframework.context.annotation.Bean;
 @Slf4j
 public class JsonlogicAutoConfiguration {
 
+	/**
+	 * Creates the {@link JsonLogic} evaluator used to evaluate JSON Logic rules.
+	 * @return the JsonLogic evaluator instance
+	 */
 	@Bean
 	@ConditionalOnMissingBean
 	public JsonLogic jsonLogic() {
 		return new JsonLogic();
 	}
 
+	/**
+	 * Creates a {@link FileBasedFetcher} that loads rules from the configured
+	 * {@code jsonlogic.filename} location.
+	 * @param properties the JsonlogicProperties holding the rules file location
+	 * @return the file based RuleFetcher instance
+	 */
 	@SneakyThrows
 	@Bean
 	@ConditionalOnProperty(prefix = JsonlogicProperties.JSONLOGIC_PREFIX, name = "filename")
@@ -73,6 +83,11 @@ public class JsonlogicAutoConfiguration {
 		return new FileBasedFetcher(properties.getFilename().getURI());
 	}
 
+	/**
+	 * Creates a no-operation {@link RuleFetcher} fallback used when no
+	 * {@code jsonlogic.filename} is configured.
+	 * @return the no-op RuleFetcher instance
+	 */
 	@Bean
 	@ConditionalOnProperty(prefix = JsonlogicProperties.JSONLOGIC_PREFIX, name = "filename", matchIfMissing = true)
 	@ConditionalOnMissingBean
@@ -91,6 +106,13 @@ public class JsonlogicAutoConfiguration {
 		};
 	}
 
+	/**
+	 * Creates the {@link JsonlogicProvider} feature provider backed by the
+	 * {@link JsonLogic} evaluator and a {@link RuleFetcher}.
+	 * @param logic the JsonLogic evaluator used to evaluate rules
+	 * @param fetcher the RuleFetcher used to look up rules by key
+	 * @return the JsonlogicProvider feature provider instance
+	 */
 	@Bean
 	@ConditionalOnMissingBean
 	public FeatureProvider jsonlogicProvider(JsonLogic logic, RuleFetcher fetcher) {

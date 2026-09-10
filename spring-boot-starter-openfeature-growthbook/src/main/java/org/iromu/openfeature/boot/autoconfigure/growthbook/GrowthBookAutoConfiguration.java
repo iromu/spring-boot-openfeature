@@ -49,6 +49,12 @@ import org.springframework.context.annotation.Bean;
 @Slf4j
 public class GrowthBookAutoConfiguration {
 
+	/**
+	 * Builds the {@link Options} used to create the GrowthBook feature provider.
+	 * @param customizers the customizers applied to the options builder
+	 * @param growthBookProperties the GrowthBook configuration properties
+	 * @return the configured GrowthBook options
+	 */
 	@Bean
 	@ConditionalOnMissingBean
 	public Options growthBookOptions(ObjectProvider<GrowthBookCustomizer> customizers,
@@ -69,6 +75,11 @@ public class GrowthBookAutoConfiguration {
 		return builder.build();
 	}
 
+	/**
+	 * Creates the {@link FeatureProvider} backed by the supplied GrowthBook options.
+	 * @param growthBookOptions the options to build the provider from
+	 * @return the GrowthBook feature provider
+	 */
 	@SneakyThrows
 	@Bean
 	@ConditionalOnMissingBean

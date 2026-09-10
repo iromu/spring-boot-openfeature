@@ -18,6 +18,12 @@ package org.iromu.openfeature.boot.growthbook;
 
 import growthbook.sdk.java.multiusermode.configurations.Options;
 
+/**
+ * Callback interface that can be used to customize GrowthBook with a
+ * {@link growthbook.sdk.java.multiusermode.configurations.Options.OptionsBuilder}.
+ *
+ * @author Ivan Rodriguez
+ */
 @FunctionalInterface
 public interface GrowthBookCustomizer {
 

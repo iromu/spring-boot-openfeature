@@ -49,6 +49,13 @@ import org.springframework.context.annotation.Bean;
 @Slf4j
 public class StatsigAutoConfiguration {
 
+	/**
+	 * Builds the {@link StatsigProviderConfig} used to create the Statsig feature
+	 * provider.
+	 * @param customizers the customizers applied to the config builder
+	 * @param statsigProperties the Statsig configuration properties
+	 * @return the configured Statsig provider config
+	 */
 	@Bean
 	@ConditionalOnMissingBean
 	public StatsigProviderConfig statsigProviderConfig(ObjectProvider<StatsigCustomizer> customizers,
@@ -66,6 +73,11 @@ public class StatsigAutoConfiguration {
 		return builder.build();
 	}
 
+	/**
+	 * Creates the {@link FeatureProvider} backed by the supplied Statsig configuration.
+	 * @param statsigProviderConfig the Statsig provider config to build the provider from
+	 * @return the Statsig feature provider
+	 */
 	@Bean
 	@ConditionalOnMissingBean
 	public FeatureProvider statsigProvider(StatsigProviderConfig statsigProviderConfig) {

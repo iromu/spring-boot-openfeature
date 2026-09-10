@@ -38,6 +38,11 @@ import org.springframework.core.annotation.Order;
 @Slf4j
 public class OpenFeatureAPIAutoConfiguration {
 
+	/**
+	 * Create a {@link OpenFeatureAPICustomizer} that logs provider lifecycle events.
+	 * @return a customizer registering provider ready, error, stale and configuration
+	 * change log handlers
+	 */
 	@Bean
 	@Order(Ordered.HIGHEST_PRECEDENCE)
 	public OpenFeatureAPICustomizer loggerOpenFeatureAPICustomizer() {
@@ -54,6 +59,12 @@ public class OpenFeatureAPIAutoConfiguration {
 		};
 	}
 
+	/**
+	 * Provide the singleton {@link OpenFeatureAPI} instance.
+	 * @param customizers provider of {@link OpenFeatureAPICustomizer} callbacks to apply
+	 * to the instance
+	 * @return the configured {@link OpenFeatureAPI} instance
+	 */
 	@Bean
 	@ConditionalOnMissingBean
 	public OpenFeatureAPI openFeatureAPI(ObjectProvider<OpenFeatureAPICustomizer> customizers) {
