@@ -83,7 +83,7 @@
          <properties> with the instruction COVEREDRATIO it actually achieves. -->
     <jacoco.instruction.minimum>0.0</jacoco.instruction.minimum>
 
-    <sdk.version>1.15.1</sdk.version>
+    <sdk.version>1.22.1</sdk.version>
 
     <configcat.version>0.1.0</configcat.version>
     <env-var.version>0.0.12</env-var.version>
