@@ -49,6 +49,12 @@ import org.springframework.context.annotation.Bean;
 @Slf4j
 public class FliptAutoConfiguration {
 
+	/**
+	 * Builds the {@link FliptProviderConfig} used to create the Flipt feature provider.
+	 * @param customizers the customizers applied to the config builder
+	 * @param properties the Flipt configuration properties
+	 * @return the configured Flipt provider config
+	 */
 	@Bean
 	@ConditionalOnMissingBean
 	public FliptProviderConfig fliptProviderConfig(ObjectProvider<FliptCustomizer> customizers,
@@ -68,6 +74,11 @@ public class FliptAutoConfiguration {
 		return fliptProviderConfigBuilder.build();
 	}
 
+	/**
+	 * Creates the {@link FeatureProvider} backed by the supplied Flipt configuration.
+	 * @param fliptProviderConfig the Flipt provider config to build the provider from
+	 * @return the Flipt feature provider
+	 */
 	@Bean
 	@ConditionalOnMissingBean
 	public FeatureProvider fliptProvider(FliptProviderConfig fliptProviderConfig) {

@@ -14,4 +14,7 @@
  * limitations under the License.
  */
 
+/**
+ * Auto-configuration for the OpenFeature security integration.
+ */
 package org.iromu.openfeature.boot.autoconfigure.security;

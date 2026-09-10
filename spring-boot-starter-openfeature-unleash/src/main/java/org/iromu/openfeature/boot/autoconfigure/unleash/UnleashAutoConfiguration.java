@@ -51,6 +51,14 @@ import org.springframework.context.annotation.Bean;
 @Slf4j
 public class UnleashAutoConfiguration {
 
+	/**
+	 * Creates the {@link UnleashProviderConfig} built from the configured
+	 * {@link UnleashProperties}, applying every available {@link UnleashCustomizer} to
+	 * the underlying {@link UnleashConfig.Builder}.
+	 * @param customizers the ordered provider of UnleashCustomizer beans
+	 * @param unleashProperties the UnleashProperties holding the connection settings
+	 * @return the configured UnleashProviderConfig instance
+	 */
 	@Bean
 	@ConditionalOnMissingBean
 	public UnleashProviderConfig unleashProviderConfig(ObjectProvider<UnleashCustomizer> customizers,
@@ -78,6 +86,12 @@ public class UnleashAutoConfiguration {
 		return UnleashProviderConfig.builder().unleashConfigBuilder(unleashConfigBuilder).build();
 	}
 
+	/**
+	 * Creates the {@link UnleashProvider} feature provider that resolves flags against
+	 * the Unleash server using the given configuration.
+	 * @param unleashProviderConfig the UnleashProviderConfig the provider is built from
+	 * @return the UnleashProvider feature provider instance
+	 */
 	@Bean
 	@ConditionalOnMissingBean
 	public FeatureProvider unleashProvider(UnleashProviderConfig unleashProviderConfig) {

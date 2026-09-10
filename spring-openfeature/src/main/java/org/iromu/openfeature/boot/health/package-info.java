@@ -14,4 +14,7 @@
  * limitations under the License.
  */
 
+/**
+ * OpenFeature health indicator exposed through the actuator.
+ */
 package org.iromu.openfeature.boot.health;

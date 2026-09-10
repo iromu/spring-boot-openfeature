@@ -14,4 +14,7 @@
  * limitations under the License.
  */
 
+/**
+ * Auto-configuration for the Flipt provider.
+ */
 package org.iromu.openfeature.boot.autoconfigure.flipt;

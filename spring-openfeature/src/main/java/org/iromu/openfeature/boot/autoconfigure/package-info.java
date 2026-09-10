@@ -14,4 +14,7 @@
  * limitations under the License.
  */
 
+/**
+ * Auto-configurations for the flag aspect and the health indicator.
+ */
 package org.iromu.openfeature.boot.autoconfigure;

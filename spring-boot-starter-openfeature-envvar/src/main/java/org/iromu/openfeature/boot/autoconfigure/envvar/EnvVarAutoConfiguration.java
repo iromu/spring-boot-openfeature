@@ -45,18 +45,32 @@ import org.springframework.context.annotation.Bean;
 @EnableConfigurationProperties(EnvVarProperties.class)
 public class EnvVarAutoConfiguration {
 
+	/**
+	 * Creates the {@link EnvironmentGateway} used to read values from the environment.
+	 * @return the EnvironmentGateway backed by the system environment
+	 */
 	@Bean
 	@ConditionalOnMissingBean
 	public EnvironmentGateway environmentGateway() {
 		return System::getenv;
 	}
 
+	/**
+	 * Creates the {@link EnvironmentKeyTransformer} applied to flag keys before lookup.
+	 * @return the EnvironmentKeyTransformer that leaves flag keys unchanged
+	 */
 	@Bean
 	@ConditionalOnMissingBean
 	public EnvironmentKeyTransformer environmentKeyTransformer() {
 		return EnvironmentKeyTransformer.doNothing();
 	}
 
+	/**
+	 * Creates the {@link FeatureProvider} backed by environment variables.
+	 * @param environmentGateway the EnvironmentGateway used to read the environment
+	 * @param environmentKeyTransformer the EnvironmentKeyTransformer applied to flag keys
+	 * @return the EnvVarProvider registered as the feature provider
+	 */
 	@Bean
 	@ConditionalOnMissingBean
 	public FeatureProvider envVarProvider(EnvironmentGateway environmentGateway,

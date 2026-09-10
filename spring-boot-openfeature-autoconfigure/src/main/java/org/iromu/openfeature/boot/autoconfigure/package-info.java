@@ -14,4 +14,7 @@
  * limitations under the License.
  */
 
+/**
+ * Auto-configurations for the OpenFeature client and API.
+ */
 package org.iromu.openfeature.boot.autoconfigure;

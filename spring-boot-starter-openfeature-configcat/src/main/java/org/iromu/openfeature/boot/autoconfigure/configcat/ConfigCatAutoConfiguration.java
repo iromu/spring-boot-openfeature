@@ -54,6 +54,13 @@ import org.springframework.core.io.Resource;
 @Slf4j
 public class ConfigCatAutoConfiguration {
 
+	/**
+	 * Creates the {@link ConfigCatProviderConfig} from the provided properties and
+	 * customizers.
+	 * @param customizers an ObjectProvider providing the ConfigCatCustomizer instances
+	 * @param properties the ConfigCat configuration properties
+	 * @return the ConfigCatProviderConfig used to configure the provider
+	 */
 	@Bean
 	@ConditionalOnMissingBean
 	public ConfigCatProviderConfig configCatProviderConfig(ObjectProvider<ConfigCatCustomizer> customizers,
@@ -85,6 +92,12 @@ public class ConfigCatAutoConfiguration {
 		return builder.sdkKey(properties.getSdkKey()).build();
 	}
 
+	/**
+	 * Creates the {@link FeatureProvider} backed by ConfigCat.
+	 * @param configCatProviderConfig the ConfigCatProviderConfig used to configure the
+	 * provider
+	 * @return the ConfigCatProvider registered as the feature provider
+	 */
 	@Bean
 	@ConditionalOnMissingBean
 	public FeatureProvider configCatProvider(ConfigCatProviderConfig configCatProviderConfig) {

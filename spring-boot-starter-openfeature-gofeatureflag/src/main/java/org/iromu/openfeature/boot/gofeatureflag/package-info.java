@@ -14,4 +14,7 @@
  * limitations under the License.
  */
 
+/**
+ * Configuration properties and customizer for the GoFeatureFlag provider.
+ */
 package org.iromu.openfeature.boot.gofeatureflag;

@@ -66,6 +66,11 @@ public class FakeUnleashProvider extends UnleashProvider {
 		log.info("finished initializing fake provider");
 	}
 
+	/**
+	 * Toggles the given feature on the backing {@link FakeUnleash} instance, enabling it
+	 * when it is currently disabled and disabling it otherwise.
+	 * @param feature the feature flag key to toggle
+	 */
 	public void toggle(String feature) {
 
 		if (this.unleash.isEnabled(feature)) {

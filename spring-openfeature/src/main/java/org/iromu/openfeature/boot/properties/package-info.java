@@ -14,4 +14,7 @@
  * limitations under the License.
  */
 
+/**
+ * Configuration properties bound under the {@code spring.openfeature.*} prefix.
+ */
 package org.iromu.openfeature.boot.properties;

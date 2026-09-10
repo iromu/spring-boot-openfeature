@@ -48,6 +48,13 @@ import org.springframework.context.annotation.Bean;
 @Slf4j
 public class FlagsmithAutoConfiguration {
 
+	/**
+	 * Creates the {@link FlagsmithProviderOptions} from the provided properties and
+	 * customizers.
+	 * @param customizers an ObjectProvider providing the FlagsmithCustomizer instances
+	 * @param flagsmithProperties the Flagsmith configuration properties
+	 * @return the FlagsmithProviderOptions used to configure the provider
+	 */
 	@Bean
 	@ConditionalOnMissingBean
 	public FlagsmithProviderOptions flagsmithProviderOptions(ObjectProvider<FlagsmithCustomizer> customizers,
@@ -60,6 +67,11 @@ public class FlagsmithAutoConfiguration {
 		return builder.build();
 	}
 
+	/**
+	 * Creates the {@link FeatureProvider} backed by Flagsmith.
+	 * @param flagsmithProviderOptions the options used to configure the provider
+	 * @return the FlagsmithProvider registered as the feature provider
+	 */
 	@Bean
 	@ConditionalOnMissingBean
 	public FeatureProvider flagsmithProvider(FlagsmithProviderOptions flagsmithProviderOptions) {
