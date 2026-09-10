@@ -1,6 +1,6 @@
 ---
 name: Verify with the sonar profile so the aggregate coverage report is built
-description: The build must be run with -P sonar, not plain verify; the default reactor omits the aggregate-report module and so never emits the aggregate JaCoCo XML that SonarQube consumes.
+description: Local/agent verification builds must run with -P sonar so the aggregate JaCoCo XML is emitted; CI deliberately does not, so the 16-vs-17 module difference is expected.
 type: feedback
 ---
 
@@ -24,3 +24,10 @@ compile dependency to work around jacoco/jacoco#974), so a plain run also leaves
 confirming green, check the aggregate report is actually emitted with one `<group>` per module rather than
 trusting `BUILD SUCCESS` alone; the four pom-packaging modules (root aggregator, base starter, dependencies
 BOM, `aggregate-report`) legitimately report zero instructions.
+
+**Scope - do not "fix" CI:** the rule above is for *local/agent verification runs only*.
+`.github/workflows/pull_request.yml` deliberately runs plain `./mvnw -B --no-transfer-progress clean
+verify`, without the profile, so CI builds 16 modules and does not emit the aggregate report. Asked
+directly on 2026-09-10 whether to add `-P sonar` there, the answer was no - leave CI as it is. The 16-vs-17
+module difference between CI and a local run is therefore expected and correct, not a defect to reconcile.
+Do not propose or apply a CI change on this basis.
