@@ -51,6 +51,17 @@
                 <groupId>dev.openfeature.contrib.providers</groupId>
                 <artifactId>flagsmith</artifactId>
                 <version>${flagsmith.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.flagsmith</groupId>
+                        <artifactId>flagsmith-java-client</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>com.flagsmith</groupId>
+                <artifactId>flagsmith-java-client</artifactId>
+                <version>${flagsmith-java-client.version}</version>
             </dependency>
             <dependency>
                 <groupId>dev.openfeature.contrib.providers</groupId>

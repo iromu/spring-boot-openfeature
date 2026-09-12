@@ -89,6 +89,7 @@
     <env-var.version>0.0.12</env-var.version>
     <flagd.version>0.14.1</flagd.version>
     <flagsmith.version>0.0.13</flagsmith.version>
+    <flagsmith-java-client.version>8.1.1</flagsmith-java-client.version>
     <flipt.version>0.1.4</flipt.version>
     <go-feature-flag.version>1.2.1</go-feature-flag.version>
     <jsonlogic-eval-provider.version>1.3.0</jsonlogic-eval-provider.version>
@@ -97,9 +98,9 @@
     <unleash.version>0.1.3-alpha</unleash.version>
     <unleash-client-java.version>12.3.0</unleash-client-java.version>
 
-    <okhttp.version>4.12.0</okhttp.version>
+    <okhttp.version>5.5.0</okhttp.version>
 
-    <growthbook-sdk-java.version>0.10.6</growthbook-sdk-java.version>
+    <growthbook-sdk-java.version>0.11.0</growthbook-sdk-java.version>
     <growthbook-provider.version>0.0.2</growthbook-provider.version>
   </properties>
 
