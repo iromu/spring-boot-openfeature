@@ -90,12 +90,25 @@ prose. Results, with the three that actually moved marked **→**:
       I first wrote here; the accurate claim is that those three coordinates are undeclared in the BOM and so
       unpriced by us. `lib` declares **`okhttp 5.4.0`**, which is why raising the floor is coherent with it.
       Recommend declaring the three coordinates in `spring-boot-openfeature-dependencies/pom.xml` so a change in the
-      SDK's own dependency graph cannot move them silently. **Not done, and the growthbook module's resolved
-      `lib`/cache versions have not been read back** — run
-      `JAVA_HOME=/home/wantez/.jdks/azul-17.0.20.1 ./mvnw -B -pl spring-boot-starter-openfeature-growthbook dependency:list`
-      before counting that module's green as evidence the repackaging is fully covered.
-- [x] **Unleash client promoted to 12.3.0, overriding Decision 5's endpoint gate** by direction. Module verified
-      independently: 12 tests, 0 failures, 0 skipped. Note the gate halt means this was proven by a targeted
-      `-pl … -am test`, not by the full gate.
-- [!] **Full-gate coverage caveat:** `-Psonar` halted at flagsmith (module 9/17), so modules 10–17 were
-      **SKIPPED, not passed**. Any "green" claim about them must come from a targeted run until flagsmith is fixed.
+      SDK's own dependency graph cannot move them silently. **Read back and covered:** `-pl
+      spring-boot-starter-openfeature-growthbook dependency:list` resolves
+      `com.github.growthbook.growthbook-sdk-java:lib:jar:0.11.0`,
+      `…:growthbook-cache-caffeine:jar:0.11.0` and `…:growthbook-cache-jcache:jar:0.11.0` alongside the
+      `com.github.growthbook:growthbook-sdk-java:jar:0.11.0` shell — all three new coordinates present at the matching
+      version, and `okhttp`/`okhttp-sse`/`okhttp-jvm` resolving at `5.5.0`, i.e. our floor raising the `5.4.0` that
+      `lib` declares. So the repackaging is fully covered by transitivity and the floor; declaring the three
+      coordinates stays a hardening recommendation, not a live defect.
+- [x] **Unleash client promoted to 12.3.0, overriding Decision 5's endpoint gate** by direction. That gate (re-running
+      the upstream `UnleashConfigAndAccessProviderTest` / `AbstractUnleash2ProviderTest` against a real Unleash
+      endpoint with `adminBaseUrl` + `apiToken`) is **NOT met** — it remains unobtainable here per 5.2 — so 12.3.0 is
+      landed on your direction rather than on evidence, and the pairing stays ahead of what provider `0.1.3-alpha`
+      targets (`unleash-client-java 11.0.2`). Resolution was read back, not inferred: `dependency:list` shows
+      `io.getunleash:unleash-client-java:jar:12.3.0:compile` plus `io.getunleash:yggdrasil-engine:jar:1.0.3:compile`,
+      proving the root property actually reaches the transitively-arriving client instead of the provider's `11.0.2`
+      winning by nearest-wins.
+- [x] **Full-gate coverage caveat — RESOLVED.** An earlier `-Psonar` run halted at flagsmith (module 9/17) and left
+      modules 10–17 **SKIPPED, not passed**, so no green claim about them was admissible. After the flagsmith client
+      fix the full gate was re-run: `JAVA_HOME=/home/wantez/.jdks/azul-17.0.20.1 ./mvnw -B -Psonar clean verify` →
+      `BUILD SUCCESS`, `Total time: 03:52`, **17 modules, 160 tests, 0 failures, 0 errors, 0 skipped, 0 Checkstyle
+      violations, and no module reported SKIPPED** — verified by grepping the log for `SKIPPED`/`FAILURE [` (none)
+      rather than by reading the `BUILD SUCCESS` line alone.
