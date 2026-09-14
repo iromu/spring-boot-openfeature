@@ -1,0 +1,35 @@
+# Brings up the real Unleash endpoint that UnleashEndpointIntegrationTest drives.
+#
+#   docker compose -f src/test/resources/unleash/docker-compose.integration.yml up -d
+#   docker compose -f src/test/resources/unleash/docker-compose.integration.yml down -v
+#
+# Topology, image name and the seeded token format follow the vendor's own
+# docker-compose.yml in Unleash/unleash. The admin token is intentionally seeded
+# here rather than minted through a login: api-token-service.initApiTokens() only
+# seeds when api_tokens is still empty, so a token added after the first boot is
+# silently skipped ("Not creating initial API tokens because tokens exist in the
+# database"). Recreate with -v when changing these tokens.
+#
+# Development credentials only - never reuse these outside a local test run.
+
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: "db"
+      POSTGRES_PASSWORD: "unleash"
+
+  web:
+    image: unleashorg/unleash-server:latest
+    depends_on:
+      - db
+    ports:
+      - "4243:4242"
+    environment:
+      DATABASE_URL: "postgres://postgres:unleash@db/db"
+      DATABASE_SSL: "false"
+      UNLEASH_TELEMETRY_DISABLED: "true"
+      LOG_LEVEL: "warn"
+      INIT_ADMIN_API_TOKENS: "*:*.integration-admin-token"
+      INIT_BACKEND_API_TOKENS: "default:development.unleash-insecure-api-token"
+      INIT_FRONTEND_API_TOKENS: "default:development.unleash-insecure-frontend-api-token"
