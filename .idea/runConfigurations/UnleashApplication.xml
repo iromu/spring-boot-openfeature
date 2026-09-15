@@ -1,9 +1,0 @@
-<component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="UnleashApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-    <module name="unleash-simple" />
-    <option name="SPRING_BOOT_MAIN_CLASS" value="org.iromu.openfeature.examples.UnleashApplication" />
-    <method v="2">
-      <option name="Make" enabled="true" />
-    </method>
-  </configuration>
-</component>

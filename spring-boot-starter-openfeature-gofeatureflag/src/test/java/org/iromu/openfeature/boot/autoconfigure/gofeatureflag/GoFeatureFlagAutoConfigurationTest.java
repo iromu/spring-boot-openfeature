@@ -17,6 +17,7 @@
 package org.iromu.openfeature.boot.autoconfigure.gofeatureflag;
 
 import dev.openfeature.contrib.providers.gofeatureflag.GoFeatureFlagProviderOptions;
+import dev.openfeature.contrib.providers.gofeatureflag.bean.EvaluationType;
 import dev.openfeature.sdk.Client;
 import dev.openfeature.sdk.FeatureProvider;
 import dev.openfeature.sdk.ProviderEvaluation;
@@ -61,6 +62,7 @@ class GoFeatureFlagAutoConfigurationTest {
 	@Test
 	void shouldSupplyDefaultBeans() {
 		this.contextRunner.withPropertyValues(requiredProperties)
+			.withUserConfiguration(RemoteEvaluationConfiguration.class)
 			.run((context) -> assertThat(context).hasSingleBean(FeatureProvider.class)
 				.hasBean("goFeatureFlagProvider")
 				.hasSingleBean(Client.class)
@@ -114,6 +116,20 @@ class GoFeatureFlagAutoConfigurationTest {
 		@Bean
 		public GoFeatureFlagCustomizer goFeatureFlagTimeoutCustomizer() {
 			return builder -> builder.timeout(4242);
+		}
+
+	}
+
+	@Configuration(proxyBeanMethods = false)
+	static class RemoteEvaluationConfiguration {
+
+		// go-feature-flag 1.x defaults to IN_PROCESS (WASM) evaluation, which fetches the
+		// flag
+		// configuration at startup and blocks on an endpoint this offline suite cannot
+		// serve.
+		@Bean
+		public GoFeatureFlagCustomizer goFeatureFlagEvaluationTypeCustomizer() {
+			return builder -> builder.evaluationType(EvaluationType.REMOTE);
 		}
 
 	}
