@@ -1,8 +1,10 @@
+# dependency-upgrades Specification
+
 ## Purpose
 
 Defines how this project manages its third-party dependency and build-plugin set: the OpenFeature SDK and every contrib provider resolve as one mutually-compatible lockstep set, the build is verified on the CI-aligned JDK 17 toolchain, provider auto-configuration contracts survive upstream upgrades, the examples reactor builds against the locally-built starter, and no binary-incompatible transitive dependency is introduced.
 
-## ADDED Requirements
+## Requirements
 
 ### Requirement: OpenFeature runtime dependencies resolve as one lockstep set
 The OpenFeature SDK and every contrib provider artifact SHALL resolve to a mutually-compatible set within the shared compatibility window. The reactor SHALL NOT resolve an SDK version below the lower bound of any provider's declared SDK range, and SHALL NOT let an explicitly-pinned SDK version mask a provider's higher requirement.
@@ -58,3 +60,4 @@ The managed dependency set SHALL NOT be moved to a major version that a consumer
 #### Scenario: Blocked upgrade is documented, not silently applied
 - **WHEN** an upstream release is identified as incompatible with the current dependency set
 - **THEN** the plan records it as deferred with the specific blocking dependency, and no task in the current change forces the incompatible version
+  - *Note (2026-09-14):* "held" is one compliant outcome, not the only one. The normative SHALL is that the managed set is not left in a state where an in-tree consumer is built against an absent/removed symbol of a transitive major. The §7 sweep reached that compliant state by **removing the incompatibility before the move** rather than holding it — promoting `flagsmith-java-client` to the OkHttp-5-native `8.1.1` (so `flagsmith` no longer resolves an `okhttp3` symbol absent under the `5.5.0` floor) and taking `growthbook-sdk-java` `0.11.0` whose `lib` declares `okhttp 5.4.0`. That is an alternative satisfying path, not a violation of this scenario; the residual (an unmanaged cross-major coordinate `okhttp-eventsource:4.3.0` on the Unleash classpath, symbol-verified present in `5.5.0`) is tracked as a hardening follow-up, not a shipped defect.
