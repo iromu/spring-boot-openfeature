@@ -27,6 +27,8 @@ multiplier.
 ### What to Read First
 
 1. `.wiki/index.md` — wiki with all the knowledge you need to know
+2. `.qwen/team-memory/MEMORY.md` — project memory
+3. 
 ---
 
 ## Project Overview
