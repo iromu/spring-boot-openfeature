@@ -10,10 +10,12 @@ import re
 import sys
 import xml.etree.ElementTree as ET
 
-ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, os.pardir))
-META = os.path.join(ROOT, ".qwen", "tmp", "meta")
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import _va_paths as va
 import step3_doc as S  # noqa: E402  the module under test
+
+ROOT = va.ROOT
+META = va.META
 
 
 def plain_versions(versions):

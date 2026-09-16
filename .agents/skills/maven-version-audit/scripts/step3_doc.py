@@ -22,11 +22,14 @@ import subprocess
 import sys
 import xml.etree.ElementTree as ET
 
-ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, os.pardir))
-TMP = os.path.join(ROOT, ".qwen", "tmp")
-META = os.path.join(TMP, "meta")
-DOCS = os.path.join(ROOT, "docs")
-OUT = os.path.join(DOCS, "dependency-versions.md")
+import _va_paths as va
+
+ROOT = va.ROOT
+TMP = va.TMP
+META = va.META
+DOC = va.DOC
+DOCS = os.path.dirname(DOC)
+OUT = DOC
 INTERNAL = "org.iromu.openfeature"
 POMNS = {"m": "http://maven.apache.org/POM/4.0.0"}
 POMU = "{http://maven.apache.org/POM/4.0.0}"
@@ -359,9 +362,9 @@ def main():
     stamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     add("# Maven plugin and dependency version audit")
     add("")
-    add(f"Generated {stamp} from the repository's own build metadata by the scripts under")
-    add("`docs/version-audit/` (`step1_coords.py` harvests coordinates from the POMs,")
-    add("`step2_download.py` fetches the repository metadata, `step3_doc.py` renders this file).")
+    add(f"Generated {stamp} from the repository's own build metadata by the version-audit")
+    add("scripts (`step1_coords.py` harvests coordinates from the POMs, `step2_download.py`")
+    add("fetches the repository metadata, `step3_doc.py` renders this file).")
     add("")
     add("## How this was produced")
     add("")
@@ -646,34 +649,33 @@ def main():
     add("")
     add("## Reproducing")
     add("")
-    add("The pipeline lives beside this document under `docs/version-audit/`; scratch data")
-    add("(fetched metadata, logs) is written to the ignored `.qwen/tmp/`.")
+    add("The audit ships as a set of scripts; run them from their own directory with the")
+    add("repository as the working directory. Scratch (fetched metadata, maven logs) lands in")
+    add("one temporary dir shared by every step; override `VERSION_AUDIT_TMP`, `VERSION_AUDIT_DOC`")
+    add("or `MVN` if the defaults do not suit your layout.")
     add("")
     add("```bash")
-    add("python3 docs/version-audit/step1_coords.py")
+    add("SK=<the directory holding these scripts>   # the skill's scripts/ directory")
+    add("TMP=${VERSION_AUDIT_TMP:-target/version-audit}")
+    add("MVN=${MVN:-$(test -f ./mvnw && echo ./mvnw || echo mvn)}")
+    add("mkdir -p \"$TMP\"")
+    add("python3 \"$SK/step1_coords.py\"")
     add("# let maven log its own repository traffic, then read the roots out of that log")
-    add("./mvnw -B -U org.codehaus.mojo:versions-maven-plugin:2.21.0:display-property-updates \\")
-    add("    > .qwen/tmp/props.log 2>&1")
-    add("./mvnw -B dependency:list > .qwen/tmp/deplist.log 2>&1")
+    add("\"$MVN\" -B -U org.codehaus.mojo:versions-maven-plugin:2.21.0:display-property-updates > \"$TMP/props.log\" 2>&1")
+    add("\"$MVN\" -B dependency:list > \"$TMP/deplist.log\" 2>&1")
     add("# maven's effective-pom print, for the version a parent pins on a plugin that")
-    add("# declares none itself; the examples reactor is profile gated so ask for it too")
-    add("./mvnw -B -P examples help:effective-pom > .qwen/tmp/effpom.log 2>&1")
-    add("python3 docs/version-audit/step2_download.py")
-    add("python3 docs/version-audit/step3_doc.py")
+    add("# declares none itself; a profile gated sub-reactor must be asked for explicitly")
+    add("\"$MVN\" -B -P examples help:effective-pom > \"$TMP/effpom.log\" 2>&1")
+    add("python3 \"$SK/step2_download.py\"")
+    add("python3 \"$SK/step3_doc.py\"")
     add("```")
     add("")
     add("Two self checks ship with it; both are independent of the renderer:")
     add("")
     add("```bash")
-    add("# re-derives the ordering with a separate brute force implementation and checks")
-    add("# maximality of every 'latest any' value against its own version list")
-    add("python3 docs/version-audit/verify_ordering.py")
-    add("# compares the 'behind' verdicts against maven's own versions plugin report")
-    add("python3 docs/version-audit/crosscheck.py")
+    add("python3 \"$SK/verify_ordering.py\"   # re-derives ordering independently; checks latest-any maximality")
+    add("python3 \"$SK/crosscheck.py\"          # 'behind' verdicts vs maven's own versions plugin report")
     add("```")
-    add("")
-    add("The build needs JDK 17 (`JAVA_HOME` pointing at a 17 install); the machine default")
-    add("`java` is newer and breaks Lombok annotation processing.")
     add("")
 
     os.makedirs(DOCS, exist_ok=True)

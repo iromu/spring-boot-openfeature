@@ -10,11 +10,13 @@ import os
 import re
 import sys
 
-ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, os.pardir))
-DOC = os.path.join(ROOT, "docs", "dependency-versions.md")
-TMP = os.path.join(ROOT, ".qwen", "tmp")
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import _va_paths as va
 import step3_doc as S  # noqa
+
+ROOT = va.ROOT
+DOC = va.DOC
+TMP = va.TMP
 
 REDIRECT = "".join(chr(c) for c in (0x32, 0x3E, 0x26, 0x31))
 

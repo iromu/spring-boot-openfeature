@@ -15,12 +15,14 @@ import subprocess
 import sys
 import xml.etree.ElementTree as ET
 
-ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, os.pardir))
-TMP = os.path.join(ROOT, ".qwen", "tmp")
-META = os.path.join(TMP, "meta")
-COORDS = os.path.join(TMP, "coords.tsv")
-MANIFEST = os.path.join(TMP, "manifest.tsv")
-BASES = os.path.join(TMP, "bases.tsv")
+import _va_paths as va
+
+ROOT = va.ROOT
+TMP = va.TMP
+META = va.META
+COORDS = va.COORDS
+MANIFEST = va.MANIFEST
+BASES = va.BASES
 INTERNAL = "org.iromu.openfeature"
 TAIL = "/maven-metadata.xml"
 
