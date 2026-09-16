@@ -1,0 +1,17 @@
+[
+  {"query": "what's the latest release of the openfeature sdk and are our contrib provider plugins behind? i want to know before i open a bump", "should_trigger": true},
+  {"query": "can we bump springdoc-openapi-starter in this project, or are we already on the current line?", "should_trigger": true},
+  {"query": "is maven-compiler-plugin on the newest version in our build, or should i raise it?", "should_trigger": true},
+  {"query": "the ~/.m2 cache has a growthbook 0.11.1 dir — is that actually published so i can bump growthbook-sdk-java to it?", "should_trigger": true},
+  {"query": "regenerate the dependency-versions doc and tell me which maven build plugins are behind and should be bumped", "should_trigger": true},
+  {"query": "before i open a dependency-upgrade openspec change, give me ground truth on what's actually outdated in this repo's poms", "should_trigger": true},
+  {"query": "what version does the parent pin for the version-less plugins in our examples reactor, and is that current?", "should_trigger": true},
+
+  {"query": "update package-lock.json in the ui folder, the transitive pins drifted", "should_trigger": false},
+  {"query": "run the full build with -P sonar and tell me whether the tests pass", "should_trigger": false},
+  {"query": "check whether our npm dependencies have any known security advisories", "should_trigger": false},
+  {"query": "add a new provider module starter for Statsig to the maven reactor", "should_trigger": false},
+  {"query": "write the changelog entry for the 4.0.1 release", "should_trigger": false},
+  {"query": "why does my spring context fail to start with a 'bean of type X not found' error", "should_trigger": false},
+  {"query": "point the git remote at the new github org url", "should_trigger": false}
+]

@@ -7,10 +7,12 @@ import os
 import sys
 import xml.etree.ElementTree as ET
 
-ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, os.pardir))
+import _va_paths as va
+
+ROOT = va.ROOT
 NS = {"m": "http://maven.apache.org/POM/4.0.0"}
 U = "{http://maven.apache.org/POM/4.0.0}"
-OUT = os.path.join(ROOT, ".qwen", "tmp", "coords.tsv")
+OUT = va.COORDS
 
 
 def grab(elem, tag):

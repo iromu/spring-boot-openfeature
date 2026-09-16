@@ -7,6 +7,12 @@
       "skillPath": "skills/git-wiki/SKILL.md",
       "computedHash": "7a0c766675ee104158a9957ed185731411446b5b2e00ef475581b7b8aa9a6349"
     },
+    "maven-version-audit": {
+      "source": "iromu/awesome-qwen",
+      "sourceType": "github",
+      "skillPath": "skills/maven-version-audit/SKILL.md",
+      "computedHash": "a9c085f901c28c867399d1ba0722a54d9d52cfab56ba4720e7b6a735fde32d3f"
+    },
     "openspec-review": {
       "source": "iromu/OpenSpec",
       "sourceType": "github",

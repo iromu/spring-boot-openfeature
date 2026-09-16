@@ -1,4 +1,4 @@
-# Spring Starter OpenFeature
+# Spring Boot OpenFeature
 
 [![Apache License 2](https://img.shields.io/badge/license-ASF2-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0.txt)
 ![Build Status](https://github.com/iromu/spring-boot-openfeature/actions/workflows/snapshots.yml/badge.svg?branch=main)
@@ -10,114 +10,161 @@
 [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/iromu/spring-boot-openfeature/badge)](https://securityscorecards.dev/viewer/?uri=github.com/iromu/spring-boot-openfeature)
 
 This is a Spring Boot starter that integrates [OpenFeature](https://openfeature.dev/), an open standard for feature flag
-management.
+management. Add one starter dependency, set a few `spring.openfeature.*` properties, and feature flags work in your
+application — no manual wiring of the OpenFeature SDK.
 
 ## Features
 
-- **OpenFeature Integration**: Easily toggle features and manage feature flags in your application.
-- **Spring Boot Framework**: Built with Spring Boot for rapid development.
-- **Extensibility**: Supports multiple feature flag providers via OpenFeature SDK.
+- **Auto-Configuration** — a ready-made `dev.openfeature.sdk.Client` bean, created as soon as a `FeatureProvider` bean
+  is on the context.
+- **Declarative Flags** — the `@ToggleOnFlag` annotation gates method execution on a flag, with SpEL evaluation context
+  and an `orElse` fallback method.
+- **Health Indicator** — a Spring Boot Actuator health check for the configured flag provider.
+- **Provider Starters** — one starter module per feature-flag backend, each configured under its own
+  `spring.openfeature.<provider>.*` prefix.
+- **Extension Points** — `ClientCustomizer`, `OpenFeatureAPICustomizer`, and per-provider customizers let you tweak
+  the auto-configured beans.
+- **Security Integration** — when Spring Security is on the classpath, `userId` and `authorities` are automatically
+  added to every flag evaluation context.
 
 ## Prerequisites
 
-Before running the application, ensure you have the following installed:
-
-- Java 17 or higher
-- Maven 3.8++
+- Java 17
+- Maven (the repository ships the Maven wrapper `./mvnw`)
 
 ## Getting Started
 
-### 1. Clone the Repository
+### 1. Add the Dependency
 
-```bash
-$ git clone https://github.com/iromu/spring-boot-openfeature.git
-$ cd spring-boot-openfeature
+Every provider has its own starter. For Unleash:
+
+**Maven**
+
+```xml
+<project>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.iromu.openfeature</groupId>
+            <artifactId>spring-boot-starter-openfeature-unleash</artifactId>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.iromu.openfeature</groupId>
+                <artifactId>spring-boot-openfeature-dependencies</artifactId>
+                <version>${spring-boot-openfeature.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>
 ```
 
-### 2. Configure OpenFeature Provider
+**Gradle**
 
-OpenFeature allows you to integrate with a feature flag management provider. Update the configuration in
-`application.properties` or `application.yml`.
+```groovy
+dependencyManagement {
+    imports {
+        mavenBom "org.iromu.openfeature:spring-boot-openfeature-dependencies:${springBootOpenFeatureVersion}"
+    }
+}
 
-For example, if you're using Unleash:
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.iromu.openfeature:spring-boot-starter-openfeature-unleash'
+}
+```
 
-```properties
+The BOM (`spring-boot-openfeature-dependencies`) pins the OpenFeature SDK and every provider library version, so you
+do not need to declare versions yourself.
+
+### 2. Configure the Provider
+
+Configure the provider under its `spring.openfeature.<provider>.*` prefix in `application.yml` (or
+`application.properties`). For example, Unleash:
+
+```yaml
 spring:
-    openfeature:
-        unleash:
-            app-name:${spring.application.name}
-            environment:development
-            unleash-api:http://unleash-instance:54242/api/
-            unleash-token:'default:development.your-api-key'
-    application:
-        name:UnleashApplication
+  application:
+    name: UnleashApplication
+  openfeature:
+    unleash:
+      app-name: ${spring.application.name}
+      environment: development
+      unleash-api: http://unleash-instance:4242/api/
+      unleash-token: 'default:development.your-api-key'
 ```
 
-Refer to the provider's documentation for specific configuration details.
+Each provider starter also accepts an `enabled` property (`spring.openfeature.<provider>.enabled`) to switch its
+auto-configuration on or off. Refer to the provider's own documentation for the full set of options.
 
-### 3. Build and Run the Example Applications
+### 3. Use the `Client`
 
-Using Maven:
-
-```bash
-$ cd examples
-$ mvn clean package
-```
-
-### 4. Testing Feature Flags
-
-To test feature flags, create a simple feature toggle in your provider and use OpenFeature APIs in your code. Example:
+Inject the auto-configured `Client` and evaluate flags:
 
 ```java
 import dev.openfeature.sdk.Client;
+import dev.openfeature.sdk.ImmutableContext;
+import dev.openfeature.sdk.Value;
 
 @RestController
+@RequestMapping("/feature")
 public class FeatureController {
 
     private final Client client;
-    
+
     public FeatureController(Client client) {
         this.client = client;
     }
-    
-    @GetMapping("/feature-status")
-    public String getFeatureStatus() {
-        boolean isFeatureEnabled = client.getBooleanValue("my-feature", false);
-        return isFeatureEnabled ? "Feature is enabled!" : "Feature is disabled.";
+
+    @GetMapping("{name}")
+    public Boolean feature(@PathVariable("name") final String name) {
+        return this.client.getBooleanValue(name, false);
     }
 
-    @GetMapping("/user/{id}")
+    @GetMapping("user/{id}")
     public Boolean featureOnUserId(@PathVariable("id") final String id) {
-        return client.getBooleanValue("users-flag", false, new ImmutableContext(Map.of("userId", new Value(id))));
+        return this.client.getBooleanValue("users-flag", false,
+                new ImmutableContext(Map.of("userId", new Value(id))));
     }
 }
 ```
 
-Navigate to `/feature-status` to see the feature toggle in action.
+### 4. Use `@ToggleOnFlag`
 
+The `@ToggleOnFlag` annotation (from `org.iromu.openfeature.boot.aop`) conditionally executes a method based on a
+flag. `attributes` accepts a SpEL map that is evaluated into the flag evaluation context, and `orElse` names a
+fallback method invoked when the flag evaluates to `false`.
 
-
-### 5. Annotations
-
-With a strategy defined like:
+Given an Unleash flag defined as:
 
 ```json
+{
+  "name": "users-flag",
+  "enabled": true,
+  "strategies": [
     {
-      "name": "users-flag",
-      "enabled": true,
-      "strategies": [
-        {
-          "name": "userWithId",
-          "parameters": {
-            "userIds": "111,234"
-          }
-        }
-      ]
+      "name": "userWithId",
+      "parameters": {
+        "userIds": "111,234"
+      }
     }
+  ]
+}
 ```
 
 ```java
+import org.iromu.openfeature.boot.aop.ToggleOnFlag;
+
 @RestController
+@RequestMapping("/feature")
 public class UserController {
 
     @GetMapping("annotated/user/{id}")
@@ -134,66 +181,79 @@ public class UserController {
 
 ## OpenFeature Providers
 
-OpenFeature supports multiple feature flag providers, including:
+Each backend has its own starter module under `org.iromu.openfeature`:
 
-- Unleash
-- Split
-- ...
+| Provider      | Starter artifact                                     |
+|---------------|------------------------------------------------------|
+| ConfigCat     | `spring-boot-starter-openfeature-configcat`          |
+| Env Var       | `spring-boot-starter-openfeature-envvar`             |
+| flagd         | `spring-boot-starter-openfeature-flagd`              |
+| Flagsmith     | `spring-boot-starter-openfeature-flagsmith`          |
+| Flipt         | `spring-boot-starter-openfeature-flipt`              |
+| GoFeatureFlag | `spring-boot-starter-openfeature-gofeatureflag`      |
+| GrowthBook    | `spring-boot-starter-openfeature-growthbook`         |
+| JsonLogic     | `spring-boot-starter-openfeature-jsonlogic`          |
+| Multi-Provider| `spring-boot-starter-openfeature-multiprovider`      |
+| Statsig       | `spring-boot-starter-openfeature-statsig`            |
+| Unleash       | `spring-boot-starter-openfeature-unleash`            |
 
-To switch providers, replace the dependency and update configuration as per the provider's documentation.
+To switch providers, replace the starter dependency and update the configuration as per the provider's documentation.
 
-## Dependencies
+## Example Applications
 
-Key dependencies for this project:
+The `examples/` directory contains two runnable applications (built with the `examples` profile or as a separate
+reactor; they resolve the starters from the local build or the snapshot repository):
 
-- Spring Boot Starter Web
-- Spring Boot OpenFeature Starter
-- OpenFeature Provider (e.g., Unleash or Split)
+- **`unleash-simple`** — runs on port `9998` with a bundled in-memory fake Unleash provider; no external server
+  needed.
+- **`unleash-advanced`** — runs on port `9999` against a mocked Unleash API server, using a local `features.json`
+  backup file.
 
-Add the OpenFeature SDK and provider dependencies to your `pom.xml` or `build.gradle`:
-
-**Maven**
-
-```xml
-<project>
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.iromu.openfeature</groupId>
-            <artifactId>spring-boot-starter-openfeature-unleash</artifactId>
-            <version>${spring-boot-openfeature.version}</version>
-        </dependency>
-    </dependencies>
-</project>
+```bash
+$ cd examples
+$ mvn clean package
 ```
 
-**Gradle**
+Then run the packaged application, for example:
 
-```groovy
-dependencyManagement {
-    imports {
-        mavenBom "org.iromu.openfeature:spring-boot-openfeature-dependencies:${springBootOpenFeatureDependenciesVersion}"
-    }
-}
-
-dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.iromu.openfeature:spring-boot-starter-openfeature'
-    implementation 'dev.openfeature.contrib.providers:unleash'
-}
+```bash
+$ java -jar unleash-simple/target/unleash-simple-${revision}.jar
 ```
+
+Try the endpoints (`unleash-simple`):
+
+```bash
+$ curl http://localhost:9998/feature/random-boolean-flag
+$ curl http://localhost:9998/feature/greet/world
+```
+
+And with `unleash-advanced` running on `9999`:
+
+```bash
+$ curl http://localhost:9999/feature/annotated/user/111
+```
+
+## Building the Project
+
+All commands use the Maven wrapper from the repository root:
+
+```bash
+# Full build (compile, checkstyle, formatting, tests, coverage)
+$ ./mvnw clean verify
+
+# Skip tests
+$ ./mvnw clean verify -DskipTests
+
+# Build a single module and its dependencies
+$ ./mvnw -pl spring-boot-starter-openfeature-unleash -am clean verify
+```
+
+Code style is enforced by Spring Java Format and Checkstyle, which run automatically during the `validate` phase.
 
 ## Contributing
 
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository
-2. Create a new branch
-3. Make your changes and test thoroughly
-4. Submit a pull request
+Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for the full guide on reporting bugs, suggesting
+features, code style, testing, and the pull request process.
 
 ## License
 
@@ -204,7 +264,3 @@ This project is licensed under the Apache License 2.0. See the [LICENSE](LICENSE
 - [OpenFeature Documentation](https://docs.openfeature.dev/)
 - [Spring Boot Documentation](https://spring.io/projects/spring-boot)
 - [Unleash Documentation](https://docs.getunleash.io/)
-
----
-
-Happy coding! 🚀

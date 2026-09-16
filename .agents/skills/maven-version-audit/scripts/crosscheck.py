@@ -8,10 +8,12 @@ import os
 import re
 import sys
 
-ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, os.pardir))
-TMP = os.path.join(ROOT, ".qwen", "tmp")
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import _va_paths as va
 import step3_doc as S  # noqa
+
+ROOT = va.ROOT
+TMP = va.TMP
 
 LINE = re.compile(r"^\[INFO\]\s+([\w.\-]+):([\w.\-]+)\s+\.{2,}\s+([\w.\-+]+)"
                   r"\s+->\s+([\w.\-+]+)")

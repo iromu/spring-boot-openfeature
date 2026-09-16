@@ -36,11 +36,11 @@ multiplier.
 **Spring Boot OpenFeature** is a Spring Boot starter that integrates [OpenFeature](https://openfeature.dev/) — an open standard for feature-flag management — into Spring Boot applications. It provides auto-configuration, a `Client` bean, a health indicator, a declarative `@ToggleOnFlag` AOP annotation, and per-provider starters so consumers can wire up a feature-flag backend with minimal configuration.
 
 - **Language / Runtime:** Java 17
-- **Framework:** Spring Boot 4.0.1
-- **Core SDK:** OpenFeature Java SDK (`dev.openfeature.sdk`) 1.15.1
+- **Framework:** Spring Boot 4.1.1 (`spring-boot.version`)
+- **Core SDK:** OpenFeature Java SDK (`dev.openfeature.sdk`) 1.22.1 (`sdk.version`)
 - **Build tool:** Maven (multi-module, uses the Maven wrapper `./mvnw`)
 - **License:** Apache 2.0 (every source file carries the Apache license header)
-- **Coordinates:** `org.iromu.openfeature:spring-boot-openfeature`, version managed by `${revision}` (currently `4.0.1-SNAPSHOT`)
+- **Coordinates:** `org.iromu.openfeature:spring-boot-openfeature`, version managed by `${revision}` (currently `4.1.2-SNAPSHOT`)
 
 ## Module Architecture
 
