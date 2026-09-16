@@ -1,13 +1,10 @@
 # Spring Boot OpenFeature
 
-[![Apache License 2](https://img.shields.io/badge/license-ASF2-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0.txt)
-![Build Status](https://github.com/iromu/spring-boot-openfeature/actions/workflows/snapshots.yml/badge.svg?branch=main)
-![Sonar Coverage](https://img.shields.io/sonar/coverage/iromu_spring-boot-openfeature?server=https%3A%2F%2Fsonarcloud.io)
+![Build Status](https://github.com/iromu/spring-boot-openfeature/actions/workflows/release.yml/badge.svg?branch=main)![Build Status](https://github.com/iromu/spring-boot-openfeature/actions/workflows/snapshots.yml/badge.svg?branch=main)
 [![Coveralls](https://img.shields.io/coverallsCoverage/github/iromu/spring-boot-openfeature)](https://coveralls.io/github/iromu/spring-boot-openfeature?branch=main)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=iromu_spring-boot-openfeature&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=iromu_spring-boot-openfeature)
-[![Maven Central](https://img.shields.io/maven-central/v/org.iromu.openfeature/spring-boot-openfeature?label=release)](https://repo1.maven.org/maven2/org/iromu/openfeature/)
-[![Maven metadata URL](https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Fcentral.sonatype.com%2Frepository%2Fmaven-snapshots%2Forg%2Firomu%2Fopenfeature%2Fspring-boot-openfeature%2Fmaven-metadata.xml&label=snapshot)](https://central.sonatype.com/service/rest/repository/browse/maven-snapshots/org/iromu/openfeature/)
-[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/iromu/spring-boot-openfeature/badge)](https://securityscorecards.dev/viewer/?uri=github.com/iromu/spring-boot-openfeature)
+
+[![Maven Central](https://img.shields.io/maven-central/v/org.iromu.openfeature/spring-boot-openfeature?label=Release)](https://repo1.maven.org/maven2/org/iromu/openfeature/)
+[![Maven Snapshot](https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Fcentral.sonatype.com%2Frepository%2Fmaven-snapshots%2Forg%2Firomu%2Fopenfeature%2Fspring-boot-openfeature%2Fmaven-metadata.xml&label=Snapshot)](https://central.sonatype.com/service/rest/repository/browse/maven-snapshots/org/iromu/openfeature/)
 
 This is a Spring Boot starter that integrates [OpenFeature](https://openfeature.dev/), an open standard for feature flag
 management. Add one starter dependency, set a few `spring.openfeature.*` properties, and feature flags work in your
