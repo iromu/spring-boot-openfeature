@@ -87,7 +87,7 @@
 
     <configcat.version>0.2.1</configcat.version>
     <env-var.version>0.0.12</env-var.version>
-    <flagd.version>0.14.1</flagd.version>
+    <flagd.version>0.14.2</flagd.version>
     <flagsmith.version>0.0.13</flagsmith.version>
     <flagsmith-java-client.version>8.1.1</flagsmith-java-client.version>
     <flipt.version>0.1.4</flipt.version>
