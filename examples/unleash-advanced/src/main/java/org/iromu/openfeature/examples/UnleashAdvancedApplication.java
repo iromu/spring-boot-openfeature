@@ -28,7 +28,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class UnleashAdvancedApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(UnleashAdvancedApplication.class);
+		SpringApplication.run(UnleashAdvancedApplication.class, args);
 	}
 
 }

@@ -34,7 +34,11 @@ name) as fact — quote it from the file or emit it from the parser. Distinguish
 artifact is a parent is not a missing coordinate — parse the parent's own `<repositories>` and probe
 each declared repo before calling a coordinate unresolvable. Prefer the narrowest test that answers
 the question and escalate only if insufficient (`compile` → targeted `test -Dtest=<ClassName>` → full
-`-Psonar`); never substitute a broad run for a narrow claim. Grep build logs for
+`-Psonar`); never substitute a broad run for a narrow claim. A probe whose own flags suppress its
+output is not a negative result either: `mvn -q dependency:tree` prints **nothing**, so
+`dependency:tree | grep aspectj` returning empty means "no output", not "absent from the classpath" —
+drop `-q` and confirm the tree has lines (`grep -c ':compile\|:runtime'`) before believing any
+absence it appears to show. Grep build logs for
 `Failed to collect dependencies|Failed to download` rather than inferring absence from a directory
 listing. Also: `examples/pom.xml` spells its property `sprindoc-openapi.version`, so
 `-Dspringdoc-openapi.version=…` is a silent no-op — prove a `-D` actually binds by overriding it to a

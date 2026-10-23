@@ -70,8 +70,23 @@
             </dependency>
             <dependency>
                 <groupId>dev.openfeature.contrib.providers</groupId>
+                <artifactId>gcp</artifactId>
+                <version>${gcp.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>dev.openfeature.contrib.providers</groupId>
                 <artifactId>go-feature-flag</artifactId>
                 <version>${go-feature-flag.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.cloud</groupId>
+                <artifactId>google-cloud-secretmanager</artifactId>
+                <version>${google-cloud-secretmanager.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.cloud</groupId>
+                <artifactId>google-cloud-parametermanager</artifactId>
+                <version>${google-cloud-parametermanager.version}</version>
             </dependency>
             <dependency>
                 <groupId>dev.openfeature.contrib.providers</groupId>

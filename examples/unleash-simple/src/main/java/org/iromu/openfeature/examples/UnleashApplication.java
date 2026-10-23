@@ -28,7 +28,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class UnleashApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(UnleashApplication.class);
+		SpringApplication.run(UnleashApplication.class, args);
 	}
 
 }
