@@ -61,6 +61,7 @@
     <module>spring-boot-starter-openfeature-gofeatureflag</module>
     <module>spring-boot-starter-openfeature-jsonlogic</module>
     <module>spring-boot-starter-openfeature-multiprovider</module>
+    <module>spring-boot-starter-openfeature-ofrep</module>
     <module>spring-boot-starter-openfeature-statsig</module>
     <module>spring-boot-starter-openfeature-unleash</module>
     <module>spring-openfeature</module>
@@ -98,6 +99,7 @@
     <google-cloud-parametermanager.version>0.36.0</google-cloud-parametermanager.version>
     <jsonlogic-eval-provider.version>1.3.0</jsonlogic-eval-provider.version>
     <multiprovider.version>0.0.3</multiprovider.version>
+    <ofrep.version>0.0.2</ofrep.version>
     <statsig.version>0.2.1</statsig.version>
     <unleash.version>0.1.3-alpha</unleash.version>
     <unleash-client-java.version>12.3.0</unleash-client-java.version>
