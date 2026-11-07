@@ -45,11 +45,11 @@ jobs:
           find . -name 'pom.xml' | xargs git add
           git commit -m "Tagged version v${VERSION} [skip-ci]"
           git push
-          
+
           git tag v$VERSION
           git push origin v$VERSION
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
 
       - name: Publish version to the Maven Central Repository
         run: ./mvnw -B --no-transfer-progress deploy -P publish -DskipTests
@@ -62,10 +62,10 @@ jobs:
         run: |
           NEXT_SNAPSHOT=$(./mvnw -B --no-transfer-progress help:evaluate -Dexpression=revision -q -DforceStdout | awk -F. -v OFS=. '{$NF += 1 ; print}')-SNAPSHOT
           ./mvnw -B --no-transfer-progress versions:set-property -Dproperty=revision -DnewVersion=$NEXT_SNAPSHOT
-          ./mvnw -B --no-transfer-progress versions:commit         
-          
+          ./mvnw -B --no-transfer-progress versions:commit
+
           find . -name 'pom.xml' | xargs git add
           git commit -m "Increment version to ${NEXT_SNAPSHOT} [skip-ci]"
           git push origin
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
