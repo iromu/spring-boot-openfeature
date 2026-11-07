@@ -6,7 +6,7 @@ language: "default"
 source_paths:
   - "spring-openfeature/src/main/java/org/iromu/openfeature/boot/properties/OpenFeatureProperties.java"
   - "spring-boot-starter-openfeature-unleash/src/main/java/org/iromu/openfeature/boot/unleash/UnleashProperties.java"
-updated_at: "2026-09-05"
+updated_at: "2026-11-07"
 ---
 
 # Configuration Properties
@@ -21,7 +21,7 @@ All configuration lives under the `spring.openfeature` prefix.
 
 ## Per-provider
 
-Each provider starter binds its own sub-prefix: `spring.openfeature.unleash.*`, `spring.openfeature.configcat.*`, `spring.openfeature.flagd.*`, and so on. Every provider has:
+Each provider starter binds its own sub-prefix: `spring.openfeature.unleash.*`, `spring.openfeature.configcat.*`, `spring.openfeature.flagd.*`, `spring.openfeature.gcp.*`, `spring.openfeature.ofrep.*`, `spring.openfeature.optimizely.*`, and so on. Every provider has:
 
 | Property | Default | Effect |
 | --- | --- | --- |

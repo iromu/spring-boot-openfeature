@@ -1,0 +1,13 @@
+server.port: 9999
+spring:
+  openfeature:
+    gcp:
+      type: ${GCP_FLAG_TYPE:secretmanager}
+      project-id: ${GCP_PROJECT_ID:}
+      # Unset falls back to Application Default Credentials. To use a key file instead:
+      # service-account-json: file:${GOOGLE_APPLICATION_CREDENTIALS:}
+  application:
+    name: GcpApplication
+
+# Boot without GCP at all: run with --example.fake-provider=true
+logging.level.org.iromu: DEBUG

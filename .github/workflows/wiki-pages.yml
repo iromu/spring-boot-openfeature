@@ -1,0 +1,55 @@
+name: Deploy static site to Pages
+
+# Builds the .wiki/ knowledge base into a static site with the reusable
+# iromu/wiki-site-action, then deploys it to GitHub Pages using the official
+# custom-workflow approach (actions/upload-pages-artifact + actions/deploy-pages).
+# The repo's Pages publishing source must be set to "GitHub Actions" . Runs on pushes to the
+# default branch that touch the wiki or this workflow, and on manual dispatch.
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.wiki/**'
+      - '.github/workflows/wiki-pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v4
+
+      - name: Build the wiki site
+        uses: iromu/wiki-site-action@v2
+        with:
+          wiki-dir: .wiki
+          out-dir: dist
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

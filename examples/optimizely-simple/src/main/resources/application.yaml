@@ -1,0 +1,16 @@
+server.port: 9999
+spring:
+  openfeature:
+    optimizely:
+      # Remote project config (default). Set OPTIMIZELY_SDK_KEY to run for real.
+      sdk-key: ${OPTIMIZELY_SDK_KEY:}
+      config-url: ${OPTIMIZELY_CONFIG_URL:https://config.optimizely.com/api/v4/optimizely/datafile.json}
+      # datafile-auth-token: ${OPTIMIZELY_DATAFILE_AUTH_TOKEN:}
+      # poll-interval: 30
+      # Or evaluate from a local datafile (offline) instead of the remote sdk-key:
+      # datafile: <json-datafile>
+  application:
+    name: OptimizelyApplication
+
+# Boot without Optimizely: run with --example.fake-provider=true
+logging.level.org.iromu: DEBUG

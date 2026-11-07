@@ -70,8 +70,23 @@
             </dependency>
             <dependency>
                 <groupId>dev.openfeature.contrib.providers</groupId>
+                <artifactId>gcp</artifactId>
+                <version>${gcp.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>dev.openfeature.contrib.providers</groupId>
                 <artifactId>go-feature-flag</artifactId>
                 <version>${go-feature-flag.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.cloud</groupId>
+                <artifactId>google-cloud-secretmanager</artifactId>
+                <version>${google-cloud-secretmanager.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.cloud</groupId>
+                <artifactId>google-cloud-parametermanager</artifactId>
+                <version>${google-cloud-parametermanager.version}</version>
             </dependency>
             <dependency>
                 <groupId>dev.openfeature.contrib.providers</groupId>
@@ -82,6 +97,11 @@
                 <groupId>dev.openfeature.contrib.providers</groupId>
                 <artifactId>multiprovider</artifactId>
                 <version>${multiprovider.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>dev.openfeature.contrib.providers</groupId>
+                <artifactId>ofrep</artifactId>
+                <version>${ofrep.version}</version>
             </dependency>
             <dependency>
                 <groupId>dev.openfeature.contrib.providers</groupId>
@@ -123,6 +143,26 @@
                 <groupId>com.github.growthbook</groupId>
                 <artifactId>growthbook-sdk-java</artifactId>
                 <version>${growthbook-sdk-java.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>dev.openfeature.contrib.providers</groupId>
+                <artifactId>optimizely</artifactId>
+                <version>${optimizely.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.optimizely.ab</groupId>
+                <artifactId>core-api</artifactId>
+                <version>${optimizely-sdk.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.optimizely.ab</groupId>
+                <artifactId>core-httpclient-impl</artifactId>
+                <version>${optimizely-sdk.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.json</groupId>
+                <artifactId>json</artifactId>
+                <version>${json.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

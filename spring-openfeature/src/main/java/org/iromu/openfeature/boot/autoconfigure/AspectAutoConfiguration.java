@@ -19,6 +19,7 @@ package org.iromu.openfeature.boot.autoconfigure;
 import org.iromu.openfeature.boot.aop.ToggleOnFlagAspect;
 
 import org.springframework.boot.autoconfigure.AutoConfiguration;
+import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.context.annotation.Import;
 
 /**
@@ -27,6 +28,7 @@ import org.springframework.context.annotation.Import;
  * @author Ivan Rodriguez
  */
 @AutoConfiguration
+@AutoConfigureAfter(name = "org.iromu.openfeature.boot.autoconfigure.ClientAutoConfiguration")
 @Import(ToggleOnFlagAspect.class)
 public class AspectAutoConfiguration {
 

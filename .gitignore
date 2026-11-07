@@ -36,3 +36,5 @@ build
 secret.txt
 
 .qwen/tmp
+.qwen/reviews
+

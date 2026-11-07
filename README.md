@@ -187,6 +187,7 @@ Each backend has its own starter module under `org.iromu.openfeature`:
 | flagd         | `spring-boot-starter-openfeature-flagd`              |
 | Flagsmith     | `spring-boot-starter-openfeature-flagsmith`          |
 | Flipt         | `spring-boot-starter-openfeature-flipt`              |
+| GCP           | `spring-boot-starter-openfeature-gcp`                |
 | GoFeatureFlag | `spring-boot-starter-openfeature-gofeatureflag`      |
 | GrowthBook    | `spring-boot-starter-openfeature-growthbook`         |
 | JsonLogic     | `spring-boot-starter-openfeature-jsonlogic`          |
