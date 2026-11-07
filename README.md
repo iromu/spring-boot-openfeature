@@ -100,7 +100,8 @@ spring:
 ```
 
 Each provider starter also accepts an `enabled` property (`spring.openfeature.<provider>.enabled`) to switch its
-auto-configuration on or off. Refer to the provider's own documentation for the full set of options.
+auto-configuration on or off. See the [provider table](#openfeature-providers) below for the full set of options
+per provider.
 
 ### 3. Use the `Client`
 
@@ -180,22 +181,24 @@ public class UserController {
 
 Each backend has its own starter module under `org.iromu.openfeature`:
 
-| Provider      | Starter artifact                                     |
-|---------------|------------------------------------------------------|
-| ConfigCat     | `spring-boot-starter-openfeature-configcat`          |
-| Env Var       | `spring-boot-starter-openfeature-envvar`             |
-| flagd         | `spring-boot-starter-openfeature-flagd`              |
-| Flagsmith     | `spring-boot-starter-openfeature-flagsmith`          |
-| Flipt         | `spring-boot-starter-openfeature-flipt`              |
-| GCP           | `spring-boot-starter-openfeature-gcp`                |
-| GoFeatureFlag | `spring-boot-starter-openfeature-gofeatureflag`      |
-| GrowthBook    | `spring-boot-starter-openfeature-growthbook`         |
-| JsonLogic     | `spring-boot-starter-openfeature-jsonlogic`          |
-| Multi-Provider| `spring-boot-starter-openfeature-multiprovider`      |
-| Statsig       | `spring-boot-starter-openfeature-statsig`            |
-| Unleash       | `spring-boot-starter-openfeature-unleash`            |
+| Provider       | Starter artifact                                     | Documentation |
+|----------------|------------------------------------------------------|---------------|
+| ConfigCat      | `spring-boot-starter-openfeature-configcat`          | [README](spring-boot-starter-openfeature-configcat/README.md) |
+| Env Var        | `spring-boot-starter-openfeature-envvar`             | [README](spring-boot-starter-openfeature-envvar/README.md) |
+| flagd          | `spring-boot-starter-openfeature-flagd`              | [README](spring-boot-starter-openfeature-flagd/README.md) |
+| Flagsmith      | `spring-boot-starter-openfeature-flagsmith`          | [README](spring-boot-starter-openfeature-flagsmith/README.md) |
+| Flipt          | `spring-boot-starter-openfeature-flipt`              | [README](spring-boot-starter-openfeature-flipt/README.md) |
+| GCP            | `spring-boot-starter-openfeature-gcp`                | [README](spring-boot-starter-openfeature-gcp/README.md) |
+| GoFeatureFlag  | `spring-boot-starter-openfeature-gofeatureflag`      | [README](spring-boot-starter-openfeature-gofeatureflag/README.md) |
+| GrowthBook     | `spring-boot-starter-openfeature-growthbook`         | [README](spring-boot-starter-openfeature-growthbook/README.md) |
+| JsonLogic      | `spring-boot-starter-openfeature-jsonlogic`          | [README](spring-boot-starter-openfeature-jsonlogic/README.md) |
+| Multi-Provider | `spring-boot-starter-openfeature-multiprovider`      | [README](spring-boot-starter-openfeature-multiprovider/README.md) |
+| OFREP          | `spring-boot-starter-openfeature-ofrep`              | [README](spring-boot-starter-openfeature-ofrep/README.md) |
+| Optimizely     | `spring-boot-starter-openfeature-optimizely`         | [README](spring-boot-starter-openfeature-optimizely/README.md) |
+| Statsig        | `spring-boot-starter-openfeature-statsig`            | [README](spring-boot-starter-openfeature-statsig/README.md) |
+| Unleash        | `spring-boot-starter-openfeature-unleash`            | [README](spring-boot-starter-openfeature-unleash/README.md) |
 
-To switch providers, replace the starter dependency and update the configuration as per the provider's documentation.
+To switch providers, replace the starter dependency and update the configuration as described in the provider's README.
 
 ## Example Applications
 
