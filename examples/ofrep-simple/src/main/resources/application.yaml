@@ -1,0 +1,16 @@
+server.port: 9999
+spring:
+  openfeature:
+    ofrep:
+      base-url: ${OFREP_BASE_URL:}
+      connect-timeout: 5s
+      request-timeout: 5s
+      # Send headers with every evaluation request, e.g.:
+      # headers:
+      #   Authorization:
+      #     - Bearer ${OFREP_TOKEN:}
+  application:
+    name: OfrepApplication
+
+# Boot without an OFREP endpoint: run with --example.fake-provider=true
+logging.level.org.iromu: DEBUG

@@ -36,6 +36,8 @@
         <module>unleash-advanced</module>
         <module>unleash-simple</module>
         <module>gcp-simple</module>
+        <module>ofrep-simple</module>
+        <module>optimizely-simple</module>
     </modules>
 
     <properties>
