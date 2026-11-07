@@ -6,12 +6,12 @@ language: "default"
 source_paths:
   - "spring-boot-starter-openfeature-unleash/src/main/java/org/iromu/openfeature/boot/autoconfigure/unleash/UnleashAutoConfiguration.java"
   - "spring-boot-starter-openfeature-unleash/src/main/java/org/iromu/openfeature/boot/unleash/UnleashProperties.java"
-updated_at: "2026-09-05"
+updated_at: "2026-11-07"
 ---
 
 # Provider Starters
 
-One Maven module per flag backend: `unleash`, `configcat`, `envvar`, `flagd`, `flagsmith`, `flipt`, `gofeatureflag`, `jsonlogic`, `statsig`, `growthbook`, plus `multiprovider` ([[features/multi-provider]]).
+One Maven module per flag backend: `unleash`, `configcat`, `envvar`, `flagd`, `flagsmith`, `flipt`, `gofeatureflag`, `jsonlogic`, `statsig`, `growthbook`, `gcp`, `ofrep`, `optimizely`, plus `multiprovider` ([[features/multi-provider]]).
 
 ## The shared pattern
 
@@ -27,6 +27,9 @@ One Maven module per flag backend: `unleash`, `configcat`, `envvar`, `flagd`, `f
 
 - **Unleash:** `UnleashProperties` (`spring.openfeature.unleash.*`) maps to `UnleashConfig` — API URL, token (sent as `Authorization` header), app name, environment, optional `backupFile` local cache.
 - **EnvVar:** reads flags from environment variables via `System.getenv`; exposes `EnvironmentGateway` and `EnvironmentKeyTransformer` beans so consumers can swap them. No customizer interface.
+- **GCP:** `GcpProperties` (`spring.openfeature.gcp.*`) points at a Google Secret Manager secret holding a flag config; a fake provider backs the runnable `gcp-simple` example.
+- **OFREP:** binds to an OpenFeature Remote Evaluation Protocol endpoint (`spring.openfeature.ofrep.*`). The provider has no public constructor — the starter builds it via the `constructProvider` factory, which validates the base URL.
+- **Optimizely:** `OptimizelyProperties` (`spring.openfeature.optimizely.*`) assembles the vendor SDK's `Configuration` (datafile or sdk-key). The SDK's config parser imports `org.json` without declaring it, so the BOM manages `org.json:json` explicitly.
 - Most others (configcat, flagd, flagsmith, flipt, gofeatureflag, jsonlogic, statsig, growthbook) follow the same shape with their own `Properties` + `Customizer`.
 
 ## Adding a new provider

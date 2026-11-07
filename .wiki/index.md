@@ -3,8 +3,8 @@ title: "Project Wiki"
 type: "index"
 status: "active"
 language: "default"
-last_commit: "a0dc578aa4b3e811126d7ec3d9d7e7b1d9b298cd"
-updated_at: "2026-09-05"
+last_commit: "07e9442607c3d56bb5997ada0c56b7d6822f28f9"
+updated_at: "2026-11-07"
 ---
 
 # Spring Boot OpenFeature — Wiki
