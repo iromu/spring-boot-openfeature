@@ -1,0 +1,61 @@
+{
+  "version": "4",
+  "anonymizeIP": true,
+  "botFiltering": false,
+  "projectId": "project_test",
+  "accountId": "account_test",
+  "revision": "1",
+  "attributes": [],
+  "events": [],
+  "experiments": [],
+  "groups": [],
+  "featureFlags": [
+    {
+      "id": "flag_1",
+      "key": "test_feature",
+      "rolloutId": "rollout_1",
+      "experimentIds": [],
+      "variables": [
+        {
+          "id": "var_value",
+          "key": "value",
+          "type": "boolean",
+          "defaultValue": "false"
+        }
+      ]
+    }
+  ],
+  "rollouts": [
+    {
+      "id": "rollout_1",
+      "experiments": [
+        {
+          "id": "rollout_exp_1",
+          "key": "test_feature_rollout",
+          "status": "Running",
+          "audienceIds": [],
+          "forcedVariations": {},
+          "variations": [
+            {
+              "id": "var_1",
+              "key": "enabled",
+              "featureEnabled": true,
+              "variables": [
+                {
+                  "id": "var_value",
+                  "value": "true"
+                }
+              ]
+            }
+          ],
+          "trafficAllocation": [
+            {
+              "entityId": "var_1",
+              "endOfRange": 100000
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
