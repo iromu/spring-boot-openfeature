@@ -144,6 +144,26 @@
                 <artifactId>growthbook-sdk-java</artifactId>
                 <version>${growthbook-sdk-java.version}</version>
             </dependency>
+            <dependency>
+                <groupId>dev.openfeature.contrib.providers</groupId>
+                <artifactId>optimizely</artifactId>
+                <version>${optimizely.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.optimizely.ab</groupId>
+                <artifactId>core-api</artifactId>
+                <version>${optimizely-sdk.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.optimizely.ab</groupId>
+                <artifactId>core-httpclient-impl</artifactId>
+                <version>${optimizely-sdk.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.json</groupId>
+                <artifactId>json</artifactId>
+                <version>${json.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <build>

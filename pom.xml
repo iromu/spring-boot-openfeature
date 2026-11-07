@@ -67,6 +67,7 @@
     <module>spring-openfeature</module>
     <module>spring-boot-starter-openfeature-growthbook</module>
     <module>spring-boot-starter-openfeature-gcp</module>
+    <module>spring-boot-starter-openfeature-optimizely</module>
   </modules>
 
   <properties>
@@ -108,6 +109,13 @@
 
     <growthbook-sdk-java.version>0.11.0</growthbook-sdk-java.version>
     <growthbook-provider.version>0.0.2</growthbook-provider.version>
+
+    <optimizely.version>1.0.0</optimizely.version>
+    <optimizely-sdk.version>4.2.2</optimizely-sdk.version>
+    <!-- Required by the Optimizely SDK's config parser (com.optimizely.ab:core-api does
+         not declare org.json itself); without it the parser hits NoSuchMethodError on
+         JSONObject.keySet() for any datafile/fetched config. -->
+    <json.version>20250517</json.version>
   </properties>
 
   <dependencyManagement>
