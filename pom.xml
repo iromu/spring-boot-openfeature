@@ -92,7 +92,7 @@
     <env-var.version>0.0.12</env-var.version>
     <flagd.version>0.14.2</flagd.version>
     <flagsmith.version>0.0.13</flagsmith.version>
-    <flagsmith-java-client.version>8.1.1</flagsmith-java-client.version>
+    <flagsmith-java-client.version>8.2.0</flagsmith-java-client.version>
     <flipt.version>0.1.4</flipt.version>
     <gcp.version>0.0.2</gcp.version>
     <go-feature-flag.version>2.0.2</go-feature-flag.version>
