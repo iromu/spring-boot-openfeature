@@ -30,8 +30,8 @@
     <name>spring-boot-starter-openfeature-optimizely</name>
 
     <properties>
-        <!-- JaCoCo instruction-coverage ratchet (measured: 0.5138) -->
-        <jacoco.instruction.minimum>0.51</jacoco.instruction.minimum>
+        <!-- JaCoCo instruction-coverage ratchet (measured: 1.0) -->
+        <jacoco.instruction.minimum>1.0</jacoco.instruction.minimum>
     </properties>
 
     <dependencyManagement>
