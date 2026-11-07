@@ -26,7 +26,7 @@ Maven multi-module build (Java 17, Spring Boot 4). Use the wrapper: `./mvnw`.
 | Profile | Adds |
 | --- | --- |
 | `sonar` | `aggregate-report` module (coverage aggregation) |
-| `examples` | `examples` reactor (`unleash-simple`, `unleash-advanced`, `gcp-simple`) |
+| `examples` | `examples` reactor (`unleash-simple`, `unleash-advanced`, `gcp-simple`, `ofrep-simple`, `optimizely-simple`) |
 | `publish` | GPG signing + Central Portal publishing |
 
 ## Examples
@@ -34,6 +34,8 @@ Maven multi-module build (Java 17, Spring Boot 4). Use the wrapper: `./mvnw`.
 - `examples/unleash-simple` — minimal app: Unleash provider via properties, a `Client`-injected controller, port `9998`.
 - `examples/unleash-advanced` — adds `@ToggleOnFlag` usage, a mocked Unleash API server, and GraalVM native-image config for the Unleash yggdrasil engine.
 - `examples/gcp-simple` — GCP starter backed by a fake Secret Manager provider, mirroring the `unleash-simple` layout.
+- `examples/ofrep-simple` — OFREP starter with an in-memory fake provider (`example.fake-provider=true`), same layout as `gcp-simple`.
+- `examples/optimizely-simple` — Optimizely starter with an in-memory fake provider (`example.fake-provider=true`), same layout as `gcp-simple`.
 
 ## Quality gates
 

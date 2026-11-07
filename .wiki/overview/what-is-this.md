@@ -24,7 +24,7 @@ The root `pom.xml` (aggregator, artifact `org.iromu.openfeature:spring-boot-open
 | `spring-boot-starter-openfeature` | Base starter (`pom` packaging) pulling in the generic auto-config |
 | `spring-boot-openfeature-dependencies` | BOM pinning SDK + provider versions |
 | `spring-boot-starter-openfeature-<provider>` | One module per backend: `unleash`, `configcat`, `envvar`, `flagd`, `flagsmith`, `flipt`, `gofeatureflag`, `jsonlogic`, `multiprovider`, `statsig`, `growthbook`, `gcp`, `ofrep`, `optimizely` |
-| `examples` (separate reactor, `-P examples`) | `unleash-simple`, `unleash-advanced`, and `gcp-simple` runnable apps |
+| `examples` (separate reactor, `-P examples`) | `unleash-simple`, `unleash-advanced`, `gcp-simple`, `ofrep-simple`, `optimizely-simple` runnable apps |
 
 ## Who uses what
 
