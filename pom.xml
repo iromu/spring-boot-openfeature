@@ -95,7 +95,7 @@
     <flagsmith-java-client.version>8.1.1</flagsmith-java-client.version>
     <flipt.version>0.1.4</flipt.version>
     <gcp.version>0.0.2</gcp.version>
-    <go-feature-flag.version>1.2.1</go-feature-flag.version>
+    <go-feature-flag.version>2.0.2</go-feature-flag.version>
     <google-cloud-secretmanager.version>2.92.0</google-cloud-secretmanager.version>
     <google-cloud-parametermanager.version>0.36.0</google-cloud-parametermanager.version>
     <jsonlogic-eval-provider.version>1.3.0</jsonlogic-eval-provider.version>
