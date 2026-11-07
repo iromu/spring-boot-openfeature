@@ -79,7 +79,7 @@ jobs:
           gpg-passphrase: MAVEN_GPG_PASSPHRASE
 
       - name: Publish SNAPSHOT version to the Maven Central Repository
-        run: ./mvnw -B --no-transfer-progress deploy -P publish -DskipTests
+        run: ./mvnw -B --no-transfer-progress deploy -P snapshot -DskipTests
         env:
           MAVEN_USERNAME: ${{ secrets.MAVEN_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.MAVEN_PASSWORD }}
