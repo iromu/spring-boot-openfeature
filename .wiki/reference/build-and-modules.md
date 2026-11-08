@@ -6,7 +6,7 @@ language: "default"
 source_paths:
   - "pom.xml"
   - "examples/pom.xml"
-updated_at: "2026-11-07"
+updated_at: "2026-11-08"
 ---
 
 # Build and Modules
@@ -26,16 +26,18 @@ Maven multi-module build (Java 17, Spring Boot 4). Use the wrapper: `./mvnw`.
 | Profile | Adds |
 | --- | --- |
 | `sonar` | `aggregate-report` module (coverage aggregation) |
-| `examples` | `examples` reactor (`unleash-simple`, `unleash-advanced`, `gcp-simple`, `ofrep-simple`, `optimizely-simple`) |
+| `examples` | `examples` reactor (16 modules: `unleash-simple`, `unleash-advanced`, plus `<provider>-simple` for all other 13 providers) |
 | `publish` | GPG signing + Central Portal publishing |
 
 ## Examples
 
-- `examples/unleash-simple` — minimal app: Unleash provider via properties, a `Client`-injected controller, port `9998`.
-- `examples/unleash-advanced` — adds `@ToggleOnFlag` usage, a mocked Unleash API server, and GraalVM native-image config for the Unleash yggdrasil engine.
-- `examples/gcp-simple` — GCP starter backed by a fake Secret Manager provider, mirroring the `unleash-simple` layout.
-- `examples/ofrep-simple` — OFREP starter with an in-memory fake provider (`example.fake-provider=true`), same layout as `gcp-simple`.
-- `examples/optimizely-simple` — Optimizely starter with an in-memory fake provider (`example.fake-provider=true`), same layout as `gcp-simple`.
+Every provider starter has a runnable `<provider>-simple` example under `examples/`. All share the same layout: a WebFlux app, a controller exercising `Client.getBooleanValue` + `@ToggleOnFlag` AOP, a fake in-memory `FeatureProvider` gated on `--example.fake-provider=true`, Swagger UI redirect, and port `9999`.
+
+- `unleash-simple` / `unleash-advanced` — the original pair (port `9998`); advanced adds a mocked Unleash API server and native-image config.
+- `gcp-simple`, `ofrep-simple`, `optimizely-simple` — the three contrib-backed starters added in PR #229.
+- `configcat-simple`, `envvar-simple`, `flagd-simple`, `flagsmith-simple`, `flipt-simple`, `gofeatureflag-simple`, `growthbook-simple`, `jsonlogic-simple`, `multiprovider-simple`, `statsig-simple` — the remaining ten, completing full provider coverage (added 2026-11-08).
+
+The `multiprovider-simple` example additionally pulls in `spring-boot-starter-openfeature-envvar` so the `MultiProvider` wraps two `FeatureProvider` beans.
 
 ## Quality gates
 
