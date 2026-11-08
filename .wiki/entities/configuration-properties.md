@@ -6,7 +6,7 @@ language: "default"
 source_paths:
   - "spring-openfeature/src/main/java/org/iromu/openfeature/boot/properties/OpenFeatureProperties.java"
   - "spring-boot-starter-openfeature-unleash/src/main/java/org/iromu/openfeature/boot/unleash/UnleashProperties.java"
-updated_at: "2026-11-07"
+updated_at: "2026-11-08"
 ---
 
 # Configuration Properties
@@ -21,7 +21,7 @@ All configuration lives under the `spring.openfeature` prefix.
 
 ## Per-provider
 
-Each provider starter binds its own sub-prefix: `spring.openfeature.unleash.*`, `spring.openfeature.configcat.*`, `spring.openfeature.flagd.*`, `spring.openfeature.gcp.*`, `spring.openfeature.ofrep.*`, `spring.openfeature.optimizely.*`, and so on. Every provider has:
+Each provider starter binds its own sub-prefix: `spring.openfeature.unleash.*`, `spring.openfeature.configcat.*`, `spring.openfeature.flagd.*`, `spring.openfeature.gcp.*`, `spring.openfeature.ofrep.*`, `spring.openfeature.optimizely.*`, `spring.openfeature.launchdarkly.*`, and so on. Every provider has:
 
 | Property | Default | Effect |
 | --- | --- | --- |
@@ -37,4 +37,11 @@ Each provider starter binds its own sub-prefix: `spring.openfeature.unleash.*`, 
 - `backup-file` — optional local JSON cache file
 - polling/metrics tuning: `fetch-toggles-interval`, `send-metrics-interval`, `disable-polling`, `disable-metrics`, timeouts, `synchronous-fetch-on-initialisation`
 
-Settings not covered by properties should go through the provider customizer instead — see [[concepts/customizers]].
+## LaunchDarkly
+
+`LaunchDarklyProperties` (`spring.openfeature.launchdarkly.*`) — deliberately small, because the v7 `LDConfig.Builder` has no flat environment/streaming/polling knobs:
+
+- `service-key` — required when enabled; the LaunchDarkly environment is encoded in the per-environment server-side SDK key
+- `offline` (default `false`) — run the client in offline mode, no connection attempted
+
+Everything else (streaming vs polling vs file data source, endpoint overrides) goes through a `LaunchDarklyCustomizer` bean — see [[concepts/customizers]].
