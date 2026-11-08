@@ -53,7 +53,7 @@
     <properties>
         <revision>4.1.2-SNAPSHOT</revision>
         <spring-boot-openfeature.version>${revision}</spring-boot-openfeature.version>
-        <sprindoc-openapi.version>3.1.1</sprindoc-openapi.version>
+        <sprindoc-openapi.version>3.2.0</sprindoc-openapi.version>
     </properties>
 
     <repositories>
