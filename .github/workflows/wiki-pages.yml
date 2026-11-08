@@ -33,7 +33,7 @@ jobs:
         uses: actions/configure-pages@v4
 
       - name: Build the wiki site
-        uses: iromu/wiki-site-action@v2
+        uses: iromu/wiki-site-action@main
         with:
           wiki-dir: .wiki
           out-dir: dist
