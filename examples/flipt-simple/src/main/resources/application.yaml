@@ -1,0 +1,12 @@
+server.port: 9999
+spring:
+  openfeature:
+    flipt:
+      base-url: ${FLIPT_URL:}
+      namespace: default
+      timeout: 60s
+  application:
+    name: FliptApplication
+
+# Boot without Flipt at all: run with --example.fake-provider=true
+logging.level.org.iromu: DEBUG

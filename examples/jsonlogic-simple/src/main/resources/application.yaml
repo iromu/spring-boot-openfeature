@@ -1,0 +1,11 @@
+server.port: 9999
+spring:
+  openfeature:
+    json-logic:
+      # Point to a JSON file containing your rules, e.g.:
+      # filename: classpath:rules.json
+  application:
+    name: JsonlogicApplication
+
+# Boot without a rules file: run with --example.fake-provider=true
+logging.level.org.iromu: DEBUG

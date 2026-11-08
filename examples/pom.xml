@@ -38,6 +38,16 @@
         <module>gcp-simple</module>
         <module>ofrep-simple</module>
         <module>optimizely-simple</module>
+        <module>configcat-simple</module>
+        <module>envvar-simple</module>
+        <module>flagd-simple</module>
+        <module>flagsmith-simple</module>
+        <module>flipt-simple</module>
+        <module>gofeatureflag-simple</module>
+        <module>growthbook-simple</module>
+        <module>jsonlogic-simple</module>
+        <module>multiprovider-simple</module>
+        <module>statsig-simple</module>
     </modules>
 
     <properties>
@@ -57,6 +67,10 @@
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
+        </repository>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
         </repository>
     </repositories>
 

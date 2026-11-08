@@ -1,0 +1,7 @@
+server.port: 9999
+spring:
+  application:
+    name: MultiProviderApplication
+
+# Boot without any real providers: run with --example.fake-provider=true
+logging.level.org.iromu: DEBUG

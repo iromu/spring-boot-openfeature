@@ -6,7 +6,8 @@ language: "default"
 source_paths:
   - "spring-boot-starter-openfeature-unleash/src/main/java/org/iromu/openfeature/boot/autoconfigure/unleash/UnleashAutoConfiguration.java"
   - "spring-boot-starter-openfeature-unleash/src/main/java/org/iromu/openfeature/boot/unleash/UnleashProperties.java"
-updated_at: "2026-11-07"
+  - "examples/pom.xml"
+updated_at: "2026-11-08"
 ---
 
 # Provider Starters
@@ -41,3 +42,7 @@ Extension points: [[concepts/customizers]]. Config reference: [[entities/configu
 ## Per-provider documentation
 
 Each provider starter module ships a `README.md` with its full `spring.openfeature.<provider>.*` property table, a configuration example, and a short usage snippet. The root `README.md` links to all of them from the provider table.
+
+## Example apps
+
+Every provider starter pairs with a runnable `<provider>-simple` example in the `examples/` reactor (16 modules total including `unleash-advanced`). Each boots without vendor credentials via a `@Primary` fake `FeatureProvider` gated on `--example.fake-provider=true`; the real provider auto-config backs off entirely. See [[reference/build-and-modules]] for the full list.
