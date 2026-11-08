@@ -78,6 +78,17 @@ jobs:
           gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
           gpg-passphrase: MAVEN_GPG_PASSPHRASE
 
+      - name: Test snapshot repo credentials
+        run: |
+          HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" \
+            -u "${{ secrets.MAVEN_USERNAME }}:${{ secrets.MAVEN_PASSWORD }}" \
+            "https://central.sonatype.com/repository/maven-snapshots/org/iromu/openfeature/")
+          echo "Snapshot repo HTTP status: $HTTP_CODE"
+          if [ "$HTTP_CODE" = "401" ] || [ "$HTTP_CODE" = "403" ]; then
+            echo "::error::Credentials rejected by snapshot repo (HTTP $HTTP_CODE)"
+            exit 1
+          fi
+
       - name: Publish SNAPSHOT version to the Maven Central Repository
         run: ./mvnw -B --no-transfer-progress deploy -P publish -DskipTests
         env:
