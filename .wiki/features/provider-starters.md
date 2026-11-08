@@ -12,7 +12,7 @@ updated_at: "2026-11-08"
 
 # Provider Starters
 
-One Maven module per flag backend: `unleash`, `configcat`, `envvar`, `flagd`, `flagsmith`, `flipt`, `gofeatureflag`, `jsonlogic`, `statsig`, `growthbook`, `gcp`, `ofrep`, `optimizely`, plus `multiprovider` ([[features/multi-provider]]).
+One Maven module per flag backend: `unleash`, `configcat`, `envvar`, `flagd`, `flagsmith`, `flipt`, `gofeatureflag`, `jsonlogic`, `statsig`, `growthbook`, `gcp`, `ofrep`, `optimizely`, `launchdarkly`, plus `multiprovider` ([[features/multi-provider]]).
 
 ## The shared pattern
 
@@ -31,6 +31,7 @@ One Maven module per flag backend: `unleash`, `configcat`, `envvar`, `flagd`, `f
 - **GCP:** `GcpProperties` (`spring.openfeature.gcp.*`) points at a Google Secret Manager secret holding a flag config; a fake provider backs the runnable `gcp-simple` example.
 - **OFREP:** binds to an OpenFeature Remote Evaluation Protocol endpoint (`spring.openfeature.ofrep.*`). The provider has no public constructor — the starter builds it via the `constructProvider` factory, which validates the base URL.
 - **Optimizely:** `OptimizelyProperties` (`spring.openfeature.optimizely.*`) assembles the vendor SDK's `Configuration` (datafile or sdk-key). The SDK's config parser imports `org.json` without declaring it, so the BOM manages `org.json:json` explicitly.
+- **LaunchDarkly:** `LaunchDarklyProperties` (`spring.openfeature.launchdarkly.*`) binds `service-key` (the environment is encoded in the key) and `offline`. The LaunchDarkly OpenFeature provider is vendor-published (`com.launchdarkly:launchdarkly-openfeature-serverprovider`), and its POM ships the LaunchDarkly server SDK in `runtime` scope, so the module declares `launchdarkly-java-server-sdk` explicitly to compile against `LDConfig`. Data-source selection (streaming/polling/file) goes through the `LaunchDarklyCustomizer`; the contract tests run credential-free via a file data source + `events(Components.noEvents())`.
 - Most others (configcat, flagd, flagsmith, flipt, gofeatureflag, jsonlogic, statsig, growthbook) follow the same shape with their own `Properties` + `Customizer`.
 
 ## Adding a new provider
@@ -45,4 +46,4 @@ Each provider starter module ships a `README.md` with its full `spring.openfeatu
 
 ## Example apps
 
-Every provider starter pairs with a runnable `<provider>-simple` example in the `examples/` reactor (16 modules total including `unleash-advanced`). Each boots without vendor credentials via a `@Primary` fake `FeatureProvider` gated on `--example.fake-provider=true`; the real provider auto-config backs off entirely. See [[reference/build-and-modules]] for the full list.
+Every provider starter pairs with a runnable `<provider>-simple` example in the `examples/` reactor (17 modules total including `unleash-advanced`). Each boots without vendor credentials via a `@Primary` fake `FeatureProvider` gated on `--example.fake-provider=true`; the real provider auto-config backs off entirely. See [[reference/build-and-modules]] for the full list.

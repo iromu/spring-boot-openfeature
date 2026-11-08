@@ -46,6 +46,7 @@
         <module>gofeatureflag-simple</module>
         <module>growthbook-simple</module>
         <module>jsonlogic-simple</module>
+        <module>launchdarkly-simple</module>
         <module>multiprovider-simple</module>
         <module>statsig-simple</module>
     </modules>

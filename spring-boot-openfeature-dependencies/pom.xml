@@ -164,6 +164,16 @@
                 <artifactId>json</artifactId>
                 <version>${json.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.launchdarkly</groupId>
+                <artifactId>launchdarkly-openfeature-serverprovider</artifactId>
+                <version>${launchdarkly-openfeature.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.launchdarkly</groupId>
+                <artifactId>launchdarkly-java-server-sdk</artifactId>
+                <version>${launchdarkly-java-server-sdk.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <build>
