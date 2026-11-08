@@ -1,0 +1,11 @@
+server.port: 9999
+spring:
+  openfeature:
+    gofeatureflag:
+      endpoint: ${GOFEATUREFLAG_ENDPOINT:}
+      # api-key: ${GOFEATUREFLAG_API_KEY:}
+  application:
+    name: GoFeatureFlagApplication
+
+# Boot without GO Feature Flag at all: run with --example.fake-provider=true
+logging.level.org.iromu: DEBUG

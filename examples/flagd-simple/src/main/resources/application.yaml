@@ -1,0 +1,12 @@
+server.port: 9999
+spring:
+  openfeature:
+    flagd:
+      resolver-type: RPC
+      deadline: 500
+      # offline-flag-source-path: file:${FLAGD_OFFLINE_FLAG_SOURCE:}
+  application:
+    name: FlagdApplication
+
+# Boot without flagd at all: run with --example.fake-provider=true
+logging.level.org.iromu: DEBUG

@@ -1,0 +1,10 @@
+server.port: 9999
+spring:
+  openfeature:
+    config-cat:
+      sdk-key: ${CONFIGCAT_SDK_KEY:}
+  application:
+    name: ConfigCatApplication
+
+# Boot without ConfigCat at all: run with --example.fake-provider=true
+logging.level.org.iromu: DEBUG

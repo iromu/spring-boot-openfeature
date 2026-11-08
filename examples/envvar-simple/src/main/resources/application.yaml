@@ -1,0 +1,7 @@
+server.port: 9999
+spring:
+  application:
+    name: EnvVarApplication
+
+# Boot without any env vars: run with --example.fake-provider=true
+logging.level.org.iromu: DEBUG

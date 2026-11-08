@@ -1,0 +1,11 @@
+server.port: 9999
+spring:
+  openfeature:
+    statsig:
+      sdk-key: ${STATSIG_SDK_KEY:}
+      local-mode: false
+  application:
+    name: StatsigApplication
+
+# Boot without Statsig at all: run with --example.fake-provider=true
+logging.level.org.iromu: DEBUG

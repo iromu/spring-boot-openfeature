@@ -1,0 +1,13 @@
+server.port: 9999
+spring:
+  openfeature:
+    growthbook:
+      api-host: https://cdn.growthbook.io
+      client-key: ${GROWTHBOOK_CLIENT_KEY:}
+      cache-mode: AUTO
+      is-qa-mode: false
+  application:
+    name: GrowthBookApplication
+
+# Boot without GrowthBook at all: run with --example.fake-provider=true
+logging.level.org.iromu: DEBUG

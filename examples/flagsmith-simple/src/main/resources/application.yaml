@@ -1,0 +1,10 @@
+server.port: 9999
+spring:
+  openfeature:
+    flagsmith:
+      api-key: ${FLAGSMITH_API_KEY:}
+  application:
+    name: FlagsmithApplication
+
+# Boot without Flagsmith at all: run with --example.fake-provider=true
+logging.level.org.iromu: DEBUG
