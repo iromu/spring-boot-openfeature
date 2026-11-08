@@ -194,7 +194,7 @@ Each backend has its own starter module under `org.iromu.openfeature`:
 | JsonLogic      | 1.3.0     | `spring-boot-starter-openfeature-jsonlogic`          | [README](spring-boot-starter-openfeature-jsonlogic/README.md) |
 | Multi-Provider | 0.0.3     | `spring-boot-starter-openfeature-multiprovider`      | [README](spring-boot-starter-openfeature-multiprovider/README.md) |
 | OFREP          | 0.0.2     | `spring-boot-starter-openfeature-ofrep`              | [README](spring-boot-starter-openfeature-ofrep/README.md) |
-| Optimizely     | 4.7.0     | `spring-boot-starter-openfeature-optimizely`         | [README](spring-boot-starter-openfeature-optimizely/README.md) |
+| Optimizely     | 1.0.0     | `spring-boot-starter-openfeature-optimizely`         | [README](spring-boot-starter-openfeature-optimizely/README.md) |
 | Statsig        | 0.2.1     | `spring-boot-starter-openfeature-statsig`            | [README](spring-boot-starter-openfeature-statsig/README.md) |
 | Unleash        | 0.1.3-alpha | `spring-boot-starter-openfeature-unleash`          | [README](spring-boot-starter-openfeature-unleash/README.md) |
 
