@@ -37,3 +37,7 @@ One Maven module per flag backend: `unleash`, `configcat`, `envvar`, `flagd`, `f
 Copy the Unleash module: properties, customizer, auto-configuration, `pom.xml`, the `AutoConfiguration.imports` registration, and `ApplicationContextRunner`-style tests. Then add the module + version property to the root `pom.xml` and the BOM.
 
 Extension points: [[concepts/customizers]]. Config reference: [[entities/configuration-properties]].
+
+## Per-provider documentation
+
+Each provider starter module ships a `README.md` with its full `spring.openfeature.<provider>.*` property table, a configuration example, and a short usage snippet. The root `README.md` links to all of them from the provider table.

@@ -202,13 +202,14 @@ To switch providers, replace the starter dependency and update the configuration
 
 ## Example Applications
 
-The `examples/` directory contains two runnable applications (built with the `examples` profile or as a separate
+The `examples/` directory contains five runnable applications (built with the `examples` profile or as a separate
 reactor; they resolve the starters from the local build or the snapshot repository):
 
-- **`unleash-simple`** — runs on port `9998` with a bundled in-memory fake Unleash provider; no external server
-  needed.
-- **`unleash-advanced`** — runs on port `9999` against a mocked Unleash API server, using a local `features.json`
-  backup file.
+- **`unleash-simple`** — port `9998`; in-memory fake Unleash provider (default, no external server needed).
+- **`unleash-advanced`** — port `9999`; mocked Unleash API server with a local `features.json` backup file.
+- **`gcp-simple`** — port `9999`; in-memory fake GCP provider (`--example.fake-provider=true`).
+- **`ofrep-simple`** — port `9999`; in-memory fake OFREP provider (`--example.fake-provider=true`).
+- **`optimizely-simple`** — port `9999`; in-memory fake Optimizely provider (`--example.fake-provider=true`).
 
 ```bash
 $ cd examples
@@ -219,13 +220,22 @@ Then run the packaged application, for example:
 
 ```bash
 $ java -jar unleash-simple/target/unleash-simple-${revision}.jar
+$ java -jar gcp-simple/target/gcp-simple-${revision}.jar --example.fake-provider=true
 ```
 
-Try the endpoints (`unleash-simple`):
+Try the endpoints (`unleash-simple` on `9998`):
 
 ```bash
 $ curl http://localhost:9998/feature/random-boolean-flag
 $ curl http://localhost:9998/feature/greet/world
+```
+
+The "simple" examples all expose the same endpoints on their respective ports:
+
+```bash
+$ curl http://localhost:9999/feature/random-boolean-flag
+$ curl http://localhost:9999/feature/toggle/random-boolean-flag
+$ curl http://localhost:9999/feature/greet/world
 ```
 
 And with `unleash-advanced` running on `9999`:
