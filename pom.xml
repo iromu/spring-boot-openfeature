@@ -70,6 +70,7 @@
     <module>spring-boot-starter-openfeature-optimizely</module>
     <module>spring-boot-starter-openfeature-launchdarkly</module>
     <module>spring-boot-starter-openfeature-datadog</module>
+    <module>spring-boot-starter-openfeature-split</module>
   </modules>
 
   <properties>
@@ -126,6 +127,8 @@
     <launchdarkly-java-server-sdk.version>7.9.1</launchdarkly-java-server-sdk.version>
 
     <datadog-openfeature.version>1.68.1</datadog-openfeature.version>
+    <split-openfeature.version>1.2.2</split-openfeature.version>
+    <split-java-client.version>4.18.2</split-java-client.version>
   </properties>
 
   <dependencyManagement>

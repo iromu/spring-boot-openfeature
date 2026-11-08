@@ -32,6 +32,14 @@
 
     <dependencyManagement>
         <dependencies>
+            <!-- Pin the OpenFeature SDK to ${sdk.version} so every provider starter stays
+                 in lockstep, even when a vendor provider (e.g. Split) transitively pulls
+                 in a different SDK version. -->
+            <dependency>
+                <groupId>dev.openfeature</groupId>
+                <artifactId>sdk</artifactId>
+                <version>${sdk.version}</version>
+            </dependency>
             <dependency>
                 <groupId>dev.openfeature.contrib.providers</groupId>
                 <artifactId>configcat</artifactId>
@@ -178,6 +186,16 @@
                 <groupId>com.datadoghq</groupId>
                 <artifactId>dd-openfeature</artifactId>
                 <version>${datadog-openfeature.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.split.openfeature</groupId>
+                <artifactId>split-openfeature-provider</artifactId>
+                <version>${split-openfeature.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.split.client</groupId>
+                <artifactId>java-client</artifactId>
+                <version>${split-java-client.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
