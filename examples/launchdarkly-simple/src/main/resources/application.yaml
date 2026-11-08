@@ -1,0 +1,12 @@
+server.port: 9999
+spring:
+  openfeature:
+    launchdarkly:
+      service-key: ${LAUNCHDARKLY_SERVICE_KEY:}
+      # Run the LaunchDarkly client without any connection to LaunchDarkly:
+      # offline: true
+  application:
+    name: LaunchDarklyApplication
+
+# Boot without LaunchDarkly at all: run with --example.fake-provider=true
+logging.level.org.iromu: DEBUG

@@ -68,6 +68,7 @@
     <module>spring-boot-starter-openfeature-growthbook</module>
     <module>spring-boot-starter-openfeature-gcp</module>
     <module>spring-boot-starter-openfeature-optimizely</module>
+    <module>spring-boot-starter-openfeature-launchdarkly</module>
   </modules>
 
   <properties>
@@ -112,10 +113,16 @@
 
     <optimizely.version>1.0.0</optimizely.version>
     <optimizely-sdk.version>4.7.0</optimizely-sdk.version>
+
     <!-- Required by the Optimizely SDK's config parser (com.optimizely.ab:core-api does
          not declare org.json itself); without it the parser hits NoSuchMethodError on
          JSONObject.keySet() for any datafile/fetched config. -->
     <json.version>20260814</json.version>
+
+    <launchdarkly-openfeature.version>1.1.1</launchdarkly-openfeature.version>
+    <!-- Declared explicitly (not transitively): the OpenFeature provider publishes the
+         LaunchDarkly SDK in runtime scope, and the starter compiles against LDConfig. -->
+    <launchdarkly-java-server-sdk.version>7.9.1</launchdarkly-java-server-sdk.version>
   </properties>
 
   <dependencyManagement>
