@@ -181,22 +181,22 @@ public class UserController {
 
 Each backend has its own starter module under `org.iromu.openfeature`:
 
-| Provider       | Starter artifact                                     | Documentation |
-|----------------|------------------------------------------------------|---------------|
-| ConfigCat      | `spring-boot-starter-openfeature-configcat`          | [README](spring-boot-starter-openfeature-configcat/README.md) |
-| Env Var        | `spring-boot-starter-openfeature-envvar`             | [README](spring-boot-starter-openfeature-envvar/README.md) |
-| flagd          | `spring-boot-starter-openfeature-flagd`              | [README](spring-boot-starter-openfeature-flagd/README.md) |
-| Flagsmith      | `spring-boot-starter-openfeature-flagsmith`          | [README](spring-boot-starter-openfeature-flagsmith/README.md) |
-| Flipt          | `spring-boot-starter-openfeature-flipt`              | [README](spring-boot-starter-openfeature-flipt/README.md) |
-| GCP            | `spring-boot-starter-openfeature-gcp`                | [README](spring-boot-starter-openfeature-gcp/README.md) |
-| GoFeatureFlag  | `spring-boot-starter-openfeature-gofeatureflag`      | [README](spring-boot-starter-openfeature-gofeatureflag/README.md) |
-| GrowthBook     | `spring-boot-starter-openfeature-growthbook`         | [README](spring-boot-starter-openfeature-growthbook/README.md) |
-| JsonLogic      | `spring-boot-starter-openfeature-jsonlogic`          | [README](spring-boot-starter-openfeature-jsonlogic/README.md) |
-| Multi-Provider | `spring-boot-starter-openfeature-multiprovider`      | [README](spring-boot-starter-openfeature-multiprovider/README.md) |
-| OFREP          | `spring-boot-starter-openfeature-ofrep`              | [README](spring-boot-starter-openfeature-ofrep/README.md) |
-| Optimizely     | `spring-boot-starter-openfeature-optimizely`         | [README](spring-boot-starter-openfeature-optimizely/README.md) |
-| Statsig        | `spring-boot-starter-openfeature-statsig`            | [README](spring-boot-starter-openfeature-statsig/README.md) |
-| Unleash        | `spring-boot-starter-openfeature-unleash`            | [README](spring-boot-starter-openfeature-unleash/README.md) |
+| Provider       | Version   | Starter artifact                                     | Documentation |
+|----------------|-----------|------------------------------------------------------|---------------|
+| ConfigCat      | 0.2.1     | `spring-boot-starter-openfeature-configcat`          | [README](spring-boot-starter-openfeature-configcat/README.md) |
+| Env Var        | 0.0.12    | `spring-boot-starter-openfeature-envvar`             | [README](spring-boot-starter-openfeature-envvar/README.md) |
+| flagd          | 0.15.0    | `spring-boot-starter-openfeature-flagd`              | [README](spring-boot-starter-openfeature-flagd/README.md) |
+| Flagsmith      | 0.0.13    | `spring-boot-starter-openfeature-flagsmith`          | [README](spring-boot-starter-openfeature-flagsmith/README.md) |
+| Flipt          | 0.1.4     | `spring-boot-starter-openfeature-flipt`              | [README](spring-boot-starter-openfeature-flipt/README.md) |
+| GCP            | 0.0.2     | `spring-boot-starter-openfeature-gcp`                | [README](spring-boot-starter-openfeature-gcp/README.md) |
+| GoFeatureFlag  | 2.0.2     | `spring-boot-starter-openfeature-gofeatureflag`      | [README](spring-boot-starter-openfeature-gofeatureflag/README.md) |
+| GrowthBook     | 0.0.2     | `spring-boot-starter-openfeature-growthbook`         | [README](spring-boot-starter-openfeature-growthbook/README.md) |
+| JsonLogic      | 1.3.0     | `spring-boot-starter-openfeature-jsonlogic`          | [README](spring-boot-starter-openfeature-jsonlogic/README.md) |
+| Multi-Provider | 0.0.3     | `spring-boot-starter-openfeature-multiprovider`      | [README](spring-boot-starter-openfeature-multiprovider/README.md) |
+| OFREP          | 0.0.2     | `spring-boot-starter-openfeature-ofrep`              | [README](spring-boot-starter-openfeature-ofrep/README.md) |
+| Optimizely     | 4.7.0     | `spring-boot-starter-openfeature-optimizely`         | [README](spring-boot-starter-openfeature-optimizely/README.md) |
+| Statsig        | 0.2.1     | `spring-boot-starter-openfeature-statsig`            | [README](spring-boot-starter-openfeature-statsig/README.md) |
+| Unleash        | 0.1.3-alpha | `spring-boot-starter-openfeature-unleash`          | [README](spring-boot-starter-openfeature-unleash/README.md) |
 
 To switch providers, replace the starter dependency and update the configuration as described in the provider's README.
 
