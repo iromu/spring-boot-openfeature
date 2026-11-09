@@ -26,7 +26,7 @@ Maven multi-module build (Java 17, Spring Boot 4). Use the wrapper: `./mvnw`.
 | Profile | Adds |
 | --- | --- |
 | `sonar` | `aggregate-report` module (coverage aggregation) |
-| `examples` | `examples` reactor (20 modules: `unleash-simple`, `unleash-advanced`, plus `<provider>-simple` for all other 18 providers) |
+| `examples` | `examples` reactor (21 modules: `unleash-simple`, `unleash-advanced`, plus `<provider>-simple` for all other 19 providers) |
 | `publish` | GPG signing + Central Portal publishing |
 
 ## Examples
@@ -41,6 +41,7 @@ Every provider starter has a runnable `<provider>-simple` example under `example
 - `devcycle-simple` — the DevCycle starter (vendor-published provider inside `com.devcycle:java-server-sdk`, added 2026-11-08).
 - `featbit-simple` — the FeatBit starter (vendor-published provider, added 2026-11-09).
 - `featureflip-simple` — the Featureflip starter (vendor-published provider, added 2026-11-09).
+- `mixpanel-simple` — the Mixpanel starter (vendor-published provider, added 2026-11-09).
 
 The `multiprovider-simple` example additionally pulls in `spring-boot-starter-openfeature-envvar` so the `MultiProvider` wraps two `FeatureProvider` beans.
 
