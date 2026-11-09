@@ -61,6 +61,15 @@ Everything else (streaming vs polling vs file data source, endpoint overrides) g
 
 Missing required credentials fail fast with an `IllegalStateException` when the starter's own provider bean is created (not when a consumer supplies its own `FeatureProvider`).
 
+## Featureflip
+
+`FeatureflipProperties` (`spring.openfeature.featureflip.*`) — deliberately small, because the target environment is encoded in the SDK key itself (there is no separate environment option):
+
+- `api-key` — required when enabled; the Featureflip SDK key for the target environment. Missing key fails fast with an `IllegalStateException` when the starter's own provider bean is created.
+- `base-url` — optional; overrides the Featureflip endpoint (self-hosted deployments).
+
+Everything else (streaming, polling, timeouts) goes through a `FeatureflipCustomizer` bean — see [[concepts/customizers]].
+
 Settings not covered by properties should go through the provider customizer instead — see [[concepts/customizers]].
 
 ## DevCycle

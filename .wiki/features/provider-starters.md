@@ -12,7 +12,7 @@ updated_at: "2026-11-09"
 
 # Provider Starters
 
-One Maven module per flag backend: `unleash`, `configcat`, `datadog`, `envvar`, `flagd`, `flagsmith`, `flipt`, `gofeatureflag`, `jsonlogic`, `statsig`, `growthbook`, `gcp`, `ofrep`, `optimizely`, `launchdarkly`, `split`, `devcycle`, `featbit`, plus `multiprovider` ([[features/multi-provider]]).
+One Maven module per flag backend: `unleash`, `configcat`, `datadog`, `envvar`, `flagd`, `flagsmith`, `flipt`, `gofeatureflag`, `jsonlogic`, `statsig`, `growthbook`, `gcp`, `ofrep`, `optimizely`, `launchdarkly`, `split`, `devcycle`, `featbit`, `featureflip`, plus `multiprovider` ([[features/multi-provider]]).
 
 ## The shared pattern
 
@@ -36,6 +36,7 @@ One Maven module per flag backend: `unleash`, `configcat`, `datadog`, `envvar`, 
 - **Split:** `SplitProperties` (`spring.openfeature.split.*`) supplies the `authorization-key` and an optional `domain` endpoint override. The Split SDK's factory is built eagerly, so the starter assembles a `SplitProviderOptions` (key + `SplitClientConfig`) and fails fast when the key is unset; finer `SplitClientConfig` tuning goes through the `SplitCustomizer` bean. A fake provider backs the runnable `split-simple` example.
 - **DevCycle:** `DevCycleProperties` (`spring.openfeature.devcycle.*`) binds `server-side-key` (required; must start with `dvc_server`) and `base-url-override`. The OpenFeature provider (`com.devcycle.sdk.server.openfeature.DevCycleProvider`) ships inside the vendor-published `com.devcycle:java-server-sdk`; the starter wraps a `DevCycleCloudClient` around it. The client constructor is network-lazy (no connection until the first evaluation) and runs no background threads, so the contract tests run credential-free by pointing `base-url-override` at a `MockWebServer`. The module pins `dev.openfeature:sdk` to the repo's `sdk.version` because the DevCycle SDK transitively pulls an older SDK at compile scope.
 - **FeatBit:** `FeatBitProperties` (`spring.openfeature.featbit.*`) binds `token`, `streaming-url` and `event-url` (all required, fail-fast) plus `offline` and `disable-events`. The vendor-published provider (`co.featbit:featbit-openfeature-provider-java-server`) has an eager constructor — it always builds an `FBClient` — so the contract tests run credential-free in offline mode (`offline=true`), which wires a null data-synchronizer and a null insight processor and opens no connection. The module declares `featbit-java-sdk` explicitly and pins `dev.openfeature:sdk` lockstep.
+- **Featureflip:** `FeatureflipProperties` (`spring.openfeature.featureflip.*`) binds `api-key` (required, fail-fast) plus an optional `base-url` endpoint override; the target environment is encoded in the SDK key itself, so there is no separate environment property. The provider (`io.featureflip:featureflip-openfeature`) is vendor-published by Canopy Labs, its constructor is lazy (bytecode-verified — no I/O until `initialize()`), and the contract tests run credential-free by stubbing `OpenFeatureAPI` so the real provider is constructed but never initialized.
 - Most others (configcat, flagd, flagsmith, flipt, gofeatureflag, jsonlogic, statsig, growthbook) follow the same shape with their own `Properties` + `Customizer`.
 
 ## Adding a new provider
