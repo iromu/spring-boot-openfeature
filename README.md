@@ -191,6 +191,7 @@ Each backend has its own starter module under `org.iromu.openfeature`:
 | flagd          | 0.15.0    | `spring-boot-starter-openfeature-flagd`              | [README](spring-boot-starter-openfeature-flagd/README.md) |
 | Flagsmith      | 0.0.13    | `spring-boot-starter-openfeature-flagsmith`          | [README](spring-boot-starter-openfeature-flagsmith/README.md) |
 | Flipt          | 0.1.4     | `spring-boot-starter-openfeature-flipt`              | [README](spring-boot-starter-openfeature-flipt/README.md) |
+| Featureflip    | 0.2.1     | `spring-boot-starter-openfeature-featureflip`        | [README](spring-boot-starter-openfeature-featureflip/README.md) |
 | GCP            | 0.0.2     | `spring-boot-starter-openfeature-gcp`                | [README](spring-boot-starter-openfeature-gcp/README.md) |
 | GoFeatureFlag  | 2.0.2     | `spring-boot-starter-openfeature-gofeatureflag`      | [README](spring-boot-starter-openfeature-gofeatureflag/README.md) |
 | GrowthBook     | 0.0.2     | `spring-boot-starter-openfeature-growthbook`         | [README](spring-boot-starter-openfeature-growthbook/README.md) |

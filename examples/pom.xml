@@ -53,6 +53,7 @@
         <module>datadog-simple</module>
         <module>split-simple</module>
         <module>featbit-simple</module>
+        <module>featureflip-simple</module>
     </modules>
 
     <properties>
