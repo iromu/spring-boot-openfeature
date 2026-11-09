@@ -112,7 +112,7 @@
 
     <okhttp.version>5.5.1</okhttp.version>
 
-    <growthbook-sdk-java.version>0.11.0</growthbook-sdk-java.version>
+    <growthbook-sdk-java.version>0.12.0</growthbook-sdk-java.version>
     <growthbook-provider.version>0.0.2</growthbook-provider.version>
 
     <optimizely.version>1.0.0</optimizely.version>
