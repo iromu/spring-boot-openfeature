@@ -7,12 +7,12 @@ source_paths:
   - "spring-boot-starter-openfeature-unleash/src/main/java/org/iromu/openfeature/boot/autoconfigure/unleash/UnleashAutoConfiguration.java"
   - "spring-boot-starter-openfeature-unleash/src/main/java/org/iromu/openfeature/boot/unleash/UnleashProperties.java"
   - "examples/pom.xml"
-updated_at: "2026-11-08"
+updated_at: "2026-11-09"
 ---
 
 # Provider Starters
 
-One Maven module per flag backend: `unleash`, `configcat`, `envvar`, `flagd`, `flagsmith`, `flipt`, `gofeatureflag`, `jsonlogic`, `statsig`, `growthbook`, `gcp`, `ofrep`, `optimizely`, `launchdarkly`, plus `multiprovider` ([[features/multi-provider]]).
+One Maven module per flag backend: `unleash`, `configcat`, `datadog`, `envvar`, `flagd`, `flagsmith`, `flipt`, `gofeatureflag`, `jsonlogic`, `statsig`, `growthbook`, `gcp`, `ofrep`, `optimizely`, `launchdarkly`, plus `multiprovider` ([[features/multi-provider]]).
 
 ## The shared pattern
 
@@ -32,6 +32,7 @@ One Maven module per flag backend: `unleash`, `configcat`, `envvar`, `flagd`, `f
 - **OFREP:** binds to an OpenFeature Remote Evaluation Protocol endpoint (`spring.openfeature.ofrep.*`). The provider has no public constructor — the starter builds it via the `constructProvider` factory, which validates the base URL.
 - **Optimizely:** `OptimizelyProperties` (`spring.openfeature.optimizely.*`) assembles the vendor SDK's `Configuration` (datafile or sdk-key). The SDK's config parser imports `org.json` without declaring it, so the BOM manages `org.json:json` explicitly.
 - **LaunchDarkly:** `LaunchDarklyProperties` (`spring.openfeature.launchdarkly.*`) binds `service-key` (the environment is encoded in the key) and `offline`. The LaunchDarkly OpenFeature provider is vendor-published (`com.launchdarkly:launchdarkly-openfeature-serverprovider`), and its POM ships the LaunchDarkly server SDK in `runtime` scope, so the module declares `launchdarkly-java-server-sdk` explicitly to compile against `LDConfig`. Data-source selection (streaming/polling/file) goes through the `LaunchDarklyCustomizer`; the contract tests run credential-free via a file data source + `events(Components.noEvents())`.
+- **Datadog:** `DatadogProperties` (`spring.openfeature.datadog.*`) binds api-key/app-key/site (required, fail-fast) plus `init-timeout` and `evaluation-telemetry-opt-out` for the provider's `Options`. The provider has no programmatic credential API, so the starter publishes the bound values as `DD_API_KEY`/`DD_SITE`/`DD_ENV` system properties only when not already set — the dd-trace settings then pick them up. The provider constructor is lazy; real initialization requires the `dd-java-agent`.
 - Most others (configcat, flagd, flagsmith, flipt, gofeatureflag, jsonlogic, statsig, growthbook) follow the same shape with their own `Properties` + `Customizer`.
 
 ## Adding a new provider

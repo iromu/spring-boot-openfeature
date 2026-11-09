@@ -6,7 +6,7 @@ language: "default"
 source_paths:
   - "pom.xml"
   - "examples/pom.xml"
-updated_at: "2026-11-08"
+updated_at: "2026-11-09"
 ---
 
 # Build and Modules
@@ -26,7 +26,7 @@ Maven multi-module build (Java 17, Spring Boot 4). Use the wrapper: `./mvnw`.
 | Profile | Adds |
 | --- | --- |
 | `sonar` | `aggregate-report` module (coverage aggregation) |
-| `examples` | `examples` reactor (17 modules: `unleash-simple`, `unleash-advanced`, plus `<provider>-simple` for all other 14 providers) |
+| `examples` | `examples` reactor (17 modules: `unleash-simple`, `unleash-advanced`, plus `<provider>-simple` for the other providers) |
 | `publish` | GPG signing + Central Portal publishing |
 
 ## Examples
@@ -35,7 +35,7 @@ Every provider starter has a runnable `<provider>-simple` example under `example
 
 - `unleash-simple` / `unleash-advanced` — the original pair (port `9998`); advanced adds a mocked Unleash API server and native-image config.
 - `gcp-simple`, `ofrep-simple`, `optimizely-simple` — the three contrib-backed starters added in PR #229.
-- `configcat-simple`, `envvar-simple`, `flagd-simple`, `flagsmith-simple`, `flipt-simple`, `gofeatureflag-simple`, `growthbook-simple`, `jsonlogic-simple`, `multiprovider-simple`, `statsig-simple` — the remaining ten, completing full contrib provider coverage (added 2026-11-08).
+- `configcat-simple`, `envvar-simple`, `flagd-simple`, `flagsmith-simple`, `flipt-simple`, `gofeatureflag-simple`, `growthbook-simple`, `jsonlogic-simple`, `multiprovider-simple`, `statsig-simple`, `datadog-simple` — the remaining eleven, completing full provider coverage (added 2026-11-08).
 - `launchdarkly-simple` — the LaunchDarkly starter (vendor-published provider, added 2026-11-08).
 
 The `multiprovider-simple` example additionally pulls in `spring-boot-starter-openfeature-envvar` so the `MultiProvider` wraps two `FeatureProvider` beans.
