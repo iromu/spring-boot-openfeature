@@ -69,6 +69,7 @@
     <module>spring-boot-starter-openfeature-gcp</module>
     <module>spring-boot-starter-openfeature-optimizely</module>
     <module>spring-boot-starter-openfeature-launchdarkly</module>
+    <module>spring-boot-starter-openfeature-datadog</module>
   </modules>
 
   <properties>
@@ -123,6 +124,8 @@
     <!-- Declared explicitly (not transitively): the OpenFeature provider publishes the
          LaunchDarkly SDK in runtime scope, and the starter compiles against LDConfig. -->
     <launchdarkly-java-server-sdk.version>7.9.1</launchdarkly-java-server-sdk.version>
+
+    <datadog-openfeature.version>1.68.1</datadog-openfeature.version>
   </properties>
 
   <dependencyManagement>
