@@ -77,6 +77,7 @@
     <module>spring-boot-starter-openfeature-mixpanel</module>
     <module>spring-boot-starter-openfeature-kameleoon</module>
     <module>spring-boot-starter-openfeature-confidence</module>
+    <module>spring-boot-starter-openfeature-octopusdeploy</module>
   </modules>
 
   <properties>
@@ -158,6 +159,7 @@
     <!-- Confidence's OpenFeature provider, published by Spotify alongside the Confidence
          SDK (com.spotify.confidence:sdk-java). -->
     <confidence-openfeature.version>0.7.0</confidence-openfeature.version>
+    <octopusdeploy-openfeature.version>2.1.0</octopusdeploy-openfeature.version>
   </properties>
 
   <dependencyManagement>

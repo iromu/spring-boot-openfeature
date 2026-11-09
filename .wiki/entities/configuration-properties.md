@@ -129,3 +129,14 @@ Everything else (e.g. the exposure executor) goes through a `MixpanelCustomizer`
 - `tracking-interval` — optional, in milliseconds; event-tracking cadence
 
 A blank `site-code` fails fast with an `IllegalStateException` naming `spring.openfeature.kameleoon.site-code`; a missing `client-id` or `client-secret` is rejected by the vendor config builder (wrapped in an `IllegalStateException` naming the offending property) when the starter's own config bean is created. Any other `KameleoonClientConfig.Builder` option (e.g. a proxy host) goes through a `KameleoonCustomizer` bean — see [[concepts/customizers]].
+
+## Octopus Deploy
+
+`OctopusDeployProperties` (`spring.openfeature.octopusdeploy.*`) — the vendor-published provider (`com.octopus.openfeature:octopus-openfeature-provider`) identifies the calling application via a client identifier and product metadata:
+
+- `client-identifier` — required; the Octopus Deploy API key (sent as `Authorization: Bearer <key>`)
+- `product-name` — required; identifies the calling application in the `X-Octopus-Client` header
+- `product-version` — optional; application build version for the `X-Octopus-Client` header
+- `cache-duration` (default `1m`) — how often the provider re-checks for flag changes
+
+Missing required values fail fast with an `IllegalStateException` naming the property path when the starter's own configuration bean is created. The provider constructor is lazy (no network I/O until `initialize()`). Any other `OctopusFeatureConfiguration` option goes through an `OctopusDeployCustomizer` bean — see [[concepts/customizers]].

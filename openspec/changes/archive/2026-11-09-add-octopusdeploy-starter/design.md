@@ -35,7 +35,10 @@ Pinned at `octopusdeploy-openfeature.version`. Lockstep check asserts `dev.openf
 
 Additive new module; rollback is removing the `<module>` entry, the BOM rows, and the property class.
 
-## Open Questions
+## Findings (2026-11-09)
 
-- Exact Maven coordinate and latest stable version.
-- Whether the provider's constructor is lazy or eagerly connects.
+- **Coordinate:** `com.octopus.openfeature:octopus-openfeature-provider:2.1.0` (Maven Central, verified via raw POM).
+- **SDK dependency:** The provider depends on `dev.openfeature:sdk:1.23.0`, which matches the repo's `sdk.version` (1.23.0) — no pinning needed.
+- **Constructor behavior:** Lazy. `OctopusFeatureProvider(OctopusFeatureConfiguration)` only constructs the `FeatureFlagEvaluatorCache` and `FeatureFlagApiClient`; no network I/O. Network calls happen in `initialize()` (called by the OpenFeature SDK).
+- **Configuration surface:** `OctopusFeatureConfiguration(String clientIdentifier, ProductMetadata productMetadata)`. The `clientIdentifier` is the API key (sent as Bearer token). `ProductMetadata(name, version)` identifies the calling app. `setServerUri` is package-private (not settable from the starter); the server defaults to `https://features.octopus.com`. `setCacheDuration` is public.
+- **D2 adaptation:** The design originally specified `api-key` + `server-url`. The actual API uses `clientIdentifier` (not "api-key") and the server URL is not settable externally. The properties are therefore `client-identifier` + `product-name` (required) + `product-version` + `cache-duration` (optional).
