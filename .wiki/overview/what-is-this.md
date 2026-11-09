@@ -6,7 +6,7 @@ language: "default"
 source_paths:
   - "pom.xml"
   - "README.md"
-updated_at: "2026-11-08"
+updated_at: "2026-11-09"
 ---
 
 # What Is This Project
@@ -23,7 +23,7 @@ The root `pom.xml` (aggregator, artifact `org.iromu.openfeature:spring-boot-open
 | `spring-boot-openfeature-autoconfigure` | Generic auto-config: `ClientAutoConfiguration` (the `Client` bean), `OpenFeatureAPIAutoConfiguration` (SDK singleton + event logging), `SecurityAutoConfiguration` (auth-aware evaluation context) |
 | `spring-boot-starter-openfeature` | Base starter (`pom` packaging) pulling in the generic auto-config |
 | `spring-boot-openfeature-dependencies` | BOM pinning SDK + provider versions |
-| `spring-boot-starter-openfeature-<provider>` | One module per backend: `unleash`, `configcat`, `envvar`, `flagd`, `flagsmith`, `flipt`, `gofeatureflag`, `jsonlogic`, `multiprovider`, `statsig`, `growthbook`, `gcp`, `ofrep`, `optimizely`, `launchdarkly`, `split`, `devcycle` |
+| `spring-boot-starter-openfeature-<provider>` | One module per backend: `unleash`, `configcat`, `envvar`, `flagd`, `flagsmith`, `flipt`, `gofeatureflag`, `jsonlogic`, `multiprovider`, `statsig`, `growthbook`, `gcp`, `ofrep`, `optimizely`, `launchdarkly`, `split`, `devcycle`, `featbit` |
 | `examples` (separate reactor, `-P examples`) | `unleash-simple`, `unleash-advanced`, `gcp-simple`, `ofrep-simple`, `optimizely-simple` runnable apps |
 
 ## Who uses what

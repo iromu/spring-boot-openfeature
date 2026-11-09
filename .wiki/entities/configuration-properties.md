@@ -7,6 +7,7 @@ source_paths:
   - "spring-openfeature/src/main/java/org/iromu/openfeature/boot/properties/OpenFeatureProperties.java"
   - "spring-boot-starter-openfeature-unleash/src/main/java/org/iromu/openfeature/boot/unleash/UnleashProperties.java"
   - "spring-boot-starter-openfeature-datadog/src/main/java/org/iromu/openfeature/boot/datadog/DatadogProperties.java"
+  - "spring-boot-starter-openfeature-featbit/src/main/java/org/iromu/openfeature/boot/featbit/FeatBitProperties.java"
 updated_at: "2026-11-09"
 ---
 
@@ -70,3 +71,15 @@ Settings not covered by properties should go through the provider customizer ins
 - `base-url-override` — point the DevCycle bucketing API at a different host (defaults to the production API)
 
 Everything else (custom logger, REST options, eval hooks, edge DB) goes through a `DevCycleCustomizer` bean wrapping the SDK's `DevCycleCloudOptions.Builder` — see [[concepts/customizers]].
+
+## FeatBit
+
+`FeatBitProperties` (`spring.openfeature.featbit.*`) — the vendor-published provider (`co.featbit:featbit-openfeature-provider-java-server`) needs the app token plus the per-environment endpoints, and its `FBConfig` builder has no defaults for the URLs (a null URL NPEs during provider construction), so all three are required:
+
+- `token` — required; the FeatBit app token (environment secret)
+- `streaming-url` — required; the environment's streaming (WebSocket) endpoint
+- `event-url` — required; the environment's event (analytics) endpoint
+- `offline` (default `false`) — run the FeatBit client in offline mode; no connection is attempted (null data-synchronizer + null insight processor)
+- `disable-events` (default `false`) — disable FeatBit event delivery entirely
+
+Missing required values fail fast with an `IllegalStateException` naming all three property paths when the starter's own provider bean is created. Any other `FBConfig` option goes through a `FeatBitCustomizer` bean — see [[concepts/customizers]].
