@@ -9,6 +9,7 @@ source_paths:
   - "spring-boot-starter-openfeature-datadog/src/main/java/org/iromu/openfeature/boot/datadog/DatadogProperties.java"
   - "spring-boot-starter-openfeature-featbit/src/main/java/org/iromu/openfeature/boot/featbit/FeatBitProperties.java"
   - "spring-boot-starter-openfeature-kameleoon/src/main/java/org/iromu/openfeature/boot/kameleoon/KameleoonProperties.java"
+  - "spring-boot-starter-openfeature-superposition/src/main/java/org/iromu/openfeature/boot/superposition/SuperpositionProperties.java"
 updated_at: "2026-11-09"
 ---
 
@@ -149,3 +150,16 @@ Missing required values fail fast with an `IllegalStateException` naming the pro
 - `api-key` — required; the VWO API key (sdk key) used to initialize the VWO client
 
 A missing or non-numeric `account-id` or a blank `api-key` fails fast with an `IllegalStateException` naming the property path when the starter's own provider bean is created (the provider would otherwise swallow the error and end up with an uninitialized client). Any other entry of the options map the `VWOProvider` is built from goes through a `VwoCustomizer` bean — see [[concepts/customizers]].
+
+## Superposition
+
+`SuperpositionProperties` (`spring.openfeature.superposition.*`) — the vendor-published provider (`io.juspay.superposition:openfeature-provider`) is built from an API token plus an organization and workspace ID, so all three are required:
+
+- `api-key` — required; the Superposition API token (bound to the vendor options' `token`)
+- `org-id` — required; the Superposition organization ID
+- `workspace-id` — required; the Superposition workspace ID
+- `endpoint` — optional; the Superposition API endpoint (default `https://api.superposition.dev`)
+- `refresh-timeout-millis` — optional, in milliseconds; configuration-refresh timeout (default 10000)
+- `refresh-interval-millis` — optional, in milliseconds; configuration-refresh polling interval (default 5000)
+
+A missing `api-key`, `org-id` or `workspace-id` fails fast with an `IllegalStateException` naming the offending property when the starter's own options bean is created (the vendor options builder rejects null values with a bare `NullPointerException`, so the starter validates before building). Any other `SuperpositionProviderOptions.Builder` option (e.g. a fallback config or experimentation options) goes through a `SuperpositionCustomizer` bean — see [[concepts/customizers]].
