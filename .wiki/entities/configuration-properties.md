@@ -22,7 +22,7 @@ All configuration lives under the `spring.openfeature` prefix.
 
 ## Per-provider
 
-Each provider starter binds its own sub-prefix: `spring.openfeature.unleash.*`, `spring.openfeature.configcat.*`, `spring.openfeature.flagd.*`, `spring.openfeature.gcp.*`, `spring.openfeature.ofrep.*`, `spring.openfeature.optimizely.*`, `spring.openfeature.launchdarkly.*`, and so on. Every provider has:
+Each provider starter binds its own sub-prefix: `spring.openfeature.unleash.*`, `spring.openfeature.configcat.*`, `spring.openfeature.flagd.*`, `spring.openfeature.gcp.*`, `spring.openfeature.ofrep.*`, `spring.openfeature.optimizely.*`, `spring.openfeature.launchdarkly.*`, `spring.openfeature.split.*`, and so on. Every provider has:
 
 | Property | Default | Effect |
 | --- | --- | --- |

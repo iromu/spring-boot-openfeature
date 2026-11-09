@@ -50,6 +50,7 @@
         <module>multiprovider-simple</module>
         <module>statsig-simple</module>
         <module>datadog-simple</module>
+        <module>split-simple</module>
     </modules>
 
     <properties>

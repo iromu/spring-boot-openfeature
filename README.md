@@ -198,6 +198,7 @@ Each backend has its own starter module under `org.iromu.openfeature`:
 | OFREP          | 0.0.2     | `spring-boot-starter-openfeature-ofrep`              | [README](spring-boot-starter-openfeature-ofrep/README.md) |
 | Optimizely     | 1.0.0     | `spring-boot-starter-openfeature-optimizely`         | [README](spring-boot-starter-openfeature-optimizely/README.md) |
 | Statsig        | 0.2.1     | `spring-boot-starter-openfeature-statsig`            | [README](spring-boot-starter-openfeature-statsig/README.md) |
+| Split          | 1.2.2     | `spring-boot-starter-openfeature-split`              | [README](spring-boot-starter-openfeature-split/README.md) |
 | Unleash        | 0.1.3-alpha | `spring-boot-starter-openfeature-unleash`          | [README](spring-boot-starter-openfeature-unleash/README.md) |
 
 To switch providers, replace the starter dependency and update the configuration as described in the provider's README.

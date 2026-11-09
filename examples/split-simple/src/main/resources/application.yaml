@@ -1,0 +1,12 @@
+server.port: 9999
+spring:
+  openfeature:
+    split:
+      authorization-key: ${SPLIT_AUTHORIZATION_KEY:}
+      # Optional endpoint override for non-prod Split environments:
+      # domain: https://api.eu.split.io
+  application:
+    name: SplitApplication
+
+# Boot without Split at all: run with --example.fake-provider=true
+logging.level.org.iromu: DEBUG
