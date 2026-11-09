@@ -40,6 +40,7 @@ Every provider starter has a runnable `<provider>-simple` example under `example
 - `split-simple` — the Split starter (vendor-published provider, added 2026-11-08).
 - `devcycle-simple` — the DevCycle starter (vendor-published provider inside `com.devcycle:java-server-sdk`, added 2026-11-08).
 - `featbit-simple` — the FeatBit starter (vendor-published provider, added 2026-11-09).
+- `featureflip-simple` — the Featureflip starter (vendor-published provider, added 2026-11-09).
 
 The `multiprovider-simple` example additionally pulls in `spring-boot-starter-openfeature-envvar` so the `MultiProvider` wraps two `FeatureProvider` beans.
 

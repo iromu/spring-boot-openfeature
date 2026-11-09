@@ -73,6 +73,7 @@
     <module>spring-boot-starter-openfeature-split</module>
     <module>spring-boot-starter-openfeature-devcycle</module>
     <module>spring-boot-starter-openfeature-featbit</module>
+    <module>spring-boot-starter-openfeature-featureflip</module>
   </modules>
 
   <properties>
@@ -141,6 +142,7 @@
     <!-- Declared explicitly (not transitively): the provider publishes the FeatBit SDK in an
          open version range, and the starter compiles against FBConfig. -->
     <featbit-java-sdk.version>1.4.4</featbit-java-sdk.version>
+    <featureflip-openfeature.version>0.2.1</featureflip-openfeature.version>
   </properties>
 
   <dependencyManagement>
