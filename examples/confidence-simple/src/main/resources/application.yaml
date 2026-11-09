@@ -1,0 +1,10 @@
+server.port: 9999
+spring:
+  openfeature:
+    confidence:
+      api-token: ${CONFIDENCE_API_TOKEN:}
+  application:
+    name: ConfidenceApplication
+
+# Boot without Confidence at all: run with --example.fake-provider=true
+logging.level.org.iromu: DEBUG

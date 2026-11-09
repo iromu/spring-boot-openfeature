@@ -232,6 +232,11 @@
                 <artifactId>kameleoon-client-java</artifactId>
                 <version>${kameleoon-client-java.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.spotify.confidence</groupId>
+                <artifactId>openfeature-provider</artifactId>
+                <version>${confidence-openfeature.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <build>

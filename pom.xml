@@ -76,6 +76,7 @@
     <module>spring-boot-starter-openfeature-featureflip</module>
     <module>spring-boot-starter-openfeature-mixpanel</module>
     <module>spring-boot-starter-openfeature-kameleoon</module>
+    <module>spring-boot-starter-openfeature-confidence</module>
   </modules>
 
   <properties>
@@ -154,6 +155,9 @@
     <!-- Declared explicitly (not transitively): the starter compiles against
          KameleoonClientConfig, which ships in the Kameleoon Java client the provider uses. -->
     <kameleoon-client-java.version>4.5.0</kameleoon-client-java.version>
+    <!-- Confidence's OpenFeature provider, published by Spotify alongside the Confidence
+         SDK (com.spotify.confidence:sdk-java). -->
+    <confidence-openfeature.version>0.7.0</confidence-openfeature.version>
   </properties>
 
   <dependencyManagement>
