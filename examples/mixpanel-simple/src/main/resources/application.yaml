@@ -1,0 +1,12 @@
+server.port: 9999
+spring:
+  openfeature:
+    mixpanel:
+      project-token: ${MIXPANEL_PROJECT_TOKEN:}
+      # Mixpanel API host for your region (defaults to api.mixpanel.com):
+      # api-host: api-eu.mixpanel.com
+  application:
+    name: MixpanelApplication
+
+# Boot without Mixpanel at all: run with --example.fake-provider=true
+logging.level.org.iromu: DEBUG

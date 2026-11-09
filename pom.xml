@@ -74,6 +74,7 @@
     <module>spring-boot-starter-openfeature-devcycle</module>
     <module>spring-boot-starter-openfeature-featbit</module>
     <module>spring-boot-starter-openfeature-featureflip</module>
+    <module>spring-boot-starter-openfeature-mixpanel</module>
   </modules>
 
   <properties>
@@ -143,6 +144,11 @@
          open version range, and the starter compiles against FBConfig. -->
     <featbit-java-sdk.version>1.4.4</featbit-java-sdk.version>
     <featureflip-openfeature.version>0.2.1</featureflip-openfeature.version>
+
+    <!-- The Mixpanel OpenFeature provider (com.mixpanel.openfeature.MixpanelProvider) ships
+         in the Mixpanel Java SDK's openfeature module; it transitively pulls an older
+         dev.openfeature:sdk, which the starter pins to ${sdk.version} (lockstep). -->
+    <mixpanel-openfeature.version>0.2.0</mixpanel-openfeature.version>
   </properties>
 
   <dependencyManagement>
