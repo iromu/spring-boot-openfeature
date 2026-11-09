@@ -1,0 +1,16 @@
+server.port: 9999
+spring:
+  openfeature:
+    superposition:
+      api-key: ${SUPERPOSITION_API_KEY:}
+      org-id: ${SUPERPOSITION_ORG_ID:}
+      workspace-id: ${SUPERPOSITION_WORKSPACE_ID:}
+      # Optional endpoint / refresh tuning:
+      # endpoint: https://api.superposition.dev
+      # refresh-timeout-millis: 10000
+      # refresh-interval-millis: 5000
+  application:
+    name: SuperpositionApplication
+
+# Boot without Superposition at all: run with --example.fake-provider=true
+logging.level.org.iromu: DEBUG
