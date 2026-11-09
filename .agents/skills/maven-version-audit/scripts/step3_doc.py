@@ -15,12 +15,26 @@ version taxonomy, stated plainly because "latest" is ambiguous:
   * latest plain    highest version whose every dot component is purely numeric
   * latest any      highest version overall, qualifiers included
 """
+#  Copyright 2025-2026 the original author or authors.
+#
+#  Licensed under the Apache License, Version 2.0 (the "License");
+#  you may not use this file except in compliance with the License.
+#  You may obtain a copy of the License at
+#
+#       https://www.apache.org/licenses/LICENSE-2.0
+#
+#  Unless required by applicable law or agreed to in writing, software
+#  distributed under the License is distributed on an "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
+
 import datetime
 import os
 import re
 import subprocess
 import sys
-import xml.etree.ElementTree as ET
+import _va_xml as vx
 
 import _va_paths as va
 
@@ -123,8 +137,8 @@ def load_meta(path, group, artifact):
     if not os.path.isfile(path):
         return None
     try:
-        root = ET.parse(path).getroot()
-    except ET.ParseError:
+        root = vx.root(path)
+    except vx.ParseError:
         return None
     if root.findtext("groupId") != group or root.findtext("artifactId") != artifact:
         return None
@@ -184,7 +198,7 @@ def parents_and_boms():
         if "pom.xml" not in files:
             continue
         rel = os.path.relpath(os.path.join(dirpath, "pom.xml"), ROOT)
-        root = ET.parse(os.path.join(dirpath, "pom.xml")).getroot()
+        root = vx.root(os.path.join(dirpath, "pom.xml"))
         p = root.find("m:parent", namespaces=POMNS)
         if p is not None:
             out.append(("parent", rel, pom_txt(p, "m:groupId"),
