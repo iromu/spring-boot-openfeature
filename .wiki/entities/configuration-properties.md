@@ -71,6 +71,16 @@ Missing required credentials fail fast with an `IllegalStateException` when the 
 
 Everything else (streaming, polling, timeouts) goes through a `FeatureflipCustomizer` bean — see [[concepts/customizers]].
 
+## Confidence
+
+`ConfidenceProperties` (`spring.openfeature.confidence.*`) — the Spotify Confidence service authenticates with a single API token; endpoint overrides are optional:
+
+- `api-token` — required when enabled; the Confidence API token (client secret). Missing token fails fast with an `IllegalStateException` when the starter's own provider bean is created.
+- `host` — optional; overrides the Confidence flag-resolver endpoint (defaults to the provider's built-in endpoint when unset).
+- `port` — optional; the flag-resolver port used together with `host` (defaults to 443).
+
+Everything else (resolver/event-sender deadlines, telemetry) goes through a `ConfidenceCustomizer` bean targeting the SDK's `Confidence.Builder` — see [[concepts/customizers]].
+
 Settings not covered by properties should go through the provider customizer instead — see [[concepts/customizers]].
 
 ## DevCycle
