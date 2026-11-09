@@ -8,6 +8,7 @@ source_paths:
   - "spring-boot-starter-openfeature-unleash/src/main/java/org/iromu/openfeature/boot/unleash/UnleashProperties.java"
   - "spring-boot-starter-openfeature-datadog/src/main/java/org/iromu/openfeature/boot/datadog/DatadogProperties.java"
   - "spring-boot-starter-openfeature-featbit/src/main/java/org/iromu/openfeature/boot/featbit/FeatBitProperties.java"
+  - "spring-boot-starter-openfeature-kameleoon/src/main/java/org/iromu/openfeature/boot/kameleoon/KameleoonProperties.java"
 updated_at: "2026-11-09"
 ---
 
@@ -102,3 +103,19 @@ Missing required values fail fast with an `IllegalStateException` naming all thr
 - `request-timeout-seconds` — optional; HTTP request timeout in seconds for flag evaluations (SDK default 10).
 
 Everything else (e.g. the exposure executor) goes through a `MixpanelCustomizer` bean wrapping the SDK's `RemoteFlagsConfig.Builder` — see [[concepts/customizers]].
+
+## Kameleoon
+
+`KameleoonProperties` (`spring.openfeature.kameleoon.*`) — the vendor-published provider (`com.kameleoon:kameleoon-openfeature-java`) is constructed from a site code plus a `KameleoonClientConfig` that requires both a client ID and a client secret, so all three are required:
+
+- `site-code` — required; the Kameleoon site code (passed as the provider's first constructor argument)
+- `client-id` — required; the Kameleoon client ID
+- `client-secret` — required; the Kameleoon client secret
+- `environment` — optional; the target Kameleoon environment (default: production)
+- `top-level-domain` — optional; top-level domain override for the Kameleoon endpoint
+- `refresh-interval` — optional, in minutes; background configuration-refresh cadence
+- `session-duration` — optional, in minutes; client session duration
+- `default-timeout` — optional, in milliseconds; default request timeout
+- `tracking-interval` — optional, in milliseconds; event-tracking cadence
+
+A blank `site-code` fails fast with an `IllegalStateException` naming `spring.openfeature.kameleoon.site-code`; a missing `client-id` or `client-secret` is rejected by the vendor config builder (wrapped in an `IllegalStateException` naming the offending property) when the starter's own config bean is created. Any other `KameleoonClientConfig.Builder` option (e.g. a proxy host) goes through a `KameleoonCustomizer` bean — see [[concepts/customizers]].
