@@ -2,6 +2,9 @@
 name: maven-version-audit
 description: |-
   Use this skill whenever the user wants the current/latest version of anything Maven in this repo, or wants to know which Maven build plugins, dependencies, version properties, BOM imports, parents, or parent-pinned plugins (even the profile-gated examples reactor) are behind and should be bumped. Trigger on phrasings like "is a plugin on the newest version / should I raise it?", "what's the latest release of the OpenFeature SDK — are our contrib provider plugins behind?", "what version does the parent pin for the version-less plugins?", "which plugins are behind?", before opening a dependency-upgrade change, and to regenerate docs/dependency-versions.md. Treat any question about version currency of a Maven coordinate as this skill's job, even if the user never says "audit" or "check". It is the ground-truth source, not hand-reading POMs or `mvn versions:*`. Never for npm/package-lock, adding a new dependency or module, release notes or changelogs, build failures, or test runs.
+metadata:
+  author: "Iván Rodríguez Murillo <wantez@gmail.com>"
+  version: 1.0.0
 ---
 
 # Maven Version Audit
@@ -16,6 +19,14 @@ pinned versions are parsed from the POM bytes, "latest" comes from each coordina
 Maven's own `Downloaded from <repo>:` log lines, and every fetched file is rejected unless its
 inner `<groupId>/<artifactId>` match the coordinate requested. Never reconstruct a URL, retype a
 version, or trust a browser view.
+
+## Instructions
+
+1. Pick the mode in "Two modes - pick by what was asked" (answer a question vs regenerate the audit document) — the script set and output differ per mode.
+2. Work from the paths in "Where things live" (everything is env-overridable — never hardcode paths) and drive "The canonical pipeline" using "The bundled scripts"; harvest, don't hand-read POMs.
+3. Report all three version columns per "Reading the version columns" — "latest" alone is ambiguous and has caused false "must revert" verdicts.
+4. Run the relevant "Self-checks" before answering, and re-read "Traps that bite" before trusting a harvested value or declaring a bump unsatisfiable.
+5. For "is X outdated?" questions, answer in the shape shown in "How to answer an 'is X outdated?' question".
 
 ## Two modes - pick by what was asked
 
@@ -46,9 +57,16 @@ skill is installed - do not hardcode the skill's install path.
 
 The pipeline ships with this skill in its `scripts/` directory: `step1_coords.py`,
 `step2_download.py`, `step3_doc.py`, the three self-checks `verify_ordering.py`, `crosscheck.py`,
-`qa_doc.py`, and the shared `scripts/_va_paths.py` they all import. Set `SK` to that directory -
+`qa_doc.py`, and the shared `scripts/_va_paths.py` and `scripts/_va_xml.py` they all import. Set
+`SK` to that directory -
 it is this skill's base directory (handed to you when the skill is invoked) joined with
 `scripts/`. Invoke the scripts by that path; they read every other location from the table above.
+
+`_va_xml.py` parses POM and metadata XML as untrusted input and refuses any document that
+carries a DTD or entity declaration, so it needs `defusedxml` and deliberately has no stdlib
+fallback - a missing `defusedxml` fails at import rather than quietly downgrading the parser.
+Install it with `pip install -r requirements.txt` from this skill's base directory before
+running any step.
 
 ## The canonical pipeline
 
@@ -111,6 +129,14 @@ if it is absent. A checker that fails is a real signal, not noise - read it befo
 | `latest plain` | highest version whose every dot component is purely numeric |
 | `latest any` | highest version overall, qualifiers (`-alpha`/`-rc`/`-jre`) included |
 | verdict | `current`, **behind**, *pre-release/qualified pin*, *unpinned*, *ahead of repo*, *not found* |
+
+## Examples
+
+**"Is `spring-boot-starter-web` outdated?"** Report mode -> run the pipeline (step1 coordinates -> Maven-displayed updates -> cross-check), then answer with all three version columns per "Reading the version columns"; never answer from cached version knowledge.
+
+**"Regenerate `docs/dependency-versions.md`."** Regenerate mode -> full pipeline into `$VERSION_AUDIT_TMP`, then the Self-checks; a coordinate without a `Downloaded from` line is unresolved, not current.
+
+**"Which plugins are behind what the parent pins?"** Profile-gated example reactors are in scope (see "Traps that bite"); compare parent-pinned plugin versions against the harvested `maven-metadata.xml` values before answering.
 
 ## Traps that bite (general patterns; the parenthesised cases are this repo's instances)
 

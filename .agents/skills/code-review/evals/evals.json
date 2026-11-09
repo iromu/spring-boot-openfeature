@@ -1,0 +1,48 @@
+{
+  "skill_name": "code-review",
+  "evals": [
+    {
+      "id": 1,
+      "eval_name": "uncommitted-review-and-surgical-fix",
+      "query": "I just made some uncommitted changes and want them reviewed before I commit. Fix any real bugs you find. Here's the diff:\n\n```diff\n--- a/app/pagination.py\n+++ b/app/pagination.py\n@@ -8,7 +8,7 @@ def page_items(items, page, size):\n     # return the slice for the requested 1-based page\n-    start = (page - 1) * size\n+    start = page * size\n     end = start + size\n     return items[start:end]\n```",
+      "prompt": "I just made some uncommitted changes and want them reviewed before I commit. Fix any real bugs you find. Here's the diff:\n\n```diff\n--- a/app/pagination.py\n+++ b/app/pagination.py\n@@ -8,7 +8,7 @@ def page_items(items, page, size):\n     # return the slice for the requested 1-based page\n-    start = (page - 1) * size\n+    start = page * size\n     end = start + size\n     return items[start:end]\n```",
+      "expected_output": "Treats the input as uncommitted changes (base = HEAD), spots the off-by-one (`start = page * size` skips the first page), cites it with file:line, and gives a surgical one-line fix using `(page - 1) * size` without unrelated edits or a commit.",
+      "files": [],
+      "assertions": [
+        "Identifies the off-by-one bug: `start = page * size` should be `(page - 1) * size`, so page 1 currently skips the first `size` items",
+        "Cites the buggy line with a file:line reference to app/pagination.py",
+        "Provides a corrected `start` calculation (e.g. `(page - 1) * size`) as a surgical fix scoped to that one line, with no unrelated changes",
+        "Treats the input as uncommitted changes (reviewing the provided diff against HEAD) rather than a whole branch, and does not commit or rewrite history"
+      ]
+    },
+    {
+      "id": 2,
+      "eval_name": "branch-review-merge-base-scope",
+      "query": "I'm on branch feature/retention and want to review everything I've done before merging into main. Here are the commits on the branch:\n  9f3ab21 add retention window filter\n  4c8d0e0 wire filter into the report\nAnd the diff from main to my branch:\n\n```diff\n--- a/app/report.py\n+++ b/app/report.py\n@@ -14,0 +15,12 @@\n+def in_window(event, since_days):\n+    cutoff = now() - timedelta(days=since_days)\n+    return event.ts > cutoff\n+\n+def retained_events(events, since_days):\n+    # keep events inside the window, newest first\n+    kept = [e for e in events if in_window(e, since_days)]\n+    kept.sort(key=lambda e: e.ts)\n+    return kept\n```",
+      "prompt": "I'm on branch feature/retention and want to review everything I've done before merging into main. Here are the commits on the branch:\n  9f3ab21 add retention window filter\n  4c8d0e0 wire filter into the report\nAnd the diff from main to my branch:\n\n```diff\n--- a/app/report.py\n+++ b/app/report.py\n@@ -14,0 +15,12 @@\n+def in_window(event, since_days):\n+    cutoff = now() - timedelta(days=since_days)\n+    return event.ts > cutoff\n+\n+def retained_events(events, since_days):\n+    # keep events inside the window, newest first\n+    kept = [e for e in events if in_window(e, since_days)]\n+    kept.sort(key=lambda e: e.ts)\n+    return kept\n```",
+      "expected_output": "Resolves the target to the whole branch (diff from the merge-base with main, both commits), not just the last commit; flags the sort-direction bug (sorted ascending but the comment says 'newest first', so reverse=True is missing) with file:line; states the review scope.",
+      "files": [],
+      "assertions": [
+        "Resolves the review target to the whole branch \u2014 the diff from the merge-base with main covering both commits \u2014 not just the most recent commit",
+        "Reviews the changes introduced across the branch's commits, not a single commit",
+        "Identifies the sort bug: the list is sorted ascending (oldest first) but the comment states 'newest first', so `reverse=True` is missing",
+        "Cites the bug with a file:line reference to app/report.py",
+        "States the scope of the review (which commits/files on the branch are in scope)"
+      ]
+    },
+    {
+      "id": 3,
+      "eval_name": "review-only-no-modification",
+      "query": "Review my uncommitted changes, but don't change anything \u2014 I only want the findings and a report, no edits. Here's the diff:\n\n```diff\n--- a/app/stats.py\n+++ b/app/stats.py\n@@ -6,4 +6,7 @@ def avg(values):\n     total = sum(values)\n-    return total / len(values)\n+    # exclude the first value (a known-bad seed) from the average\n+    count = len(values) - 1\n+    return total / count\n```",
+      "prompt": "Review my uncommitted changes, but don't change anything \u2014 I only want the findings and a report, no edits. Here's the diff:\n\n```diff\n--- a/app/stats.py\n+++ b/app/stats.py\n@@ -6,4 +6,7 @@ def avg(values):\n     total = sum(values)\n-    return total / len(values)\n+    # exclude the first value (a known-bad seed) from the average\n+    count = len(values) - 1\n+    return total / count\n```",
+      "expected_output": "Spots the numerator/denominator mismatch (sums all values but divides by len-1, and divides by zero for a single value) with file:line, reports it without modifying any file, and gives a structured finding + verdict.",
+      "files": [],
+      "assertions": [
+        "Identifies the bug: the numerator `sum(values)` includes all values but the denominator is `len(values) - 1`, so the average is wrong (and it divides by zero when there is exactly one value)",
+        "Cites the bug with a file:line reference to app/stats.py",
+        "Does NOT modify or rewrite any file \u2014 it honors the explicit 'don't change anything' request and only reports",
+        "Produces a structured report: the finding plus a verdict (e.g. a MUST-FIX line or a Verdict line)"
+      ]
+    }
+  ]
+}

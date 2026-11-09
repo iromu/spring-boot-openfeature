@@ -5,10 +5,24 @@ assumptions of step3's comparator:
   * plain ordering is re-derived with fixed width zero padded numeric tuples
   * maximality of latest_any is checked pairwise against every listed version
 """
+#  Copyright 2025-2026 the original author or authors.
+#
+#  Licensed under the Apache License, Version 2.0 (the "License");
+#  you may not use this file except in compliance with the License.
+#  You may obtain a copy of the License at
+#
+#       https://www.apache.org/licenses/LICENSE-2.0
+#
+#  Unless required by applicable law or agreed to in writing, software
+#  distributed under the License is distributed on an "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
+
 import os
 import re
 import sys
-import xml.etree.ElementTree as ET
+import _va_xml as vx
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import _va_paths as va
@@ -33,7 +47,7 @@ def naive_max_plain(versions):
 
 
 def all_versions(path):
-    root = ET.parse(path).getroot()
+    root = vx.root(path)
     ver = root.find("versioning")
     if ver is None:
         return []
@@ -49,8 +63,8 @@ for name in sorted(os.listdir(META)):
         continue
     path = os.path.join(META, name)
     try:
-        root = ET.parse(path).getroot()
-    except ET.ParseError:
+        root = vx.root(path)
+    except vx.ParseError:
         continue
     g, a = root.findtext("groupId"), root.findtext("artifactId")
     versions = all_versions(path)
