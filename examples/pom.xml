@@ -47,6 +47,7 @@
         <module>growthbook-simple</module>
         <module>jsonlogic-simple</module>
         <module>launchdarkly-simple</module>
+        <module>devcycle-simple</module>
         <module>multiprovider-simple</module>
         <module>statsig-simple</module>
         <module>datadog-simple</module>

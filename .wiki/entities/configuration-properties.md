@@ -22,7 +22,7 @@ All configuration lives under the `spring.openfeature` prefix.
 
 ## Per-provider
 
-Each provider starter binds its own sub-prefix: `spring.openfeature.unleash.*`, `spring.openfeature.configcat.*`, `spring.openfeature.flagd.*`, `spring.openfeature.gcp.*`, `spring.openfeature.ofrep.*`, `spring.openfeature.optimizely.*`, `spring.openfeature.launchdarkly.*`, `spring.openfeature.split.*`, and so on. Every provider has:
+Each provider starter binds its own sub-prefix: `spring.openfeature.unleash.*`, `spring.openfeature.configcat.*`, `spring.openfeature.flagd.*`, `spring.openfeature.gcp.*`, `spring.openfeature.ofrep.*`, `spring.openfeature.optimizely.*`, `spring.openfeature.launchdarkly.*`, `spring.openfeature.split.*`, `spring.openfeature.devcycle.*`, and so on. Every provider has:
 
 | Property | Default | Effect |
 | --- | --- | --- |
@@ -61,3 +61,12 @@ Everything else (streaming vs polling vs file data source, endpoint overrides) g
 Missing required credentials fail fast with an `IllegalStateException` when the starter's own provider bean is created (not when a consumer supplies its own `FeatureProvider`).
 
 Settings not covered by properties should go through the provider customizer instead — see [[concepts/customizers]].
+
+## DevCycle
+
+`DevCycleProperties` (`spring.openfeature.devcycle.*`) — the DevCycle cloud client is configured around a server-side key:
+
+- `server-side-key` — required when enabled; must start with `dvc_server` (the SDK validates the prefix and fails fast)
+- `base-url-override` — point the DevCycle bucketing API at a different host (defaults to the production API)
+
+Everything else (custom logger, REST options, eval hooks, edge DB) goes through a `DevCycleCustomizer` bean wrapping the SDK's `DevCycleCloudOptions.Builder` — see [[concepts/customizers]].

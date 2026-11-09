@@ -1,0 +1,12 @@
+server.port: 9999
+spring:
+  openfeature:
+    devcycle:
+      server-side-key: ${DEV_CYCLE_SERVER_SIDE_KEY:}
+      # Point the DevCycle bucketing API at a different host:
+      # base-url-override: https://your-devcycle-host/
+  application:
+    name: DevCycleApplication
+
+# Boot without DevCycle at all: run with --example.fake-provider=true
+logging.level.org.iromu: DEBUG

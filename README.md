@@ -185,6 +185,7 @@ Each backend has its own starter module under `org.iromu.openfeature`:
 |----------------|-----------|------------------------------------------------------|---------------|
 | ConfigCat      | 0.2.1     | `spring-boot-starter-openfeature-configcat`          | [README](spring-boot-starter-openfeature-configcat/README.md) |
 | Datadog        | 1.68.1    | `spring-boot-starter-openfeature-datadog`            | [README](spring-boot-starter-openfeature-datadog/README.md) |
+| DevCycle       | 2.10.0    | `spring-boot-starter-openfeature-devcycle`           | [README](spring-boot-starter-openfeature-devcycle/README.md) |
 | Env Var        | 0.0.12    | `spring-boot-starter-openfeature-envvar`             | [README](spring-boot-starter-openfeature-envvar/README.md) |
 | flagd          | 0.15.0    | `spring-boot-starter-openfeature-flagd`              | [README](spring-boot-starter-openfeature-flagd/README.md) |
 | Flagsmith      | 0.0.13    | `spring-boot-starter-openfeature-flagsmith`          | [README](spring-boot-starter-openfeature-flagsmith/README.md) |
