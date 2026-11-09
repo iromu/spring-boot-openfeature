@@ -30,8 +30,8 @@
     <name>spring-boot-starter-openfeature-split</name>
 
     <properties>
-        <!-- JaCoCo instruction-coverage ratchet (measured: 0.8889) -->
-        <jacoco.instruction.minimum>0.88</jacoco.instruction.minimum>
+        <!-- JaCoCo instruction-coverage ratchet (measured: 1.0000) -->
+        <jacoco.instruction.minimum>1.00</jacoco.instruction.minimum>
     </properties>
 
     <dependencyManagement>

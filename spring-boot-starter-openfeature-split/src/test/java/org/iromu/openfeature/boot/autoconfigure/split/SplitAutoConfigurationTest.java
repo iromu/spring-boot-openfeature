@@ -16,6 +16,7 @@
 
 package org.iromu.openfeature.boot.autoconfigure.split;
 
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
@@ -26,12 +27,14 @@ import dev.openfeature.sdk.FeatureProvider;
 import dev.openfeature.sdk.ImmutableContext;
 import dev.openfeature.sdk.ProviderEvaluation;
 import io.split.client.SplitClientConfig;
+import io.split.client.SplitFactoryBuilder;
 import io.split.openfeature.SplitProvider;
 import org.iromu.openfeature.boot.autoconfigure.ClientAutoConfiguration;
 import org.iromu.openfeature.boot.split.SplitCustomizer;
 import org.iromu.openfeature.boot.split.SplitProviderOptions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
+import org.mockito.MockedStatic;
 import org.mockito.Mockito;
 import org.springframework.boot.autoconfigure.AutoConfigurations;
 import org.springframework.boot.test.context.runner.ApplicationContextRunner;
@@ -39,8 +42,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.iromu.openfeature.boot.split.SplitProperties.SPLIT_PREFIX;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyString;
 
 /**
  * Tests for {@link SplitAutoConfiguration}.
@@ -141,6 +146,28 @@ class SplitAutoConfigurationTest {
 			assertThat(context.getStartupFailure()).hasRootCauseInstanceOf(IllegalStateException.class)
 				.hasMessageContaining(SPLIT_PREFIX + ".authorization-key");
 		});
+	}
+
+	@Test
+	void shouldFailFastWhenAuthorizationKeyIsBlank() {
+		assertThatThrownBy(() -> new SplitAutoConfiguration()
+			.splitProvider(new SplitProviderOptions("   ", SplitClientConfig.builder().build())))
+			.isInstanceOf(IllegalStateException.class)
+			.hasMessageContaining(SPLIT_PREFIX + ".authorization-key");
+	}
+
+	@Test
+	void shouldWrapSplitFactoryCreationFailures() {
+		try (MockedStatic<SplitFactoryBuilder> splitFactoryBuilder = Mockito.mockStatic(SplitFactoryBuilder.class)) {
+			splitFactoryBuilder.when(() -> SplitFactoryBuilder.build(anyString(), any(SplitClientConfig.class)))
+				.thenThrow(new IOException("factory creation failed"));
+
+			assertThatThrownBy(() -> new SplitAutoConfiguration()
+				.splitProvider(new SplitProviderOptions("test-key", SplitClientConfig.builder().build())))
+				.isInstanceOf(IllegalStateException.class)
+				.hasMessageContaining("Unable to create the Split factory")
+				.hasRootCauseInstanceOf(IOException.class);
+		}
 	}
 
 	private String[] add(String[] array, String element) {
