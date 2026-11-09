@@ -75,6 +75,7 @@
     <module>spring-boot-starter-openfeature-featbit</module>
     <module>spring-boot-starter-openfeature-featureflip</module>
     <module>spring-boot-starter-openfeature-mixpanel</module>
+    <module>spring-boot-starter-openfeature-kameleoon</module>
   </modules>
 
   <properties>
@@ -149,6 +150,10 @@
          in the Mixpanel Java SDK's openfeature module; it transitively pulls an older
          dev.openfeature:sdk, which the starter pins to ${sdk.version} (lockstep). -->
     <mixpanel-openfeature.version>0.2.0</mixpanel-openfeature.version>
+    <kameleoon-openfeature.version>0.0.1</kameleoon-openfeature.version>
+    <!-- Declared explicitly (not transitively): the starter compiles against
+         KameleoonClientConfig, which ships in the Kameleoon Java client the provider uses. -->
+    <kameleoon-client-java.version>4.5.0</kameleoon-client-java.version>
   </properties>
 
   <dependencyManagement>
