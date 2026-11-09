@@ -1,0 +1,13 @@
+server.port: 9999
+spring:
+  openfeature:
+    datadog:
+      api-key: ${DD_API_KEY:}
+      app-key: ${DD_APP_KEY:}
+      site: ${DD_SITE:datadoghq.com}
+      environment: ${DD_ENV:}
+  application:
+    name: DatadogApplication
+
+# Boot without Datadog at all: run with --example.fake-provider=true
+logging.level.org.iromu: DEBUG
