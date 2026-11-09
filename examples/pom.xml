@@ -52,6 +52,7 @@
         <module>statsig-simple</module>
         <module>datadog-simple</module>
         <module>split-simple</module>
+        <module>featbit-simple</module>
     </modules>
 
     <properties>

@@ -1,0 +1,16 @@
+server.port: 9999
+spring:
+  openfeature:
+    featbit:
+      token: ${FEATBIT_TOKEN:}
+      # Each FeatBit environment has its own endpoints (from the FeatBit dashboard):
+      streaming-url: ${FEATBIT_STREAMING_URL:}
+      event-url: ${FEATBIT_EVENT_URL:}
+      # Run the FeatBit client without any connection to FeatBit:
+      # offline: true
+      # disable-events: true
+  application:
+    name: FeatBitApplication
+
+# Boot without FeatBit at all: run with --example.fake-provider=true
+logging.level.org.iromu: DEBUG
