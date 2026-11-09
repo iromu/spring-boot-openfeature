@@ -72,6 +72,7 @@
     <module>spring-boot-starter-openfeature-datadog</module>
     <module>spring-boot-starter-openfeature-split</module>
     <module>spring-boot-starter-openfeature-devcycle</module>
+    <module>spring-boot-starter-openfeature-featbit</module>
   </modules>
 
   <properties>
@@ -128,12 +129,18 @@
     <launchdarkly-java-server-sdk.version>7.9.1</launchdarkly-java-server-sdk.version>
 
     <datadog-openfeature.version>1.68.1</datadog-openfeature.version>
+
     <split-openfeature.version>1.2.2</split-openfeature.version>
     <split-java-client.version>4.18.2</split-java-client.version>
 
     <!-- DevCycle's OpenFeature provider (com.devcycle.sdk.server.openfeature.DevCycleProvider)
          ships inside the DevCycle Java server SDK. -->
     <devcycle-openfeature.version>2.10.0</devcycle-openfeature.version>
+
+    <featbit-openfeature.version>1.0.0</featbit-openfeature.version>
+    <!-- Declared explicitly (not transitively): the provider publishes the FeatBit SDK in an
+         open version range, and the starter compiles against FBConfig. -->
+    <featbit-java-sdk.version>1.4.4</featbit-java-sdk.version>
   </properties>
 
   <dependencyManagement>

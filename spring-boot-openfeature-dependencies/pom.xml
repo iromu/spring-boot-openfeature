@@ -202,6 +202,16 @@
                 <artifactId>java-server-sdk</artifactId>
                 <version>${devcycle-openfeature.version}</version>
             </dependency>
+            <dependency>
+                <groupId>co.featbit</groupId>
+                <artifactId>featbit-openfeature-provider-java-server</artifactId>
+                <version>${featbit-openfeature.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>co.featbit</groupId>
+                <artifactId>featbit-java-sdk</artifactId>
+                <version>${featbit-java-sdk.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <build>
