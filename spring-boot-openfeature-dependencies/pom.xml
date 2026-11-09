@@ -217,6 +217,11 @@
                 <artifactId>featureflip-openfeature</artifactId>
                 <version>${featureflip-openfeature.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.mixpanel</groupId>
+                <artifactId>mixpanel-java-openfeature</artifactId>
+                <version>${mixpanel-openfeature.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <build>

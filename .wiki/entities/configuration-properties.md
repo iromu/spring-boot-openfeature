@@ -92,3 +92,13 @@ Everything else (custom logger, REST options, eval hooks, edge DB) goes through 
 - `disable-events` (default `false`) — disable FeatBit event delivery entirely
 
 Missing required values fail fast with an `IllegalStateException` naming all three property paths when the starter's own provider bean is created. Any other `FBConfig` option goes through a `FeatBitCustomizer` bean — see [[concepts/customizers]].
+
+## Mixpanel
+
+`MixpanelProperties` (`spring.openfeature.mixpanel.*`) — the project is identified by its token; the starter wires the vendor-published provider (`com.mixpanel:mixpanel-java-openfeature`) in remote-evaluation mode:
+
+- `project-token` — required when enabled; the Mixpanel project token. Missing token fails fast with an `IllegalStateException` when the starter's own provider bean is created.
+- `api-host` — optional; the Mixpanel API host for your region (SDK default `api.mixpanel.com`).
+- `request-timeout-seconds` — optional; HTTP request timeout in seconds for flag evaluations (SDK default 10).
+
+Everything else (e.g. the exposure executor) goes through a `MixpanelCustomizer` bean wrapping the SDK's `RemoteFlagsConfig.Builder` — see [[concepts/customizers]].
