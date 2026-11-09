@@ -242,6 +242,16 @@
                 <artifactId>octopus-openfeature-provider</artifactId>
                 <version>${octopusdeploy-openfeature.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.vwo.sdk</groupId>
+                <artifactId>vwo-openfeature-provider-java</artifactId>
+                <version>${vwo-openfeature.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.vwo.sdk</groupId>
+                <artifactId>vwo-fme-java-sdk</artifactId>
+                <version>${vwo-fme-java-sdk.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <build>

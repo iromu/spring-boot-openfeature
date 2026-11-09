@@ -1,0 +1,11 @@
+server.port: 9999
+spring:
+  openfeature:
+    vwo:
+      account-id: ${VWO_ACCOUNT_ID:}
+      api-key: ${VWO_API_KEY:}
+  application:
+    name: VwoApplication
+
+# Boot without VWO at all: run with --example.fake-provider=true
+logging.level.org.iromu: DEBUG
