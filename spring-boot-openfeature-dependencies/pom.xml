@@ -237,6 +237,11 @@
                 <artifactId>openfeature-provider</artifactId>
                 <version>${confidence-openfeature.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.octopus.openfeature</groupId>
+                <artifactId>octopus-openfeature-provider</artifactId>
+                <version>${octopusdeploy-openfeature.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <build>

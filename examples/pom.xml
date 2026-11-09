@@ -57,6 +57,7 @@
         <module>mixpanel-simple</module>
         <module>kameleoon-simple</module>
         <module>confidence-simple</module>
+        <module>octopusdeploy-simple</module>
     </modules>
 
     <properties>

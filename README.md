@@ -203,6 +203,7 @@ Each backend has its own starter module under `org.iromu.openfeature`:
 | Multi-Provider | 0.0.3     | `spring-boot-starter-openfeature-multiprovider`      | [README](spring-boot-starter-openfeature-multiprovider/README.md) |
 | OFREP          | 0.0.2     | `spring-boot-starter-openfeature-ofrep`              | [README](spring-boot-starter-openfeature-ofrep/README.md) |
 | Optimizely     | 1.0.0     | `spring-boot-starter-openfeature-optimizely`         | [README](spring-boot-starter-openfeature-optimizely/README.md) |
+| Octopus Deploy | 2.1.0     | `spring-boot-starter-openfeature-octopusdeploy`      | [README](spring-boot-starter-openfeature-octopusdeploy/README.md) |
 | Statsig        | 0.2.1     | `spring-boot-starter-openfeature-statsig`            | [README](spring-boot-starter-openfeature-statsig/README.md) |
 | Split          | 1.2.2     | `spring-boot-starter-openfeature-split`              | [README](spring-boot-starter-openfeature-split/README.md) |
 | Unleash        | 0.1.3-alpha | `spring-boot-starter-openfeature-unleash`          | [README](spring-boot-starter-openfeature-unleash/README.md) |
