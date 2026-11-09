@@ -197,6 +197,11 @@
                 <artifactId>java-client</artifactId>
                 <version>${split-java-client.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.devcycle</groupId>
+                <artifactId>java-server-sdk</artifactId>
+                <version>${devcycle-openfeature.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <build>
