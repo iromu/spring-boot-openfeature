@@ -27,11 +27,11 @@ When the consumer defines their own `FeatureProvider` bean, the starter SHALL ba
 - **THEN** the context has exactly one `FeatureProvider`, the consumer's
 
 ### Requirement: Configuration is property-driven
-The Kameleoon API key and any provider-specific options SHALL be bindable from `spring.openfeature.kameleoon.*` properties; a registered customizer SHALL be able to adjust the assembled configuration.
+The Kameleoon site code, client credentials and any provider-specific options SHALL be bindable from `spring.openfeature.kameleoon.*` properties; a registered customizer SHALL be able to adjust the assembled configuration.
 
-#### Scenario: API key supplied
-- **WHEN** `spring.openfeature.kameleoon.api-key` is set
-- **THEN** the assembled provider configuration carries that key
+#### Scenario: Credentials supplied
+- **WHEN** `spring.openfeature.kameleoon.site-code`, `spring.openfeature.kameleoon.client-id` and `spring.openfeature.kameleoon.client-secret` are set
+- **THEN** the assembled provider configuration carries those values
 
 #### Scenario: Customizer applied after binding
 - **WHEN** a customizer bean is registered in the context

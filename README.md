@@ -196,6 +196,7 @@ Each backend has its own starter module under `org.iromu.openfeature`:
 | GoFeatureFlag  | 2.0.2     | `spring-boot-starter-openfeature-gofeatureflag`      | [README](spring-boot-starter-openfeature-gofeatureflag/README.md) |
 | GrowthBook     | 0.0.2     | `spring-boot-starter-openfeature-growthbook`         | [README](spring-boot-starter-openfeature-growthbook/README.md) |
 | JsonLogic      | 1.3.0     | `spring-boot-starter-openfeature-jsonlogic`          | [README](spring-boot-starter-openfeature-jsonlogic/README.md) |
+| Kameleoon      | 0.0.1     | `spring-boot-starter-openfeature-kameleoon`          | [README](spring-boot-starter-openfeature-kameleoon/README.md) |
 | LaunchDarkly   | 1.1.1     | `spring-boot-starter-openfeature-launchdarkly`       | [README](spring-boot-starter-openfeature-launchdarkly/README.md) |
 | Mixpanel       | 0.2.0     | `spring-boot-starter-openfeature-mixpanel`           | [README](spring-boot-starter-openfeature-mixpanel/README.md) |
 | Multi-Provider | 0.0.3     | `spring-boot-starter-openfeature-multiprovider`      | [README](spring-boot-starter-openfeature-multiprovider/README.md) |

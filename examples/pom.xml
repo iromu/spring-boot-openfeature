@@ -55,6 +55,7 @@
         <module>featbit-simple</module>
         <module>featureflip-simple</module>
         <module>mixpanel-simple</module>
+        <module>kameleoon-simple</module>
     </modules>
 
     <properties>

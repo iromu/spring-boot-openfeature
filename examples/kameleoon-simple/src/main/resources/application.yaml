@@ -1,0 +1,15 @@
+server.port: 9999
+spring:
+  openfeature:
+    kameleoon:
+      site-code: ${KAMELEOON_SITE_CODE:}
+      client-id: ${KAMELEOON_CLIENT_ID:}
+      client-secret: ${KAMELEOON_CLIENT_SECRET:}
+      # Optional environment / endpoint tuning:
+      # environment: production
+      # top-level-domain: kameleoon.com
+  application:
+    name: KameleoonApplication
+
+# Boot without Kameleoon at all: run with --example.fake-provider=true
+logging.level.org.iromu: DEBUG
