@@ -12,7 +12,7 @@ updated_at: "2026-11-09"
 
 # Provider Starters
 
-One Maven module per flag backend: `unleash`, `configcat`, `datadog`, `envvar`, `flagd`, `flagsmith`, `flipt`, `gofeatureflag`, `jsonlogic`, `statsig`, `growthbook`, `gcp`, `ofrep`, `optimizely`, `launchdarkly`, `split`, plus `multiprovider` ([[features/multi-provider]]).
+One Maven module per flag backend: `unleash`, `configcat`, `datadog`, `envvar`, `flagd`, `flagsmith`, `flipt`, `gofeatureflag`, `jsonlogic`, `statsig`, `growthbook`, `gcp`, `ofrep`, `optimizely`, `launchdarkly`, `split`, `devcycle`, plus `multiprovider` ([[features/multi-provider]]).
 
 ## The shared pattern
 
@@ -34,6 +34,7 @@ One Maven module per flag backend: `unleash`, `configcat`, `datadog`, `envvar`, 
 - **LaunchDarkly:** `LaunchDarklyProperties` (`spring.openfeature.launchdarkly.*`) binds `service-key` (the environment is encoded in the key) and `offline`. The LaunchDarkly OpenFeature provider is vendor-published (`com.launchdarkly:launchdarkly-openfeature-serverprovider`), and its POM ships the LaunchDarkly server SDK in `runtime` scope, so the module declares `launchdarkly-java-server-sdk` explicitly to compile against `LDConfig`. Data-source selection (streaming/polling/file) goes through the `LaunchDarklyCustomizer`; the contract tests run credential-free via a file data source + `events(Components.noEvents())`.
 - **Datadog:** `DatadogProperties` (`spring.openfeature.datadog.*`) binds api-key/app-key/site (required, fail-fast) plus `init-timeout` and `evaluation-telemetry-opt-out` for the provider's `Options`. The provider has no programmatic credential API, so the starter publishes the bound values as `DD_API_KEY`/`DD_SITE`/`DD_ENV` system properties only when not already set — the dd-trace settings then pick them up. The provider constructor is lazy; real initialization requires the `dd-java-agent`.
 - **Split:** `SplitProperties` (`spring.openfeature.split.*`) supplies the `authorization-key` and an optional `domain` endpoint override. The Split SDK's factory is built eagerly, so the starter assembles a `SplitProviderOptions` (key + `SplitClientConfig`) and fails fast when the key is unset; finer `SplitClientConfig` tuning goes through the `SplitCustomizer` bean. A fake provider backs the runnable `split-simple` example.
+- **DevCycle:** `DevCycleProperties` (`spring.openfeature.devcycle.*`) binds `server-side-key` (required; must start with `dvc_server`) and `base-url-override`. The OpenFeature provider (`com.devcycle.sdk.server.openfeature.DevCycleProvider`) ships inside the vendor-published `com.devcycle:java-server-sdk`; the starter wraps a `DevCycleCloudClient` around it. The client constructor is network-lazy (no connection until the first evaluation) and runs no background threads, so the contract tests run credential-free by pointing `base-url-override` at a `MockWebServer`. The module pins `dev.openfeature:sdk` to the repo's `sdk.version` because the DevCycle SDK transitively pulls an older SDK at compile scope.
 - Most others (configcat, flagd, flagsmith, flipt, gofeatureflag, jsonlogic, statsig, growthbook) follow the same shape with their own `Properties` + `Customizer`.
 
 ## Adding a new provider
@@ -48,4 +49,4 @@ Each provider starter module ships a `README.md` with its full `spring.openfeatu
 
 ## Example apps
 
-Every provider starter pairs with a runnable `<provider>-simple` example in the `examples/` reactor (17 modules total including `unleash-advanced`). Each boots without vendor credentials via a `@Primary` fake `FeatureProvider` gated on `--example.fake-provider=true`; the real provider auto-config backs off entirely. See [[reference/build-and-modules]] for the full list.
+Every provider starter pairs with a runnable `<provider>-simple` example in the `examples/` reactor (19 modules total including `unleash-advanced`). Each boots without vendor credentials via a `@Primary` fake `FeatureProvider` gated on `--example.fake-provider=true`; the real provider auto-config backs off entirely. See [[reference/build-and-modules]] for the full list.
