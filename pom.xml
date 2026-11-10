@@ -133,10 +133,10 @@
          JSONObject.keySet() for any datafile/fetched config. -->
     <json.version>20260814</json.version>
 
-    <launchdarkly-openfeature.version>1.1.1</launchdarkly-openfeature.version>
+    <launchdarkly-openfeature.version>2.0.0</launchdarkly-openfeature.version>
     <!-- Declared explicitly (not transitively): the OpenFeature provider publishes the
          LaunchDarkly SDK in runtime scope, and the starter compiles against LDConfig. -->
-    <launchdarkly-java-server-sdk.version>7.9.1</launchdarkly-java-server-sdk.version>
+    <launchdarkly-java-server-sdk.version>7.17.5</launchdarkly-java-server-sdk.version>
 
     <datadog-openfeature.version>1.68.1</datadog-openfeature.version>
 
