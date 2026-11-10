@@ -6,7 +6,7 @@ language: "default"
 source_paths:
   - "pom.xml"
   - "examples/pom.xml"
-updated_at: "2026-11-09"
+updated_at: "2026-11-10"
 ---
 
 # Build and Modules
@@ -26,7 +26,7 @@ Maven multi-module build (Java 17, Spring Boot 4). Use the wrapper: `./mvnw`.
 | Profile | Adds |
 | --- | --- |
 | `sonar` | `aggregate-report` module (coverage aggregation) |
-| `examples` | `examples` reactor (26 modules: `unleash-simple`, `unleash-advanced`, plus `<provider>-simple` for all other 24 providers) |
+| `examples` | `examples` reactor (28 modules: `unleash-simple`, `unleash-advanced`, plus `<provider>-simple` for all other 26 providers) |
 | `publish` | GPG signing + Central Portal publishing |
 
 ## Examples
@@ -47,6 +47,7 @@ Every provider starter has a runnable `<provider>-simple` example under `example
 - `octopusdeploy-simple` — the Octopus Deploy starter (vendor-published provider, added 2026-11-09).
 - `vwo-simple` — the VWO starter (vendor-published provider, added 2026-11-09).
 - `superposition-simple` — the Superposition starter (vendor-published provider, added 2026-11-09).
+- `ageris-simple` — the Ageris starter (vendor-published, file-based provider, added 2026-11-10).
 
 The `multiprovider-simple` example additionally pulls in `spring-boot-starter-openfeature-envvar` so the `MultiProvider` wraps two `FeatureProvider` beans.
 

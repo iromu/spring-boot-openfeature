@@ -11,6 +11,7 @@ source_paths:
   - "spring-boot-starter-openfeature-kameleoon/src/main/java/org/iromu/openfeature/boot/kameleoon/KameleoonProperties.java"
   - "spring-boot-starter-openfeature-superposition/src/main/java/org/iromu/openfeature/boot/superposition/SuperpositionProperties.java"
 updated_at: "2026-11-09"
+updated_at: "2026-11-10"
 ---
 
 # Configuration Properties
@@ -163,3 +164,16 @@ A missing or non-numeric `account-id` or a blank `api-key` fails fast with an `I
 - `refresh-interval-millis` — optional, in milliseconds; configuration-refresh polling interval (default 5000)
 
 A missing `api-key`, `org-id` or `workspace-id` fails fast with an `IllegalStateException` naming the offending property when the starter's own options bean is created (the vendor options builder rejects null values with a bare `NullPointerException`, so the starter validates before building). Any other `SuperpositionProviderOptions.Builder` option (e.g. a fallback config or experimentation options) goes through a `SuperpositionCustomizer` bean — see [[concepts/customizers]].
+## Ageris
+
+`AgerisProperties` (`spring.openfeature.ageris.*`) — Ageris is a file-based platform with no API key: flags and configs are read from configuration files in a local directory and refreshed on a schedule:
+
+- `application` — required; the name of the application, as the configuration file fetcher and the Ageris managers use it
+- `path` — required; the base directory of the Ageris configuration files (the fetcher reads them from `<path>/<application>/`)
+- `feature-flag-files` — required (at least one entry); names of the feature-flag configuration files (e.g. `featureflags.json`); boolean lookups are answered from these files
+- `json-config-files` — optional; names of the JSON configuration files (e.g. `configs.json`); text, number and object lookups are answered from these files
+- `targeting-key-type` (default `user`) — context type the targeting key of a caller is put under
+- `refresh-interval` (default `10s`) — interval between two refreshes of the configuration files
+- `first-load-timeout` (default `30s`) — how long provider initialization waits for the first attempt to load the configuration files
+
+Missing required values fail fast with an `IllegalStateException` naming the property path when the starter's own configuration bean is created. The provider constructor is lazy (no I/O until `initialize()` starts the configuration loader). Any other `Ageris` option (policy bindings, metrics) goes through an `AgerisCustomizer` bean — see [[concepts/customizers]].
