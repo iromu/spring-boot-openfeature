@@ -10,7 +10,6 @@ source_paths:
   - "spring-boot-starter-openfeature-featbit/src/main/java/org/iromu/openfeature/boot/featbit/FeatBitProperties.java"
   - "spring-boot-starter-openfeature-kameleoon/src/main/java/org/iromu/openfeature/boot/kameleoon/KameleoonProperties.java"
   - "spring-boot-starter-openfeature-superposition/src/main/java/org/iromu/openfeature/boot/superposition/SuperpositionProperties.java"
-updated_at: "2026-11-09"
 updated_at: "2026-11-10"
 ---
 
