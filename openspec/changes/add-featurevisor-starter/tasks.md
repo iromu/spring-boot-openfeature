@@ -1,8 +1,8 @@
 ## 1. Premises and feasibility gate
 
-- [ ] 1.1 Resolve the Featurevisor OpenFeature provider from Maven Central, inspect its API surface. Record findings in design.md.
-- [ ] 1.2 Determine whether the provider constructor is lazy or eagerly connects. Record in design.md.
-- [ ] 1.3 Prove lockstep: `./mvnw -B -pl spring-boot-starter-openfeature-featurevisor dependency:list` shows `dev.openfeature:sdk` = `sdk.version`.
+- [x] 1.1 Resolve the Featurevisor OpenFeature provider from Maven Central, inspect its API surface. Record findings in design.md. — **Resolved and BLOCKED:** `com.featurevisor:featurevisor-openfeature:5.0.0` is published to GitHub Packages only (auth required; not on Maven Central under any group). Findings and exit options recorded in design.md; the API surface cannot be inspected because the jar is unresolvable without a GitHub token.
+- [ ] 1.2 Determine whether the provider constructor is lazy or eagerly connects. Record in design.md. — **Blocked** by 1.1 (jar unresolvable on this host).
+- [ ] 1.3 Prove lockstep: `./mvnw -B -pl spring-boot-starter-openfeature-featurevisor dependency:list` shows `dev.openfeature:sdk` = `sdk.version`. — **Blocked** by 1.1 (module cannot build until the artifact is resolvable).
 
 ## 2. Build wiring
 

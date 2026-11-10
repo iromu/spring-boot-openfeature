@@ -37,4 +37,5 @@ secret.txt
 
 .qwen/tmp
 .qwen/reviews
-
+.qwen/worktrees
+__pycache__

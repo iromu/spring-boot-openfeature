@@ -1,0 +1,10 @@
+server.port: 9999
+spring:
+  openfeature:
+    featureflip:
+      api-key: ${FEATUREFLIP_API_KEY:}
+  application:
+    name: FeatureflipApplication
+
+# Boot without Featureflip at all: run with --example.fake-provider=true
+logging.level.org.iromu: DEBUG

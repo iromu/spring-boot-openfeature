@@ -73,10 +73,20 @@
     <module>spring-boot-starter-openfeature-split</module>
     <module>spring-boot-starter-openfeature-devcycle</module>
     <module>spring-boot-starter-openfeature-featbit</module>
+    <module>spring-boot-starter-openfeature-featureflip</module>
+    <module>spring-boot-starter-openfeature-mixpanel</module>
+    <module>spring-boot-starter-openfeature-kameleoon</module>
+    <module>spring-boot-starter-openfeature-confidence</module>
+    <module>spring-boot-starter-openfeature-octopusdeploy</module>
+    <module>spring-boot-starter-openfeature-vwo</module>
+    <module>spring-boot-starter-openfeature-superposition</module>
+    <module>spring-boot-starter-openfeature-ageris</module>
+    <module>spring-boot-starter-openfeature-cloudbees</module>
+    <module>spring-boot-starter-openfeature-configdirector</module>
   </modules>
 
   <properties>
-    <revision>4.1.3-SNAPSHOT</revision>
+    <revision>4.1.4-SNAPSHOT</revision>
     <java.version>17</java.version>
 
     <maven.compiler.source>${java.version}</maven.compiler.source>
@@ -131,7 +141,7 @@
     <datadog-openfeature.version>1.68.1</datadog-openfeature.version>
 
     <split-openfeature.version>1.2.2</split-openfeature.version>
-    <split-java-client.version>4.18.2</split-java-client.version>
+    <split-java-client.version>4.19.1</split-java-client.version>
 
     <!-- DevCycle's OpenFeature provider (com.devcycle.sdk.server.openfeature.DevCycleProvider)
          ships inside the DevCycle Java server SDK. -->
@@ -141,6 +151,45 @@
     <!-- Declared explicitly (not transitively): the provider publishes the FeatBit SDK in an
          open version range, and the starter compiles against FBConfig. -->
     <featbit-java-sdk.version>1.4.4</featbit-java-sdk.version>
+    <featureflip-openfeature.version>0.2.1</featureflip-openfeature.version>
+
+    <!-- The Mixpanel OpenFeature provider (com.mixpanel.openfeature.MixpanelProvider) ships
+         in the Mixpanel Java SDK's openfeature module; it transitively pulls an older
+         dev.openfeature:sdk, which the starter pins to ${sdk.version} (lockstep). -->
+    <mixpanel-openfeature.version>0.2.0</mixpanel-openfeature.version>
+    <kameleoon-openfeature.version>0.0.1</kameleoon-openfeature.version>
+    <!-- Declared explicitly (not transitively): the starter compiles against
+         KameleoonClientConfig, which ships in the Kameleoon Java client the provider uses. -->
+    <kameleoon-client-java.version>4.5.0</kameleoon-client-java.version>
+    <!-- Confidence's OpenFeature provider, published by Spotify alongside the Confidence
+         SDK (com.spotify.confidence:sdk-java). -->
+    <confidence-openfeature.version>0.7.0</confidence-openfeature.version>
+    <octopusdeploy-openfeature.version>2.1.0</octopusdeploy-openfeature.version>
+    <!-- VWO's OpenFeature provider (com.vwo.VWOProvider); the provider declares
+         dev.openfeature:sdk at an older version, which the starter pins to
+         ${sdk.version} (lockstep). -->
+    <vwo-openfeature.version>1.0.0</vwo-openfeature.version>
+    <!-- Declared explicitly (not transitively): the provider ships the VWO FME SDK at
+         runtime scope, but the starter compiles against com.vwo.VWO, which ships in it
+         (referenced by VWOProvider's constructor signature). -->
+    <vwo-fme-java-sdk.version>1.8.1</vwo-fme-java-sdk.version>
+
+    <!-- The Superposition OpenFeature provider (io.juspay.superposition.openfeature.SuperpositionOpenFeatureProvider)
+         ships in Juspay's Superposition Java client; it transitively pulls an older
+         dev.openfeature:sdk, which the starter pins to ${sdk.version} (lockstep). -->
+    <superposition-openfeature.version>0.118.2</superposition-openfeature.version>
+    <!-- Ageris's OpenFeature provider (io.github.lichtsinn:ageris-openfeature) declares
+         dev.openfeature:sdk with provided scope, so it never pulls a transitive SDK
+         version; the consumer's SDK arrives at ${sdk.version} through spring-openfeature. -->
+    <ageris-openfeature.version>0.7.0</ageris-openfeature.version>
+    <!-- CloudBees's OpenFeature provider (com.cloudbees.openfeature.provider.CloudbeesProvider);
+         the provider declares dev.openfeature:sdk at an older version, which the starter
+         pins to ${sdk.version} (lockstep). -->
+    <cloudbees-openfeature.version>1.0.1</cloudbees-openfeature.version>
+    <!-- ConfigDirector's OpenFeature provider (com.configdirector:configdirector-openfeature-server-provider)
+         transitively pulls an older dev.openfeature:sdk, which the starter pins to
+         ${sdk.version} (lockstep). -->
+    <configdirector-openfeature.version>1.4.0</configdirector-openfeature.version>
   </properties>
 
   <dependencyManagement>

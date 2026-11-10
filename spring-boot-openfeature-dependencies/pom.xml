@@ -212,6 +212,66 @@
                 <artifactId>featbit-java-sdk</artifactId>
                 <version>${featbit-java-sdk.version}</version>
             </dependency>
+            <dependency>
+                <groupId>io.featureflip</groupId>
+                <artifactId>featureflip-openfeature</artifactId>
+                <version>${featureflip-openfeature.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mixpanel</groupId>
+                <artifactId>mixpanel-java-openfeature</artifactId>
+                <version>${mixpanel-openfeature.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.kameleoon</groupId>
+                <artifactId>kameleoon-openfeature-java</artifactId>
+                <version>${kameleoon-openfeature.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.kameleoon</groupId>
+                <artifactId>kameleoon-client-java</artifactId>
+                <version>${kameleoon-client-java.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.spotify.confidence</groupId>
+                <artifactId>openfeature-provider</artifactId>
+                <version>${confidence-openfeature.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.octopus.openfeature</groupId>
+                <artifactId>octopus-openfeature-provider</artifactId>
+                <version>${octopusdeploy-openfeature.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.vwo.sdk</groupId>
+                <artifactId>vwo-openfeature-provider-java</artifactId>
+                <version>${vwo-openfeature.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.vwo.sdk</groupId>
+                <artifactId>vwo-fme-java-sdk</artifactId>
+                <version>${vwo-fme-java-sdk.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.juspay.superposition</groupId>
+                <artifactId>openfeature-provider</artifactId>
+                <version>${superposition-openfeature.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.lichtsinn</groupId>
+                <artifactId>ageris-openfeature</artifactId>
+                <version>${ageris-openfeature.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.cloudbees.openfeature</groupId>
+                <artifactId>cloudbees-openfeature-provider</artifactId>
+                <version>${cloudbees-openfeature.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.configdirector</groupId>
+                <artifactId>configdirector-openfeature-server-provider</artifactId>
+                <version>${configdirector-openfeature.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <build>

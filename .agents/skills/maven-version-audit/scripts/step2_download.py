@@ -9,11 +9,25 @@ no url is hand retyped:
   * every coordinate is then tried against every declared repository, so artifacts that
     live only on a secondary repo (the growthbook pair on jitpack) still resolve.
 """
+#  Copyright 2025-2026 the original author or authors.
+#
+#  Licensed under the Apache License, Version 2.0 (the "License");
+#  you may not use this file except in compliance with the License.
+#  You may obtain a copy of the License at
+#
+#       https://www.apache.org/licenses/LICENSE-2.0
+#
+#  Unless required by applicable law or agreed to in writing, software
+#  distributed under the License is distributed on an "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
+
 import os
 import re
 import subprocess
 import sys
-import xml.etree.ElementTree as ET
+import _va_xml as vx
 
 import _va_paths as va
 
@@ -98,8 +112,8 @@ def content_matches(path, group, artifact):
     if not is_metadata(path):
         return False
     try:
-        root = ET.parse(path).getroot()
-    except ET.ParseError:
+        root = vx.root(path)
+    except vx.ParseError:
         return False
     got_group = root.findtext("groupId")
     got_artifact = root.findtext("artifactId")

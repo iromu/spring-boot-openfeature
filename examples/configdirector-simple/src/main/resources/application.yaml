@@ -1,0 +1,11 @@
+server.port: 9999
+spring:
+  openfeature:
+    configdirector:
+      api-key: ${CONFIGDIRECTOR_API_KEY:fake-api-key}
+      url: ${CONFIGDIRECTOR_URL:https://api.configdirector.com}
+  application:
+    name: ConfigDirectorApplication
+
+# Boot without ConfigDirector at all: run with --example.fake-provider=true
+logging.level.org.iromu: DEBUG

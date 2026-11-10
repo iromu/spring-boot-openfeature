@@ -1,0 +1,13 @@
+server.port: 9999
+spring:
+  openfeature:
+    octopusdeploy:
+      client-identifier: ${OCTOPUS_CLIENT_IDENTIFIER:}
+      product-name: ${OCTOPUS_PRODUCT_NAME:octopusdeploy-simple}
+      # product-version: 1.0.0
+      # cache-duration: 2m
+  application:
+    name: OctopusDeployApplication
+
+# Boot without Octopus Deploy at all: run with --example.fake-provider=true
+logging.level.org.iromu: DEBUG

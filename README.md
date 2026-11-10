@@ -183,7 +183,10 @@ Each backend has its own starter module under `org.iromu.openfeature`:
 
 | Provider       | Version   | Starter artifact                                     | Documentation |
 |----------------|-----------|------------------------------------------------------|---------------|
+| Ageris         | 0.7.0     | `spring-boot-starter-openfeature-ageris`             | [README](spring-boot-starter-openfeature-ageris/README.md) |
 | ConfigCat      | 0.2.1     | `spring-boot-starter-openfeature-configcat`          | [README](spring-boot-starter-openfeature-configcat/README.md) |
+| ConfigDirector | 1.4.0     | `spring-boot-starter-openfeature-configdirector`     | [README](spring-boot-starter-openfeature-configdirector/README.md) |
+| Confidence     | 0.7.0     | `spring-boot-starter-openfeature-confidence`         | [README](spring-boot-starter-openfeature-confidence/README.md) |
 | Datadog        | 1.68.1    | `spring-boot-starter-openfeature-datadog`            | [README](spring-boot-starter-openfeature-datadog/README.md) |
 | DevCycle       | 2.10.0    | `spring-boot-starter-openfeature-devcycle`           | [README](spring-boot-starter-openfeature-devcycle/README.md) |
 | Env Var        | 0.0.12    | `spring-boot-starter-openfeature-envvar`             | [README](spring-boot-starter-openfeature-envvar/README.md) |
@@ -191,30 +194,41 @@ Each backend has its own starter module under `org.iromu.openfeature`:
 | flagd          | 0.15.0    | `spring-boot-starter-openfeature-flagd`              | [README](spring-boot-starter-openfeature-flagd/README.md) |
 | Flagsmith      | 0.0.13    | `spring-boot-starter-openfeature-flagsmith`          | [README](spring-boot-starter-openfeature-flagsmith/README.md) |
 | Flipt          | 0.1.4     | `spring-boot-starter-openfeature-flipt`              | [README](spring-boot-starter-openfeature-flipt/README.md) |
+| Featureflip    | 0.2.1     | `spring-boot-starter-openfeature-featureflip`        | [README](spring-boot-starter-openfeature-featureflip/README.md) |
 | GCP            | 0.0.2     | `spring-boot-starter-openfeature-gcp`                | [README](spring-boot-starter-openfeature-gcp/README.md) |
 | GoFeatureFlag  | 2.0.2     | `spring-boot-starter-openfeature-gofeatureflag`      | [README](spring-boot-starter-openfeature-gofeatureflag/README.md) |
 | GrowthBook     | 0.0.2     | `spring-boot-starter-openfeature-growthbook`         | [README](spring-boot-starter-openfeature-growthbook/README.md) |
 | JsonLogic      | 1.3.0     | `spring-boot-starter-openfeature-jsonlogic`          | [README](spring-boot-starter-openfeature-jsonlogic/README.md) |
+| Kameleoon      | 0.0.1     | `spring-boot-starter-openfeature-kameleoon`          | [README](spring-boot-starter-openfeature-kameleoon/README.md) |
 | LaunchDarkly   | 1.1.1     | `spring-boot-starter-openfeature-launchdarkly`       | [README](spring-boot-starter-openfeature-launchdarkly/README.md) |
+| Mixpanel       | 0.2.0     | `spring-boot-starter-openfeature-mixpanel`           | [README](spring-boot-starter-openfeature-mixpanel/README.md) |
 | Multi-Provider | 0.0.3     | `spring-boot-starter-openfeature-multiprovider`      | [README](spring-boot-starter-openfeature-multiprovider/README.md) |
 | OFREP          | 0.0.2     | `spring-boot-starter-openfeature-ofrep`              | [README](spring-boot-starter-openfeature-ofrep/README.md) |
 | Optimizely     | 1.0.0     | `spring-boot-starter-openfeature-optimizely`         | [README](spring-boot-starter-openfeature-optimizely/README.md) |
+| Octopus Deploy | 2.1.0     | `spring-boot-starter-openfeature-octopusdeploy`      | [README](spring-boot-starter-openfeature-octopusdeploy/README.md) |
 | Statsig        | 0.2.1     | `spring-boot-starter-openfeature-statsig`            | [README](spring-boot-starter-openfeature-statsig/README.md) |
 | Split          | 1.2.2     | `spring-boot-starter-openfeature-split`              | [README](spring-boot-starter-openfeature-split/README.md) |
+| Superposition  | 0.118.2   | `spring-boot-starter-openfeature-superposition`      | [README](spring-boot-starter-openfeature-superposition/README.md) |
 | Unleash        | 0.1.3-alpha | `spring-boot-starter-openfeature-unleash`          | [README](spring-boot-starter-openfeature-unleash/README.md) |
+| VWO            | 1.0.0     | `spring-boot-starter-openfeature-vwo`              | [README](spring-boot-starter-openfeature-vwo/README.md) |
+| CloudBees      | 1.0.1     | `spring-boot-starter-openfeature-cloudbees`        | [README](spring-boot-starter-openfeature-cloudbees/README.md) |
 
 To switch providers, replace the starter dependency and update the configuration as described in the provider's README.
 
 ## Example Applications
 
-The `examples/` directory contains five runnable applications (built with the `examples` profile or as a separate
+The `examples/` directory contains thirty runnable applications (built with the `examples` profile or as a separate
 reactor; they resolve the starters from the local build or the snapshot repository):
 
 - **`unleash-simple`** — port `9998`; in-memory fake Unleash provider (default, no external server needed).
 - **`unleash-advanced`** — port `9999`; mocked Unleash API server with a local `features.json` backup file.
-- **`gcp-simple`** — port `9999`; in-memory fake GCP provider (`--example.fake-provider=true`).
-- **`ofrep-simple`** — port `9999`; in-memory fake OFREP provider (`--example.fake-provider=true`).
-- **`optimizely-simple`** — port `9999`; in-memory fake Optimizely provider (`--example.fake-provider=true`).
+- **one `<provider>-simple` per remaining provider** (28 apps: `ageris-simple`, `cloudbees-simple`,
+  `confidence-simple`, `configcat-simple`, `configdirector-simple`, `datadog-simple`, `devcycle-simple`,
+  `featbit-simple`, `featureflip-simple`, `flipt-simple`, `flagd-simple`, `flagsmith-simple`, `gcp-simple`,
+  `gofeatureflag-simple`, `growthbook-simple`, `jsonlogic-simple`, `kameleoon-simple`, `launchdarkly-simple`,
+  `mixpanel-simple`, `multiprovider-simple`, `octopusdeploy-simple`, `ofrep-simple`, `optimizely-simple`,
+  `split-simple`, `statsig-simple`, `superposition-simple`, `vwo-simple`) — port `9999`; each boots
+  credential-free with an in-memory fake provider (`--example.fake-provider=true`).
 
 ```bash
 $ cd examples

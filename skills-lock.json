@@ -1,6 +1,12 @@
 {
   "version": 1,
   "skills": {
+    "code-review": {
+      "source": "iromu/awesome-qwen",
+      "sourceType": "github",
+      "skillPath": "skills/code-review/SKILL.md",
+      "computedHash": "bb7158fff1ff2a98ad3f1ab638f60db7efaf21dbcfed51cc63a317000f902615"
+    },
     "git-wiki": {
       "source": "yysun/awesome-agent-world",
       "sourceType": "github",
@@ -11,7 +17,7 @@
       "source": "iromu/awesome-qwen",
       "sourceType": "github",
       "skillPath": "skills/maven-version-audit/SKILL.md",
-      "computedHash": "a9c085f901c28c867399d1ba0722a54d9d52cfab56ba4720e7b6a735fde32d3f"
+      "computedHash": "0719b48de12f624ab2724b93aadb3cd1abd37f6d9dbc70ff618b52f90bf2aacf"
     },
     "openspec-review": {
       "source": "iromu/OpenSpec",
@@ -23,7 +29,7 @@
       "source": "github/awesome-copilot",
       "sourceType": "github",
       "skillPath": "skills/spring-boot-testing/SKILL.md",
-      "computedHash": "4e6153fd6eed64dfc6b0f9a2a38ef8e636a88977702a49f3c5691fafcc02d8a8"
+      "computedHash": "7f9a21e9d049adab263a83e83f5be6a01c8c2a50ef8dbe7a3f1365094b8aa080"
     }
   }
 }
