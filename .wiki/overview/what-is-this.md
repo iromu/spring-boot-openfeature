@@ -30,3 +30,13 @@ The root `pom.xml` (aggregator, artifact `org.iromu.openfeature:spring-boot-open
 
 - Library consumers: `spring-boot-starter-openfeature` + one provider starter.
 - The generic auto-config only activates when a `FeatureProvider` bean exists — that is what the provider starters produce. See [[features/provider-starters]] and [[flows/startup-flow]].
+
+## Documentation
+
+Every module ships its own `README.md`: the six core modules (`spring-openfeature`,
+`spring-boot-openfeature-autoconfigure`, `spring-boot-starter-openfeature`,
+`spring-boot-openfeature-dependencies`, `aggregate-report`, `examples`) and each
+`spring-boot-starter-openfeature-<provider>` module. The root `README.md` links to the
+per-provider READMEs; the core-module READMEs document the generic wiring, the BOM, the
+`@ToggleOnFlag`/health features, coverage aggregation, and how to build and run the
+[examples](../examples).
