@@ -58,6 +58,7 @@
         <module>kameleoon-simple</module>
         <module>confidence-simple</module>
         <module>octopusdeploy-simple</module>
+        <module>vwo-simple</module>
     </modules>
 
     <properties>

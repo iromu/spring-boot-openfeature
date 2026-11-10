@@ -78,6 +78,7 @@
     <module>spring-boot-starter-openfeature-kameleoon</module>
     <module>spring-boot-starter-openfeature-confidence</module>
     <module>spring-boot-starter-openfeature-octopusdeploy</module>
+    <module>spring-boot-starter-openfeature-vwo</module>
   </modules>
 
   <properties>
@@ -160,6 +161,14 @@
          SDK (com.spotify.confidence:sdk-java). -->
     <confidence-openfeature.version>0.7.0</confidence-openfeature.version>
     <octopusdeploy-openfeature.version>2.1.0</octopusdeploy-openfeature.version>
+    <!-- VWO's OpenFeature provider (com.vwo.VWOProvider); the provider declares
+         dev.openfeature:sdk at an older version, which the starter pins to
+         ${sdk.version} (lockstep). -->
+    <vwo-openfeature.version>1.0.0</vwo-openfeature.version>
+    <!-- Declared explicitly (not transitively): the provider ships the VWO FME SDK at
+         runtime scope, but the starter compiles against com.vwo.VWO, which ships in it
+         (referenced by VWOProvider's constructor signature). -->
+    <vwo-fme-java-sdk.version>1.8.1</vwo-fme-java-sdk.version>
   </properties>
 
   <dependencyManagement>

@@ -140,3 +140,12 @@ A blank `site-code` fails fast with an `IllegalStateException` naming `spring.op
 - `cache-duration` (default `1m`) — how often the provider re-checks for flag changes
 
 Missing required values fail fast with an `IllegalStateException` naming the property path when the starter's own configuration bean is created. The provider constructor is lazy (no network I/O until `initialize()`). Any other `OctopusFeatureConfiguration` option goes through an `OctopusDeployCustomizer` bean — see [[concepts/customizers]].
+
+## VWO
+
+`VwoProperties` (`spring.openfeature.vwo.*`) — the vendor-published provider (`com.vwo.sdk:vwo-openfeature-provider-java`) authenticates to the VWO service with an account ID and an API key:
+
+- `account-id` — required; the VWO account ID (must be numeric)
+- `api-key` — required; the VWO API key (sdk key) used to initialize the VWO client
+
+A missing or non-numeric `account-id` or a blank `api-key` fails fast with an `IllegalStateException` naming the property path when the starter's own provider bean is created (the provider would otherwise swallow the error and end up with an uninitialized client). Any other entry of the options map the `VWOProvider` is built from goes through a `VwoCustomizer` bean — see [[concepts/customizers]].
