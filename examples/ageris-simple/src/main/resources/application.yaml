@@ -1,0 +1,12 @@
+server.port: 9999
+spring:
+  openfeature:
+    ageris:
+      application: AgerisApplication
+      path: ${AGERIS_CONFIG_PATH:./config}
+      feature-flag-files: featureflags.json
+  application:
+    name: AgerisApplication
+
+# Boot without Ageris at all: run with --example.fake-provider=true
+logging.level.org.iromu: DEBUG

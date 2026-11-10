@@ -80,6 +80,7 @@
     <module>spring-boot-starter-openfeature-octopusdeploy</module>
     <module>spring-boot-starter-openfeature-vwo</module>
     <module>spring-boot-starter-openfeature-superposition</module>
+    <module>spring-boot-starter-openfeature-ageris</module>
   </modules>
 
   <properties>
@@ -175,6 +176,10 @@
          ships in Juspay's Superposition Java client; it transitively pulls an older
          dev.openfeature:sdk, which the starter pins to ${sdk.version} (lockstep). -->
     <superposition-openfeature.version>0.118.2</superposition-openfeature.version>
+    <!-- Ageris's OpenFeature provider (io.github.lichtsinn:ageris-openfeature) declares
+         dev.openfeature:sdk with provided scope, so it never pulls a transitive SDK
+         version; the consumer's SDK arrives at ${sdk.version} through spring-openfeature. -->
+    <ageris-openfeature.version>0.7.0</ageris-openfeature.version>
   </properties>
 
   <dependencyManagement>
