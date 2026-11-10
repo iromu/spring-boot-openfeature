@@ -62,8 +62,8 @@ class GrowthBookAutoConfigurationTest {
 	void shouldSupplyDefaultBeans() {
 		mockWebServer.enqueue(new MockResponse().setBody("""
 				{
-				  "features": [
-				    {
+				  "features": {
+				    "string": {
 				      "id": "string",
 				      "dateCreated": "2019-08-24T14:15:22Z",
 				      "dateUpdated": "2019-08-24T14:15:22Z",
@@ -233,7 +233,7 @@ class GrowthBookAutoConfigurationTest {
 				      },
 				      "customFields": {}
 				    }
-				  ],
+				  },
 				  "limit": 0,
 				  "offset": 0,
 				  "count": 0,
