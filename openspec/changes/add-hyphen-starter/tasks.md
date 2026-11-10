@@ -1,8 +1,8 @@
 ## 1. Premises and feasibility gate
 
-- [ ] 1.1 Resolve the Hyphen AI OpenFeature provider from Maven Central, inspect its API surface. Record findings in design.md.
-- [ ] 1.2 Determine whether the provider constructor is lazy or eagerly connects. Record in design.md.
-- [ ] 1.3 Prove lockstep: `./mvnw -B -pl spring-boot-starter-openfeature-hyphen dependency:list` shows `dev.openfeature:sdk` = `sdk.version`.
+- [x] 1.1 Resolve the Hyphen AI OpenFeature provider from Maven Central, inspect its API surface. Record findings in design.md. — **Resolved and BLOCKED:** `dev.hyphen:openfeature-provider-java:1.0.0` is not on Maven Central (HTTP 404 for metadata/POM/JAR; 0 search-index hits) and the vendor repo shows no release pipeline (no tags, no CI, no `distributionManagement`). Findings and exit options recorded in design.md; the API surface was inspected from the `provider` branch source instead of the jar.
+- [ ] 1.2 Determine whether the provider constructor is lazy or eagerly connects. Record in design.md. — **Blocked** by 1.1 (jar unresolvable on this host); answered from source in design.md — the constructor is eager.
+- [ ] 1.3 Prove lockstep: `./mvnw -B -pl spring-boot-starter-openfeature-hyphen dependency:list` shows `dev.openfeature:sdk` = `sdk.version`. — **Blocked** by 1.1 (module cannot build until the artifact is resolvable).
 
 ## 2. Build wiring
 
