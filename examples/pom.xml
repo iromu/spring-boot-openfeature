@@ -62,6 +62,7 @@
         <module>superposition-simple</module>
         <module>ageris-simple</module>
         <module>cloudbees-simple</module>
+        <module>configdirector-simple</module>
     </modules>
 
     <properties>

@@ -82,6 +82,7 @@
     <module>spring-boot-starter-openfeature-superposition</module>
     <module>spring-boot-starter-openfeature-ageris</module>
     <module>spring-boot-starter-openfeature-cloudbees</module>
+    <module>spring-boot-starter-openfeature-configdirector</module>
   </modules>
 
   <properties>
@@ -185,6 +186,10 @@
          the provider declares dev.openfeature:sdk at an older version, which the starter
          pins to ${sdk.version} (lockstep). -->
     <cloudbees-openfeature.version>1.0.1</cloudbees-openfeature.version>
+    <!-- ConfigDirector's OpenFeature provider (com.configdirector:configdirector-openfeature-server-provider)
+         transitively pulls an older dev.openfeature:sdk, which the starter pins to
+         ${sdk.version} (lockstep). -->
+    <configdirector-openfeature.version>1.4.0</configdirector-openfeature.version>
   </properties>
 
   <dependencyManagement>

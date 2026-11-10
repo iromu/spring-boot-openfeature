@@ -267,6 +267,11 @@
                 <artifactId>cloudbees-openfeature-provider</artifactId>
                 <version>${cloudbees-openfeature.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.configdirector</groupId>
+                <artifactId>configdirector-openfeature-server-provider</artifactId>
+                <version>${configdirector-openfeature.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <build>
