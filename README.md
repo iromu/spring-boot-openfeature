@@ -217,14 +217,18 @@ To switch providers, replace the starter dependency and update the configuration
 
 ## Example Applications
 
-The `examples/` directory contains five runnable applications (built with the `examples` profile or as a separate
+The `examples/` directory contains thirty runnable applications (built with the `examples` profile or as a separate
 reactor; they resolve the starters from the local build or the snapshot repository):
 
 - **`unleash-simple`** — port `9998`; in-memory fake Unleash provider (default, no external server needed).
 - **`unleash-advanced`** — port `9999`; mocked Unleash API server with a local `features.json` backup file.
-- **`gcp-simple`** — port `9999`; in-memory fake GCP provider (`--example.fake-provider=true`).
-- **`ofrep-simple`** — port `9999`; in-memory fake OFREP provider (`--example.fake-provider=true`).
-- **`optimizely-simple`** — port `9999`; in-memory fake Optimizely provider (`--example.fake-provider=true`).
+- **one `<provider>-simple` per remaining provider** (28 apps: `ageris-simple`, `cloudbees-simple`,
+  `confidence-simple`, `configcat-simple`, `configdirector-simple`, `datadog-simple`, `devcycle-simple`,
+  `featbit-simple`, `featureflip-simple`, `flipt-simple`, `flagd-simple`, `flagsmith-simple`, `gcp-simple`,
+  `gofeatureflag-simple`, `growthbook-simple`, `jsonlogic-simple`, `kameleoon-simple`, `launchdarkly-simple`,
+  `mixpanel-simple`, `multiprovider-simple`, `octopusdeploy-simple`, `ofrep-simple`, `optimizely-simple`,
+  `split-simple`, `statsig-simple`, `superposition-simple`, `vwo-simple`) — port `9999`; each boots
+  credential-free with an in-memory fake provider (`--example.fake-provider=true`).
 
 ```bash
 $ cd examples
