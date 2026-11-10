@@ -1,6 +1,6 @@
 # Maven plugin and dependency version audit
 
-Generated 2026-11-10 10:18:46 from the repository's own build metadata by the version-audit
+Generated 2026-11-10 14:01:30 from the repository's own build metadata by the version-audit
 scripts (`step1_coords.py` harvests coordinates from the POMs, `step2_download.py`
 fetches the repository metadata, `step3_doc.py` renders this file).
 
@@ -91,7 +91,7 @@ coordinate stands against the repository.
 | `datadog-openfeature.version` | `1.68.1` | `com.datadoghq:dd-openfeature` | `1.68.1` | `1.68.1` | `1.68.1` | current |
 | `devcycle-openfeature.version` | `2.10.0` | `com.devcycle:java-server-sdk` | `2.10.0` | `2.10.0` | `2.10.0` | current |
 | `env-var.version` | `0.0.12` | `dev.openfeature.contrib.providers:env-var` | `0.0.12` | `0.0.12` | `0.0.12` | current |
-| `featbit-java-sdk.version` | `1.4.4` | `co.featbit:featbit-java-sdk` | `1.5.0` | `1.5.0` | `1.5.0` | **behind** |
+| `featbit-java-sdk.version` | `1.5.0` | `co.featbit:featbit-java-sdk` | `1.5.0` | `1.5.0` | `1.5.0` | current |
 | `featbit-openfeature.version` | `1.0.0` | `co.featbit:featbit-openfeature-provider-java-server` | `1.0.0` | `1.0.0` | `1.0.0` | current |
 | `featureflip-openfeature.version` | `0.2.1` | `io.featureflip:featureflip-openfeature` | `0.2.1` | `0.2.1` | `0.2.1` | current |
 | `flagd.version` | `0.15.0` | `dev.openfeature.contrib.providers:flagd` | `0.15.0` | `0.15.0` | `0.15.0` | current |
@@ -103,14 +103,14 @@ coordinate stands against the repository.
 | `google-cloud-parametermanager.version` | `0.46.0` | `com.google.cloud:google-cloud-parametermanager` | `0.46.0` | `0.46.0` | `0.46.0` | current |
 | `google-cloud-secretmanager.version` | `2.102.0` | `com.google.cloud:google-cloud-secretmanager` | `2.102.0` | `2.102.0` | `2.102.0` | current |
 | `growthbook-provider.version` | `0.0.2` | `com.github.growthbook:growthbook-openfeature-provider-java` | `0.0.2` | `0.0.2` | `0.0.2` | current |
-| `growthbook-sdk-java.version` | `0.11.0` | `com.github.growthbook:growthbook-sdk-java` | `0.12.0` | `0.12.0` | `0.12.0` | **behind** |
+| `growthbook-sdk-java.version` | `0.12.0` | `com.github.growthbook:growthbook-sdk-java` | `0.12.0` | `0.12.0` | `0.12.0` | current |
 | `io.spring.javaformat.version` | `0.0.48` | `io.spring.javaformat:spring-javaformat-checkstyle`, `io.spring.javaformat:spring-javaformat-maven-plugin` | `0.0.48` | `0.0.48` | `0.0.48` | current |
 | `json.version` | `20260814` | `org.json:json` | `20260814` | `20260814` | `20260814` | current |
 | `jsonlogic-eval-provider.version` | `1.3.0` | `dev.openfeature.contrib.providers:jsonlogic-eval-provider` | `1.3.0` | `1.3.0` | `1.3.0` | current |
-| `kameleoon-client-java.version` | `4.5.0` | `com.kameleoon:kameleoon-client-java` | `4.25.0` | `4.25.0` | `4.25.0` | **behind** |
+| `kameleoon-client-java.version` | `4.25.0` | `com.kameleoon:kameleoon-client-java` | `4.25.0` | `4.25.0` | `4.25.0` | current |
 | `kameleoon-openfeature.version` | `0.0.1` | `com.kameleoon:kameleoon-openfeature-java` | `0.0.1` | `0.0.1` | `0.0.1` | current |
-| `launchdarkly-java-server-sdk.version` | `7.9.1` | `com.launchdarkly:launchdarkly-java-server-sdk` | `7.17.5` | `7.17.5` | `7.17.5` | **behind** |
-| `launchdarkly-openfeature.version` | `1.1.1` | `com.launchdarkly:launchdarkly-openfeature-serverprovider` | `2.0.0` | `2.0.0` | `2.0.0` | **behind** |
+| `launchdarkly-java-server-sdk.version` | `7.17.5` | `com.launchdarkly:launchdarkly-java-server-sdk` | `7.17.5` | `7.17.5` | `7.17.5` | current |
+| `launchdarkly-openfeature.version` | `2.0.0` | `com.launchdarkly:launchdarkly-openfeature-serverprovider` | `2.0.0` | `2.0.0` | `2.0.0` | current |
 | `mixpanel-openfeature.version` | `0.2.0` | `com.mixpanel:mixpanel-java-openfeature` | `0.2.0` | `0.2.0` | `0.2.0` | current |
 | `multiprovider.version` | `0.0.3` | `dev.openfeature.contrib.providers:multiprovider` | `0.0.3` | `0.0.3` | `0.0.3` | current |
 | `octopusdeploy-openfeature.version` | `2.1.0` | `com.octopus.openfeature:octopus-openfeature-provider` | `2.1.0` | `2.1.0` | `2.1.0` | current |
@@ -119,7 +119,7 @@ coordinate stands against the repository.
 | `optimizely-sdk.version` | `4.7.0` | `com.optimizely.ab:core-api`, `com.optimizely.ab:core-httpclient-impl` | `4.7.0` | `4.7.0` | `4.7.0` | current |
 | `optimizely.version` | `1.0.0` | `dev.openfeature.contrib.providers:optimizely` | `1.0.0` | `1.0.0` | `1.0.0` | current |
 | `sdk.version` | `1.23.0` | `dev.openfeature:sdk` | `1.23.0` | `1.23.0` | `1.23.0` | current |
-| `split-java-client.version` | `4.18.2` | `io.split.client:java-client` | `4.19.1` | `4.19.1` | `4.19.1` | **behind** |
+| `split-java-client.version` | `4.19.1` | `io.split.client:java-client` | `4.19.1` | `4.19.1` | `4.19.1` | current |
 | `split-openfeature.version` | `1.2.2` | `io.split.openfeature:split-openfeature-provider` | `1.2.2` | `1.2.2` | `1.2.2` | current |
 | `spring-boot.version` | `4.1.2` | `org.springframework.boot:spring-boot-dependencies` | `4.2.0-RC2` | `4.1.2` | `4.2.0-RC2` | current |
 | `statsig.version` | `0.2.1` | `dev.openfeature.contrib.providers:statsig` | `0.2.1` | `0.2.1` | `0.2.1` | current |
@@ -312,7 +312,7 @@ Direct dependencies the reactor declares itself.
 
 | Coordinate | pinned | in use | scopes | release (repo) | latest plain | latest any | verdict | repo |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| `co.featbit:featbit-java-sdk` | `1.4.4` *(declared as* `${featbit-java-sdk.version}`*)* | `1.4.4` | compile | `1.5.0` | `1.5.0` | `1.5.0` | **behind** | central |
+| `co.featbit:featbit-java-sdk` | `1.5.0` *(declared as* `${featbit-java-sdk.version}`*)* | `1.5.0` | compile | `1.5.0` | `1.5.0` | `1.5.0` | current | central |
 | `co.featbit:featbit-openfeature-provider-java-server` | `1.0.0` *(declared as* `${featbit-openfeature.version}`*)* | `1.0.0` | compile | `1.0.0` | `1.0.0` | `1.0.0` | current | central |
 | `com.cloudbees.openfeature:cloudbees-openfeature-provider` | `1.0.1` *(declared as* `${cloudbees-openfeature.version}`*)* | `1.0.1` | compile | `1.0.1` | `1.0.1` | `1.0.1` | current | central |
 | `com.configdirector:configdirector-openfeature-server-provider` | `1.4.0` *(declared as* `${configdirector-openfeature.version}`*)* | `1.4.0` | compile | `1.4.0` | `1.4.0` | `1.4.0` | current | central |
@@ -320,19 +320,19 @@ Direct dependencies the reactor declares itself.
 | `com.devcycle:java-server-sdk` | `2.10.0` *(declared as* `${devcycle-openfeature.version}`*)* | `2.10.0` | compile | `2.10.0` | `2.10.0` | `2.10.0` | current | central |
 | `com.flagsmith:flagsmith-java-client` | `8.4.0` *(declared as* `${flagsmith-java-client.version}`*)* | `8.4.0` | compile | `8.4.0` | `8.4.0` | `8.4.0` | current | central |
 | `com.github.growthbook:growthbook-openfeature-provider-java` | `0.0.2` *(declared as* `${growthbook-provider.version}`*)* | `0.0.2` | compile | `0.0.2` | `0.0.2` | `0.0.2` | current | jitpack.io |
-| `com.github.growthbook:growthbook-sdk-java` | `0.11.0` *(declared as* `${growthbook-sdk-java.version}`*)* | `0.11.0` | compile | `0.12.0` | `0.12.0` | `0.12.0` | **behind** | jitpack.io |
+| `com.github.growthbook:growthbook-sdk-java` | `0.12.0` *(declared as* `${growthbook-sdk-java.version}`*)* | `0.12.0` | compile | `0.12.0` | `0.12.0` | `0.12.0` | current | jitpack.io |
 | `com.google.cloud:google-cloud-parametermanager` | `0.46.0` *(declared as* `${google-cloud-parametermanager.version}`*)* | `0.46.0` | compile | `0.46.0` | `0.46.0` | `0.46.0` | current | central |
 | `com.google.cloud:google-cloud-secretmanager` | `2.102.0` *(declared as* `${google-cloud-secretmanager.version}`*)* | `2.102.0` | compile | `2.102.0` | `2.102.0` | `2.102.0` | current | central |
-| `com.kameleoon:kameleoon-client-java` | `4.5.0` *(declared as* `${kameleoon-client-java.version}`*)* | `4.5.0` | compile | `4.25.0` | `4.25.0` | `4.25.0` | **behind** | central |
+| `com.kameleoon:kameleoon-client-java` | `4.25.0` *(declared as* `${kameleoon-client-java.version}`*)* | `4.25.0` | compile | `4.25.0` | `4.25.0` | `4.25.0` | current | central |
 | `com.kameleoon:kameleoon-openfeature-java` | `0.0.1` *(declared as* `${kameleoon-openfeature.version}`*)* | `0.0.1` | compile | `0.0.1` | `0.0.1` | `0.0.1` | current | central |
-| `com.launchdarkly:launchdarkly-java-server-sdk` | `7.9.1` *(declared as* `${launchdarkly-java-server-sdk.version}`*)* | `7.9.1` | compile | `7.17.5` | `7.17.5` | `7.17.5` | **behind** | central |
-| `com.launchdarkly:launchdarkly-openfeature-serverprovider` | `1.1.1` *(declared as* `${launchdarkly-openfeature.version}`*)* | `1.1.1` | compile | `2.0.0` | `2.0.0` | `2.0.0` | **behind** | central |
+| `com.launchdarkly:launchdarkly-java-server-sdk` | `7.17.5` *(declared as* `${launchdarkly-java-server-sdk.version}`*)* | `7.17.5` | compile | `7.17.5` | `7.17.5` | `7.17.5` | current | central |
+| `com.launchdarkly:launchdarkly-openfeature-serverprovider` | `2.0.0` *(declared as* `${launchdarkly-openfeature.version}`*)* | `2.0.0` | compile | `2.0.0` | `2.0.0` | `2.0.0` | current | central |
 | `com.mixpanel:mixpanel-java-openfeature` | `0.2.0` *(declared as* `${mixpanel-openfeature.version}`*)* | `0.2.0` | compile | `0.2.0` | `0.2.0` | `0.2.0` | current | central |
 | `com.octopus.openfeature:octopus-openfeature-provider` | `2.1.0` *(declared as* `${octopusdeploy-openfeature.version}`*)* | `2.1.0` | compile | `2.1.0` | `2.1.0` | `2.1.0` | current | central |
 | `com.optimizely.ab:core-api` | `4.7.0` *(declared as* `${optimizely-sdk.version}`*)* | `4.7.0` | compile | `4.7.0` | `4.7.0` | `4.7.0` | current | central |
 | `com.optimizely.ab:core-httpclient-impl` | `4.7.0` *(declared as* `${optimizely-sdk.version}`*)* | `4.7.0` | compile | `4.7.0` | `4.7.0` | `4.7.0` | current | central |
 | `com.spotify.confidence:openfeature-provider` | `0.7.0` *(declared as* `${confidence-openfeature.version}`*)* | `0.7.0` | compile | `0.7.0` | `0.7.0` | `0.7.0` | current | central |
-| `com.squareup.okhttp3:mockwebserver` | `5.5.0` | `5.5.1` | test | `5.5.1` | `5.5.1` | `5.5.1` | **behind** | central |
+| `com.squareup.okhttp3:mockwebserver` | `5.5.1` | `5.5.1` | test | `5.5.1` | `5.5.1` | `5.5.1` | current | central |
 | `com.squareup.okhttp3:okhttp` | *by BOM* | `5.5.1` | compile, runtime | `5.5.1` | `5.5.1` | `5.5.1` | current | central |
 | `com.squareup.okhttp3:okhttp-bom` | `5.5.1` *(declared as* `${okhttp.version}`*)* | *not resolved* | import | `5.5.1` | `5.5.1` | `5.5.1` | current | central |
 | `com.squareup.okhttp3:okhttp-jvm` | *by BOM* | `5.5.1` | compile, runtime, test | `5.5.1` | `5.5.1` | `5.5.1` | current | central |
@@ -356,7 +356,7 @@ Direct dependencies the reactor declares itself.
 | `io.getunleash:unleash-client-java` | `12.3.2` *(declared as* `${unleash-client-java.version}`*)* | `12.3.2` | compile | `12.3.2` | `12.3.2` | `12.3.2` | current | central |
 | `io.github.lichtsinn:ageris-openfeature` | `0.7.0` *(declared as* `${ageris-openfeature.version}`*)* | `0.7.0` | compile | `0.7.0` | `0.7.0` | `0.7.0` | current | central |
 | `io.juspay.superposition:openfeature-provider` | `0.118.2` *(declared as* `${superposition-openfeature.version}`*)* | `0.118.2` | compile | `0.118.2` | `0.118.2` | `0.118.2` | current | central |
-| `io.split.client:java-client` | `4.18.2` *(declared as* `${split-java-client.version}`*)* | `4.18.2` | compile | `4.19.1` | `4.19.1` | `4.19.1` | **behind** | central |
+| `io.split.client:java-client` | `4.19.1` *(declared as* `${split-java-client.version}`*)* | `4.19.1` | compile | `4.19.1` | `4.19.1` | `4.19.1` | current | central |
 | `io.split.openfeature:split-openfeature-provider` | `1.2.2` *(declared as* `${split-openfeature.version}`*)* | `1.2.2` | compile | `1.2.2` | `1.2.2` | `1.2.2` | current | central |
 | `org.json:json` | `20260814` *(declared as* `${json.version}`*)* | `20250517`, `20260814` | compile | `20260814` | `20260814` | `20260814` | current | central |
 | `org.projectlombok:lombok` | *by BOM* | `1.18.48` | provided | `1.18.48` | `1.18.48` | `1.18.48` | current | central |
@@ -377,14 +377,7 @@ Direct dependencies the reactor declares itself.
 
 Behind the latest plain release:
 
-- `co.featbit:featbit-java-sdk`: pinned `1.4.4`, latest plain `1.5.0`
-- `com.github.growthbook:growthbook-sdk-java`: pinned `0.11.0`, latest plain `0.12.0`
-- `com.kameleoon:kameleoon-client-java`: pinned `4.5.0`, latest plain `4.25.0`
-- `com.launchdarkly:launchdarkly-java-server-sdk`: pinned `7.9.1`, latest plain `7.17.5`
-- `com.launchdarkly:launchdarkly-openfeature-serverprovider`: pinned `1.1.1`, latest plain `2.0.0`
-- `com.squareup.okhttp3:mockwebserver`: pinned `5.5.0`, latest plain `5.5.1`
 - `com.vwo.sdk:vwo-fme-java-sdk`: pinned `1.8.1`, latest plain `1.65.0`
-- `io.split.client:java-client`: pinned `4.18.2`, latest plain `4.19.1`
 - `com.puppycrawl.tools:checkstyle`: pinned `12.3.1`, latest plain `14.4.0`
 
 ### Reactor-internal coordinates
@@ -429,120 +422,119 @@ Built by this project, so no repository "latest" applies.
 ## Appendix A - full resolved dependency closure
 
 Every external coordinate appearing in the resolved closure of the reactor:
-**295** coordinates, of which **129** sit behind the latest plain release.
+**290** coordinates, of which **118** sit behind the latest plain release.
 
 | Coordinate | in use | scopes | release (repo) | latest plain | latest any | verdict | repo |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| `ch.qos.logback:logback-classic` | `1.5.38` | compile | `1.6.6` | `1.6.6` | `1.6.6` | **behind** | central |
-| `ch.qos.logback:logback-core` | `1.5.38` | compile | `1.6.6` | `1.6.6` | `1.6.6` | **behind** | central |
-| `co.featbit:featbit-java-sdk` | `1.4.4` | compile | `1.5.0` | `1.5.0` | `1.5.0` | **behind** | central |
+| `ch.qos.logback:logback-classic` | `1.5.38` | compile | `1.6.6` | `1.6.6` | `1.6.6` | **behind** | - |
+| `ch.qos.logback:logback-core` | `1.5.38` | compile | `1.6.6` | `1.6.6` | `1.6.6` | **behind** | - |
+| `co.featbit:featbit-java-sdk` | `1.5.0` | compile | `1.5.0` | `1.5.0` | `1.5.0` | current | central |
 | `co.featbit:featbit-openfeature-provider-java-server` | `1.0.0` | compile | `1.0.0` | `1.0.0` | `1.0.0` | current | central |
-| `com.alibaba:transmittable-thread-local` | `2.12.6` | compile | `2.14.5` | `2.14.5` | `2.14.5` | **behind** | central |
+| `com.alibaba:transmittable-thread-local` | `2.12.6` | compile | `2.14.5` | `2.14.5` | `2.14.5` | **behind** | - |
 | `com.cloudbees.openfeature:cloudbees-openfeature-provider` | `1.0.1` | compile | `1.0.1` | `1.0.1` | `1.0.1` | current | central |
-| `com.configcat:configcat-java-client` | `9.4.3` | compile | `10.0.1` | `10.0.1` | `10.0.1` | **behind** | central |
+| `com.configcat:configcat-java-client` | `9.4.3` | compile | `10.0.1` | `10.0.1` | `10.0.1` | **behind** | - |
 | `com.configdirector:configdirector-openfeature-server-provider` | `1.4.0` | compile | `1.4.0` | `1.4.0` | `1.4.0` | current | central |
-| `com.configdirector:configdirector-server-sdk` | `1.7.0` | compile | `1.7.0` | `1.7.0` | `1.7.0` | current | central |
+| `com.configdirector:configdirector-server-sdk` | `1.7.0` | compile | `1.7.0` | `1.7.0` | `1.7.0` | current | - |
 | `com.datadoghq:dd-openfeature` | `1.68.1` | compile | `1.68.1` | `1.68.1` | `1.68.1` | current | central |
 | `com.devcycle:java-server-sdk` | `2.10.0` | compile | `2.10.0` | `2.10.0` | `2.10.0` | current | central |
-| `com.dylibso.chicory:log` | `1.7.5` | compile | `1.7.5` | `1.7.5` | `1.7.5` | current | central |
-| `com.dylibso.chicory:runtime` | `1.7.5` | compile | `1.7.5` | `1.7.5` | `1.7.5` | current | central |
-| `com.dylibso.chicory:wasi` | `1.7.5` | compile | `1.7.5` | `1.7.5` | `1.7.5` | current | central |
-| `com.dylibso.chicory:wasm` | `1.7.5` | compile | `1.7.5` | `1.7.5` | `1.7.5` | current | central |
-| `com.ethlo.time:itu` | `1.14.0` | compile | `1.17.0` | `1.17.0` | `1.17.0` | **behind** | central |
-| `com.fasterxml.jackson.core:jackson-annotations` | `2.21` | compile, runtime | `3.0-rc5` | `2.23` | `3.0-rc5` | **behind** | central |
-| `com.fasterxml.jackson.core:jackson-core` | `2.21.7` | compile, runtime | `2.23.0` | `2.23.0` | `2.23.0` | **behind** | central |
-| `com.fasterxml.jackson.core:jackson-databind` | `2.21.7` | compile, runtime | `2.23.0` | `2.23.0` | `2.23.0` | **behind** | central |
-| `com.fasterxml.jackson.dataformat:jackson-dataformat-yaml` | `2.21.7` | compile | `2.23.0` | `2.23.0` | `2.23.0` | **behind** | central |
-| `com.fasterxml.jackson.datatype:jackson-datatype-jdk8` | `2.21.7` | compile | `2.23.0` | `2.23.0` | `2.23.0` | **behind** | central |
-| `com.fasterxml.jackson.datatype:jackson-datatype-jsr310` | `2.21.7` | compile, runtime | `2.23.0` | `2.23.0` | `2.23.0` | **behind** | central |
+| `com.dylibso.chicory:log` | `1.7.5` | compile | `1.7.5` | `1.7.5` | `1.7.5` | current | - |
+| `com.dylibso.chicory:runtime` | `1.7.5` | compile | `1.7.5` | `1.7.5` | `1.7.5` | current | - |
+| `com.dylibso.chicory:wasi` | `1.7.5` | compile | `1.7.5` | `1.7.5` | `1.7.5` | current | - |
+| `com.dylibso.chicory:wasm` | `1.7.5` | compile | `1.7.5` | `1.7.5` | `1.7.5` | current | - |
+| `com.ethlo.time:itu` | `1.14.0` | compile | `1.17.0` | `1.17.0` | `1.17.0` | **behind** | - |
+| `com.fasterxml.jackson.core:jackson-annotations` | `2.21` | compile, runtime | `3.0-rc5` | `2.23` | `3.0-rc5` | **behind** | - |
+| `com.fasterxml.jackson.core:jackson-core` | `2.21.7` | compile, runtime | `2.23.0` | `2.23.0` | `2.23.0` | **behind** | - |
+| `com.fasterxml.jackson.core:jackson-databind` | `2.21.7` | compile, runtime | `2.23.0` | `2.23.0` | `2.23.0` | **behind** | - |
+| `com.fasterxml.jackson.dataformat:jackson-dataformat-yaml` | `2.21.7` | compile | `2.23.0` | `2.23.0` | `2.23.0` | **behind** | - |
+| `com.fasterxml.jackson.datatype:jackson-datatype-jdk8` | `2.21.7` | compile | `2.23.0` | `2.23.0` | `2.23.0` | **behind** | - |
+| `com.fasterxml.jackson.datatype:jackson-datatype-jsr310` | `2.21.7` | compile, runtime | `2.23.0` | `2.23.0` | `2.23.0` | **behind** | - |
 | `com.flagsmith:flagsmith-java-client` | `8.4.0` | compile | `8.4.0` | `8.4.0` | `8.4.0` | current | central |
-| `com.github.ben-manes.caffeine:caffeine` | `3.2.4` | compile, runtime | `3.3.1` | `3.3.1` | `3.3.1` | **behind** | central |
-| `com.github.eprst:murmur3` | `0.4.3` | compile | `0.4.3` | `0.4.3` | `0.4.3` | current | central |
+| `com.github.ben-manes.caffeine:caffeine` | `3.2.4` | compile, runtime | `3.3.1` | `3.3.1` | `3.3.1` | **behind** | - |
+| `com.github.eprst:murmur3` | `0.4.3` | compile | `0.4.3` | `0.4.3` | `0.4.3` | current | - |
 | `com.github.growthbook:growthbook-openfeature-provider-java` | `0.0.2` | compile | `0.0.2` | `0.0.2` | `0.0.2` | current | jitpack.io |
-| `com.github.growthbook:growthbook-sdk-java` | `0.11.0` | compile | `0.12.0` | `0.12.0` | `0.12.0` | **behind** | jitpack.io |
-| `com.github.growthbook.growthbook-sdk-java:growthbook-cache-caffeine` | `0.11.0` | compile | `0.12.0` | `0.12.0` | `0.12.0` | **behind** | jitpack.io |
-| `com.github.growthbook.growthbook-sdk-java:growthbook-cache-jcache` | `0.11.0` | compile | `0.12.0` | `0.12.0` | `0.12.0` | **behind** | jitpack.io |
-| `com.github.growthbook.growthbook-sdk-java:lib` | `0.11.0` | compile | `0.12.0` | `0.12.0` | `0.12.0` | **behind** | jitpack.io |
-| `com.github.spotbugs:spotbugs-annotations` | `4.9.8` | compile | `4.10.5` | `4.10.5` | `4.10.5` | **behind** | central |
-| `com.github.ua-parser:uap-java` | `1.6.1` | runtime | `1.6.1` | `1.6.1` | `1.6.1` | current | central |
-| `com.google.android:annotations` | `4.1.1.4` | runtime | `4.1.1.4` | `4.1.1.4` | `4.1.1.4` | current | central |
-| `com.google.api:api-common` | `2.73.0` | compile | `2.73.0` | `2.73.0` | `2.73.0` | current | central |
-| `com.google.api:gax` | `2.90.0` | compile | `2.90.0` | `2.90.0` | `2.90.0` | current | central |
-| `com.google.api:gax-grpc` | `2.90.0` | compile | `2.90.0` | `2.90.0` | `2.90.0` | current | central |
-| `com.google.api:gax-httpjson` | `2.90.0` | compile | `2.90.0` | `2.90.0` | `2.90.0` | current | central |
-| `com.google.api.grpc:grpc-google-common-protos` | `2.54.1` | compile | `2.81.0` | `2.81.0` | `2.81.0` | **behind** | central |
-| `com.google.api.grpc:proto-google-cloud-parametermanager-v1` | `0.46.0` | compile | `0.46.0` | `0.46.0` | `0.46.0` | current | central |
-| `com.google.api.grpc:proto-google-cloud-secretmanager-v1` | `2.102.0` | compile | `2.102.0` | `2.102.0` | `2.102.0` | current | central |
-| `com.google.api.grpc:proto-google-cloud-secretmanager-v1beta1` | `2.102.0` | compile | `2.102.0` | `2.102.0` | `2.102.0` | current | central |
-| `com.google.api.grpc:proto-google-cloud-secretmanager-v1beta2` | `2.102.0` | compile | `2.102.0` | `2.102.0` | `2.102.0` | current | central |
-| `com.google.api.grpc:proto-google-common-protos` | `2.54.1`, `2.64.1`, `2.81.0` | compile | `2.81.0` | `2.81.0` | `2.81.0` | **behind** | central |
-| `com.google.api.grpc:proto-google-iam-v1` | `1.76.0` | compile | `1.76.0` | `1.76.0` | `1.76.0` | current | central |
-| `com.google.auth:google-auth-library-credentials` | `1.57.0` | compile | `1.57.0` | `1.57.0` | `1.57.0` | current | central |
-| `com.google.auth:google-auth-library-oauth2-http` | `1.57.0` | compile | `1.57.0` | `1.57.0` | `1.57.0` | current | central |
-| `com.google.auto.value:auto-value-annotations` | `1.11.0` | compile | `1.11.1` | `1.11.1` | `1.11.1` | **behind** | central |
+| `com.github.growthbook:growthbook-sdk-java` | `0.12.0` | compile | `0.12.0` | `0.12.0` | `0.12.0` | current | jitpack.io |
+| `com.github.growthbook.growthbook-sdk-java:growthbook-cache-caffeine` | `0.12.0` | compile | `0.12.0` | `0.12.0` | `0.12.0` | current | - |
+| `com.github.growthbook.growthbook-sdk-java:growthbook-cache-jcache` | `0.12.0` | compile | `0.12.0` | `0.12.0` | `0.12.0` | current | - |
+| `com.github.growthbook.growthbook-sdk-java:growthbook-cache-redis` | `0.12.0` | compile | `0.12.0` | `0.12.0` | `0.12.0` | current | jitpack.io |
+| `com.github.growthbook.growthbook-sdk-java:lib` | `0.12.0` | compile | `0.12.0` | `0.12.0` | `0.12.0` | current | - |
+| `com.github.spotbugs:spotbugs-annotations` | `4.9.8` | compile | `4.10.5` | `4.10.5` | `4.10.5` | **behind** | - |
+| `com.github.ua-parser:uap-java` | `1.6.1` | runtime | `1.6.1` | `1.6.1` | `1.6.1` | current | - |
+| `com.google.android:annotations` | `4.1.1.4` | runtime | `4.1.1.4` | `4.1.1.4` | `4.1.1.4` | current | - |
+| `com.google.api:api-common` | `2.73.0` | compile | `2.73.0` | `2.73.0` | `2.73.0` | current | - |
+| `com.google.api:gax` | `2.90.0` | compile | `2.90.0` | `2.90.0` | `2.90.0` | current | - |
+| `com.google.api:gax-grpc` | `2.90.0` | compile | `2.90.0` | `2.90.0` | `2.90.0` | current | - |
+| `com.google.api:gax-httpjson` | `2.90.0` | compile | `2.90.0` | `2.90.0` | `2.90.0` | current | - |
+| `com.google.api.grpc:grpc-google-common-protos` | `2.54.1` | compile | `2.81.0` | `2.81.0` | `2.81.0` | **behind** | - |
+| `com.google.api.grpc:proto-google-cloud-parametermanager-v1` | `0.46.0` | compile | `0.46.0` | `0.46.0` | `0.46.0` | current | - |
+| `com.google.api.grpc:proto-google-cloud-secretmanager-v1` | `2.102.0` | compile | `2.102.0` | `2.102.0` | `2.102.0` | current | - |
+| `com.google.api.grpc:proto-google-cloud-secretmanager-v1beta1` | `2.102.0` | compile | `2.102.0` | `2.102.0` | `2.102.0` | current | - |
+| `com.google.api.grpc:proto-google-cloud-secretmanager-v1beta2` | `2.102.0` | compile | `2.102.0` | `2.102.0` | `2.102.0` | current | - |
+| `com.google.api.grpc:proto-google-common-protos` | `2.54.1`, `2.64.1`, `2.81.0` | compile | `2.81.0` | `2.81.0` | `2.81.0` | **behind** | - |
+| `com.google.api.grpc:proto-google-iam-v1` | `1.76.0` | compile | `1.76.0` | `1.76.0` | `1.76.0` | current | - |
+| `com.google.auth:google-auth-library-credentials` | `1.57.0` | compile | `1.57.0` | `1.57.0` | `1.57.0` | current | - |
+| `com.google.auth:google-auth-library-oauth2-http` | `1.57.0` | compile | `1.57.0` | `1.57.0` | `1.57.0` | current | - |
+| `com.google.auto.value:auto-value-annotations` | `1.11.0` | compile | `1.11.1` | `1.11.1` | `1.11.1` | **behind** | - |
 | `com.google.cloud:google-cloud-parametermanager` | `0.46.0` | compile | `0.46.0` | `0.46.0` | `0.46.0` | current | central |
 | `com.google.cloud:google-cloud-secretmanager` | `2.102.0` | compile | `2.102.0` | `2.102.0` | `2.102.0` | current | central |
-| `com.google.code.findbugs:annotations` | `3.0.1` | runtime | `3.0.1u2` | `3.0.1` | `3.0.1` | current | central |
-| `com.google.code.findbugs:jsr305` | `3.0.2` | compile, runtime | `3.0.2` | `3.0.2` | `3.0.2` | current | central |
-| `com.google.code.gson:gson` | `2.13.2` | compile, runtime | `2.15.0` | `2.15.0` | `2.15.0` | **behind** | central |
-| `com.google.errorprone:error_prone_annotations` | `2.18.0`, `2.36.0`, `2.41.0`, `2.49.0`, `2.50.0`, `2.7.1` | compile, runtime | `2.52.0` | `2.52.0` | `2.52.0` | **behind** | central |
-| `com.google.flatbuffers:flatbuffers-java` | `25.2.10` | runtime | `25.2.10` | `25.2.10` | `25.2.10` | current | central |
-| `com.google.guava:failureaccess` | `1.0.1`, `1.0.2`, `1.0.3` | compile, runtime | `1.0.3` | `1.0.3` | `1.0.3` | **behind** | central |
-| `com.google.guava:guava` | `31.0.1-jre`, `32.1.2-jre`, `32.1.3-jre`, `33.3.1-jre`, `33.4.8-jre`, `33.6.0-android`, `33.6.0-jre` | compile, runtime | `33.8.0-jre` | `23.0` | `33.8.0-jre` | *ahead of repo* | central |
-| `com.google.guava:listenablefuture` | `9999.0-empty-to-avoid-conflict-with-guava` | compile, runtime | `9999.0-empty-to-avoid-conflict-with-guava` | `1.0` | `9999.0-empty-to-avoid-conflict-with-guava` | current | central |
-| `com.google.http-client:google-http-client` | `2.2.0` | compile | `2.2.0` | `2.2.0` | `2.2.0` | current | central |
-| `com.google.http-client:google-http-client-gson` | `2.2.0` | compile | `2.2.0` | `2.2.0` | `2.2.0` | current | central |
-| `com.google.j2objc:j2objc-annotations` | `1.3`, `2.8`, `3.0.0`, `3.1` | compile, runtime | `3.1` | `3.1` | `3.1` | **behind** | central |
-| `com.google.protobuf:protobuf-java` | `4.36.2` | compile, runtime | `4.37.0-RC1` | `4.36.2` | `4.37.0-RC1` | current | central |
-| `com.google.protobuf:protobuf-java-util` | `4.36.2` | compile | `4.37.0-RC1` | `4.36.2` | `4.37.0-RC1` | current | central |
-| `com.google.re2j:re2j` | `1.8` | runtime | `1.8` | `1.8` | `1.8` | current | central |
-| `com.jayway.jsonpath:json-path` | `2.10.0` | compile, test | `3.0.0` | `3.0.0` | `3.0.0` | **behind** | central |
-| `com.kameleoon:kameleoon-client-java` | `4.5.0` | compile | `4.25.0` | `4.25.0` | `4.25.0` | **behind** | central |
+| `com.google.code.findbugs:annotations` | `3.0.1` | runtime | `3.0.1u2` | `3.0.1` | `3.0.1` | current | - |
+| `com.google.code.findbugs:jsr305` | `3.0.2` | compile, runtime | `3.0.2` | `3.0.2` | `3.0.2` | current | - |
+| `com.google.code.gson:gson` | `2.13.2` | compile, runtime | `2.15.0` | `2.15.0` | `2.15.0` | **behind** | - |
+| `com.google.errorprone:error_prone_annotations` | `2.36.0`, `2.41.0`, `2.49.0`, `2.50.0`, `2.7.1` | compile, runtime | `2.52.0` | `2.52.0` | `2.52.0` | **behind** | - |
+| `com.google.flatbuffers:flatbuffers-java` | `25.2.10` | runtime | `25.2.10` | `25.2.10` | `25.2.10` | current | - |
+| `com.google.guava:failureaccess` | `1.0.1`, `1.0.2`, `1.0.3` | compile, runtime | `1.0.3` | `1.0.3` | `1.0.3` | **behind** | - |
+| `com.google.guava:guava` | `31.0.1-jre`, `32.1.2-jre`, `32.1.3-jre`, `33.3.1-jre`, `33.4.8-jre`, `33.6.0-android`, `33.6.0-jre` | compile, runtime | `33.8.0-jre` | `23.0` | `33.8.0-jre` | *ahead of repo* | - |
+| `com.google.guava:listenablefuture` | `9999.0-empty-to-avoid-conflict-with-guava` | compile, runtime | `9999.0-empty-to-avoid-conflict-with-guava` | `1.0` | `9999.0-empty-to-avoid-conflict-with-guava` | current | - |
+| `com.google.http-client:google-http-client` | `2.2.0` | compile | `2.2.0` | `2.2.0` | `2.2.0` | current | - |
+| `com.google.http-client:google-http-client-gson` | `2.2.0` | compile | `2.2.0` | `2.2.0` | `2.2.0` | current | - |
+| `com.google.j2objc:j2objc-annotations` | `1.3`, `2.8`, `3.0.0`, `3.1` | compile, runtime | `3.1` | `3.1` | `3.1` | **behind** | - |
+| `com.google.protobuf:protobuf-java` | `4.36.2` | compile, runtime | `4.37.0-RC1` | `4.36.2` | `4.37.0-RC1` | current | - |
+| `com.google.protobuf:protobuf-java-util` | `4.36.2` | compile | `4.37.0-RC1` | `4.36.2` | `4.37.0-RC1` | current | - |
+| `com.google.re2j:re2j` | `1.8` | runtime | `1.8` | `1.8` | `1.8` | current | - |
+| `com.jayway.jsonpath:json-path` | `2.10.0` | compile, test | `3.0.0` | `3.0.0` | `3.0.0` | **behind** | - |
+| `com.kameleoon:kameleoon-client-java` | `4.25.0` | compile | `4.25.0` | `4.25.0` | `4.25.0` | current | central |
 | `com.kameleoon:kameleoon-openfeature-java` | `0.0.1` | compile | `0.0.1` | `0.0.1` | `0.0.1` | current | central |
-| `com.launchdarkly:launchdarkly-java-server-sdk` | `7.9.1` | compile | `7.17.5` | `7.17.5` | `7.17.5` | **behind** | central |
-| `com.launchdarkly:launchdarkly-logging` | `1.1.1` | compile, runtime | `1.1.1` | `1.1.1` | `1.1.1` | current | central |
-| `com.launchdarkly:launchdarkly-openfeature-serverprovider` | `1.1.1` | compile | `2.0.0` | `2.0.0` | `2.0.0` | **behind** | central |
-| `com.launchdarkly:okhttp-eventsource` | `4.1.1`, `4.3.0` | compile, runtime | `6.0.0` | `6.0.0` | `6.0.0` | **behind** | central |
-| `com.mixpanel:mixpanel-java` | `1.10.0` | compile | `1.11.0` | `1.11.0` | `1.11.0` | **behind** | central |
+| `com.launchdarkly:launchdarkly-java-server-sdk` | `7.17.5` | compile | `7.17.5` | `7.17.5` | `7.17.5` | current | central |
+| `com.launchdarkly:launchdarkly-logging` | `1.1.1` | compile, runtime | `1.1.1` | `1.1.1` | `1.1.1` | current | - |
+| `com.launchdarkly:launchdarkly-openfeature-serverprovider` | `2.0.0` | compile | `2.0.0` | `2.0.0` | `2.0.0` | current | central |
+| `com.launchdarkly:okhttp-eventsource` | `4.1.1`, `4.3.0` | compile, runtime | `6.0.0` | `6.0.0` | `6.0.0` | **behind** | - |
+| `com.mixpanel:mixpanel-java` | `1.10.0` | compile | `1.11.0` | `1.11.0` | `1.11.0` | **behind** | - |
 | `com.mixpanel:mixpanel-java-openfeature` | `0.2.0` | compile | `0.2.0` | `0.2.0` | `0.2.0` | current | central |
-| `com.networknt:json-schema-validator` | `1.5.9` | compile | `3.0.9` | `3.0.9` | `3.0.9` | **behind** | central |
+| `com.networknt:json-schema-validator` | `1.5.9` | compile | `3.0.9` | `3.0.9` | `3.0.9` | **behind** | - |
 | `com.octopus.openfeature:octopus-openfeature-provider` | `2.1.0` | compile | `2.1.0` | `2.1.0` | `2.1.0` | current | central |
 | `com.optimizely.ab:core-api` | `4.7.0` | compile | `4.7.0` | `4.7.0` | `4.7.0` | current | central |
 | `com.optimizely.ab:core-httpclient-impl` | `4.7.0` | compile | `4.7.0` | `4.7.0` | `4.7.0` | current | central |
-| `com.sangupta:murmur` | `1.0.0` | compile | `1.0.0` | `1.0.0` | `1.0.0` | current | central |
-| `com.spotify.confidence:confidence-proto` | `0.7.0` | compile | `0.7.0` | `0.7.0` | `0.7.0` | current | central |
+| `com.sangupta:murmur` | `1.0.0` | compile | `1.0.0` | `1.0.0` | `1.0.0` | current | - |
+| `com.spotify.confidence:confidence-proto` | `0.7.0` | compile | `0.7.0` | `0.7.0` | `0.7.0` | current | - |
 | `com.spotify.confidence:openfeature-provider` | `0.7.0` | compile | `0.7.0` | `0.7.0` | `0.7.0` | current | central |
-| `com.spotify.confidence:openfeature-provider-shared` | `0.7.0` | compile | `0.7.0` | `0.7.0` | `0.7.0` | current | central |
-| `com.spotify.confidence:sdk-java` | `0.7.0` | compile | `0.7.0` | `0.7.0` | `0.7.0` | current | central |
-| `com.squareup.okhttp3:logging-interceptor` | `5.5.1` | runtime | `5.5.1` | `5.5.1` | `5.5.1` | current | central |
+| `com.spotify.confidence:openfeature-provider-shared` | `0.7.0` | compile | `0.7.0` | `0.7.0` | `0.7.0` | current | - |
+| `com.spotify.confidence:sdk-java` | `0.7.0` | compile | `0.7.0` | `0.7.0` | `0.7.0` | current | - |
+| `com.squareup.okhttp3:logging-interceptor` | `5.5.1` | runtime | `5.5.1` | `5.5.1` | `5.5.1` | current | - |
 | `com.squareup.okhttp3:mockwebserver` | `5.5.1` | test | `5.5.1` | `5.5.1` | `5.5.1` | current | central |
-| `com.squareup.okhttp3:mockwebserver3` | `5.5.1` | test | `5.5.1` | `5.5.1` | `5.5.1` | current | central |
+| `com.squareup.okhttp3:mockwebserver3` | `5.5.1` | test | `5.5.1` | `5.5.1` | `5.5.1` | current | - |
 | `com.squareup.okhttp3:okhttp` | `5.5.1` | compile, runtime | `5.5.1` | `5.5.1` | `5.5.1` | current | central |
 | `com.squareup.okhttp3:okhttp-jvm` | `5.5.1` | compile, runtime, test | `5.5.1` | `5.5.1` | `5.5.1` | current | central |
-| `com.squareup.okhttp3:okhttp-sse` | `5.5.1` | compile, runtime | `5.5.1` | `5.5.1` | `5.5.1` | current | central |
-| `com.squareup.okio:okio` | `3.18.1`, `3.4.0` | compile, runtime | `3.18.2` | `3.18.2` | `3.18.2` | **behind** | central |
-| `com.squareup.okio:okio-jvm` | `3.18.1`, `3.4.0` | compile, runtime, test | `3.18.2` | `3.18.2` | `3.18.2` | **behind** | central |
-| `com.squareup.retrofit2:converter-jackson` | `2.11.0` | runtime | `3.0.0` | `3.0.0` | `3.0.0` | **behind** | central |
-| `com.squareup.retrofit2:retrofit` | `2.11.0` | runtime | `3.0.0` | `3.0.0` | `3.0.0` | **behind** | central |
-| `com.statsig:ip3country` | `0.1.5` | runtime | `0.1.6` | `0.1.6` | `0.1.6` | **behind** | central |
-| `com.statsig:serversdk` | `1.18.1` | compile | `3.2.0` | `3.2.0` | `3.2.0` | **behind** | central |
-| `com.sun.xml.bind:jaxb-core` | `4.0.9` | compile | `4.0.9` | `4.0.9` | `4.0.9` | current | central |
-| `com.sun.xml.bind:jaxb-impl` | `4.0.9` | compile | `4.0.9` | `4.0.9` | `4.0.9` | current | central |
-| `com.vaadin.external.google:android-json` | `0.0.20131108.vaadin1` | test | `0.0.20131108.vaadin1` | *n/a* | `0.0.20131108.vaadin1` | current | central |
+| `com.squareup.okhttp3:okhttp-sse` | `5.5.1` | compile, runtime | `5.5.1` | `5.5.1` | `5.5.1` | current | - |
+| `com.squareup.okio:okio` | `3.18.1`, `3.4.0` | compile, runtime | `3.18.2` | `3.18.2` | `3.18.2` | **behind** | - |
+| `com.squareup.okio:okio-jvm` | `3.18.1`, `3.4.0` | compile, runtime, test | `3.18.2` | `3.18.2` | `3.18.2` | **behind** | - |
+| `com.squareup.retrofit2:converter-jackson` | `2.11.0` | runtime | `3.0.0` | `3.0.0` | `3.0.0` | **behind** | - |
+| `com.squareup.retrofit2:retrofit` | `2.11.0` | runtime | `3.0.0` | `3.0.0` | `3.0.0` | **behind** | - |
+| `com.statsig:ip3country` | `0.1.5` | runtime | `0.1.6` | `0.1.6` | `0.1.6` | **behind** | - |
+| `com.statsig:serversdk` | `1.18.1` | compile | `3.2.0` | `3.2.0` | `3.2.0` | **behind** | - |
+| `com.vaadin.external.google:android-json` | `0.0.20131108.vaadin1` | test | `0.0.20131108.vaadin1` | *n/a* | `0.0.20131108.vaadin1` | current | - |
 | `com.vwo.sdk:vwo-fme-java-sdk` | `1.8.1` | compile | `1.65.0` | `1.65.0` | `1.65.0` | **behind** | central |
 | `com.vwo.sdk:vwo-openfeature-provider-java` | `1.0.0` | compile | `1.0.0` | `1.0.0` | `1.0.0` | current | central |
-| `commons-beanutils:commons-beanutils` | `1.11.0` | compile | `1.11.0` | `1.11.0` | `1.11.0` | current | central |
-| `commons-codec:commons-codec` | `1.21.0` | compile, runtime | `1.23.0` | `1.23.0` | `1.23.0` | **behind** | central |
-| `commons-collections:commons-collections` | `3.2.2` | compile | `20040616` | `20040616` | `20040616` | **behind** | central |
-| `commons-digester:commons-digester` | `2.1` | compile | `2.1` | `2.1` | `2.1` | current | central |
-| `commons-io:commons-io` | `2.22.0` | compile | `2.22.0` | `2.22.0` | `2.22.0` | current | central |
-| `commons-logging:commons-logging` | `1.3.5`, `1.3.6` | compile | `1.4.0` | `1.4.0` | `1.4.0` | **behind** | central |
-| `commons-validator:commons-validator` | `1.10.1` | compile | `1.11.0` | `1.11.0` | `1.11.0` | **behind** | central |
-| `de.skuzzle:semantic-version` | `2.1.0` | compile | `2.1.1` | `2.1.1` | `2.1.1` | **behind** | central |
-| `dev.cel:common` | `0.13.0` | runtime | `0.15.0` | `0.15.0` | `0.15.0` | **behind** | central |
-| `dev.cel:protobuf` | `0.13.0` | runtime | `0.15.0` | `0.15.0` | `0.15.0` | **behind** | central |
-| `dev.cel:runtime` | `0.13.0` | runtime | `0.15.0` | `0.15.0` | `0.15.0` | **behind** | central |
-| `dev.failsafe:failsafe` | `3.3.2` | compile | `3.3.2` | `3.3.2` | `3.3.2` | current | central |
+| `commons-beanutils:commons-beanutils` | `1.11.0` | compile | `1.11.0` | `1.11.0` | `1.11.0` | current | - |
+| `commons-codec:commons-codec` | `1.21.0` | compile, runtime | `1.23.0` | `1.23.0` | `1.23.0` | **behind** | - |
+| `commons-collections:commons-collections` | `3.2.2` | compile | `20040616` | `20040616` | `20040616` | **behind** | - |
+| `commons-digester:commons-digester` | `2.1` | compile | `2.1` | `2.1` | `2.1` | current | - |
+| `commons-io:commons-io` | `2.22.0` | compile | `2.22.0` | `2.22.0` | `2.22.0` | current | - |
+| `commons-logging:commons-logging` | `1.3.5`, `1.3.6` | compile | `1.4.0` | `1.4.0` | `1.4.0` | **behind** | - |
+| `commons-validator:commons-validator` | `1.10.1` | compile | `1.11.0` | `1.11.0` | `1.11.0` | **behind** | - |
+| `de.skuzzle:semantic-version` | `2.1.0` | compile | `2.1.1` | `2.1.1` | `2.1.1` | **behind** | - |
+| `dev.cel:common` | `0.13.0` | runtime | `0.15.0` | `0.15.0` | `0.15.0` | **behind** | - |
+| `dev.cel:protobuf` | `0.13.0` | runtime | `0.15.0` | `0.15.0` | `0.15.0` | **behind** | - |
+| `dev.cel:runtime` | `0.13.0` | runtime | `0.15.0` | `0.15.0` | `0.15.0` | **behind** | - |
+| `dev.failsafe:failsafe` | `3.3.2` | compile | `3.3.2` | `3.3.2` | `3.3.2` | current | - |
 | `dev.openfeature:sdk` | `1.23.0` | compile | `1.23.0` | `1.23.0` | `1.23.0` | current | central |
 | `dev.openfeature.contrib.providers:configcat` | `0.2.1` | compile | `0.2.1` | `0.2.1` | `0.2.1` | current | central |
 | `dev.openfeature.contrib.providers:env-var` | `0.0.12` | compile, test | `0.0.12` | `0.0.12` | `0.0.12` | current | central |
@@ -557,177 +549,173 @@ Every external coordinate appearing in the resolved closure of the reactor:
 | `dev.openfeature.contrib.providers:optimizely` | `1.0.0` | compile | `1.0.0` | `1.0.0` | `1.0.0` | current | central |
 | `dev.openfeature.contrib.providers:statsig` | `0.2.1` | compile | `0.2.1` | `0.2.1` | `0.2.1` | current | central |
 | `dev.openfeature.contrib.providers:unleash` | `0.1.3-alpha` | compile | `0.1.3-alpha` | *n/a* | `0.1.3-alpha` | current | central |
-| `dev.openfeature.contrib.tools:flagd-api` | `1.0.0` | compile | `1.0.0` | `1.0.0` | `1.0.0` | current | central |
-| `dev.openfeature.contrib.tools:flagd-core` | `3.0.0` | compile | `3.0.0` | `3.0.0` | `3.0.0` | current | central |
-| `io.featureflip:featureflip-java` | `2.13.0` | compile | `2.15.0` | `2.15.0` | `2.15.0` | **behind** | central |
+| `dev.openfeature.contrib.tools:flagd-api` | `1.0.0` | compile | `1.0.0` | `1.0.0` | `1.0.0` | current | - |
+| `dev.openfeature.contrib.tools:flagd-core` | `3.0.0` | compile | `3.0.0` | `3.0.0` | `3.0.0` | current | - |
+| `io.featureflip:featureflip-java` | `2.13.0` | compile | `2.15.0` | `2.15.0` | `2.15.0` | **behind** | - |
 | `io.featureflip:featureflip-openfeature` | `0.2.1` | compile | `0.2.1` | `0.2.1` | `0.2.1` | current | central |
-| `io.flipt:flipt-java` | `1.1.2` | compile | `1.4.0` | `1.4.0` | `1.4.0` | **behind** | central |
+| `io.flipt:flipt-java` | `1.1.2` | compile | `1.4.0` | `1.4.0` | `1.4.0` | **behind** | - |
 | `io.getunleash:unleash-client-java` | `12.3.2` | compile | `12.3.2` | `12.3.2` | `12.3.2` | current | central |
-| `io.getunleash:yggdrasil-engine` | `1.0.3` | compile | `1.0.3` | `1.0.3` | `1.0.3` | current | central |
-| `io.github.gzsombor:json-logic-java` | `1.1.3`, `1.1.6` | compile | `1.2.0` | `1.2.0` | `1.2.0` | **behind** | central |
-| `io.github.jamsesso:json-logic-java` | `1.1.0` | compile | `1.1.0` | `1.1.0` | `1.1.0` | current | central |
-| `io.github.kawamuray.wasmtime:wasmtime-java` | `0.19.0` | runtime | `0.19.0` | `0.19.0` | `0.19.0` | current | central |
-| `io.github.lichtsinn:ageris-core` | `0.7.0` | compile | `0.7.0` | `0.7.0` | `0.7.0` | current | central |
+| `io.getunleash:yggdrasil-engine` | `1.0.3` | compile | `1.0.3` | `1.0.3` | `1.0.3` | current | - |
+| `io.github.gzsombor:json-logic-java` | `1.1.3`, `1.1.6` | compile | `1.2.0` | `1.2.0` | `1.2.0` | **behind** | - |
+| `io.github.jamsesso:json-logic-java` | `1.1.0` | compile | `1.1.0` | `1.1.0` | `1.1.0` | current | - |
+| `io.github.kawamuray.wasmtime:wasmtime-java` | `0.19.0` | runtime | `0.19.0` | `0.19.0` | `0.19.0` | current | - |
+| `io.github.lichtsinn:ageris-core` | `0.7.0` | compile | `0.7.0` | `0.7.0` | `0.7.0` | current | - |
 | `io.github.lichtsinn:ageris-openfeature` | `0.7.0` | compile | `0.7.0` | `0.7.0` | `0.7.0` | current | central |
-| `io.grpc:grpc-alts` | `1.84.1` | compile | `1.85.1` | `1.85.1` | `1.85.1` | **behind** | central |
-| `io.grpc:grpc-api` | `1.84.1` | compile | `1.85.1` | `1.85.1` | `1.85.1` | **behind** | central |
-| `io.grpc:grpc-auth` | `1.84.1` | compile | `1.85.1` | `1.85.1` | `1.85.1` | **behind** | central |
-| `io.grpc:grpc-context` | `1.84.1` | compile, runtime | `1.85.1` | `1.85.1` | `1.85.1` | **behind** | central |
-| `io.grpc:grpc-core` | `1.84.1` | compile | `1.85.1` | `1.85.1` | `1.85.1` | **behind** | central |
-| `io.grpc:grpc-googleapis` | `1.84.1` | runtime | `1.85.1` | `1.85.1` | `1.85.1` | **behind** | central |
-| `io.grpc:grpc-inprocess` | `1.84.1` | compile | `1.85.1` | `1.85.1` | `1.85.1` | **behind** | central |
-| `io.grpc:grpc-netty-shaded` | `1.84.1` | compile | `1.85.1` | `1.85.1` | `1.85.1` | **behind** | central |
-| `io.grpc:grpc-protobuf` | `1.84.1` | compile | `1.85.1` | `1.85.1` | `1.85.1` | **behind** | central |
-| `io.grpc:grpc-protobuf-lite` | `1.84.1` | runtime | `1.85.1` | `1.85.1` | `1.85.1` | **behind** | central |
-| `io.grpc:grpc-services` | `1.84.1` | runtime | `1.85.1` | `1.85.1` | `1.85.1` | **behind** | central |
-| `io.grpc:grpc-stub` | `1.84.1` | compile | `1.85.1` | `1.85.1` | `1.85.1` | **behind** | central |
-| `io.grpc:grpc-util` | `1.84.1` | runtime | `1.85.1` | `1.85.1` | `1.85.1` | **behind** | central |
-| `io.grpc:grpc-xds` | `1.84.1` | runtime | `1.85.1` | `1.85.1` | `1.85.1` | **behind** | central |
-| `io.juspay.superposition:bindings` | `0.118.2` | runtime | `0.118.2` | `0.118.2` | `0.118.2` | current | central |
+| `io.grpc:grpc-alts` | `1.84.1` | compile | `1.85.1` | `1.85.1` | `1.85.1` | **behind** | - |
+| `io.grpc:grpc-api` | `1.84.1` | compile | `1.85.1` | `1.85.1` | `1.85.1` | **behind** | - |
+| `io.grpc:grpc-auth` | `1.84.1` | compile | `1.85.1` | `1.85.1` | `1.85.1` | **behind** | - |
+| `io.grpc:grpc-context` | `1.84.1` | compile, runtime | `1.85.1` | `1.85.1` | `1.85.1` | **behind** | - |
+| `io.grpc:grpc-core` | `1.84.1` | compile | `1.85.1` | `1.85.1` | `1.85.1` | **behind** | - |
+| `io.grpc:grpc-googleapis` | `1.84.1` | runtime | `1.85.1` | `1.85.1` | `1.85.1` | **behind** | - |
+| `io.grpc:grpc-inprocess` | `1.84.1` | compile | `1.85.1` | `1.85.1` | `1.85.1` | **behind** | - |
+| `io.grpc:grpc-netty-shaded` | `1.84.1` | compile | `1.85.1` | `1.85.1` | `1.85.1` | **behind** | - |
+| `io.grpc:grpc-protobuf` | `1.84.1` | compile | `1.85.1` | `1.85.1` | `1.85.1` | **behind** | - |
+| `io.grpc:grpc-protobuf-lite` | `1.84.1` | runtime | `1.85.1` | `1.85.1` | `1.85.1` | **behind** | - |
+| `io.grpc:grpc-services` | `1.84.1` | runtime | `1.85.1` | `1.85.1` | `1.85.1` | **behind** | - |
+| `io.grpc:grpc-stub` | `1.84.1` | compile | `1.85.1` | `1.85.1` | `1.85.1` | **behind** | - |
+| `io.grpc:grpc-util` | `1.84.1` | runtime | `1.85.1` | `1.85.1` | `1.85.1` | **behind** | - |
+| `io.grpc:grpc-xds` | `1.84.1` | runtime | `1.85.1` | `1.85.1` | `1.85.1` | **behind** | - |
+| `io.juspay.superposition:bindings` | `0.118.2` | runtime | `0.118.2` | `0.118.2` | `0.118.2` | current | - |
 | `io.juspay.superposition:openfeature-provider` | `0.118.2` | compile | `0.118.2` | `0.118.2` | `0.118.2` | current | central |
-| `io.juspay.superposition:sdk` | `0.118.2` | runtime | `0.118.2` | `0.118.2` | `0.118.2` | current | central |
-| `io.micrometer:micrometer-commons` | `1.17.2` | compile | `1.18.0-RC2` | `1.17.2` | `1.18.0-RC2` | current | central |
-| `io.micrometer:micrometer-core` | `1.17.2` | compile | `1.18.0-RC2` | `1.17.2` | `1.18.0-RC2` | current | central |
-| `io.micrometer:micrometer-jakarta9` | `1.17.2` | compile | `1.18.0-RC2` | `1.17.2` | `1.18.0-RC2` | current | central |
-| `io.micrometer:micrometer-observation` | `1.17.2` | compile | `1.18.0-RC2` | `1.17.2` | `1.18.0-RC2` | current | central |
-| `io.opencensus:opencensus-api` | `0.31.1` | compile | `0.31.1` | `0.31.1` | `0.31.1` | current | central |
-| `io.opencensus:opencensus-contrib-http-util` | `0.31.1` | compile | `0.31.1` | `0.31.1` | `0.31.1` | current | central |
-| `io.opentelemetry:opentelemetry-api` | `1.62.0` | compile | `1.68.0` | `1.68.0` | `1.68.0` | **behind** | central |
-| `io.opentelemetry:opentelemetry-common` | `1.62.0` | compile | `1.68.0` | `1.68.0` | `1.68.0` | **behind** | central |
-| `io.opentelemetry:opentelemetry-context` | `1.62.0` | compile | `1.68.0` | `1.68.0` | `1.68.0` | **behind** | central |
-| `io.perfmark:perfmark-api` | `0.27.0` | runtime | `0.27.0` | `0.27.0` | `0.27.0` | current | central |
-| `io.reactivex.rxjava3:rxjava` | `3.1.12` | compile | `3.1.12` | `3.1.12` | `3.1.12-RC1` | current | central |
-| `io.rollout.rox:rox-java-core` | `6.0.0` | compile | `6.0.2` | `6.0.2` | `6.0.2` | **behind** | central |
-| `io.rollout.rox:rox-java-server` | `6.0.0` | compile | `6.0.0` | `6.0.0` | `6.0.0` | current | central |
-| `io.split.client:java-client` | `4.18.2` | compile | `4.19.1` | `4.19.1` | `4.19.1` | **behind** | central |
+| `io.juspay.superposition:sdk` | `0.118.2` | runtime | `0.118.2` | `0.118.2` | `0.118.2` | current | - |
+| `io.micrometer:micrometer-commons` | `1.17.2` | compile | `1.18.0-RC2` | `1.17.2` | `1.18.0-RC2` | current | - |
+| `io.micrometer:micrometer-core` | `1.17.2` | compile | `1.18.0-RC2` | `1.17.2` | `1.18.0-RC2` | current | - |
+| `io.micrometer:micrometer-jakarta9` | `1.17.2` | compile | `1.18.0-RC2` | `1.17.2` | `1.18.0-RC2` | current | - |
+| `io.micrometer:micrometer-observation` | `1.17.2` | compile | `1.18.0-RC2` | `1.17.2` | `1.18.0-RC2` | current | - |
+| `io.opencensus:opencensus-api` | `0.31.1` | compile | `0.31.1` | `0.31.1` | `0.31.1` | current | - |
+| `io.opencensus:opencensus-contrib-http-util` | `0.31.1` | compile | `0.31.1` | `0.31.1` | `0.31.1` | current | - |
+| `io.opentelemetry:opentelemetry-api` | `1.62.0` | compile | `1.68.0` | `1.68.0` | `1.68.0` | **behind** | - |
+| `io.opentelemetry:opentelemetry-common` | `1.62.0` | compile | `1.68.0` | `1.68.0` | `1.68.0` | **behind** | - |
+| `io.opentelemetry:opentelemetry-context` | `1.62.0` | compile | `1.68.0` | `1.68.0` | `1.68.0` | **behind** | - |
+| `io.perfmark:perfmark-api` | `0.27.0` | runtime | `0.27.0` | `0.27.0` | `0.27.0` | current | - |
+| `io.reactivex.rxjava3:rxjava` | `3.1.12` | compile | `3.1.12` | `3.1.12` | `3.1.12-RC1` | current | - |
+| `io.rollout.rox:rox-java-core` | `6.0.0` | compile | `6.0.2` | `6.0.2` | `6.0.2` | **behind** | - |
+| `io.rollout.rox:rox-java-server` | `6.0.0` | compile | `6.0.0` | `6.0.0` | `6.0.0` | current | - |
+| `io.split.client:java-client` | `4.19.1` | compile | `4.19.1` | `4.19.1` | `4.19.1` | current | central |
 | `io.split.openfeature:split-openfeature-provider` | `1.2.2` | compile | `1.2.2` | `1.2.2` | `1.2.2` | current | central |
-| `io.swagger.core.v3:swagger-annotations` | `2.2.18` | runtime | `3.0.0` | `3.0.0` | `3.0.0` | **behind** | central |
-| `jakarta.activation:jakarta.activation-api` | `2.1.4` | compile, test | `2.2.0-M2` | `2.1.4` | `2.2.0-M2` | current | central |
-| `jakarta.annotation:jakarta.annotation-api` | `3.0.0` | compile | `3.0.0` | `3.0.0` | `3.0.0-M1` | current | central |
-| `jakarta.xml.bind:jakarta.xml.bind-api` | `4.0.5` | compile, test | `4.1.0-M1` | `4.0.5` | `4.1.0-M1` | current | central |
-| `javax.annotation:javax.annotation-api` | `1.3.2` | compile | `1.3.2` | `1.3.2` | `1.3.2` | current | central |
-| `javax.cache:cache-api` | `1.1.1` | compile | `1.1.1` | `1.1.1` | `1.1.1` | current | central |
-| `javax.json:javax.json-api` | `1.1.4` | compile | `1.1.4` | `1.1.4` | `1.1.4` | current | central |
-| `javax.servlet:javax.servlet-api` | `4.0.1` | compile | `4.0.1` | `4.0.1` | `4.0.1` | current | central |
-| `javax.xml.bind:jaxb-api` | `2.3.0` | compile | `2.4.0-b180830.0359` | `2.3.1` | `2.4.0-b180830.0359` | **behind** | central |
-| `junit:junit` | `4.13.2` | test | `4.13.2` | `4.13.2` | `4.13.2` | current | central |
-| `net.bytebuddy:byte-buddy` | `1.18.15` | compile, test | `1.18.17-jdk5` | `1.18.17` | `1.18.17-jdk5` | **behind** | central |
-| `net.bytebuddy:byte-buddy-agent` | `1.18.15` | test | `1.18.17-jdk5` | `1.18.17` | `1.18.17-jdk5` | **behind** | central |
-| `net.java.dev.jna:jna` | `5.13.0` | runtime | `5.19.1` | `5.19.1` | `5.19.1` | **behind** | central |
+| `io.swagger.core.v3:swagger-annotations` | `2.2.18` | runtime | `3.0.0` | `3.0.0` | `3.0.0` | **behind** | - |
+| `jakarta.activation:jakarta.activation-api` | `2.1.4` | test | `2.2.0-M2` | `2.1.4` | `2.2.0-M2` | current | - |
+| `jakarta.annotation:jakarta.annotation-api` | `3.0.0` | compile | `3.0.0` | `3.0.0` | `3.0.0-M1` | current | - |
+| `jakarta.xml.bind:jakarta.xml.bind-api` | `4.0.5` | test | `4.1.0-M1` | `4.0.5` | `4.1.0-M1` | current | - |
+| `javax.annotation:javax.annotation-api` | `1.3.2` | compile | `1.3.2` | `1.3.2` | `1.3.2` | current | - |
+| `javax.cache:cache-api` | `1.1.1` | compile | `1.1.1` | `1.1.1` | `1.1.1` | current | - |
+| `javax.json:javax.json-api` | `1.1.4` | compile | `1.1.4` | `1.1.4` | `1.1.4` | current | - |
+| `javax.servlet:javax.servlet-api` | `4.0.1` | compile | `4.0.1` | `4.0.1` | `4.0.1` | current | - |
+| `junit:junit` | `4.13.2` | test | `4.13.2` | `4.13.2` | `4.13.2` | current | - |
+| `net.bytebuddy:byte-buddy` | `1.18.15` | compile, test | `1.18.17-jdk5` | `1.18.17` | `1.18.17-jdk5` | **behind** | - |
+| `net.bytebuddy:byte-buddy-agent` | `1.18.15` | test | `1.18.17-jdk5` | `1.18.17` | `1.18.17-jdk5` | **behind** | - |
+| `net.java.dev.jna:jna` | `5.13.0` | runtime | `5.19.1` | `5.19.1` | `5.19.1` | **behind** | - |
 | `net.jcip:jcip-annotations` | `1.0` | runtime | *n/a* | *n/a* | *n/a* | *not found* | - |
-| `net.minidev:accessors-smart` | `2.6.0` | runtime, test | `2.6.1` | `2.6.1` | `2.6.1` | **behind** | central |
-| `net.minidev:json-smart` | `2.6.0` | runtime, test | `2.6.1` | `2.6.1` | `2.6.1` | **behind** | central |
-| `org.apache.commons:commons-collections4` | `4.4`, `4.5.0` | compile, runtime | `4.6.0` | `4.6.0` | `4.6.0` | **behind** | central |
-| `org.apache.commons:commons-lang3` | `3.20.0` | compile, test | `3.21.0` | `3.21.0` | `3.21.0` | **behind** | central |
-| `org.apache.commons:commons-math3` | `3.6.1` | runtime | `3.6.1` | `3.6.1` | `3.6.1` | current | central |
-| `org.apache.httpcomponents:httpasyncclient` | `4.1.5` | compile | `4.1.5` | `4.1.5` | `4.1.5` | current | central |
-| `org.apache.httpcomponents:httpclient` | `4.5.13`, `4.5.14` | compile, runtime | `4.5.14` | `4.5.14` | `4.5.14` | **behind** | central |
-| `org.apache.httpcomponents:httpcore` | `4.4.16` | compile, runtime | `4.4.16` | `4.4.16` | `4.4.16` | current | central |
-| `org.apache.httpcomponents:httpcore-nio` | `4.4.16` | compile | `4.4.16` | `4.4.16` | `4.4.16` | current | central |
-| `org.apache.httpcomponents.client5:httpclient5` | `5.6.5` | compile | `5.7-beta1` | `5.6.5` | `5.7-beta1` | current | central |
-| `org.apache.httpcomponents.core5:httpcore5` | `5.4.4` | compile | `5.5-beta4` | `5.4.4` | `5.5-beta4` | current | central |
-| `org.apache.httpcomponents.core5:httpcore5-h2` | `5.4.4` | compile | `5.5-beta4` | `5.4.4` | `5.5-beta4` | current | central |
-| `org.apache.logging.log4j:log4j-api` | `2.25.5` | compile | `3.0.0-beta2` | `2.26.1` | `3.0.0-beta2` | **behind** | central |
-| `org.apache.logging.log4j:log4j-to-slf4j` | `2.25.5` | compile | `3.0.0-beta2` | `2.26.1` | `3.0.0-beta2` | **behind** | central |
-| `org.apache.maven:maven-artifact` | `3.6.3` | compile | `4.0.0-rc-7` | `3.10.0` | `4.0.0-rc-7` | **behind** | central |
-| `org.apiguardian:apiguardian-api` | `1.1.2` | test | `1.1.2` | `1.1.2` | `1.1.2` | current | central |
-| `org.aspectj:aspectjweaver` | `1.9.25.1` | compile | `1.9.27` | `1.9.27` | `1.9.27` | **behind** | central |
-| `org.assertj:assertj-core` | `3.27.7` | test | `4.0.0-M1` | `3.27.7` | `4.0.0-M1` | current | central |
-| `org.awaitility:awaitility` | `4.3.0` | test | `4.3.0` | `4.3.0` | `4.3.0` | current | central |
-| `org.checkerframework:checker-qual` | `3.12.0`, `3.33.0`, `3.37.0`, `3.43.0` | compile, runtime | `4.4.0` | `4.4.0` | `4.4.0` | **behind** | central |
-| `org.codehaus.mojo:animal-sniffer-annotations` | `1.27` | compile | `1.29.1` | `1.29.1` | `1.29.1` | **behind** | central |
-| `org.codehaus.plexus:plexus-utils` | `3.2.1` | compile | `4.1.0` | `4.1.0` | `4.1.0` | **behind** | central |
-| `org.conscrypt:conscrypt-openjdk-uber` | `2.6.2` | compile | `2.9.0` | `2.9.0` | `2.9.0` | **behind** | central |
-| `org.eclipse.angus:angus-activation` | `2.0.3` | runtime | `2.1.0-M1` | `2.0.3` | `2.1.0-M1` | current | central |
-| `org.glassfish:javax.json` | `1.1.4` | compile | `1.1.4` | `1.1.4` | `1.1.4` | current | central |
-| `org.hamcrest:hamcrest` | `3.0` | test | `3.0` | `3.0` | `3.0-rc1` | current | central |
-| `org.hamcrest:hamcrest-core` | `3.0` | test | `3.0` | `3.0` | `3.0-rc1` | current | central |
-| `org.hdrhistogram:HdrHistogram` | `2.2.2` | runtime | `2.2.2` | `2.2.2` | `2.2.2` | current | central |
-| `org.jetbrains:annotations` | `13.0`, `23.0.0`, `24.0.0`, `24.0.1` | compile, runtime, test | `26.1.0` | `26.1.0` | `26.1.0` | **behind** | central |
-| `org.jetbrains.kotlin:kotlin-stdlib` | `2.3.21` | compile, runtime, test | `2.5.0-Beta2` | `2.4.21` | `2.5.0-Beta2` | **behind** | central |
-| `org.jetbrains.kotlin:kotlin-stdlib-common` | `1.8.0` | compile | `2.5.0-Beta2` | `2.4.21` | `2.5.0-Beta2` | **behind** | central |
-| `org.jetbrains.kotlin:kotlin-stdlib-jdk7` | `2.3.21` | compile | `2.5.0-Beta2` | `2.4.21` | `2.5.0-Beta2` | **behind** | central |
-| `org.jetbrains.kotlin:kotlin-stdlib-jdk8` | `2.3.21` | compile | `2.5.0-Beta2` | `2.4.21` | `2.5.0-Beta2` | **behind** | central |
-| `org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm` | `1.10.2` | runtime | `1.11.0` | `1.11.0` | `1.11.0-rc02` | **behind** | central |
-| `org.jetbrains.kotlinx:kotlinx-coroutines-jdk8` | `1.10.2` | runtime | `1.11.0` | `1.11.0` | `1.11.0-rc02` | **behind** | central |
+| `net.minidev:accessors-smart` | `2.6.0` | runtime, test | `2.6.1` | `2.6.1` | `2.6.1` | **behind** | - |
+| `net.minidev:json-smart` | `2.6.0` | runtime, test | `2.6.1` | `2.6.1` | `2.6.1` | **behind** | - |
+| `org.apache.commons:commons-collections4` | `4.4`, `4.5.0` | compile, runtime | `4.6.0` | `4.6.0` | `4.6.0` | **behind** | - |
+| `org.apache.commons:commons-lang3` | `3.20.0` | compile, test | `3.21.0` | `3.21.0` | `3.21.0` | **behind** | - |
+| `org.apache.commons:commons-math3` | `3.6.1` | runtime | `3.6.1` | `3.6.1` | `3.6.1` | current | - |
+| `org.apache.httpcomponents:httpclient` | `4.5.14` | compile, runtime | `4.5.14` | `4.5.14` | `4.5.14` | current | - |
+| `org.apache.httpcomponents:httpcore` | `4.4.16` | compile, runtime | `4.4.16` | `4.4.16` | `4.4.16` | current | - |
+| `org.apache.httpcomponents.client5:httpclient5` | `5.6.5` | compile | `5.7-beta1` | `5.6.5` | `5.7-beta1` | current | - |
+| `org.apache.httpcomponents.core5:httpcore5` | `5.4.4` | compile | `5.5-beta4` | `5.4.4` | `5.5-beta4` | current | - |
+| `org.apache.httpcomponents.core5:httpcore5-h2` | `5.4.4` | compile | `5.5-beta4` | `5.4.4` | `5.5-beta4` | current | - |
+| `org.apache.logging.log4j:log4j-api` | `2.25.5` | compile | `3.0.0-beta2` | `2.26.1` | `3.0.0-beta2` | **behind** | - |
+| `org.apache.logging.log4j:log4j-to-slf4j` | `2.25.5` | compile | `3.0.0-beta2` | `2.26.1` | `3.0.0-beta2` | **behind** | - |
+| `org.apache.maven:maven-artifact` | `3.6.3` | compile | `4.0.0-rc-7` | `3.10.0` | `4.0.0-rc-7` | **behind** | - |
+| `org.apiguardian:apiguardian-api` | `1.1.2` | test | `1.1.2` | `1.1.2` | `1.1.2` | current | - |
+| `org.aspectj:aspectjweaver` | `1.9.25.1` | compile | `1.9.27` | `1.9.27` | `1.9.27` | **behind** | - |
+| `org.assertj:assertj-core` | `3.27.7` | test | `4.0.0-M1` | `3.27.7` | `4.0.0-M1` | current | - |
+| `org.awaitility:awaitility` | `4.3.0` | test | `4.3.0` | `4.3.0` | `4.3.0` | current | - |
+| `org.checkerframework:checker-qual` | `3.12.0`, `3.33.0`, `3.37.0`, `3.43.0` | compile, runtime | `4.4.0` | `4.4.0` | `4.4.0` | **behind** | - |
+| `org.codehaus.mojo:animal-sniffer-annotations` | `1.27` | compile | `1.29.1` | `1.29.1` | `1.29.1` | **behind** | - |
+| `org.codehaus.plexus:plexus-utils` | `3.2.1` | compile | `4.1.0` | `4.1.0` | `4.1.0` | **behind** | - |
+| `org.conscrypt:conscrypt-openjdk-uber` | `2.6.2` | compile | `2.9.0` | `2.9.0` | `2.9.0` | **behind** | - |
+| `org.glassfish:javax.json` | `1.1.4` | compile | `1.1.4` | `1.1.4` | `1.1.4` | current | - |
+| `org.hamcrest:hamcrest` | `3.0` | test | `3.0` | `3.0` | `3.0-rc1` | current | - |
+| `org.hamcrest:hamcrest-core` | `3.0` | test | `3.0` | `3.0` | `3.0-rc1` | current | - |
+| `org.hdrhistogram:HdrHistogram` | `2.2.2` | runtime | `2.2.2` | `2.2.2` | `2.2.2` | current | - |
+| `org.jetbrains:annotations` | `13.0`, `23.0.0`, `24.0.0`, `26.1.0` | compile, runtime, test | `26.1.0` | `26.1.0` | `26.1.0` | **behind** | - |
+| `org.jetbrains.kotlin:kotlin-stdlib` | `2.3.21` | compile, runtime, test | `2.5.0-Beta2` | `2.4.21` | `2.5.0-Beta2` | **behind** | - |
+| `org.jetbrains.kotlin:kotlin-stdlib-common` | `1.8.0` | compile | `2.5.0-Beta2` | `2.4.21` | `2.5.0-Beta2` | **behind** | - |
+| `org.jetbrains.kotlin:kotlin-stdlib-jdk7` | `2.3.21` | compile | `2.5.0-Beta2` | `2.4.21` | `2.5.0-Beta2` | **behind** | - |
+| `org.jetbrains.kotlin:kotlin-stdlib-jdk8` | `2.3.21` | compile | `2.5.0-Beta2` | `2.4.21` | `2.5.0-Beta2` | **behind** | - |
+| `org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm` | `1.10.2` | runtime | `1.11.0` | `1.11.0` | `1.11.0-rc02` | **behind** | - |
+| `org.jetbrains.kotlinx:kotlinx-coroutines-jdk8` | `1.10.2` | runtime | `1.11.0` | `1.11.0` | `1.11.0-rc02` | **behind** | - |
 | `org.json:json` | `20250517`, `20260814` | compile | `20260814` | `20260814` | `20260814` | **behind** | central |
-| `org.jspecify:jspecify` | `1.0.1` | compile | `1.0.1` | `1.0.1` | `1.0.1` | current | central |
-| `org.junit.jupiter:junit-jupiter` | `6.0.3` | test | `6.1.3` | `6.1.3` | `6.1.3` | **behind** | central |
-| `org.junit.jupiter:junit-jupiter-api` | `6.0.3` | test | `6.1.3` | `6.1.3` | `6.1.3` | **behind** | central |
-| `org.junit.jupiter:junit-jupiter-engine` | `6.0.3` | test | `6.1.3` | `6.1.3` | `6.1.3` | **behind** | central |
-| `org.junit.jupiter:junit-jupiter-params` | `6.0.3` | test | `6.1.3` | `6.1.3` | `6.1.3` | **behind** | central |
-| `org.junit.platform:junit-platform-commons` | `6.0.3` | test | `6.1.3` | `6.1.3` | `6.1.3` | **behind** | central |
-| `org.junit.platform:junit-platform-engine` | `6.0.3` | test | `6.1.3` | `6.1.3` | `6.1.3` | **behind** | central |
-| `org.mockito:mockito-core` | `5.23.0` | test | `5.24.0` | `5.24.0` | `5.24.0` | **behind** | central |
-| `org.mockito:mockito-junit-jupiter` | `5.23.0` | test | `5.24.0` | `5.24.0` | `5.24.0` | **behind** | central |
-| `org.objenesis:objenesis` | `3.3` | test | `3.6` | `3.6` | `3.6` | **behind** | central |
-| `org.opentest4j:opentest4j` | `1.3.0` | test | `1.3.0` | `1.3.0` | `1.3.0-RC2` | current | central |
-| `org.ow2.asm:asm` | `9.7.1` | runtime, test | `9.11.1` | `9.11.1` | `9.11.1` | **behind** | central |
+| `org.jspecify:jspecify` | `1.0.1` | compile | `1.0.1` | `1.0.1` | `1.0.1` | current | - |
+| `org.junit.jupiter:junit-jupiter` | `6.0.3` | test | `6.1.3` | `6.1.3` | `6.1.3` | **behind** | - |
+| `org.junit.jupiter:junit-jupiter-api` | `6.0.3` | test | `6.1.3` | `6.1.3` | `6.1.3` | **behind** | - |
+| `org.junit.jupiter:junit-jupiter-engine` | `6.0.3` | test | `6.1.3` | `6.1.3` | `6.1.3` | **behind** | - |
+| `org.junit.jupiter:junit-jupiter-params` | `6.0.3` | test | `6.1.3` | `6.1.3` | `6.1.3` | **behind** | - |
+| `org.junit.platform:junit-platform-commons` | `6.0.3` | test | `6.1.3` | `6.1.3` | `6.1.3` | **behind** | - |
+| `org.junit.platform:junit-platform-engine` | `6.0.3` | test | `6.1.3` | `6.1.3` | `6.1.3` | **behind** | - |
+| `org.mockito:mockito-core` | `5.23.0` | test | `5.24.0` | `5.24.0` | `5.24.0` | **behind** | - |
+| `org.mockito:mockito-junit-jupiter` | `5.23.0` | test | `5.24.0` | `5.24.0` | `5.24.0` | **behind** | - |
+| `org.objenesis:objenesis` | `3.3` | test | `3.6` | `3.6` | `3.6` | **behind** | - |
+| `org.opentest4j:opentest4j` | `1.3.0` | test | `1.3.0` | `1.3.0` | `1.3.0-RC2` | current | - |
+| `org.ow2.asm:asm` | `9.7.1` | runtime, test | `9.11.1` | `9.11.1` | `9.11.1` | **behind** | - |
 | `org.projectlombok:lombok` | `1.18.48` | provided | `1.18.48` | `1.18.48` | `1.18.48` | current | central |
-| `org.reactivestreams:reactive-streams` | `1.0.4` | compile | `1.0.4` | `1.0.4` | `1.0.4` | current | central |
-| `org.semver4j:semver4j` | `5.8.0` | compile | `6.0.0` | `6.0.0` | `6.0.0` | **behind** | central |
-| `org.simpleframework:simple-common` | `6.0.1` | compile | `6.0.1` | `6.0.1` | `6.0.1` | current | central |
-| `org.simpleframework:simple-http` | `6.0.1` | compile | `6.0.1` | `6.0.1` | `6.0.1` | current | central |
-| `org.simpleframework:simple-transport` | `6.0.1` | compile | `6.0.1` | `6.0.1` | `6.0.1` | current | central |
-| `org.skyscreamer:jsonassert` | `1.5.3` | test | `2.0-rc1` | `1.5.3` | `2.0-rc1` | current | central |
-| `org.slf4j:jul-to-slf4j` | `2.0.20` | compile | `2.1.0-alpha1` | `2.0.20` | `2.1.0-alpha1` | current | central |
+| `org.reactivestreams:reactive-streams` | `1.0.4` | compile | `1.0.4` | `1.0.4` | `1.0.4` | current | - |
+| `org.semver4j:semver4j` | `5.8.0` | compile | `6.0.0` | `6.0.0` | `6.0.0` | **behind** | - |
+| `org.simpleframework:simple-common` | `6.0.1` | compile | `6.0.1` | `6.0.1` | `6.0.1` | current | - |
+| `org.simpleframework:simple-http` | `6.0.1` | compile | `6.0.1` | `6.0.1` | `6.0.1` | current | - |
+| `org.simpleframework:simple-transport` | `6.0.1` | compile | `6.0.1` | `6.0.1` | `6.0.1` | current | - |
+| `org.skyscreamer:jsonassert` | `1.5.3` | test | `2.0-rc1` | `1.5.3` | `2.0-rc1` | current | - |
+| `org.slf4j:jul-to-slf4j` | `2.0.20` | compile | `2.1.0-alpha1` | `2.0.20` | `2.1.0-alpha1` | current | - |
 | `org.slf4j:slf4j-api` | `2.0.20` | compile | `2.1.0-alpha1` | `2.0.20` | `2.1.0-alpha1` | current | central |
-| `org.springframework:spring-aop` | `7.0.10` | compile | `7.1.0-RC2` | `7.0.10` | `7.1.0-RC2` | current | central |
-| `org.springframework:spring-beans` | `7.0.10` | compile | `7.1.0-RC2` | `7.0.10` | `7.1.0-RC2` | current | central |
-| `org.springframework:spring-context` | `7.0.10` | compile | `7.1.0-RC2` | `7.0.10` | `7.1.0-RC2` | current | central |
-| `org.springframework:spring-core` | `7.0.10` | compile | `7.1.0-RC2` | `7.0.10` | `7.1.0-RC2` | current | central |
-| `org.springframework:spring-expression` | `7.0.10` | compile | `7.1.0-RC2` | `7.0.10` | `7.1.0-RC2` | current | central |
-| `org.springframework:spring-test` | `7.0.10` | test | `7.1.0-RC2` | `7.0.10` | `7.1.0-RC2` | current | central |
-| `org.springframework:spring-web` | `7.0.10` | compile | `7.1.0-RC2` | `7.0.10` | `7.1.0-RC2` | current | central |
-| `org.springframework.boot:spring-boot` | `4.1.2` | compile | `4.2.0-RC2` | `4.1.2` | `4.2.0-RC2` | current | central |
-| `org.springframework.boot:spring-boot-actuator` | `4.1.2` | compile | `4.2.0-RC2` | `4.1.2` | `4.2.0-RC2` | current | central |
-| `org.springframework.boot:spring-boot-actuator-autoconfigure` | `4.1.2` | compile | `4.2.0-RC2` | `4.1.2` | `4.2.0-RC2` | current | central |
+| `org.springframework:spring-aop` | `7.0.10` | compile | `7.1.0-RC2` | `7.0.10` | `7.1.0-RC2` | current | - |
+| `org.springframework:spring-beans` | `7.0.10` | compile | `7.1.0-RC2` | `7.0.10` | `7.1.0-RC2` | current | - |
+| `org.springframework:spring-context` | `7.0.10` | compile | `7.1.0-RC2` | `7.0.10` | `7.1.0-RC2` | current | - |
+| `org.springframework:spring-core` | `7.0.10` | compile | `7.1.0-RC2` | `7.0.10` | `7.1.0-RC2` | current | - |
+| `org.springframework:spring-expression` | `7.0.10` | compile | `7.1.0-RC2` | `7.0.10` | `7.1.0-RC2` | current | - |
+| `org.springframework:spring-test` | `7.0.10` | test | `7.1.0-RC2` | `7.0.10` | `7.1.0-RC2` | current | - |
+| `org.springframework:spring-web` | `7.0.10` | compile | `7.1.0-RC2` | `7.0.10` | `7.1.0-RC2` | current | - |
+| `org.springframework.boot:spring-boot` | `4.1.2` | compile | `4.2.0-RC2` | `4.1.2` | `4.2.0-RC2` | current | - |
+| `org.springframework.boot:spring-boot-actuator` | `4.1.2` | compile | `4.2.0-RC2` | `4.1.2` | `4.2.0-RC2` | current | - |
+| `org.springframework.boot:spring-boot-actuator-autoconfigure` | `4.1.2` | compile | `4.2.0-RC2` | `4.1.2` | `4.2.0-RC2` | current | - |
 | `org.springframework.boot:spring-boot-autoconfigure` | `4.1.2` | compile | `4.2.0-RC2` | `4.1.2` | `4.2.0-RC2` | current | central |
 | `org.springframework.boot:spring-boot-autoconfigure-processor` | `4.1.2` | compile | `4.2.0-RC2` | `4.1.2` | `4.2.0-RC2` | current | central |
 | `org.springframework.boot:spring-boot-configuration-processor` | `4.1.2` | compile | `4.2.0-RC2` | `4.1.2` | `4.2.0-RC2` | current | central |
-| `org.springframework.boot:spring-boot-health` | `4.1.2` | compile | `4.2.0-RC2` | `4.1.2` | `4.2.0-RC2` | current | central |
-| `org.springframework.boot:spring-boot-micrometer-metrics` | `4.1.2` | compile | `4.2.0-RC2` | `4.1.2` | `4.2.0-RC2` | current | central |
-| `org.springframework.boot:spring-boot-micrometer-observation` | `4.1.2` | compile | `4.2.0-RC2` | `4.1.2` | `4.2.0-RC2` | current | central |
-| `org.springframework.boot:spring-boot-security` | `4.1.2` | compile | `4.2.0-RC2` | `4.1.2` | `4.2.0-RC2` | current | central |
-| `org.springframework.boot:spring-boot-starter` | `4.1.2` | compile | `4.2.0-RC2` | `4.1.2` | `4.2.0-RC2` | current | central |
+| `org.springframework.boot:spring-boot-health` | `4.1.2` | compile | `4.2.0-RC2` | `4.1.2` | `4.2.0-RC2` | current | - |
+| `org.springframework.boot:spring-boot-micrometer-metrics` | `4.1.2` | compile | `4.2.0-RC2` | `4.1.2` | `4.2.0-RC2` | current | - |
+| `org.springframework.boot:spring-boot-micrometer-observation` | `4.1.2` | compile | `4.2.0-RC2` | `4.1.2` | `4.2.0-RC2` | current | - |
+| `org.springframework.boot:spring-boot-security` | `4.1.2` | compile | `4.2.0-RC2` | `4.1.2` | `4.2.0-RC2` | current | - |
+| `org.springframework.boot:spring-boot-starter` | `4.1.2` | compile | `4.2.0-RC2` | `4.1.2` | `4.2.0-RC2` | current | - |
 | `org.springframework.boot:spring-boot-starter-actuator` | `4.1.2` | compile | `4.2.0-RC2` | `4.1.2` | `4.2.0-RC2` | current | central |
 | `org.springframework.boot:spring-boot-starter-aspectj` | `4.1.2` | compile | `4.2.0-RC2` | `4.1.2` | `4.2.0-RC2` | current | central |
-| `org.springframework.boot:spring-boot-starter-logging` | `4.1.2` | compile | `4.2.0-RC2` | `4.1.2` | `4.2.0-RC2` | current | central |
-| `org.springframework.boot:spring-boot-starter-micrometer-metrics` | `4.1.2` | compile | `4.2.0-RC2` | `4.1.2` | `4.2.0-RC2` | current | central |
+| `org.springframework.boot:spring-boot-starter-logging` | `4.1.2` | compile | `4.2.0-RC2` | `4.1.2` | `4.2.0-RC2` | current | - |
+| `org.springframework.boot:spring-boot-starter-micrometer-metrics` | `4.1.2` | compile | `4.2.0-RC2` | `4.1.2` | `4.2.0-RC2` | current | - |
 | `org.springframework.boot:spring-boot-starter-security` | `4.1.2` | compile | `4.2.0-RC2` | `4.1.2` | `4.2.0-RC2` | current | central |
 | `org.springframework.boot:spring-boot-starter-test` | `4.1.2` | test | `4.2.0-RC2` | `4.1.2` | `4.2.0-RC2` | current | central |
-| `org.springframework.boot:spring-boot-test` | `4.1.2` | test | `4.2.0-RC2` | `4.1.2` | `4.2.0-RC2` | current | central |
-| `org.springframework.boot:spring-boot-test-autoconfigure` | `4.1.2` | test | `4.2.0-RC2` | `4.1.2` | `4.2.0-RC2` | current | central |
-| `org.springframework.security:spring-security-config` | `7.1.2` | compile | `7.2.0-RC1` | `7.1.2` | `7.2.0-RC1` | current | central |
-| `org.springframework.security:spring-security-core` | `7.1.2` | compile | `7.2.0-RC1` | `7.1.2` | `7.2.0-RC1` | current | central |
-| `org.springframework.security:spring-security-crypto` | `7.1.2` | compile | `7.2.0-RC1` | `7.1.2` | `7.2.0-RC1` | current | central |
+| `org.springframework.boot:spring-boot-test` | `4.1.2` | test | `4.2.0-RC2` | `4.1.2` | `4.2.0-RC2` | current | - |
+| `org.springframework.boot:spring-boot-test-autoconfigure` | `4.1.2` | test | `4.2.0-RC2` | `4.1.2` | `4.2.0-RC2` | current | - |
+| `org.springframework.security:spring-security-config` | `7.1.2` | compile | `7.2.0-RC1` | `7.1.2` | `7.2.0-RC1` | current | - |
+| `org.springframework.security:spring-security-core` | `7.1.2` | compile | `7.2.0-RC1` | `7.1.2` | `7.2.0-RC1` | current | - |
+| `org.springframework.security:spring-security-crypto` | `7.1.2` | compile | `7.2.0-RC1` | `7.1.2` | `7.2.0-RC1` | current | - |
 | `org.springframework.security:spring-security-test` | `7.1.2` | test | `7.2.0-RC1` | `7.1.2` | `7.2.0-RC1` | current | central |
-| `org.springframework.security:spring-security-web` | `7.1.2` | compile | `7.2.0-RC1` | `7.1.2` | `7.2.0-RC1` | current | central |
-| `org.threeten:threeten-extra` | `1.8.0` | runtime | `1.11.0` | `1.11.0` | `1.11.0` | **behind** | central |
-| `org.threeten:threetenbp` | `1.7.0` | compile | `1.7.5` | `1.7.5` | `1.7.5` | **behind** | central |
-| `org.xmlunit:xmlunit-core` | `2.11.0` | test | `2.14.0` | `2.14.0` | `2.14.0` | **behind** | central |
-| `org.yaml:snakeyaml` | `2.6` | compile | `2.7` | `2.7` | `2.7` | **behind** | central |
-| `software.amazon.eventstream:eventstream` | `1.0.1` | runtime | `1.0.1` | `1.0.1` | `1.0.1` | current | central |
-| `software.amazon.smithy:smithy-aws-traits` | `1.55.0` | runtime | `1.74.1` | `1.74.1` | `1.74.1` | **behind** | central |
-| `software.amazon.smithy:smithy-diff` | `1.55.0` | runtime | `1.74.1` | `1.74.1` | `1.74.1` | **behind** | central |
-| `software.amazon.smithy:smithy-model` | `1.55.0` | runtime | `1.74.1` | `1.74.1` | `1.74.1` | **behind** | central |
-| `software.amazon.smithy:smithy-utils` | `1.55.0` | runtime | `1.74.1` | `1.74.1` | `1.74.1` | **behind** | central |
-| `software.amazon.smithy:smithy-validation-model` | `1.54.0` | runtime | `1.74.1` | `1.74.1` | `1.74.1` | **behind** | central |
-| `software.amazon.smithy.java:auth-api` | `0.0.1` | runtime | `1.8.0` | `1.8.0` | `1.8.0` | **behind** | central |
-| `software.amazon.smithy.java:aws-client-restjson` | `0.0.1` | runtime | `1.8.0` | `1.8.0` | `1.8.0` | **behind** | central |
-| `software.amazon.smithy.java:client-core` | `0.0.1` | runtime | `1.8.0` | `1.8.0` | `1.8.0` | **behind** | central |
-| `software.amazon.smithy.java:client-http` | `0.0.1` | runtime | `1.8.0` | `1.8.0` | `1.8.0` | **behind** | central |
-| `software.amazon.smithy.java:client-http-binding` | `0.0.1` | runtime | `1.8.0` | `1.8.0` | `1.8.0` | **behind** | central |
-| `software.amazon.smithy.java:context` | `0.0.1` | runtime | `1.8.0` | `1.8.0` | `1.8.0` | **behind** | central |
-| `software.amazon.smithy.java:core` | `0.0.1` | runtime | `1.8.0` | `1.8.0` | `1.8.0` | **behind** | central |
-| `software.amazon.smithy.java:event-streams` | `0.0.1` | runtime | `0.0.1` | `0.0.1` | `0.0.1` | current | central |
-| `software.amazon.smithy.java:framework-errors` | `0.0.1` | runtime | `1.8.0` | `1.8.0` | `1.8.0` | **behind** | central |
-| `software.amazon.smithy.java:http-api` | `0.0.1` | runtime | `1.8.0` | `1.8.0` | `1.8.0` | **behind** | central |
-| `software.amazon.smithy.java:http-binding` | `0.0.1` | runtime | `1.8.0` | `1.8.0` | `1.8.0` | **behind** | central |
-| `software.amazon.smithy.java:io` | `0.0.1` | runtime | `1.8.0` | `1.8.0` | `1.8.0` | **behind** | central |
-| `software.amazon.smithy.java:json-codec` | `0.0.1` | runtime | `1.8.0` | `1.8.0` | `1.8.0` | **behind** | central |
-| `software.amazon.smithy.java:logging` | `0.0.1` | runtime | `1.8.0` | `1.8.0` | `1.8.0` | **behind** | central |
-| `software.amazon.smithy.java:retries-api` | `0.0.1` | runtime | `1.8.0` | `1.8.0` | `1.8.0` | **behind** | central |
+| `org.springframework.security:spring-security-web` | `7.1.2` | compile | `7.2.0-RC1` | `7.1.2` | `7.2.0-RC1` | current | - |
+| `org.threeten:threeten-extra` | `1.8.0` | runtime | `1.11.0` | `1.11.0` | `1.11.0` | **behind** | - |
+| `org.threeten:threetenbp` | `1.7.0` | compile | `1.7.5` | `1.7.5` | `1.7.5` | **behind** | - |
+| `org.xmlunit:xmlunit-core` | `2.11.0` | test | `2.14.0` | `2.14.0` | `2.14.0` | **behind** | - |
+| `org.yaml:snakeyaml` | `2.6` | compile | `2.7` | `2.7` | `2.7` | **behind** | - |
+| `software.amazon.eventstream:eventstream` | `1.0.1` | runtime | `1.0.1` | `1.0.1` | `1.0.1` | current | - |
+| `software.amazon.smithy:smithy-aws-traits` | `1.55.0` | runtime | `1.74.1` | `1.74.1` | `1.74.1` | **behind** | - |
+| `software.amazon.smithy:smithy-diff` | `1.55.0` | runtime | `1.74.1` | `1.74.1` | `1.74.1` | **behind** | - |
+| `software.amazon.smithy:smithy-model` | `1.55.0` | runtime | `1.74.1` | `1.74.1` | `1.74.1` | **behind** | - |
+| `software.amazon.smithy:smithy-utils` | `1.55.0` | runtime | `1.74.1` | `1.74.1` | `1.74.1` | **behind** | - |
+| `software.amazon.smithy:smithy-validation-model` | `1.54.0` | runtime | `1.74.1` | `1.74.1` | `1.74.1` | **behind** | - |
+| `software.amazon.smithy.java:auth-api` | `0.0.1` | runtime | `1.8.0` | `1.8.0` | `1.8.0` | **behind** | - |
+| `software.amazon.smithy.java:aws-client-restjson` | `0.0.1` | runtime | `1.8.0` | `1.8.0` | `1.8.0` | **behind** | - |
+| `software.amazon.smithy.java:client-core` | `0.0.1` | runtime | `1.8.0` | `1.8.0` | `1.8.0` | **behind** | - |
+| `software.amazon.smithy.java:client-http` | `0.0.1` | runtime | `1.8.0` | `1.8.0` | `1.8.0` | **behind** | - |
+| `software.amazon.smithy.java:client-http-binding` | `0.0.1` | runtime | `1.8.0` | `1.8.0` | `1.8.0` | **behind** | - |
+| `software.amazon.smithy.java:context` | `0.0.1` | runtime | `1.8.0` | `1.8.0` | `1.8.0` | **behind** | - |
+| `software.amazon.smithy.java:core` | `0.0.1` | runtime | `1.8.0` | `1.8.0` | `1.8.0` | **behind** | - |
+| `software.amazon.smithy.java:event-streams` | `0.0.1` | runtime | `0.0.1` | `0.0.1` | `0.0.1` | current | - |
+| `software.amazon.smithy.java:framework-errors` | `0.0.1` | runtime | `1.8.0` | `1.8.0` | `1.8.0` | **behind** | - |
+| `software.amazon.smithy.java:http-api` | `0.0.1` | runtime | `1.8.0` | `1.8.0` | `1.8.0` | **behind** | - |
+| `software.amazon.smithy.java:http-binding` | `0.0.1` | runtime | `1.8.0` | `1.8.0` | `1.8.0` | **behind** | - |
+| `software.amazon.smithy.java:io` | `0.0.1` | runtime | `1.8.0` | `1.8.0` | `1.8.0` | **behind** | - |
+| `software.amazon.smithy.java:json-codec` | `0.0.1` | runtime | `1.8.0` | `1.8.0` | `1.8.0` | **behind** | - |
+| `software.amazon.smithy.java:logging` | `0.0.1` | runtime | `1.8.0` | `1.8.0` | `1.8.0` | **behind** | - |
+| `software.amazon.smithy.java:retries-api` | `0.0.1` | runtime | `1.8.0` | `1.8.0` | `1.8.0` | **behind** | - |
 
 ## Notes and caveats
 
