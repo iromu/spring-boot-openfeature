@@ -257,6 +257,11 @@
                 <artifactId>openfeature-provider</artifactId>
                 <version>${superposition-openfeature.version}</version>
             </dependency>
+            <dependency>
+                <groupId>io.github.lichtsinn</groupId>
+                <artifactId>ageris-openfeature</artifactId>
+                <version>${ageris-openfeature.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <build>

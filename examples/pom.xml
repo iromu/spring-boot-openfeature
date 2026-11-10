@@ -60,6 +60,7 @@
         <module>octopusdeploy-simple</module>
         <module>vwo-simple</module>
         <module>superposition-simple</module>
+        <module>ageris-simple</module>
     </modules>
 
     <properties>
