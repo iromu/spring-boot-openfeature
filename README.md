@@ -185,6 +185,7 @@ Each backend has its own starter module under `org.iromu.openfeature`:
 |----------------|-----------|------------------------------------------------------|---------------|
 | Ageris         | 0.7.0     | `spring-boot-starter-openfeature-ageris`             | [README](spring-boot-starter-openfeature-ageris/README.md) |
 | ConfigCat      | 0.2.1     | `spring-boot-starter-openfeature-configcat`          | [README](spring-boot-starter-openfeature-configcat/README.md) |
+| ConfigDirector | 1.4.0     | `spring-boot-starter-openfeature-configdirector`     | [README](spring-boot-starter-openfeature-configdirector/README.md) |
 | Confidence     | 0.7.0     | `spring-boot-starter-openfeature-confidence`         | [README](spring-boot-starter-openfeature-confidence/README.md) |
 | Datadog        | 1.68.1    | `spring-boot-starter-openfeature-datadog`            | [README](spring-boot-starter-openfeature-datadog/README.md) |
 | DevCycle       | 2.10.0    | `spring-boot-starter-openfeature-devcycle`           | [README](spring-boot-starter-openfeature-devcycle/README.md) |
