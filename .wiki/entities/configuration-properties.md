@@ -177,6 +177,7 @@ A missing `api-key`, `org-id` or `workspace-id` fails fast with an `IllegalState
 - `first-load-timeout` (default `30s`) — how long provider initialization waits for the first attempt to load the configuration files
 
 Missing required values fail fast with an `IllegalStateException` naming the property path when the starter's own configuration bean is created. The provider constructor is lazy (no I/O until `initialize()` starts the configuration loader). Any other `Ageris` option (policy bindings, metrics) goes through an `AgerisCustomizer` bean — see [[concepts/customizers]].
+
 ## CloudBees
 
 `CloudbeesProperties` (`spring.openfeature.cloudbees.*`) — the vendor-published provider (`com.cloudbees.openfeature:cloudbees-openfeature-provider`) authenticates to the CloudBees (Rox) service with an API key:
@@ -185,3 +186,12 @@ Missing required values fail fast with an `IllegalStateException` naming the pro
 - `endpoint` — optional; overrides the Rox service URL the provider is built against
 
 A blank `api-key` (or a malformed `endpoint`) fails fast with an `IllegalStateException` naming the property path when the starter's own provider bean is created. Any other option of the `RoxOptions` the provider is built from goes through a `CloudbeesCustomizer` bean — see [[concepts/customizers]].
+
+## ConfigDirector
+
+`ConfigDirectorProperties` (`spring.openfeature.configdirector.*`) — ConfigDirector is a remote configuration and feature-flag service:
+
+- `api-key` — required; the server SDK key for the ConfigDirector environment
+- `url` — optional; endpoint the provider connects to (the ConfigDirector default endpoint applies)
+
+A missing API key fails fast with an `IllegalStateException` naming the property path when the starter's own configuration bean is created. The provider constructor is lazy (no I/O until `initialize()` starts the background eventsource). Any other option (connection mode, polling interval, timeouts, metadata, telemetry) goes through a `ConfigDirectorCustomizer` bean — see [[concepts/customizers]].
