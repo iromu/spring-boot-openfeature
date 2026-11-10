@@ -81,6 +81,7 @@
     <module>spring-boot-starter-openfeature-vwo</module>
     <module>spring-boot-starter-openfeature-superposition</module>
     <module>spring-boot-starter-openfeature-ageris</module>
+    <module>spring-boot-starter-openfeature-cloudbees</module>
   </modules>
 
   <properties>
@@ -180,6 +181,10 @@
          dev.openfeature:sdk with provided scope, so it never pulls a transitive SDK
          version; the consumer's SDK arrives at ${sdk.version} through spring-openfeature. -->
     <ageris-openfeature.version>0.7.0</ageris-openfeature.version>
+    <!-- CloudBees's OpenFeature provider (com.cloudbees.openfeature.provider.CloudbeesProvider);
+         the provider declares dev.openfeature:sdk at an older version, which the starter
+         pins to ${sdk.version} (lockstep). -->
+    <cloudbees-openfeature.version>1.0.1</cloudbees-openfeature.version>
   </properties>
 
   <dependencyManagement>

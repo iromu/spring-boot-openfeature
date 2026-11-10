@@ -261,6 +261,9 @@
                 <groupId>io.github.lichtsinn</groupId>
                 <artifactId>ageris-openfeature</artifactId>
                 <version>${ageris-openfeature.version}</version>
+                <groupId>com.cloudbees.openfeature</groupId>
+                <artifactId>cloudbees-openfeature-provider</artifactId>
+                <version>${cloudbees-openfeature.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
