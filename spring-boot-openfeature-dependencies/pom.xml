@@ -252,6 +252,11 @@
                 <artifactId>vwo-fme-java-sdk</artifactId>
                 <version>${vwo-fme-java-sdk.version}</version>
             </dependency>
+            <dependency>
+                <groupId>io.juspay.superposition</groupId>
+                <artifactId>openfeature-provider</artifactId>
+                <version>${superposition-openfeature.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <build>

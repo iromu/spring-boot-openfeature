@@ -23,8 +23,8 @@ The root `pom.xml` (aggregator, artifact `org.iromu.openfeature:spring-boot-open
 | `spring-boot-openfeature-autoconfigure` | Generic auto-config: `ClientAutoConfiguration` (the `Client` bean), `OpenFeatureAPIAutoConfiguration` (SDK singleton + event logging), `SecurityAutoConfiguration` (auth-aware evaluation context) |
 | `spring-boot-starter-openfeature` | Base starter (`pom` packaging) pulling in the generic auto-config |
 | `spring-boot-openfeature-dependencies` | BOM pinning SDK + provider versions |
-| `spring-boot-starter-openfeature-<provider>` | One module per backend: `unleash`, `configcat`, `envvar`, `flagd`, `flagsmith`, `flipt`, `gofeatureflag`, `jsonlogic`, `multiprovider`, `statsig`, `growthbook`, `gcp`, `ofrep`, `optimizely`, `launchdarkly`, `datadog`, `split`, `devcycle`, `featbit`, `featureflip`, `mixpanel`, `kameleoon`, `confidence`, `octopusdeploy`, `vwo` |
-| `examples` (separate reactor, `-P examples`) | `unleash-simple`, `unleash-advanced`, `gcp-simple`, `ofrep-simple`, `optimizely-simple`, `kameleoon-simple`, `confidence-simple`, `octopusdeploy-simple`, `vwo-simple` runnable apps |
+| `spring-boot-starter-openfeature-<provider>` | One module per backend: `unleash`, `configcat`, `envvar`, `flagd`, `flagsmith`, `flipt`, `gofeatureflag`, `jsonlogic`, `multiprovider`, `statsig`, `growthbook`, `gcp`, `ofrep`, `optimizely`, `launchdarkly`, `datadog`, `split`, `devcycle`, `featbit`, `featureflip`, `mixpanel`, `kameleoon`, `confidence`, `octopusdeploy`, `vwo`, `superposition` |
+| `examples` (separate reactor, `-P examples`) | `unleash-simple`, `unleash-advanced`, `gcp-simple`, `ofrep-simple`, `optimizely-simple`, `kameleoon-simple`, `confidence-simple`, `octopusdeploy-simple`, `vwo-simple`, `superposition-simple` runnable apps |
 
 ## Who uses what
 

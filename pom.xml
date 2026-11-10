@@ -79,6 +79,7 @@
     <module>spring-boot-starter-openfeature-confidence</module>
     <module>spring-boot-starter-openfeature-octopusdeploy</module>
     <module>spring-boot-starter-openfeature-vwo</module>
+    <module>spring-boot-starter-openfeature-superposition</module>
   </modules>
 
   <properties>
@@ -169,6 +170,11 @@
          runtime scope, but the starter compiles against com.vwo.VWO, which ships in it
          (referenced by VWOProvider's constructor signature). -->
     <vwo-fme-java-sdk.version>1.8.1</vwo-fme-java-sdk.version>
+
+    <!-- The Superposition OpenFeature provider (io.juspay.superposition.openfeature.SuperpositionOpenFeatureProvider)
+         ships in Juspay's Superposition Java client; it transitively pulls an older
+         dev.openfeature:sdk, which the starter pins to ${sdk.version} (lockstep). -->
+    <superposition-openfeature.version>0.118.2</superposition-openfeature.version>
   </properties>
 
   <dependencyManagement>

@@ -206,6 +206,7 @@ Each backend has its own starter module under `org.iromu.openfeature`:
 | Octopus Deploy | 2.1.0     | `spring-boot-starter-openfeature-octopusdeploy`      | [README](spring-boot-starter-openfeature-octopusdeploy/README.md) |
 | Statsig        | 0.2.1     | `spring-boot-starter-openfeature-statsig`            | [README](spring-boot-starter-openfeature-statsig/README.md) |
 | Split          | 1.2.2     | `spring-boot-starter-openfeature-split`              | [README](spring-boot-starter-openfeature-split/README.md) |
+| Superposition  | 0.118.2   | `spring-boot-starter-openfeature-superposition`      | [README](spring-boot-starter-openfeature-superposition/README.md) |
 | Unleash        | 0.1.3-alpha | `spring-boot-starter-openfeature-unleash`          | [README](spring-boot-starter-openfeature-unleash/README.md) |
 | VWO            | 1.0.0     | `spring-boot-starter-openfeature-vwo`              | [README](spring-boot-starter-openfeature-vwo/README.md) |
 
