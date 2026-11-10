@@ -26,7 +26,7 @@ Maven multi-module build (Java 17, Spring Boot 4). Use the wrapper: `./mvnw`.
 | Profile | Adds |
 | --- | --- |
 | `sonar` | `aggregate-report` module (coverage aggregation) |
-| `examples` | `examples` reactor (28 modules: `unleash-simple`, `unleash-advanced`, plus `<provider>-simple` for all other 26 providers) |
+| `examples` | `examples` reactor (29 modules: `unleash-simple`, `unleash-advanced`, plus `<provider>-simple` for all other 27 providers) |
 | `publish` | GPG signing + Central Portal publishing |
 
 ## Examples
@@ -48,6 +48,7 @@ Every provider starter has a runnable `<provider>-simple` example under `example
 - `vwo-simple` — the VWO starter (vendor-published provider, added 2026-11-09).
 - `superposition-simple` — the Superposition starter (vendor-published provider, added 2026-11-09).
 - `ageris-simple` — the Ageris starter (vendor-published, file-based provider, added 2026-11-10).
+- `cloudbees-simple` — the CloudBees starter (vendor-published provider, added 2026-11-10).
 
 The `multiprovider-simple` example additionally pulls in `spring-boot-starter-openfeature-envvar` so the `MultiProvider` wraps two `FeatureProvider` beans.
 

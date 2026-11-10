@@ -61,6 +61,7 @@
         <module>vwo-simple</module>
         <module>superposition-simple</module>
         <module>ageris-simple</module>
+        <module>cloudbees-simple</module>
     </modules>
 
     <properties>

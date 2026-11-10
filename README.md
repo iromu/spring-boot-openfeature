@@ -210,6 +210,7 @@ Each backend has its own starter module under `org.iromu.openfeature`:
 | Superposition  | 0.118.2   | `spring-boot-starter-openfeature-superposition`      | [README](spring-boot-starter-openfeature-superposition/README.md) |
 | Unleash        | 0.1.3-alpha | `spring-boot-starter-openfeature-unleash`          | [README](spring-boot-starter-openfeature-unleash/README.md) |
 | VWO            | 1.0.0     | `spring-boot-starter-openfeature-vwo`              | [README](spring-boot-starter-openfeature-vwo/README.md) |
+| CloudBees      | 1.0.1     | `spring-boot-starter-openfeature-cloudbees`        | [README](spring-boot-starter-openfeature-cloudbees/README.md) |
 
 To switch providers, replace the starter dependency and update the configuration as described in the provider's README.
 

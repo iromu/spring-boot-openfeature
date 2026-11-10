@@ -1,0 +1,10 @@
+server.port: 9999
+spring:
+  openfeature:
+    cloudbees:
+      api-key: ${CLOUDBEES_API_KEY:}
+  application:
+    name: CloudbeesApplication
+
+# Boot without CloudBees at all: run with --example.fake-provider=true
+logging.level.org.iromu: DEBUG

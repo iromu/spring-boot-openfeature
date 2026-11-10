@@ -262,6 +262,11 @@
                 <artifactId>ageris-openfeature</artifactId>
                 <version>${ageris-openfeature.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.cloudbees.openfeature</groupId>
+                <artifactId>cloudbees-openfeature-provider</artifactId>
+                <version>${cloudbees-openfeature.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <build>
