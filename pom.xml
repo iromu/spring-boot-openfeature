@@ -150,7 +150,7 @@
     <featbit-openfeature.version>1.0.0</featbit-openfeature.version>
     <!-- Declared explicitly (not transitively): the provider publishes the FeatBit SDK in an
          open version range, and the starter compiles against FBConfig. -->
-    <featbit-java-sdk.version>1.4.4</featbit-java-sdk.version>
+    <featbit-java-sdk.version>1.5.0</featbit-java-sdk.version>
     <featureflip-openfeature.version>0.2.1</featureflip-openfeature.version>
 
     <!-- The Mixpanel OpenFeature provider (com.mixpanel.openfeature.MixpanelProvider) ships
@@ -160,7 +160,7 @@
     <kameleoon-openfeature.version>0.0.1</kameleoon-openfeature.version>
     <!-- Declared explicitly (not transitively): the starter compiles against
          KameleoonClientConfig, which ships in the Kameleoon Java client the provider uses. -->
-    <kameleoon-client-java.version>4.5.0</kameleoon-client-java.version>
+    <kameleoon-client-java.version>4.25.0</kameleoon-client-java.version>
     <!-- Confidence's OpenFeature provider, published by Spotify alongside the Confidence
          SDK (com.spotify.confidence:sdk-java). -->
     <confidence-openfeature.version>0.7.0</confidence-openfeature.version>
