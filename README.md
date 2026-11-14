@@ -200,7 +200,7 @@ Each backend has its own starter module under `org.iromu.openfeature`:
 | GrowthBook     | 0.0.2     | `spring-boot-starter-openfeature-growthbook`         | [README](spring-boot-starter-openfeature-growthbook/README.md) |
 | JsonLogic      | 1.3.0     | `spring-boot-starter-openfeature-jsonlogic`          | [README](spring-boot-starter-openfeature-jsonlogic/README.md) |
 | Kameleoon      | 0.0.1     | `spring-boot-starter-openfeature-kameleoon`          | [README](spring-boot-starter-openfeature-kameleoon/README.md) |
-| LaunchDarkly   | 1.1.1     | `spring-boot-starter-openfeature-launchdarkly`       | [README](spring-boot-starter-openfeature-launchdarkly/README.md) |
+| LaunchDarkly   | 2.0.0     | `spring-boot-starter-openfeature-launchdarkly`       | [README](spring-boot-starter-openfeature-launchdarkly/README.md) |
 | Mixpanel       | 0.2.0     | `spring-boot-starter-openfeature-mixpanel`           | [README](spring-boot-starter-openfeature-mixpanel/README.md) |
 | Multi-Provider | 0.0.3     | `spring-boot-starter-openfeature-multiprovider`      | [README](spring-boot-starter-openfeature-multiprovider/README.md) |
 | OFREP          | 0.0.2     | `spring-boot-starter-openfeature-ofrep`              | [README](spring-boot-starter-openfeature-ofrep/README.md) |
@@ -279,6 +279,19 @@ $ ./mvnw -pl spring-boot-starter-openfeature-unleash -am clean verify
 ```
 
 Code style is enforced by Spring Java Format and Checkstyle, which run automatically during the `validate` phase.
+
+## Documentation
+
+Design and engineering documents live under [`docs/`](docs):
+
+| Document | Contents |
+|----------|----------|
+| [architecture.md](docs/architecture.md) | Module map, the provider → `Client` wiring flow, extension points, `@ToggleOnFlag` aspect, health and security integration |
+| [provider-starter-contract.md](docs/provider-starter-contract.md) | The shared auto-configuration contract every provider starter honors, per-provider deltas, and the checklist for adding a starter |
+| [quality-and-testing.md](docs/quality-and-testing.md) | Test tiers, behavioral contracts, per-module JaCoCo coverage floors, CI posture and known gaps |
+| [dependency-management.md](docs/dependency-management.md) | Where versions live, the BOM, the OpenFeature SDK ↔ provider lockstep rule, upgrade policy and blocked pins |
+| [backlog.md](docs/backlog.md) | Unimplemented work: the blocked Featurevisor and Hyphen AI starters, the Unleash real-endpoint CI gate |
+| [dependency-versions.md](docs/dependency-versions.md) | Generated audit of every plugin and dependency pin against its latest release |
 
 ## Contributing
 

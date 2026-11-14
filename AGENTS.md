@@ -28,7 +28,8 @@ multiplier.
 
 1. `.wiki/index.md` — wiki with all the knowledge you need to know
 2. `.qwen/team-memory/MEMORY.md` — project memory
-3. 
+3. `docs/` — the project design documents: `architecture.md`, `provider-starter-contract.md`, `quality-and-testing.md`, `dependency-management.md`, `backlog.md`, and the generated `dependency-versions.md` audit (these replaced the retired OpenSpec workflow)
+
 ---
 
 ## Project Overview
@@ -36,11 +37,11 @@ multiplier.
 **Spring Boot OpenFeature** is a Spring Boot starter that integrates [OpenFeature](https://openfeature.dev/) — an open standard for feature-flag management — into Spring Boot applications. It provides auto-configuration, a `Client` bean, a health indicator, a declarative `@ToggleOnFlag` AOP annotation, and per-provider starters so consumers can wire up a feature-flag backend with minimal configuration.
 
 - **Language / Runtime:** Java 17
-- **Framework:** Spring Boot 4.1.1 (`spring-boot.version`)
-- **Core SDK:** OpenFeature Java SDK (`dev.openfeature.sdk`) 1.22.1 (`sdk.version`)
+- **Framework:** Spring Boot 4.1.2 (`spring-boot.version`)
+- **Core SDK:** OpenFeature Java SDK (`dev.openfeature.sdk`) 1.23.0 (`sdk.version`)
 - **Build tool:** Maven (multi-module, uses the Maven wrapper `./mvnw`)
 - **License:** Apache 2.0 (every source file carries the Apache license header)
-- **Coordinates:** `org.iromu.openfeature:spring-boot-openfeature`, version managed by `${revision}` (currently `4.1.2-SNAPSHOT`)
+- **Coordinates:** `org.iromu.openfeature:spring-boot-openfeature`, version managed by `${revision}` (currently `4.1.5-SNAPSHOT`)
 
 ## Module Architecture
 
@@ -50,13 +51,13 @@ This is a multi-module Maven reactor. The root `pom.xml` is a `pom`-packaging ag
 - **`spring-boot-openfeature-autoconfigure`** — generic auto-configuration. `ClientAutoConfiguration` creates the `dev.openfeature.sdk.Client` bean, conditioned on a `FeatureProvider` bean being present (`@ConditionalOnBean(FeatureProvider.class)`) and a `multiProvider` bean being absent. Also `OpenFeatureAPIAutoConfiguration` and a `security` sub-package. Exposes `ClientCustomizer` / `OpenFeatureAPICustomizer` extension points.
 - **`spring-boot-starter-openfeature`** — the base starter (`pom` packaging). Pulls in autoconfigure + the dependencies BOM. This is the artifact consumers add to use provider-agnostic pieces.
 - **`spring-boot-openfeature-dependencies`** — the BOM (`spring-boot-openfeature-dependencies`) that pins versions of the OpenFeature SDK and all provider libraries. Consumers import this via `dependencyManagement`.
-- **Provider starters** — one module per feature-flag backend, each `spring-boot-starter-openfeature-<provider>`: `configcat`, `envvar`, `flagd`, `flagsmith`, `flipt`, `gofeatureflag`, `jsonlogic`, `multiprovider`, `statsig`, `unleash`, `growthbook`.
+- **Provider starters** — one module per feature-flag backend, each `spring-boot-starter-openfeature-<provider>` (29 total): `ageris`, `cloudbees`, `configcat`, `configdirector`, `confidence`, `datadog`, `devcycle`, `envvar`, `featbit`, `featureflip`, `flagd`, `flagsmith`, `flipt`, `gcp`, `gofeatureflag`, `growthbook`, `jsonlogic`, `kameleoon`, `launchdarkly`, `mixpanel`, `multiprovider`, `ofrep`, `octopusdeploy`, `optimizely`, `split`, `statsig`, `superposition`, `unleash`, `vwo`. The root README keeps the artifact ↔ provider ↔ version table.
 - **`aggregate-report`** — JaCoCo/Sonar aggregation (only built under the `sonar` profile).
-- **`examples`** — runnable sample apps (only built under the `examples` profile). Has its own parent (`spring-boot-starter-parent`) and its own `${revision}`. Contains `unleash-simple` and `unleash-advanced`.
+- **`examples`** — runnable sample apps (only built under the `examples` profile). Has its own parent (`spring-boot-starter-parent`) and its own `${revision}`. 30 apps: `unleash-simple`, `unleash-advanced`, and one `<provider>-simple` per remaining provider, each booting credential-free on an in-memory fake provider gated on `example.fake-provider`.
 
 ### The Provider-Starter Pattern
 
-Each provider module follows the same structure — use the **Unleash** module as the reference implementation when adding or modifying a provider:
+Each provider module follows the same structure — use the **Unleash** module as the reference implementation when adding or modifying a provider. The full behavioral contract every starter must honor (single `FeatureProvider` + `Client`, back-off to a consumer provider, declarative enablement, customizer application, credential-free unit tests) and the add-a-starter checklist are in [`docs/provider-starter-contract.md`](docs/provider-starter-contract.md).
 
 - `<Provider>Properties` — `@ConfigurationProperties(prefix = "...")` for provider config (e.g. `UnleashProperties`).
 - `<Provider>Customizer` — an extension interface consumers implement to tweak provider config.
@@ -110,11 +111,12 @@ cd examples && mvn clean package
 - **Pre-commit hooks** (`.pre-commit-config.yaml`): checkstyle, `gitleaks` (secret scanning), `end-of-file-fixer`, `trailing-whitespace`. Keep files clean of trailing whitespace and ensure a trailing newline.
 - **Lombok** is used for boilerplate (`@Data`, `@Slf4j`, etc.) and `spring-boot-configuration-processor` generates `spring-configuration-metadata`. Both are configured as annotation processors in provider/core modules.
 - **Tests:** JUnit via `spring-boot-starter-test`; provider auto-config tests use `ApplicationContextRunner`-style assertions and `mockwebserver` (OkHttp) for HTTP-based providers. Keep the test source directory layout mirrored under `src/test/java`.
-- **Adding a new provider:** replicate the Unleash module structure (properties, customizer, auto-configuration, `pom.xml`, auto-config registration via `META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports`, plus tests) and add the module + version property to the root `pom.xml` and the BOM.
+- **Adding a new provider:** replicate the Unleash module structure (properties, customizer, auto-configuration, `pom.xml`, auto-config registration via `META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports`, plus tests) and add the module + version property to the root `pom.xml` and the BOM — the full checklist and the contract the starter must honor are in `docs/provider-starter-contract.md`.
 
 ## Key Files
 
 - `pom.xml` — root aggregator: module list, version properties (SDK + each provider), build plugins, profiles.
+- `docs/` — the project design documents (`architecture.md`, `provider-starter-contract.md`, `quality-and-testing.md`, `dependency-management.md`, `backlog.md`) plus the generated `dependency-versions.md` audit; these are the durable replacement for the retired OpenSpec planning trees.
 - `spring-boot-openfeature-autoconfigure/.../ClientAutoConfiguration.java` — the central `Client` bean wiring.
 - `spring-openfeature/.../aop/ToggleOnFlag.java` + `ToggleOnFlagAspect.java` — the declarative flag annotation and its aspect.
 - `spring-boot-starter-openfeature-unleash/.../UnleashAutoConfiguration.java` — reference provider implementation.
