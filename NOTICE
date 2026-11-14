@@ -20,7 +20,7 @@ following components.
 
    OpenFeature Contrib Providers for Java
    (ConfigCat, EnvVar, Flagd, Flagsmith, Flipt, GCP, GoFeatureFlag, JsonLogic,
-   MultiProvider, Statsig and Unleash providers)
+   MultiProvider, Optimizely, Statsig and Unleash providers)
    https://github.com/open-feature/java-sdk-contrib
 
    Licensed under the Apache License, Version 2.0.
@@ -64,6 +64,79 @@ following components.
 
    Unleash client SDK for Java
    (io.getunleash:unleash-client-java)
+
+   Licensed under the Apache License, Version 2.0.
+
+
+   Optimizely SDK
+   (com.optimizely.ab:core-api, com.optimizely.ab:core-httpclient-impl)
+
+   Licensed under the Apache License, Version 2.0.
+
+
+   LaunchDarkly Java server SDK and OpenFeature server provider
+   (com.launchdarkly:launchdarkly-java-server-sdk,
+   com.launchdarkly:launchdarkly-openfeature-serverprovider)
+
+   Licensed under the Apache License, Version 2.0.
+
+
+   Datadog OpenFeature provider
+   (com.datadoghq:dd-openfeature)
+
+   Licensed under the Apache License, Version 2.0.
+
+
+   Split Java client SDK and OpenFeature provider
+   (io.split.client:java-client, io.split.openfeature:split-openfeature-provider)
+
+   Licensed under the Apache License, Version 2.0.
+
+
+   FeatureFlip OpenFeature provider
+   (io.featureflip:featureflip-openfeature)
+
+   Licensed under the Apache License, Version 2.0.
+
+
+   Mixpanel Java OpenFeature provider
+   (com.mixpanel:mixpanel-java-openfeature)
+
+   Licensed under the Apache License, Version 2.0.
+
+
+   Spotify Confidence OpenFeature provider
+   (com.spotify.confidence:openfeature-provider)
+
+   Licensed under the Apache License, Version 2.0.
+
+
+   Octopus Deploy OpenFeature provider
+   (com.octopus.openfeature:octopus-openfeature-provider)
+
+   Licensed under the Apache License, Version 2.0.
+
+
+   VWO OpenFeature provider and FME Java SDK
+   (com.vwo.sdk:vwo-openfeature-provider-java, com.vwo.sdk:vwo-fme-java-sdk)
+
+   Licensed under the Apache License, Version 2.0.
+
+
+   Superposition OpenFeature provider (Juspay)
+   (io.juspay.superposition:openfeature-provider)
+
+   Licensed under the Apache License, Version 2.0.
+
+
+   CloudBees OpenFeature provider
+   (com.cloudbees.openfeature:cloudbees-openfeature-provider)
+
+   Licensed under the Apache License, Version 2.0.
+
+
+   Ageris OpenFeature provider
+   (io.github.lichtsinn:ageris-openfeature)
 
    Licensed under the Apache License, Version 2.0.
 
@@ -131,3 +204,35 @@ MIT license and that require attribution to the following components.
    CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
    TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
    SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+   DevCycle Java server SDK
+   (com.devcycle:java-server-sdk)
+
+   FeatBit Java SDK and OpenFeature provider
+   (co.featbit:featbit-java-sdk, co.featbit:featbit-openfeature-provider-java-server)
+
+   ConfigDirector OpenFeature provider
+   (com.configdirector:configdirector-openfeature-server-provider)
+
+   Each of the above components is licensed under the MIT License, the
+   terms of which are reproduced above.
+
+
+==============================================================================
+This product includes components that are licensed to you under the
+GNU General Public License, version 3 (GPL-3.0), and that require
+attribution to the following component.
+==============================================================================
+
+   Kameleoon Java SDK and OpenFeature provider
+   (com.kameleoon:kameleoon-client-java, com.kameleoon:kameleoon-openfeature-java)
+
+   Licensed under the GNU General Public License, version 3.0
+   (https://www.gnu.org/licenses/gpl-3.0.html).
+
+   NOTE: Unlike this product (Apache License, Version 2.0), the Kameleoon
+   SDK is released under a copyleft license. The Kameleoon starter is an
+   optional, separate module; if you distribute this product together with
+   the Kameleoon SDK, the terms of the GPL-3.0 apply. Review that license
+   before redistributing.
