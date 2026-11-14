@@ -1,35 +1,35 @@
 {
-  "version": 1,
+  "version": 2,
   "skills": {
     "code-review": {
       "source": "iromu/awesome-qwen",
       "sourceType": "github",
       "skillPath": "skills/code-review/SKILL.md",
-      "computedHash": "bb7158fff1ff2a98ad3f1ab638f60db7efaf21dbcfed51cc63a317000f902615"
+      "computedHash": "069be03b48b68edf6ce35d61002b8df13dd7775297900b92131a0620a4876726"
     },
     "git-wiki": {
       "source": "yysun/awesome-agent-world",
       "sourceType": "github",
       "skillPath": "skills/git-wiki/SKILL.md",
-      "computedHash": "7a0c766675ee104158a9957ed185731411446b5b2e00ef475581b7b8aa9a6349"
+      "computedHash": "c52115d6214f8068390214c7a33e058a82ab34caad1862f26331793b33537e23"
     },
     "maven-version-audit": {
       "source": "iromu/awesome-qwen",
       "sourceType": "github",
       "skillPath": "skills/maven-version-audit/SKILL.md",
-      "computedHash": "0719b48de12f624ab2724b93aadb3cd1abd37f6d9dbc70ff618b52f90bf2aacf"
+      "computedHash": "d3d425f4a4c3ee70569752be1c39dc20735e5175c8ecd2e4c7cea92ba1142b99"
     },
     "openspec-review": {
       "source": "iromu/OpenSpec",
       "sourceType": "github",
       "skillPath": "skills/openspec-review/SKILL.md",
-      "computedHash": "64a2980067291e01530fe003ffcd08f88a94849a09ac5f24a9258723b8f01301"
+      "computedHash": "55d2936aa2a710ee92a6e4b3b526af4fb5801144a344ae706543c945e7af2dc7"
     },
     "spring-boot-testing": {
       "source": "github/awesome-copilot",
       "sourceType": "github",
       "skillPath": "skills/spring-boot-testing/SKILL.md",
-      "computedHash": "7f9a21e9d049adab263a83e83f5be6a01c8c2a50ef8dbe7a3f1365094b8aa080"
+      "computedHash": "00b15f274b55e37a903c037e9919c359c703d26a7f474017febde24025079c23"
     }
   }
 }

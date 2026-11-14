@@ -34,8 +34,7 @@ build
 ### Mac OS ###
 .DS_Store
 secret.txt
-
-.qwen/tmp
-.qwen/reviews
-.qwen/worktrees
+.agents
+.claude
+.qwen
 __pycache__

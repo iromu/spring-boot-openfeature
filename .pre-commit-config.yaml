@@ -1,9 +1,4 @@
 repos:
-  - repo: https://github.com/gherynos/pre-commit-java
-    rev: v0.6.29
-    hooks:
-      - id: checkstyle
-        args: [ "-c", "checkstyle.xml" ]
   - repo: https://github.com/gitleaks/gitleaks
     rev: v8.30.0
     hooks:
@@ -13,3 +8,11 @@ repos:
     hooks:
       - id: end-of-file-fixer
       - id: trailing-whitespace
+  # Run the project lint suite on every commit.
+  - repo: local
+    hooks:
+      - id: make-lint
+        name: make lint
+        entry: make lint
+        language: system
+        pass_filenames: false
