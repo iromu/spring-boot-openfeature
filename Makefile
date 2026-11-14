@@ -50,13 +50,13 @@ test-class: ## Run a single test class. Requires MODULE and TEST.
 format: ## Apply Spring Java Format (in-place)
 	$(MVN) spring-javaformat:apply
 
-.PHONY: lint
-checkstyle: ## Run Checkstyle
-	$(MVN) checkstyle:check
-
-.PHONY: checkstyle
-checkstyle: ## Run Checkstyle
-	$(MVN) checkstyle:check
+.PHONY: lint checkstyle
+lint: checkstyle ## Run the lint suite (Checkstyle)
+checkstyle: ## Run Checkstyle with the build's validate-phase configuration
+# The @checkstyle-validation suffix is required: the plugin's configLocation lives on that
+# execution, so a bare checkstyle:check silently falls back to sun_checks and reports
+# violations (80-col lines, tab indentation) that the project does not actually enforce.
+	$(MVN) checkstyle:check@checkstyle-validation
 
 .PHONY: coverage
 coverage: ## Build with aggregate JaCoCo coverage report (sonar profile)

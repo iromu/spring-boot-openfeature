@@ -36,5 +36,7 @@ build
 secret.txt
 .agents
 .claude
-.qwen
+# Shared team memory stays tracked; the rest of .qwen is local scratch.
+.qwen/*
+!.qwen/team-memory/
 __pycache__

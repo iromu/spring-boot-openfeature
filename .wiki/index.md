@@ -3,8 +3,8 @@ title: "Project Wiki"
 type: "index"
 status: "active"
 language: "default"
-last_commit: "e5b7c2bb48ab5d9e75f126897eccc0b0faf966da"
-updated_at: "2026-11-10"
+last_commit: "087fc55b27b35f9fbfb1caa7cd7a4696a77c94b9"
+updated_at: "2026-11-14"
 ---
 
 # Spring Boot OpenFeature — Wiki
@@ -17,9 +17,10 @@ It is a Java 17 / Spring Boot 4 multi-module Maven library, not an application. 
 
 ## 2. Get started
 
-- **Main command:** `./mvnw clean verify` (builds all modules, runs checkstyle + tests).
-- **Required environment:** Java 17, no external services for the library build. The runnable examples need a Unleash instance (or use the bundled fake/mock servers).
+- **Main command:** `./mvnw clean verify` (builds all modules, runs checkstyle + tests). `make help` lists the same Maven commands as targets (`make build`, `make test-module MODULE=<dir>`, `make coverage`).
+- **Required environment:** Java 17, no external services for the library build. The runnable examples need a Unleash instance (or use the bundled fake/mock servers). `./setup.sh` installs the pre-commit hooks and the project skills.
 - **Expected output:** all modules `BUILD SUCCESS`; the `unleash-simple` example answers on port `9998` with flag-driven responses.
+- **Design read:** `docs/` is the design home (the OpenSpec workflow was retired 2026-11-14) — see [[overview/design-docs]].
 - **First files to read:**
   1. `spring-boot-openfeature-autoconfigure/.../ClientAutoConfiguration.java` — the central wiring
   2. `spring-boot-starter-openfeature-unleash/.../UnleashAutoConfiguration.java` — the reference provider pattern
@@ -69,5 +70,7 @@ The library itself stores nothing. Flag data lives in the external provider (Unl
 | --- | --- |
 | How does a provider become a `Client`? | [[flows/startup-flow]] |
 | How does `@ToggleOnFlag` decide to run a method? | [[flows/flag-evaluation]] |
-| How do I add a new provider? | [[features/provider-starters]] |
+| How do I add a new provider? | [[features/provider-starters]] + `docs/provider-starter-contract.md` |
 | What build commands and profiles exist? | [[reference/build-and-modules]] |
+| Where is a design decision written down? | [[overview/design-docs]] |
+| What is planned but not built? | `docs/backlog.md` (see [[overview/design-docs]]) |
