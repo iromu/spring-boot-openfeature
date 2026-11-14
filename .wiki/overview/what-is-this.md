@@ -6,7 +6,8 @@ language: "default"
 source_paths:
   - "pom.xml"
   - "README.md"
-updated_at: "2026-11-10"
+  - "docs/architecture.md"
+updated_at: "2026-11-14"
 ---
 
 # What Is This Project
@@ -24,7 +25,7 @@ The root `pom.xml` (aggregator, artifact `org.iromu.openfeature:spring-boot-open
 | `spring-boot-starter-openfeature` | Base starter (`pom` packaging) pulling in the generic auto-config |
 | `spring-boot-openfeature-dependencies` | BOM pinning SDK + provider versions |
 | `spring-boot-starter-openfeature-<provider>` | One module per backend: `unleash`, `configcat`, `envvar`, `flagd`, `flagsmith`, `flipt`, `gofeatureflag`, `jsonlogic`, `multiprovider`, `statsig`, `growthbook`, `gcp`, `ofrep`, `optimizely`, `launchdarkly`, `datadog`, `split`, `devcycle`, `featbit`, `featureflip`, `mixpanel`, `kameleoon`, `confidence`, `octopusdeploy`, `vwo`, `superposition`, `ageris`, `cloudbees`, `configdirector` |
-| `examples` (separate reactor, `-P examples`) | `unleash-simple`, `unleash-advanced`, `gcp-simple`, `ofrep-simple`, `optimizely-simple`, `kameleoon-simple`, `confidence-simple`, `octopusdeploy-simple`, `vwo-simple`, `superposition-simple`, `ageris-simple`, `cloudbees-simple`, `configdirector-simple` runnable apps |
+| `examples` (separate reactor, `-P examples`) | 30 runnable apps: `unleash-simple`, `unleash-advanced`, and one `<provider>-simple` per remaining provider — full list in [[reference/build-and-modules]] |
 
 ## Who uses what
 
@@ -40,3 +41,8 @@ Every module ships its own `README.md`: the six core modules (`spring-openfeatur
 per-provider READMEs; the core-module READMEs document the generic wiring, the BOM, the
 `@ToggleOnFlag`/health features, coverage aggregation, and how to build and run the
 [examples](../examples).
+
+Beyond the READMEs, [`docs/`](../../docs) is the design home — the module map, the
+provider starter contract, the quality/testing contract, the dependency rules, and the
+backlog of unimplemented work. It replaced the OpenSpec planning workflow, whose trees
+were deleted on 2026-11-14. See [[overview/design-docs]].

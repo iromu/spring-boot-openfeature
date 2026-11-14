@@ -7,7 +7,8 @@ source_paths:
   - "spring-boot-starter-openfeature-unleash/src/main/java/org/iromu/openfeature/boot/autoconfigure/unleash/UnleashAutoConfiguration.java"
   - "spring-boot-starter-openfeature-unleash/src/main/java/org/iromu/openfeature/boot/unleash/UnleashProperties.java"
   - "examples/pom.xml"
-updated_at: "2026-11-10"
+  - "docs/provider-starter-contract.md"
+updated_at: "2026-11-14"
 ---
 
 # Provider Starters
@@ -51,6 +52,14 @@ One Maven module per flag backend: `unleash`, `configcat`, `datadog`, `envvar`, 
 ## Adding a new provider
 
 Copy the Unleash module: properties, customizer, auto-configuration, `pom.xml`, the `AutoConfiguration.imports` registration, and `ApplicationContextRunner`-style tests. Then add the module + version property to the root `pom.xml` and the BOM.
+
+The full behavioral contract — one `FeatureProvider` plus one `Client`, back-off when a
+consumer supplies their own provider, declarative enablement, customizer application,
+credential-free unit tests — along with the per-provider deltas, the add-a-starter
+checklist and the divergences found while consolidating the retired specs, lives in
+[`docs/provider-starter-contract.md`](../../docs/provider-starter-contract.md). Read that
+divergences list before trusting a remembered requirement: the Octopus Deploy and FeatBit
+modules require properties the old specs never named. See [[overview/design-docs]].
 
 Extension points: [[concepts/customizers]]. Config reference: [[entities/configuration-properties]].
 
