@@ -40,11 +40,22 @@ Flag evaluation defaults to `false` everywhere. A down provider means *all* flag
 
 `docs/` replaced the OpenSpec trees on 2026-11-14. A design change that lands only in code silently re-creates the problem that killed the specs: the retired trees claimed mandatory properties that do not exist (Octopus Deploy, FeatBit) and stayed wrong because nothing enforced them. Update the matching `docs/` page together with the decision — see [[overview/design-docs]].
 
-## `make lint` checks nothing
+## `make lint` must name the checkstyle execution
 
-`Makefile:53` declares `.PHONY: lint` but no `lint:` rule follows it — the recipe below belongs to a `checkstyle:` target that is then defined a second time at `Makefile:58`, so `make` warns "overriding recipe for target 'checkstyle'" on every invocation. Consequences:
+`make lint` and `make checkstyle` have to invoke `checkstyle:check@checkstyle-validation`.
+The plugin's `configLocation` (the Spring ruleset), `includeTestSourceDirectory=false` and
+`violationIgnore=SpringNullability` live on that one execution (`pom.xml:276-288`), so a bare
+`checkstyle:check` inherits none of them and silently falls back to Checkstyle's default
+`sun_checks.xml` — which reports 68 violations the project never enforced, including
+80-character lines and `FileTabCharacter` (the repo indents Java with tabs on purpose).
 
-- `make lint` prints `Nothing to be done for 'lint'` and exits 0, so the local `make-lint` pre-commit hook passes having run nothing.
-- With the standalone checkstyle hook removed from `.pre-commit-config.yaml`, nothing at commit time enforces style; only the Maven `validate` phase does, on every actual build.
+Two ways this goes wrong quietly:
 
-Treat a green `make lint` as no evidence at all until the target gets a recipe.
+- Drop the `@checkstyle-validation` suffix and lint checks the wrong ruleset: red on clean
+  code, and blind to the Spring rules that actually matter.
+- Give the target no recipe and the local `make-lint` pre-commit hook reports "Passed"
+  having run nothing — which is exactly how it shipped until 2026-11-14, alongside a
+  duplicated `checkstyle:` target that made `make` warn on every call.
+
+Verify either change behaviorally rather than by exit code: add a file with a `java.util.*`
+star import and confirm the goal fails with `AvoidStarImport`.
