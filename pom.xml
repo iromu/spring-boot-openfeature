@@ -138,7 +138,7 @@
          LaunchDarkly SDK in runtime scope, and the starter compiles against LDConfig. -->
     <launchdarkly-java-server-sdk.version>7.17.5</launchdarkly-java-server-sdk.version>
 
-    <datadog-openfeature.version>1.68.1</datadog-openfeature.version>
+    <datadog-openfeature.version>1.68.2</datadog-openfeature.version>
 
     <split-openfeature.version>1.2.2</split-openfeature.version>
     <split-java-client.version>4.19.1</split-java-client.version>
