@@ -151,7 +151,7 @@
     <!-- Declared explicitly (not transitively): the provider publishes the FeatBit SDK in an
          open version range, and the starter compiles against FBConfig. -->
     <featbit-java-sdk.version>1.5.0</featbit-java-sdk.version>
-    <featureflip-openfeature.version>0.2.1</featureflip-openfeature.version>
+    <featureflip-openfeature.version>0.2.2</featureflip-openfeature.version>
 
     <!-- The Mixpanel OpenFeature provider (com.mixpanel.openfeature.MixpanelProvider) ships
          in the Mixpanel Java SDK's openfeature module; it transitively pulls an older
