@@ -145,7 +145,7 @@
 
     <!-- DevCycle's OpenFeature provider (com.devcycle.sdk.server.openfeature.DevCycleProvider)
          ships inside the DevCycle Java server SDK. -->
-    <devcycle-openfeature.version>2.10.0</devcycle-openfeature.version>
+    <devcycle-openfeature.version>2.10.1</devcycle-openfeature.version>
 
     <featbit-openfeature.version>1.0.0</featbit-openfeature.version>
     <!-- Declared explicitly (not transitively): the provider publishes the FeatBit SDK in an
