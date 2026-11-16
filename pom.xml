@@ -172,7 +172,7 @@
     <!-- Declared explicitly (not transitively): the provider ships the VWO FME SDK at
          runtime scope, but the starter compiles against com.vwo.VWO, which ships in it
          (referenced by VWOProvider's constructor signature). -->
-    <vwo-fme-java-sdk.version>1.8.1</vwo-fme-java-sdk.version>
+    <vwo-fme-java-sdk.version>1.65.0</vwo-fme-java-sdk.version>
 
     <!-- The Superposition OpenFeature provider (io.juspay.superposition.openfeature.SuperpositionOpenFeatureProvider)
          ships in Juspay's Superposition Java client; it transitively pulls an older
